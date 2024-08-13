@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nwsc"
+version = "0.1.0"
+dependencies = []
+
+# This section tells setuptools how to find the Python packages in your project, and it adds them
+# to your PATH so you can use absolute imports in your Python modules
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = [""]
+namespaces = true
+
+# This section tells setuptools to create an executable that you can run as a command in your terminal.
+# - The `pkg_example` to the left of the `=` is the name of the executable that will be created
+# - The `pkg_example` inside the quotes is the name of the Python package folder (inside your project folder)
+# - The first `main` is the name of the module inside `pkg_example` that contains the entry point function
+# - The second `main` is the name of the function
+[project.scripts]
+nwsc = "nwsc.main:main"
