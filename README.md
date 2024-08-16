@@ -1,11 +1,13 @@
-<p align='center'>
+<div align='center'>
 <img src='https://github.com/1npo/nwsc/blob/main/nwsc-logo.png' alt='nwsc logo by http://logomvp.com/, https://x.com/lentesdev; using https://phosphoricons.com/'>
 
 # nwsc
 
-**U.S. National Weather Service Client (nwsc)** — A full-coverage text-based National Weather Service API client for weather and data nerds.
+**U.S. National Weather Service Client (nwsc)**
 
-</p>
+A full-coverage text-based National Weather Service API client for weather and data nerds.
+
+</div>
 
 ## Features
 - Retrieve data from every* available NWS API endpoint [(* see Endpoint Coverage section)](#endpoint-coverage)
