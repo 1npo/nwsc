@@ -1,10 +1,7 @@
 <div align='center'>
 <img src='https://github.com/1npo/nwsc/blob/main/nwsc-logo.png' alt='nwsc logo by http://logomvp.com/, https://x.com/lentesdev; using https://phosphoricons.com/'>
 
-# nwsc
-
-**U.S. National Weather Service Client (nwsc)**
-
+*U.S. National Weather Service Client (nwsc)*
 A full-coverage text-based National Weather Service API client for weather and data nerds.
 
 </div>
