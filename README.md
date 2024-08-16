@@ -7,6 +7,8 @@
 
 A full-coverage text-based National Weather Service API client for weather and data nerds.
 
+---
+
 **NOTE**: *This is a new project actively under development as of July 2024*
 
 </div>
