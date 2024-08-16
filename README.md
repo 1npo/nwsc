@@ -83,7 +83,7 @@ A full-coverage text-based National Weather Service API client for weather and d
 ## TODO
 ### Data
 - [ ] Finish writing API request functions for all endpoints
-- [x] Finish fleshing out dataclasses for all NWS data
+- [ ] Finish fleshing out dataclasses for all NWS data
 - [ ] Update `api.py` to use dataclasess instead of dicts
 - [x] Add wind speed/direction string and measurement conversions to `api.py` without using dataframes
 - [x] Create a `repository` subpackage for recording historical weather responses
@@ -103,7 +103,7 @@ A full-coverage text-based National Weather Service API client for weather and d
   - [ ] emoji-text
   - [ ] rich-table
 - [ ] Clean up and improve the quality of `render.py` and rename it to `render_rich.py`
-- [ ] Create a `render` subpackage and move `render_rich.py` into it
+- [x] Create a `render` subpackage and move `render_rich.py` into it
 - [ ] Create additional renderers:
   - [ ] json
   - [ ] text
