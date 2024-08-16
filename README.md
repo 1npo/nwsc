@@ -1,5 +1,5 @@
 <p align='center'>
-<img src='https://github.com/1npo/nwsc/nwsc-logo.png' alt='nwsc logo by http://logomvp.com/, https://x.com/lentesdev; using https://phosphoricons.com/'>
+<img src='https://github.com/1npo/nwsc/blob/main/nwsc-logo.png' alt='nwsc logo by http://logomvp.com/, https://x.com/lentesdev; using https://phosphoricons.com/'>
 
 # nwsc
 

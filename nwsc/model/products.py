@@ -20,6 +20,7 @@ class Product:
     product_id: str
     product_wmo_id: str
     issuing_office: str
+    issued_at: datetime
     product_type: ProductType
     product_text: str
 
