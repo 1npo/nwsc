@@ -42,6 +42,9 @@ A full-coverage text-based National Weather Service API client for weather and d
 - [x] /gridpoints/{wfo}/{x},{y}/forecast
 - [x] /gridpoints/{wfo}/{x},{y}/forecast/hourly
 - [ ] /gridpoints/{wfo}/{x},{y}/stations
+- [ ] ~~/icons/{set}/{timeOfDay}/{first}~~ (**DEPRECATED**)
+- [ ] ~~/icons/{set}/{timeOfDay}/{first}/{second}~~ (**DEPRECATED**)
+- [ ] ~~/icons~~ (**DEPRECATED**)
 - [x] /thumbnails/satellite/{area}
 - [ ] /stations/{stationId}/observations
 - [x] /stations/{stationId}/observations/latest
@@ -60,6 +63,8 @@ A full-coverage text-based National Weather Service API client for weather and d
 - [x] /radar/stations
 - [ ] /radar/stations/{stationId}
 - [x] /radar/stations/{stationId}/alarms
+- [ ] ~~/radar/queues/{host}~~ (**UNEXPECTED 404**)
+- [ ] ~~/radar/profilers/{stationId}~~ (**UNEXPECTED 404**)
 - [x] /products
 - [x] /products/locations
 - [x] /products/types
@@ -74,12 +79,7 @@ A full-coverage text-based National Weather Service API client for weather and d
 - [ ] /zones/{type}/{zoneId}/forecast
 - [ ] /zones/forecast/{zoneId}/observations
 - [ ] /zones/forecast/{zoneId}/stations
-### Endpoints with Issues
-- [ ] /radar/queues/{host} (**UNEXPECTED 404**)
-- [ ] /radar/profilers/{stationId} (**UNEXPECTED 404**)
-- [ ] /icons/{set}/{timeOfDay}/{first} (**DEPRECATED**)
-- [ ] /icons/{set}/{timeOfDay}/{first}/{second} (**DEPRECATED**)
-- [ ] /icons (**DEPRECATED**)
+
 ## TODO
 ### Data
 - [ ] Finish writing API request functions for all endpoints
