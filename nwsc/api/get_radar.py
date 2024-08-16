@@ -1,6 +1,6 @@
 from requests_cache import CachedSession
 from loguru import logger
-from nwsc.decorators import display_spinner
+from nwsc.render.decorators import display_spinner
 from nwsc.api.conversion import convert_measures
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api import (

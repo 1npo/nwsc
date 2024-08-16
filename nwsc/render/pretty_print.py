@@ -5,7 +5,7 @@ from rich.console import Console
 from rich.pretty import pprint
 from requests_cache import CachedSession
 from loguru import logger
-from nwsc.decorators import display_spinner
+from nwsc.render.decorators import display_spinner
 from nwsc.api.get_weather import *
 from nwsc.api.get_stations import *
 from nwsc.api.get_radar import *

@@ -1,5 +1,5 @@
 from requests_cache import CachedSession
-from nwsc.decorators import display_spinner
+from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
 from nwsc.api import API_URL_NWS_GLOSSARY
 

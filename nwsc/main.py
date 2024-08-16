@@ -12,9 +12,9 @@ from loguru import logger
 from requests_cache import CachedSession, SQLiteCache, FileCache
 
 from nwsc.config import ConfigManager
-from nwsc.decorators import display_spinner
-from nwsc.api_temp import get_weather_for_location
-from nwsc.render import (
+from nwsc.render.decorators import display_spinner
+from nwsc.render.pretty_print import get_weather_for_location
+from nwsc.render.rich_print import (
     rich_print_current_conditions,
 	rich_print_extended_forecast,
 	rich_print_settings,

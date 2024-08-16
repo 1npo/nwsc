@@ -18,6 +18,7 @@ A full-coverage text-based National Weather Service API client for weather and d
   - SQLite
   - Postgres
   - Delta/Spark
+  - JSON
 ## Demos
 - [ ] Add GIFs and PNGs here
 ## Endpoint Coverage
