@@ -88,7 +88,7 @@ def main():
 	address = params.address if params.address else config.get('address')
 	backend = SQLiteCache()
 	session = CachedSession('nwsc_cache', backend=backend, use_cache_dir=True)
-	with session.cache_disabled():
+	with session:
 		if params.debug:
 			log_filter.level = 'DEBUG'
 		

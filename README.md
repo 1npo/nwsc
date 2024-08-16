@@ -1,8 +1,24 @@
+<p align='center'>
+<img src='https://github.com/1npo/nwsc/nwsc-logo.png' alt='nwsc logo by http://logomvp.com/, https://x.com/lentesdev; using https://phosphoricons.com/'>
+
 # nwsc
-A text-based full-coverage National Weather Service API client.
-Logo by logomvp.com
-# Endpoint Coverage
-- [ ] /alerts **N/A**
+
+**U.S. National Weather Service Client (nwsc)** — A full-coverage text-based National Weather Service API client for weather and data nerds.
+
+</p>
+
+## Features
+- Retrieve data from every* available NWS API endpoint [(* see Endpoint Coverage section)](#endpoint-coverage)
+- Uses `requests-cache` to cache API responses for fast data retrieval
+- Pretty TUI for exploring the data
+- Output weather strings that can be piped to other tools (such as i3 status bar)
+- Export data to various sources for analytics or reporting:
+  - SQLite
+  - Postgres
+  - Delta/Spark
+
+## Endpoint Coverage
+- [ ] /alerts
 - [x] /alerts/active
 - [x] /alerts/active/count
 - [x] /alerts/active/zone/{zoneId}
@@ -39,28 +55,29 @@ Logo by logomvp.com
 - [x] /points/{point}
 - [x] /points/{point}/stations
 - [x] /radar/servers
-- [ ] /radar/servers/{id} **N/A**
+- [ ] /radar/servers/{id}
 - [x] /radar/stations
 - [ ] /radar/stations/{stationId}
-- [ ] /radar/stations/{stationId}/alarms
+- [x] /radar/stations/{stationId}/alarms
 - [ ] /radar/queues/{host} **UNEXPECTED 404**
 - [ ] /radar/profilers/{stationId} **UNEXPECTED 404**
-- [ ] /products
-- [ ] /products/locations
-- [ ] /products/types
-- [ ] /products/{productId}
-- [ ] /products/types/{typeId}
-- [ ] /products/types/{typeId}/locations
-- [ ] /products/locations/{locationId}/types
-- [ ] /products/types/{typeId}/locations/{locationId}
+- [x] /products
+- [x] /products/locations
+- [x] /products/types
+- [x] /products/{productId}
+- [x] /products/types/{typeId}
+- [x] /products/types/{typeId}/locations
+- [x] /products/locations/{locationId}/types
+- [x] /products/types/{typeId}/locations/{locationId}
 - [ ] /zones
 - [ ] /zones/{type}
 - [ ] /zones/{type}/{zoneId}
 - [ ] /zones/{type}/{zoneId}/forecast
 - [ ] /zones/forecast/{zoneId}/observations
 - [ ] /zones/forecast/{zoneId}/stations
-# TODO
-## Data
+
+## TODO
+### Data
 - [ ] Finish writing API request functions for all endpoints
 - [x] Finish fleshing out dataclasses for all NWS data
 - [ ] Update `api.py` to use dataclasess instead of dicts
@@ -71,8 +88,9 @@ Logo by logomvp.com
   - [ ] sqlite
   - [ ] postgresql
   - [ ] delta
-- [ ] Revamp or remove `cache.py`: use `requests-cache` instead of rolling your own cache manager
-## Interface
+- [x] Revamp or remove `cache.py`: use `requests-cache` instead of rolling your own cache manager
+- [ ] Update `api_temp.get_station_observations_data()` to follow the pattern that other `get_*_data()` functions use
+### Interface
 - [ ] Create an interactive TUI with Textual
 - [ ] Update `main.py` to start the TUI by default
 - [ ] Update `main.py` argument parser to let the user specify output types:
@@ -86,24 +104,49 @@ Logo by logomvp.com
   - [ ] json
   - [ ] text
   - [ ] matplotlib
-## Package
+### Package
 - [x] Rename `nws` to `nwsc`
 - [ ] Remove `pandas` as a dependency
 - [ ] Review `config.py` to determine if it can be improved
 - [ ] Make any needed improvements to `config.py`
-- [ ] Split `api.py` into separate modules, one for each endpoint
-## Documentation
+- [x] Split `api_temp.py` into separate modules, one for each endpoint
+### Documentation
 - [ ] Find some examples of great project READMEs
 - [ ] Find some examples of great API documentation
 - [ ] Fully populate *all* docstrings
+  - [ ] Move all "See:" reference links from comments above functions to the module-level docstring
 - [ ] Generate API documentation with Sphinx
 - [ ] Fully flesh out nwsc READMEs
 - [ ] Create "API Coverage" checklist in README and identify all API features that are implemented
-## Testing
+### Testing
 - [ ] Create unit tests for every function
+  - [ ] `api.get_alerts`
+  - [ ] `api.get_offices`
+  - [ ] `api.get_products`
+  - [ ] `api.get_radar`
+  - [ ] `api.get_weather`
+  - [ ] `config`
+  - [ ] `decorators`
+  - [ ] `main`
+  - [ ] `repository.base`
+  - [ ] `repository.in_memory`
+  - [ ] `repository.sqlite`
+  - [ ] `repository.postgres`
+  - [ ] `repository.delta`
+
 ## Contribution
-- [ ] The /radar/queues/{host} is unexpectedly returning 404 - submit an issue
-# Resources
+- [x] The /radar/queues/{host} is unexpectedly returning 404 - email the NWS NOC
+  - [x] If no response from NOC, submit issue to the github repo
+
+## License
+`nwsc` is made available under the [MIT License](https://opensource.org/license/mit)
+
+## Credits
+- Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
+- Icon in logo is from [Phosphor Icons](https://phosphoricons.com/)
+
+## Resources
 - https://docs.scalar.com/swagger-editor
-# Notes
+
+## Notes
 - RE: /product* endpoints: Get only the list of product types when starting nwsc. Make additional requests only when prompted by the user.

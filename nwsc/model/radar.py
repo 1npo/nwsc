@@ -5,7 +5,10 @@ from dataclasses import dataclass
 
 @dataclass
 class RadarStationAlarm:
-    pass
+    status: str
+    message: str
+    active_channel: int
+    event_at: datetime
 
 
 @dataclass
