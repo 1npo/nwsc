@@ -9,6 +9,30 @@ A full-coverage text-based National Weather Service API client for weather and d
 
 </div>
 
+**NOTE**: *This is a new project actively under development as of July 2024*
+
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Features](#features)
+- [Demos](#demos)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Console TUI](#console-tui)
+  - [CLI Options](#cli-options)
+  - [Data Export](#data-export)
+- [Endpoint Coverage](#endpoint-coverage)
+- [License](#license)
+- [Credits](#credits)
+- [TODO](#todo)
+  - [Data](#data)
+  - [Interface](#interface)
+  - [Package](#package)
+  - [Documentation](#documentation)
+  - [Testing](#testing)
+  - [Miscellaneous](#miscellaneous)
+- [Notes](#notes)
+  - [Resources](#resources)
+
 ## Features
 - Retrieve data from every* available NWS API endpoint [(see Endpoint Coverage section)](#endpoint-coverage)
 - Uses `requests-cache` to cache API responses for fast data retrieval
@@ -21,6 +45,17 @@ A full-coverage text-based National Weather Service API client for weather and d
   - JSON
 ## Demos
 - [ ] Add GIFs and PNGs here
+## Installation
+- [ ] Add PyPI installation instructions here
+- [ ] Add instructions for installing from source here
+## Usage
+### Console TUI
+- [ ] List keybindings
+### CLI Options
+- [ ] Show how to print weather strings for piping
+### Data Export
+- [ ] Describe how to set up repositories for data export
+- [ ] Describe how to enable/use data export features
 ## Endpoint Coverage
 - [ ] /alerts
 - [x] /alerts/active
@@ -79,6 +114,13 @@ A full-coverage text-based National Weather Service API client for weather and d
 - [ ] /zones/{type}/{zoneId}/forecast
 - [ ] /zones/forecast/{zoneId}/observations
 - [ ] /zones/forecast/{zoneId}/stations
+
+## License
+`nwsc` is made available under the [MIT License](https://opensource.org/license/mit)
+
+## Credits
+- Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
+- Icon in logo is from [Phosphor Icons](https://phosphoricons.com/)
 
 ## TODO
 ### Data
@@ -140,13 +182,6 @@ A full-coverage text-based National Weather Service API client for weather and d
 ### Miscellaneous
 - [x] The /radar/queues/{host} is unexpectedly returning 404 - email the NWS NOC
   - [x] If no response from NOC, submit issue to the github repo
-
-## License
-`nwsc` is made available under the [MIT License](https://opensource.org/license/mit)
-
-## Credits
-- Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
-- Icon in logo is from [Phosphor Icons](https://phosphoricons.com/)
 
 ## Notes
 - RE: /product* endpoints: Get only the list of product types when starting nwsc. Make additional requests only when prompted by the user.
