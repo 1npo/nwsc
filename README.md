@@ -40,7 +40,7 @@ A full-coverage text-based National Weather Service API client for weather and d
 - Uses [`requests-cache`](https://requests-cache.readthedocs.io/en/stable/) to cache API responses for fast data retrieval
 - Pretty TUI with [`Textual`](https://textual.textualize.io) for exploring the data
 - Output weather strings that can be piped to other tools (such as i3 status bar)
-- Export data to various sources for analytics or reporting:
+- Export data to various repositories for analytics or reporting:
   - SQLite
   - Postgres
   - Delta/Spark
