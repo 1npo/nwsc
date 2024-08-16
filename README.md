@@ -1,14 +1,16 @@
 <div align='center'>
 <img src='https://github.com/1npo/nwsc/blob/main/nwsc-logo.png' alt='nwsc logo by http://logomvp.com/, https://x.com/lentesdev; using https://phosphoricons.com/'>
 
-*U.S. National Weather Service Client (nwsc)*
+---
+
+**U.S. National Weather Service Client**
 
 A full-coverage text-based National Weather Service API client for weather and data nerds.
 
 </div>
 
 ## Features
-- Retrieve data from every* available NWS API endpoint [(* see Endpoint Coverage section)](#endpoint-coverage)
+- Retrieve data from every* available NWS API endpoint [(see Endpoint Coverage section)](#endpoint-coverage)
 - Uses `requests-cache` to cache API responses for fast data retrieval
 - Pretty TUI for exploring the data
 - Output weather strings that can be piped to other tools (such as i3 status bar)
@@ -16,7 +18,8 @@ A full-coverage text-based National Weather Service API client for weather and d
   - SQLite
   - Postgres
   - Delta/Spark
-
+## Demos
+- [ ] Add GIFs and PNGs here
 ## Endpoint Coverage
 - [ ] /alerts
 - [x] /alerts/active
@@ -133,8 +136,7 @@ A full-coverage text-based National Weather Service API client for weather and d
   - [ ] `repository.sqlite`
   - [ ] `repository.postgres`
   - [ ] `repository.delta`
-
-## Contribution
+### Miscellaneous
 - [x] The /radar/queues/{host} is unexpectedly returning 404 - email the NWS NOC
   - [x] If no response from NOC, submit issue to the github repo
 
@@ -145,8 +147,7 @@ A full-coverage text-based National Weather Service API client for weather and d
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
 - Icon in logo is from [Phosphor Icons](https://phosphoricons.com/)
 
-## Resources
-- https://docs.scalar.com/swagger-editor
-
 ## Notes
 - RE: /product* endpoints: Get only the list of product types when starting nwsc. Make additional requests only when prompted by the user.
+### Resources
+- https://docs.scalar.com/swagger-editor
