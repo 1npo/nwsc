@@ -144,7 +144,7 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 ## Credits
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
 - Icon in the logo is from [Phosphor Icons](https://phosphoricons.com/)
-- [Bruno](https://www.usebruno.com) was very helpful for exploring the API
+- [Bruno](https://www.usebruno.com) and [Swagger UI](https://swagger.io/tools/swagger-ui/) were very helpful for exploring the API
 
 ## TODO
 ### Data
@@ -215,5 +215,5 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
   - [ ] `repository.postgres`
   - [ ] `repository.delta`
 ### Miscellaneous
-- [x] The /radar/queues/{host} is unexpectedly returning 404 - email the NWS NOC
+- [x] The `/radar/queues/{host}` endpoint is unexpectedly returning 404 - email the NWS NOC
   - [x] If no response from NOC, submit issue to the github repo (https://github.com/weather-gov/api/discussions/756)
