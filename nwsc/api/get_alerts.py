@@ -20,13 +20,13 @@ from nwsc.api import (
 # - https://vlab.noaa.gov/web/nws-common-alerting-protocol
 # - https://www.weather.gov/media/alert/CAP_v12_guide_05-16-2017.pdf
 # - https://www.weather.gov/vtec/
-def process_alert_data(alerts: dict) -> list:
+def process_alert_data(alerts_data: dict) -> list:
 	"""Get all current alerts for the given area, zone, or region"""
 	alerts = []
-	for feature in alerts.get('features', {}):
+	for feature in alerts_data.get('features', {}):
 		alert = {
-			'alert_title':                  alerts.get('title'),
-			'alert_updated_at':             parse_timestamp(alerts.get('updated')),
+			'alert_title':                  feature.get('title'),
+			'alert_updated_at':             parse_timestamp(feature.get('updated')),
 			'alert_url':                    feature.get('id'),
 			'alert_id':                     feature.get('properties', {}).get('id'),
 			'alert_area_desc':              feature.get('properties', {}).get('areaDesc'),

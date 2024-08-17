@@ -1,4 +1,6 @@
 from requests_cache import CachedSession
+from rich.pretty import pprint
+from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request
@@ -33,8 +35,9 @@ def get_stations(session: CachedSession, url: str) -> list:
 	stations_data = api_request(session, url)
 	stations = []
 	for feature in stations_data.get('features', {}):
-		stations.append(process_station_data(feature))
-	stations = convert_measures(stations)
+		station = process_station_data(feature)
+		station = convert_measures(station)
+		stations.append(station)
 	return stations
 
 

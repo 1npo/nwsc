@@ -93,7 +93,7 @@ def get_products_by_type_and_location(session: CachedSession, type_id: str, loca
 def get_product(session: CachedSession, product_id: str) -> dict:
 	""" """
 	product_data = api_request(session, API_URL_NWS_PRODUCTS + product_id)
-	product = process_product_data(product_data)
-	product.update({'product_text':product_data.get('productText')})
+	product = process_product_data([product_data])[0]
+	product.update({'product_text': product_data.get('productText')})
 	return product
 

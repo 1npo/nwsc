@@ -142,8 +142,8 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 
 ## Credits
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
-- Icon in logo is from [Phosphor Icons](https://phosphoricons.com/)
-- [Bruno](https://www.usebruno.com) was immensely helpful for exploring the NWS API
+- Icon in the logo is from [Phosphor Icons](https://phosphoricons.com/)
+- [Bruno](https://www.usebruno.com) was very helpful for exploring the API
 
 ## TODO
 ### Data

@@ -1,6 +1,8 @@
 from requests_cache import CachedSession
+from rich.pretty import pprint
 from loguru import logger
 from nwsc.render.decorators import display_spinner
+from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api.get_stations import process_station_data
 from nwsc.api.get_weather import process_observations_data
@@ -12,6 +14,9 @@ from nwsc.api import (
 
 
 def process_zone_data(zone_data: list) -> dict:
+    zone_geometry = zone_data.get('geometry', {})
+    if zone_geometry:
+        zone_geometry = zone_geometry.get('coordinates')
     return {
         'zone_id':              zone_data.get('properties', {}).get('id'),
         'grid_id':              zone_data.get('properties', {}).get('gridIdentifier'),
@@ -26,7 +31,7 @@ def process_zone_data(zone_data: list) -> dict:
         'zone_expires_at':      parse_timestamp(zone_data.get('properties', {}).get('expirationDate')),
         'forecast_offices':     zone_data.get('properties', {}).get('forecastOffices'),
         'observation_stations': zone_data.get('properties', {}).get('observationStations'),
-        'multi_polygon':        zone_data.get('geometry', {}).get('coordinates', {}),
+        'multi_polygon':        zone_geometry,
     }
 
 
@@ -62,7 +67,12 @@ def get_zone_stations(session: CachedSession, zone_id: str) -> dict:
 @display_spinner('Getting observations for zone...')
 def get_zone_observations(session: CachedSession, zone_id: str) -> dict:
     zone_observations_data = api_request(session, API_URL_NWS_ZONE_FORECASTS + f'/{zone_id}/observations')
-    return process_observations_data(zone_observations_data)
+    zone_observations = []
+    for feature in zone_observations_data.get('features', {}):
+        observation = process_observations_data(feature)
+        observation = convert_measures(observation)
+        zone_observations.append(observation)
+    return zone_observations
 
 
 @display_spinner('Getting forecast for zone...')
