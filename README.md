@@ -41,10 +41,10 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - Print weather strings that can be piped to other tools (such as [i3status](https://i3wm.org/i3status/))
 - Export data to various repositories for analytics or reporting:
   - CSV
+  - JSON
   - SQLite
   - Postgres
   - Delta/Spark
-  - JSON
 
 ## Demos
 - [ ] Add GIFs and PNGs here
@@ -52,7 +52,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 ## Installation
 ### Dependencies
 - [`requests-cache`](https://github.com/requests-cache/requests-cache)
-- [`loguru`](https://github.com/Delgan/loguru)
+- [`loguru`](https://github.com/Delgan/loguru) (*being replaced with stdlib logging*)
 - [`rich`](https://github.com/Textualize/rich)
 - [`textual`](https://github.com/Textualize/textual)
 ### PyPI
@@ -146,5 +146,5 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - [Bruno](https://www.usebruno.com) and [Swagger UI](https://swagger.io/tools/swagger-ui/) were very helpful for exploring the API
 
 ## Contributing
-- See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`.
-- See [TODO.md](TODO.md) for things that need to be done.
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`
+- See [TODO.md](TODO.md) for things that need to be done
