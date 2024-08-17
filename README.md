@@ -128,7 +128,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [x] /zones/forecast/{zoneId}/stations
 
 ## License
-The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)
+The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit).
 
 ## Credits
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
@@ -182,15 +182,20 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - [ ] Fully flesh out nwsc READMEs
 - [ ] Create "API Coverage" checklist in README and identify all API features that are implemented
 ### Testing
-- [ ] Create unit tests for every function
+- [ ] Write unit tests for every (possible) function in:
+  - [ ] `main`
+  - [ ] `config`
+  - [ ] `api.conversions`
+  - [ ] `api.geocode`
   - [ ] `api.get_alerts`
+  - [ ] `api.get_glossary`
   - [ ] `api.get_offices`
   - [ ] `api.get_products`
   - [ ] `api.get_radar`
+  - [ ] `api.get_stations`
   - [ ] `api.get_weather`
-  - [ ] `config`
-  - [ ] `decorators`
-  - [ ] `main`
+  - [ ] `api.get_zones`
+  - [ ] `render.decorators`
   - [ ] `repository.base`
   - [ ] `repository.in_memory`
   - [ ] `repository.sqlite`
