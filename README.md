@@ -152,6 +152,8 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - [ ] Update `api.py` to use dataclasess instead of dicts
 - [x] Add wind speed/direction string and measurement conversions to `api.py` without using dataframes
 - [x] Create a `repository` subpackage for recording historical weather responses
+- [ ] Fix `get_zone_stations` - it's returning an empty list
+  - [ ] Re-generate `tests/test_data/nws_raw_zone_stations.json`
 - [ ] Create repositories:
   - [ ] in-memory
   - [ ] sqlite
