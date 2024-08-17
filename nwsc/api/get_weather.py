@@ -75,13 +75,13 @@ def get_location(session: CachedSession, address: str) -> dict:
 		'timezone':                 location_data.get('properties', {}).get('timeZone'),
 		'grid_x':                   location_data.get('properties', {}).get('gridX'),
 		'grid_y':                   location_data.get('properties', {}).get('gridY'),
-		'forecast_office':          location_data.get('properties', {}).get('cwa'),
+		'county_warning_area':      location_data.get('properties', {}).get('cwa'),
 		'forecast_office_url':      location_data.get('properties', {}).get('forecastOffice'),
 		'radar_station':            location_data.get('properties', {}).get('radarStation'),
-		'forecast_extended_url':    location_data.get('properties', {}).get('forecast'),
-		'forecast_hourly_url':      location_data.get('properties', {}).get('forecastHourly'),
-		'gridpoints_url':           location_data.get('properties', {}).get('forecastGridData'),
-		'observation_stations_url': location_data.get('properties', {}).get('observationStations'),
+		'forecast_extended_url':    location_data.get('properties', {}).get('forecast'),				# /gridpoints/{wfo}/{x},{y}/forecast
+		'forecast_hourly_url':      location_data.get('properties', {}).get('forecastHourly'),			# /gridpoints/{wfo}/{x},{y}/forecast/hourly
+		'gridpoints_url':           location_data.get('properties', {}).get('forecastGridData'),		# /gridpoints/{wfo}/{x},{y}
+		'observation_stations_url': location_data.get('properties', {}).get('observationStations'),		# /gridpoints/{wfo}/{x},{y}/stations
 	}
 	return location
 

@@ -2,7 +2,11 @@ from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request
-from nwsc.api import WMI_UNIT_MAP, API_URL_NWS_STATIONS
+from nwsc.api import (
+    WMI_UNIT_MAP,
+    API_URL_NWS_STATIONS,
+	API_URL_NWS_GRIDPOINTS,
+)
 
 
 def process_station_data(feature: dict) -> dict:
@@ -25,14 +29,23 @@ def process_station_data(feature: dict) -> dict:
 	}
 
 
+def get_stations(session: CachedSession, url: str) -> list:
+	stations_data = api_request(session, url)
+	stations = []
+	for feature in stations_data.get('features', {}):
+		stations.append(process_station_data(feature))
+	stations = convert_measures(stations)
+	return stations
+
+
+@display_spinner('Getting stations usable in grid area...')
+def get_stations_by_grid(session: CachedSession, forecast_office: str, gridpoints: dict) -> list:
+	return get_stations(session, API_URL_NWS_GRIDPOINTS + f'/{forecast_office}/{gridpoints}/stations')
+
+
 @display_spinner('Getting local stations...')
 def get_local_stations(session: CachedSession, location: dict) -> list:
-	stations_data = api_request(session, location['observation_stations_url'])
-	local_stations = []
-	for feature in stations_data.get('features', {}):
-		local_stations.append(process_station_data(feature))
-	local_stations = convert_measures(local_stations)
-	return local_stations
+	return get_stations(session, location['observation_stations_url'])
 
 
 @display_spinner('Getting station...')

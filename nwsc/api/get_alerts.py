@@ -1,6 +1,7 @@
 """
 """
 
+
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
@@ -19,13 +20,13 @@ from nwsc.api import (
 # - https://vlab.noaa.gov/web/nws-common-alerting-protocol
 # - https://www.weather.gov/media/alert/CAP_v12_guide_05-16-2017.pdf
 # - https://www.weather.gov/vtec/
-def process_alert_data(alert_data: dict) -> list:
+def process_alert_data(alerts: dict) -> list:
 	"""Get all current alerts for the given area, zone, or region"""
 	alerts = []
-	for feature in alert_data.get('features', {}):
+	for feature in alerts.get('features', {}):
 		alert = {
-			'alert_title':                  alert_data.get('title'),
-			'alert_updated_at':             parse_timestamp(alert_data.get('updated')),
+			'alert_title':                  alerts.get('title'),
+			'alert_updated_at':             parse_timestamp(alerts.get('updated')),
 			'alert_url':                    feature.get('id'),
 			'alert_id':                     feature.get('properties', {}).get('id'),
 			'alert_area_desc':              feature.get('properties', {}).get('areaDesc'),
@@ -67,36 +68,42 @@ def process_alert_data(alert_data: dict) -> list:
 	return alerts
 
 
+@display_spinner('Getting all alerts...')
+def get_alerts(session: CachedSession) -> list:
+	alerts = api_request(session, API_URL_NWS_ALERTS)
+	return process_alert_data(alerts)
+
+
 @display_spinner('Getting alerts for the local area...')
-def get_alerts_data_by_area(session: CachedSession, area: str) -> list:
-	alert_data = api_request(session, API_URL_NWS_ALERTS_AREA + area)
-	return process_alert_data(alert_data)
+def get_alerts_by_area(session: CachedSession, area: str) -> list:
+	alerts = api_request(session, API_URL_NWS_ALERTS_AREA + area)
+	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for zone...')
-def get_alerts_data_by_zone(session: CachedSession, zone: str) -> list:
-	alert_data = api_request(session, API_URL_NWS_ALERTS_ZONE + zone)
-	return process_alert_data(alert_data)
+def get_alerts_by_zone(session: CachedSession, zone: str) -> list:
+	alerts = api_request(session, API_URL_NWS_ALERTS_ZONE + zone)
+	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for marine region...')
-def get_alerts_data_by_region(session: CachedSession, region: str) -> list:
-	alert_data = api_request(session, API_URL_NWS_ALERTS_REGION + region)
-	return process_alert_data(alert_data)
+def get_alerts_by_region(session: CachedSession, region: str) -> list:
+	alerts = api_request(session, API_URL_NWS_ALERTS_REGION + region)
+	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for marine region...')
-def get_alerts_data_by_id(session: CachedSession, alert_id: str) -> list:
-	alert_data = api_request(session, API_URL_NWS_ALERTS + alert_id)
-	return process_alert_data({'features': [alert_data]})
+def get_alerts_by_id(session: CachedSession, alert_id: str) -> list:
+	alerts = api_request(session, API_URL_NWS_ALERTS + alert_id)
+	return process_alert_data({'features': [alerts]})
 
 
 @display_spinner('Getting alert types...')
-def get_alert_types_data(session: CachedSession) -> list:
+def get_alert_types(session: CachedSession) -> list:
 	alert_types_data = api_request(session, API_URL_NWS_ALERT_TYPES)
 	return alert_types_data.get('eventTypes')
 
 
 @display_spinner('Getting alert counts...')
-def get_alert_counts_data(session: CachedSession) -> list:
+def get_alert_counts(session: CachedSession) -> list:
 	return api_request(session, API_URL_NWS_ALERT_COUNTS)

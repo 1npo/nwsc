@@ -9,18 +9,18 @@ from nwsc.api import (
 )
 
 
-def process_product_listing_data(product_listing_data: dict) -> list:
-	product_listing = []
-	for listing in product_listing_data.get('@graph', {}):
-		product_listing.append({
-			'product_id':		listing.get('id'),
-			'product_wmo_id':	listing.get('wmoCollectiveId'),
-			'issuing_office':	listing.get('issuingOffice'),
-			'issued_at':		listing.get('issuanceTime'),
-			'product_code':		listing.get('productCode'),
-			'product_name':		listing.get('productName'),
+def process_product_data(products_data: dict) -> list:
+	products = []
+	for product in products_data:
+		products.append({
+			'product_id':		product.get('id'),
+			'product_wmo_id':	product.get('wmoCollectiveId'),
+			'issuing_office':	product.get('issuingOffice'),
+			'issued_at':		product.get('issuanceTime'),
+			'product_code':		product.get('productCode'),
+			'product_name':		product.get('productName'),
 		})
-	return product_listing
+	return products
 
 
 def process_product_types_data(product_types_data: list) -> list:
@@ -68,40 +68,32 @@ def get_product_locations(session: CachedSession) -> list:
 @display_spinner('Getting product issuing locations by type...')
 def get_product_locations_by_type(session: CachedSession, type_id: str) -> list:
 	product_locations_data = api_request(session, API_URL_NWS_PRODUCT_TYPES + f'/{type_id}/locations')
-	logger.debug(f'{type_id=}, URL={API_URL_NWS_PRODUCT_TYPES}/{type_id}/locations')
-	logger.debug(product_locations_data)
 	return process_product_locations_data(product_locations_data)
 
 
 @display_spinner('Getting listing of all products...')
-def get_product_listing(session: CachedSession) -> list:
-	product_listing_data = api_request(session, API_URL_NWS_PRODUCTS)
-	return process_product_listing_data(product_listing_data)
+def get_products(session: CachedSession) -> list:
+	products_data = api_request(session, API_URL_NWS_PRODUCTS)
+	return process_product_data(products_data.get('@graph', {}))
 
 
 @display_spinner('Getting listing of all products by type...')
-def get_product_listing_by_type(session: CachedSession, type_id: str) -> list:
-	product_listing_data = api_request(session, API_URL_NWS_PRODUCT_TYPES + f'/{type_id}')
-	return process_product_listing_data(product_listing_data)
+def get_products_by_type(session: CachedSession, type_id: str) -> list:
+	products_data = api_request(session, API_URL_NWS_PRODUCT_TYPES + f'/{type_id}')
+	return process_product_data(products_data.get('@graph', {}))
 
 
 @display_spinner('Getting listing of all products by type from the issuing location...')
-def get_product_listing_by_type_and_location(session: CachedSession, type_id: str, location_id: str):
-	product_listing_data = api_request(session, API_URL_NWS_PRODUCT_TYPES + f'/{type_id}/locations/{location_id}')
-	return process_product_listing_data(product_listing_data)
+def get_products_by_type_and_location(session: CachedSession, type_id: str, location_id: str):
+	products_data = api_request(session, API_URL_NWS_PRODUCT_TYPES + f'/{type_id}/locations/{location_id}')
+	return process_product_data(products_data.get('@graph', {}))
 
 
 @display_spinner('Getting product content...')
 def get_product(session: CachedSession, product_id: str) -> dict:
 	""" """
 	product_data = api_request(session, API_URL_NWS_PRODUCTS + product_id)
-	return {
-		'product_id':		product_data.get('id'),
-		'product_wmo_id':	product_data.get('wmoCollectiveId'),
-		'issuing_office':	product_data.get('issuingOffice'),
-		'issued_at':		product_data.get('issuanceTime'),
-		'product_code':		product_data.get('productCode'),
-		'product_name':		product_data.get('productName'),
-		'product_text':		product_data.get('productText'),
-	}
+	product = process_product_data(product_data)
+	product.update({'product_text':product_data.get('productText')})
+	return product
 

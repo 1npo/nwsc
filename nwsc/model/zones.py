@@ -19,7 +19,7 @@ class Zone:
     effective_at: datetime
     expires_at: datetime
     timezones: List[str]
-    polygon: List[List[List[float]]]
+    multi_polygon: List[List[List[float]]]
 
 
 @dataclass

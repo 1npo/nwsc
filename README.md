@@ -24,8 +24,10 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [Usage](#usage)
   - [Console TUI](#console-tui)
   - [CLI Options](#cli-options)
+  - [Configuration](#configuration)
   - [Data Export](#data-export)
 - [Endpoint Coverage](#endpoint-coverage)
+- [Architecture](#architecture)
 - [License](#license)
 - [Credits](#credits)
 - [TODO](#todo)
@@ -62,14 +64,18 @@ A full-coverage National Weather Service API client for the terminal. Made for w
   - See: https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
 ## Usage
 ### Console TUI
+- [ ] Describe TUI panels/components
 - [ ] List keybindings
 ### CLI Options
 - [ ] Show how to print weather strings for piping
+### Configuration
+- [ ] Show how to use the configuration manager
+- [ ] List available config settings
 ### Data Export
 - [ ] Describe how to set up repositories for data export
 - [ ] Describe how to enable/use data export features
 ## Endpoint Coverage
-- [ ] /alerts
+- [x] /alerts
 - [x] /alerts/active
 - [x] /alerts/active/count
 - [x] /alerts/active/zone/{zoneId}
@@ -88,11 +94,11 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [x] /gridpoints/{wfo}/{x},{y}
 - [x] /gridpoints/{wfo}/{x},{y}/forecast
 - [x] /gridpoints/{wfo}/{x},{y}/forecast/hourly
-- [ ] /gridpoints/{wfo}/{x},{y}/stations
+- [x] /gridpoints/{wfo}/{x},{y}/stations
 - [ ] ~~/icons/{set}/{timeOfDay}/{first}~~ (**DEPRECATED**)
 - [ ] ~~/icons/{set}/{timeOfDay}/{first}/{second}~~ (**DEPRECATED**)
 - [ ] ~~/icons~~ (**DEPRECATED**)
-- [x] /thumbnails/satellite/{area}
+- [ ] ~~/thumbnails/satellite/{area}~~ (**DEPRECATED**)
 - [ ] /stations/{stationId}/observations
 - [x] /stations/{stationId}/observations/latest
 - [ ] /stations/{stationId}/observations/{time}
@@ -120,15 +126,19 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [x] /products/types/{typeId}/locations
 - [x] /products/locations/{locationId}/types
 - [x] /products/types/{typeId}/locations/{locationId}
-- [ ] /zones
-- [ ] /zones/{type}
-- [ ] /zones/{type}/{zoneId}
+- [x] /zones
+- [x] /zones/{type}
+- [x] /zones/{type}/{zoneId}
 - [x] /zones/{type}/{zoneId}/forecast
 - [x] /zones/forecast/{zoneId}/observations
 - [x] /zones/forecast/{zoneId}/stations
 
+## Architecture
+- [ ] Create application architecture diagram, export to PNG
+- [ ] Add diagram to `resources.img` and embed here
+
 ## License
-The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit).
+The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)
 
 ## Credits
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)

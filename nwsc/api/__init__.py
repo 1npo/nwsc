@@ -5,6 +5,7 @@
 #   - "How do I know I'm getting the latest data? Do I need to use “cache busting” methods?"
 API_URL_USCB_GEOCODE = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?benchmark=Public_AR_Current&format=json&address='
 API_URL_NWS_POINTS = 'https://api.weather.gov/points/'
+API_URL_NWS_GRIDPOINTS = 'https://api.weather.gov/gridpoints/'
 API_URL_NWS_STATIONS = 'https://api.weather.gov/stations/'
 API_URL_NWS_ALERTS = 'http://api.weather.gov/alerts/'
 API_URL_NWS_ALERTS_AREA = 'http://api.weather.gov/alerts/active/area/'
