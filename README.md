@@ -9,6 +9,10 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 
 ---
 
+*Add badges here*
+
+*Add screenshot here*
+
 </div>
 
 ## Table of Contents
