@@ -1,4 +1,4 @@
-# `nwsc` TODOs
+# TODO
 ## Data
 - [ ] Finish writing API request functions for all endpoints
 - [ ] Finish fleshing out dataclasses for all NWS data
