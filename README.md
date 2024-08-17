@@ -9,9 +9,9 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 
 ---
 
-*Add badges here*
+*Under active development as of July 2024. This message will be removed when the project reaches a MVP state.*
 
-*Add screenshot here*
+*Add badges here*
 
 </div>
 
