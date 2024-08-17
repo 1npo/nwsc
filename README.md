@@ -38,10 +38,11 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 
 ## Features
 - Retrieve data from every* available NWS API endpoint [(see Endpoint Coverage section)](#endpoint-coverage)
-- Uses [requests-cache](https://requests-cache.readthedocs.io/en/stable/) to cache API responses for fast data retrieval
+- Uses [requests-cache](https://requests-cache.readthedocs.io/en/stable/) for faster data retrieval
 - Pretty TUI with [Textual](https://textual.textualize.io) for exploring the data
-- Output weather strings that can be piped to other tools (such as i3 status bar)
+- Output weather strings that can be piped to other tools (such as [i3status](https://i3wm.org/i3status/))
 - Export data to various repositories for analytics or reporting:
+  - CSV
   - SQLite
   - Postgres
   - Delta/Spark
