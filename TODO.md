@@ -1,4 +1,5 @@
 # TODO
+
 ## Data
 - [ ] Finish writing API request functions for all endpoints
 - [ ] Finish fleshing out dataclasses for all NWS data
@@ -48,6 +49,16 @@
   - [ ] emoji-text
 
 ## Package
+- [ ] Move package from `venv` to `(micro)mamba`
+- [ ] Set up badges:
+  - [ ] GitHub Release
+  - [ ] GitHub License
+  - [ ] GitHub Actions Workflow Status
+    - [ ] Tests
+    - [ ] Release to PyPI
+  - [ ] GitHub code size
+  - [ ] Conda Version
+  - [ ] PyPI Version
 - [x] Rename `nws` to `nwsc`
 - [ ] Remove `pandas` as a dependency
 - [ ] Remove `loguru` as a dependency
