@@ -50,10 +50,10 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [ ] Add GIFs and PNGs here
 ## Installation
 ### Dependencies
-- (`requests-cache`)[https://github.com/requests-cache/requests-cache]
-- (`loguru`)[https://github.com/Delgan/loguru]
-- (`rich`)[https://github.com/Textualize/rich]
-- (`textual`)[https://github.com/Textualize/textual]
+- [`requests-cache`](https://github.com/requests-cache/requests-cache)
+- [`loguru`](https://github.com/Delgan/loguru)
+- [`rich`](https://github.com/Textualize/rich)
+- [`textual`](https://github.com/Textualize/textual)
 ### PyPI
 - [ ] Add PyPI installation instructions here
 ### GitHub
