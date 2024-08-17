@@ -5,7 +5,7 @@
 
 **U.S. National Weather Service Client**
 
-A text-based full-coverage National Weather Service API client for weather and data nerds.
+A full-coverage National Weather Service API client for the terminal. Made for weather nerds.
 
 ---
 
