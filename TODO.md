@@ -10,7 +10,7 @@
 - [ ] Fix `get_zone_stations` - it's returning an empty list
   - [ ] Re-generate `tests/test_data/nws_raw_zone_stations.json`
 - [x] Revamp or remove `cache.py`: use `requests-cache` instead of rolling your own cache manager
-- [ ] Write `nwsc.api.get_enums` to extract `VALID_NWS_ZONES` and `VALID_NWS_FORECAST_OFFICES` enums programmatically from API error responses
+- [x] Write `nwsc.api.get_enums` to extract `VALID_NWS_ZONES` and `VALID_NWS_FORECAST_OFFICES` enums programmatically from API error responses
 
 ## Repository
 - [ ] Create repository modules:

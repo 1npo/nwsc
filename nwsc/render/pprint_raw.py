@@ -17,6 +17,7 @@ from nwsc.api.get_offices import *
 from nwsc.api.get_glossary import *
 from nwsc.api.get_alerts import *
 from nwsc.api.get_zones import *
+from nwsc.api.get_enums import *
 
 
 def get_raw_nws_data(session: CachedSession, address: str) -> dict:
@@ -61,6 +62,10 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	zone_observations = get_zone_observations(session, 'TNZ061')
 	zone_forecast = get_zone_forecast(session, 'TXZ120')
 
+	# enums
+	valid_zones = get_valid_zones(session)
+	valid_forecast_offices = get_valid_forecast_offices(session)
+
 	weather_data = {
 		'location_data':					location_data,
 		'local_stations_data':				local_stations_data,
@@ -86,6 +91,8 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 		'zone_stations':					zone_stations,
 		'zone_observations':				zone_observations,
 		'zone_forecast':					zone_forecast,
+		'valid_zones':						valid_zones,
+		'valid_forecast_offices':			valid_forecast_offices,
 	}
 
 	return weather_data
@@ -106,6 +113,8 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		console.print(f'{name}\n{"=" * len(name)}', style='bold red')
-		pprint(data)
+		if name in ('valid_zones', 'valid_forecast_offices'):
+			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
+			pprint(data)
+
 

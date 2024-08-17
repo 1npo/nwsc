@@ -21,7 +21,7 @@ API_URL_NWS_PRODUCT_TYPES = 'http://api.weather.gov/products/types'
 API_URL_NWS_PRODUCT_LOCATIONS = 'http://api.weather.gov/products/locations'
 API_URL_NWS_ZONES = 'http://api.weather.gov/zones'
 API_URL_NWS_ZONE_FORECASTS = 'http://api.weather.gov/zones/forecast'
-
+API_URL_NWS_OFFICES = 'http://api.weather.gov/offices/'
 
 # See: https://codes.wmo.int/common/unit
 WMI_UNIT_MAP = {                            
@@ -50,9 +50,27 @@ METAR_CLOUD_COVER_MAP = {
 	'OVC':  'Overcast',             # 8 oktas (sky completely covered)
 }
 
-# TODO: Get these values by sending an invalid request to the /zones/{zoneId} endpoint
-# and parsing the error message. There's no other way to get a list of valid zones from
-# the API (as of 2024-8-17).
+INVALID_ENUM_MESSAGE_DELIMITER = 'Does not have a value in the enumeration'
+FAILED_TO_GET_ENUM_MESSAGE = (
+    'Unable to extract list of valid NWS $enum_type from the API. Falling back on hardcoded '
+    'values that may be out of date. This is unexpected and a bug, please report the issue '
+    'on GitHub at https://github.com/1npo/nwsc/issues.'
+)
+
+# As of 2024-8-17:
+#
+# There isn't an API endpoint for getting a list of valid NWS zones or forecast offices.
+# The only way to get these values programmatically is by extracting them from the error
+# response string when making a request to:
+#
+# - /zones/{zoneId} with an invalid zoneId
+# - /offices/{officeId} with an invalid officeId
+#
+# These values are hardcoded to prevent crashing/exceptions in the event that extracting
+# these enums fails for some reason (eg due to changes in the structure or format of
+# error responses).
+
+
 VALID_NWS_ZONES = [
     'land',
     'marine',
@@ -64,9 +82,7 @@ VALID_NWS_ZONES = [
     'county',
 ]
 
-# TODO: Get these values by sending an invalid request to the /offices/{officeId} endpoint
-# and parsing the error message. There's no other way to get a list of valid forecast
-# offices from the API (as of 2024-8-17).
+
 VALID_NWS_FORECAST_OFFICES = [
 	'AKQ', 	'CRP', 	'TSA', 	'LOT', 	'PSR', 
 	'ALY', 	'EPZ', 	'ABR', 	'LSX', 	'REV', 
