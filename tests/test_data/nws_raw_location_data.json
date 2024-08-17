@@ -1,0 +1,14 @@
+{
+    "city": "Winchester",
+    "state": "NV",
+    "timezone": "America/Los_Angeles",
+    "grid_x": 121,
+    "grid_y": 96,
+    "county_warning_area": "VEF",
+    "forecast_office_url": "https://api.weather.gov/offices/VEF",
+    "radar_station": "KESX",
+    "forecast_extended_url": "https://api.weather.gov/gridpoints/VEF/121,96/forecast",
+    "forecast_hourly_url": "https://api.weather.gov/gridpoints/VEF/121,96/forecast/hourly",
+    "gridpoints_url": "https://api.weather.gov/gridpoints/VEF/121,96",
+    "observation_stations_url": "https://api.weather.gov/gridpoints/VEF/121,96/stations"
+}

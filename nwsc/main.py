@@ -13,7 +13,7 @@ from requests_cache import CachedSession, SQLiteCache, FileCache
 
 from nwsc.config import ConfigManager
 from nwsc.render.decorators import display_spinner
-from nwsc.render.pprint_raw import pprint_raw_nws_data
+from nwsc.render.pprint_raw import pprint_raw_nws_data, nws_data_to_json
 from nwsc.render.rich_print import (
     rich_print_current_conditions,
 	rich_print_extended_forecast,
@@ -133,5 +133,6 @@ def main():
 			#rich_print_current_conditions(current_df.iloc[0])
 			#if params.save:
 			#	df_to_file(config, 'observations', current_df.iloc[0], index=True)
-			pprint_raw_nws_data(session, '3121 S Las Vegas Blvd, Las Vegas, NV 89109')
+			#pprint_raw_nws_data(session, '3121 S Las Vegas Blvd, Las Vegas, NV 89109')
+			nws_data_to_json(session, '3121 S Las Vegas Blvd, Las Vegas, NV 89109')
 			exit(0)
