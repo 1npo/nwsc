@@ -47,6 +47,8 @@
   - [ ] json
   - [ ] plain-text
   - [ ] emoji-text
+- [ ] Take some cues from DarkSky, especially when visualizing hourly forecasts:
+  - See: https://nightingaledvs.com/dark-sky-weather-data-viz/
 
 ## Package
 - [ ] Move package from `venv` to `(micro)mamba`
@@ -79,6 +81,8 @@
 - [ ] Generate API documentation with Sphinx
 - [ ] Create `docs` folder and put Sphinx docs into it
 - [x] Create "API Coverage" checklist in README and identify all API features that are implemented
+- [ ] Take static screenshots of some printed outputs
+- [ ] Record GIFs showing how to navigate the app to do some basic things
 
 ## Testing
 - [ ] Write unit tests for every (possible) function in:
