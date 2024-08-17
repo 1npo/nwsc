@@ -9,7 +9,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 
 ---
 
-**NOTE**: *This is a new project actively under development as of July 2024*
+**NOTE**: *Under active development as of July 2024*
 
 </div>
 
