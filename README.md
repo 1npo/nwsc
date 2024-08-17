@@ -3,7 +3,7 @@
 
 ---
 
-**U.S. National Weather Service Client**
+**National Weather Service Client**
 
 A full-coverage National Weather Service API client for the terminal. Made for weather nerds.
 

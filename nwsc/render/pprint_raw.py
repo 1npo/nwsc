@@ -1,6 +1,8 @@
 """Get any needed data from the NWS API endpoints, clean it, and standardize it
 """
 
+import os
+import json
 from rich.console import Console
 from rich.pretty import pprint
 from requests_cache import CachedSession
@@ -84,6 +86,11 @@ def pprint_raw_nws_data(session: CachedSession, address: str) -> dict:
 		'zone_observations':	zone_observations,
 		'zone_forecast':		zone_forecast,
 	}
+
+	output_file = os.path.join(os.path.expanduser('~'), 'nws_raw_out.json')
+	with open(output_file, 'w') as f:
+		f.write(json.dumps(weather_data, default=str))
+	logger.success(f'Wrote raw NWS data to file')
 
 	console = Console()
 	for name, data in weather_data.items():
