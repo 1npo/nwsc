@@ -50,7 +50,9 @@ METAR_CLOUD_COVER_MAP = {
 	'OVC':  'Overcast',             # 8 oktas (sky completely covered)
 }
 
-# TODO: Get these values from the API instead of hardcoding them. Doesn't look like it's possible as of 2024-8-16.
+# TODO: Get these values by sending an invalid request to the /zones/{zoneId} endpoint
+# and parsing the error message. There's no other way to get a list of valid zones from
+# the API (as of 2024-8-17).
 VALID_NWS_ZONES = [
     'land',
     'marine',
@@ -60,4 +62,37 @@ VALID_NWS_ZONES = [
     'offshore',
     'fire',
     'county',
+]
+
+# TODO: Get these values by sending an invalid request to the /offices/{officeId} endpoint
+# and parsing the error message. There's no other way to get a list of valid forecast
+# offices from the API (as of 2024-8-17).
+VALID_NWS_FORECAST_OFFICES = [
+	'AKQ', 	'CRP', 	'TSA', 	'LOT', 	'PSR', 
+	'ALY', 	'EPZ', 	'ABR', 	'LSX', 	'REV', 
+	'BGM', 	'EWX', 	'APX', 	'MKX', 	'SEW', 
+	'BOX', 	'FFC', 	'ARX', 	'MPX', 	'SGX', 
+	'BTV', 	'FWD', 	'BIS', 	'MQT', 	'SLC', 
+	'BUF', 	'HGX', 	'BOU', 	'OAX', 	'STO', 
+	'CAE', 	'HUN', 	'CYS', 	'PAH', 	'TFX', 
+	'CAR', 	'JAN', 	'DDC', 	'PUB', 	'TWC', 
+	'CHS', 	'JAX', 	'DLH', 	'RIW', 	'VEF', 
+	'CLE', 	'KEY', 	'DMX', 	'SGF', 	'AER', 
+	'CTP', 	'LCH', 	'DTX', 	'TOP', 	'AFC', 
+	'GSP', 	'LIX', 	'DVN', 	'UNR', 	'AFG', 
+	'GYX', 	'LUB', 	'EAX', 	'BOI', 	'AJK', 
+	'ILM', 	'LZK', 	'FGF', 	'BYZ', 	'ALU', 
+	'ILN', 	'MAF', 	'FSD', 	'EKA', 	'GUM', 
+	'LWX', 	'MEG', 	'GID', 	'FGZ', 	'HPA', 
+	'MHX', 	'MFL', 	'GJT', 	'GGW', 	'HFO', 
+	'OKX', 	'MLB', 	'GLD', 	'HNX', 	'PPG', 
+	'PBZ', 	'MOB', 	'GRB', 	'LKN', 	'STU', 
+	'PHI', 	'MRX', 	'GRR', 	'LOX', 	'NH1', 
+	'RAH', 	'OHX', 	'ICT', 	'MFR', 	'NH2', 
+	'RLX', 	'OUN', 	'ILX', 	'MSO', 	'ONA', 
+	'RNK', 	'SHV', 	'IND', 	'MTR', 	'ONP', 
+	'ABQ', 	'SJT', 	'IWX', 	'OTX', 	
+	'AMA', 	'SJU', 	'JKL', 	'PDT', 	
+	'BMX', 	'TAE', 	'LBF', 	'PIH', 	
+	'BRO', 	'TBW', 	'LMK', 	'PQR', 	
 ]
