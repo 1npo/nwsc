@@ -2,32 +2,51 @@
 ## Data
 - [ ] Finish writing API request functions for all endpoints
 - [ ] Finish fleshing out dataclasses for all NWS data
-- [ ] Update `api.py` to use dataclasess instead of dicts
-- [x] Add wind speed/direction string and measurement conversions to `api.py` without using dataframes
+- [ ] Update `nwsc.api.*` to use dataclasess instead of dicts
+- [x] Add wind speed/direction string and measurement conversions to `nwsc.api.conversions` without using dataframes
+- [ ] Rewrite and condense conversion functions in `nwsc.api.conversions`
 - [x] Create a `repository` subpackage for recording historical weather responses
 - [ ] Fix `get_zone_stations` - it's returning an empty list
   - [ ] Re-generate `tests/test_data/nws_raw_zone_stations.json`
 - [x] Revamp or remove `cache.py`: use `requests-cache` instead of rolling your own cache manager
+
 ## Repository
 - [ ] Create repository modules:
   - [ ] `in-memory`
   - [ ] `sqlite`
   - [ ] `postgresql`
   - [ ] `delta`
+- [ ] Define tables for:
+  - [ ] locations
+  - [ ] stations
+  - [ ] observations
+  - [ ] forecasts
+  - [ ] alerts
+  - [ ] radar servers
+  - [ ] radar stations
+  - [ ] radar station alarms
+  - [ ] text products
+  - [ ] zones
+  - [ ] offices
+  - [ ] sigmets
+  - [ ] center weather service units
+  - [ ] center weather advisories
+  - [ ] glossary
+
 ## Interface
 - [ ] Create an interactive TUI with Textual
 - [ ] Update `main.py` to start the TUI by default
-- [ ] Update `main.py` argument parser to let the user specify output types:
+- [ ] Update `main.py` argument parser to let the user specify print output types:
   - [ ] json
   - [ ] plain-text
   - [ ] emoji-text
   - [ ] rich-table
-- [ ] Clean up and improve the quality of `render.py` and rename it to `render_rich.py`
 - [x] Create a `render` subpackage and move `render_rich.py` into it
 - [ ] Create additional renderers:
   - [ ] json
-  - [ ] text
-  - [ ] matplotlib
+  - [ ] plain-text
+  - [ ] emoji-text
+
 ## Package
 - [x] Rename `nws` to `nwsc`
 - [ ] Remove `pandas` as a dependency
@@ -39,13 +58,17 @@
 - [ ] Make any needed improvements to `config.py`
 - [x] Split `api_temp.py` into separate modules, one for each endpoint
 - [ ] Set up GitHub Actions CI/CD to publish new versions of `nwsc` to PyPI
+
 ## Documentation
-- [ ] Find some examples of great project READMEs
+- [x] Find some examples of great project READMEs
+- [x] Determine the structure and contents of the `nwsc` README
 - [ ] Find some examples of great API documentation
 - [ ] Fully populate *all* docstrings
   - [ ] Move all "See:" reference links from comments above functions to the module-level docstring
 - [ ] Generate API documentation with Sphinx
+- [ ] Create `docs` folder and put Sphinx docs into it
 - [x] Create "API Coverage" checklist in README and identify all API features that are implemented
+
 ## Testing
 - [ ] Write unit tests for every (possible) function in:
   - [ ] `main`
@@ -66,6 +89,8 @@
   - [ ] `repository.sqlite`
   - [ ] `repository.postgres`
   - [ ] `repository.delta`
+- [ ] Set up GitHub Action(s) to run unit tests
+
 ## Miscellaneous
 - [x] The `/radar/queues/{host}` endpoint is unexpectedly returning 404 - email the NWS NOC
   - [x] If no response from NOC, submit issue to the github repo (https://github.com/weather-gov/api/discussions/756)

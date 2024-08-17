@@ -37,15 +37,18 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 ## Features
 - Retrieve data from every* available NWS API endpoint [(see Endpoint Coverage section)](#endpoint-coverage)
 - Explore the data with a pretty [Textual](https://textual.textualize.io) interface
-- Output weather strings that can be piped to other tools (such as [i3status](https://i3wm.org/i3status/))
+- Print [Rich](https://rich.readthedocs.io/en/latest/) tables to the terminal
+- Print weather strings that can be piped to other tools (such as [i3status](https://i3wm.org/i3status/))
 - Export data to various repositories for analytics or reporting:
   - CSV
   - SQLite
   - Postgres
   - Delta/Spark
   - JSON
+
 ## Demos
 - [ ] Add GIFs and PNGs here
+
 ## Installation
 ### Dependencies
 - [`requests-cache`](https://github.com/requests-cache/requests-cache)
@@ -57,6 +60,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 ### GitHub
 - [ ] Add instructions for installing from GitHub
   - See: https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
+
 ## Usage
 ### Console TUI
 - [ ] Describe TUI panels/components
@@ -69,6 +73,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 ### Data Export
 - [ ] Describe how to set up repositories for data export
 - [ ] Describe how to enable/use data export features
+
 ## Endpoint Coverage
 - [x] /alerts
 - [x] /alerts/active
