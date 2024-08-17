@@ -35,7 +35,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [Contributing](#contributing)
 
 ## Features
-- Retrieve data from every* available NWS API endpoint [(see Endpoint Coverage section)](#endpoint-coverage)
+- Retrieve data from every* available NWS API endpoint (see [Endpoint Coverage](#endpoint-coverage))
 - Explore the data with a pretty [Textual](https://textual.textualize.io) interface
 - Pretty-print data to the terminal with [Rich](https://rich.readthedocs.io/en/latest/)
 - Print weather strings that can be piped to other tools (such as [i3status](https://i3wm.org/i3status/))
