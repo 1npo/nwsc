@@ -186,14 +186,14 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - [ ] Review `config.py` to determine if it can be improved
 - [ ] Make any needed improvements to `config.py`
 - [x] Split `api_temp.py` into separate modules, one for each endpoint
+- [ ] Set up GitHub Actions CI/CD to publish new versions of `nwsc` to PyPI
 ### Documentation
 - [ ] Find some examples of great project READMEs
 - [ ] Find some examples of great API documentation
 - [ ] Fully populate *all* docstrings
   - [ ] Move all "See:" reference links from comments above functions to the module-level docstring
 - [ ] Generate API documentation with Sphinx
-- [ ] Fully flesh out nwsc READMEs
-- [ ] Create "API Coverage" checklist in README and identify all API features that are implemented
+- [x] Create "API Coverage" checklist in README and identify all API features that are implemented
 ### Testing
 - [ ] Write unit tests for every (possible) function in:
   - [ ] `main`
