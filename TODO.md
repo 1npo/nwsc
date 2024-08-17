@@ -73,7 +73,9 @@
 - [ ] Set up GitHub Actions CI/CD to publish new versions of `nwsc` to PyPI
 
 ## Documentation
-- [x] Find some examples of great project READMEs
+- [x] Find some examples of great project READMEs (See links below for inspo)
+  - App images/screenshots in table cells, package structure: https://github.com/supunlakmal/thismypc
+  - Markdown alerts: https://github.com/lobehub/lobe-chat#readme
 - [x] Determine the structure and contents of the `nwsc` README
 - [ ] Find some examples of great API documentation
 - [ ] Fully populate *all* docstrings
@@ -83,6 +85,7 @@
 - [x] Create "API Coverage" checklist in README and identify all API features that are implemented
 - [ ] Take static screenshots of some printed outputs
 - [ ] Record GIFs showing how to navigate the app to do some basic things
+
 
 ## Testing
 - [ ] Write unit tests for every (possible) function in:

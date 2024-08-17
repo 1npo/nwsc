@@ -9,7 +9,8 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 
 ---
 
-*Under active development as of July 2024. This message will be removed when the project reaches a MVP state.*
+> [!WARNING]
+> Under active development as of July 2024. This warning will be removed when the project reaches a MVP state.
 
 *Add badges here*
 
@@ -29,7 +30,10 @@ A full-coverage National Weather Service API client for the terminal. Made for w
   - [Configuration](#configuration)
   - [Data Export](#data-export)
 - [Endpoint Coverage](#endpoint-coverage)
-- [Architecture](#architecture)
+- [System Design](#system-design)
+  - [App Architecture](#app-architecture)
+  - [Data Model](#data-model)
+  - [Package Structure](#package-structure)
 - [License](#license)
 - [Credits](#credits)
 - [Contributing](#contributing)
@@ -133,9 +137,14 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [x] /zones/forecast/{zoneId}/observations
 - [x] /zones/forecast/{zoneId}/stations
 
-## Architecture
+## System Design
+### App Architecture
 - [ ] Create application architecture diagram, export to PNG
 - [ ] Add diagram to `resources.img` and embed here
+### Data Model
+- [ ] Describe dataclasses here
+### Package Structure
+- [ ] Describe package structure here
 
 ## License
 The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)
