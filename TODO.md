@@ -5,7 +5,6 @@
 - [ ] Finish fleshing out dataclasses for all NWS data
 - [ ] Update `nwsc.api.*` to use dataclasess instead of dicts
 - [x] Add wind speed/direction string and measurement conversions to `nwsc.api.conversions` without using dataframes
-- [ ] Rewrite and condense conversion functions in `nwsc.api.conversions`
 - [x] Create a `repository` subpackage for recording historical weather responses
 - [ ] Fix `get_zone_stations` - it's returning an empty list
   - [ ] Re-generate `tests/test_data/nws_raw_zone_stations.json`
@@ -86,7 +85,6 @@
 - [x] Create "API Coverage" checklist in README and identify all API features that are implemented
 - [ ] Take static screenshots of some printed outputs
 - [ ] Record GIFs showing how to navigate the app to do some basic things
-
 
 ## Testing
 - [ ] Write unit tests for every (possible) function in:
