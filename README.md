@@ -35,7 +35,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
   - [Data Model](#data-model)
   - [Package Structure](#package-structure)
 - [License](#license)
-- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
 
 ## Features
@@ -149,7 +149,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 ## License
 The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)
 
-## Credits
+## Acknowledgements
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
 - Icon in the logo is from [Phosphor Icons](https://phosphoricons.com/)
 - [Bruno](https://www.usebruno.com) and [Swagger UI](https://swagger.io/tools/swagger-ui/) were very helpful for exploring the API
