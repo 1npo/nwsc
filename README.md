@@ -9,12 +9,12 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 
 ---
 
-> \[!WARNING]
-> Under active development as of July 2024. This warning will be removed when the project reaches a MVP state.
-
 *Add badges here*
 
 </div>
+
+> [!WARNING]
+> Under active development as of July 2024. This warning will be removed when the project reaches a MVP state.
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
