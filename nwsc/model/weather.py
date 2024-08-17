@@ -25,13 +25,17 @@ class Location:
 
 
 @dataclass
-class WeatherStation:
-    station_lat: float
-    station_lon: float
-    station_id: str
-    station_name: str
-    station_timezone: str
-    station_elevation_m: float
+class ObservationStation:
+    id: str
+    name: str
+    timezone: str
+    lat: float
+    lon: float
+    elevation_m: float
+    elevation_mi: float
+    forecast_url: str
+    county_url: str
+    fire_weather_zone_url: str
 
 
 @dataclass

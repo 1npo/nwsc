@@ -9,21 +9,6 @@ from nwsc.api import (
 )
 
 
-"""
-example type: RR2
-example location: APX
-
-- [x] /products - get full product listing
-- [x] /products/locations - get all locations
-- [x] /products/types - get all types
-- [x] /products/{productId} - get product
-- [x] /products/types/{typeId} - get listing by type
-- [x] /products/types/{typeId}/locations - get locations by type
-- [x] /products/locations/{locationId}/types - get types by location
-- [x] /products/types/{typeId}/locations/{locationId} - get listing by type and location
-"""
-
-
 def process_product_listing_data(product_listing_data: dict) -> list:
 	product_listing = []
 	for listing in product_listing_data.get('@graph', {}):

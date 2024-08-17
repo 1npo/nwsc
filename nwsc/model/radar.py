@@ -3,6 +3,24 @@ from datetime import datetime
 from dataclasses import dataclass
 
 
+# See: https://www.ncei.noaa.gov/products/radar/next-generation-weather-radar
+@dataclass
+class RadarDataAcquisition:
+    reporting_host: str
+    mode: str
+    status: str
+    control_status: str
+    operability_status: str
+    super_resolution_status: str
+    generator_state: str
+    alarm_summary: str
+    refreshed_at: str
+    resolution_version: str
+    nexrad_l2_path: str
+    volume_coverage_pattern: str
+    build_number: float
+
+
 @dataclass
 class RadarStationAlarm:
     status: str
@@ -12,13 +30,24 @@ class RadarStationAlarm:
 
 
 @dataclass
-class RadarStationRDA:
-    pass
-
-
-@dataclass
 class RadarStation:
-    pass
+    station_id: str
+    station_name: str
+    station_type: str
+    station_timezone: str
+    station_lat: float
+    station_lon: float
+    station_elevation_m: float
+    station_elevation_mi: float 
+    latency_current_s: float
+    latency_average_s: float
+    latency_max_s: float
+    nexrad_l2_latency_last_received_at: datetime
+    max_latency_at: datetime
+    station_server_host: str
+    station_reporting_host: str
+    radar_data_acquisition: RadarDataAcquisition
+    alarms: List[RadarStationAlarm]
 
 
 @dataclass

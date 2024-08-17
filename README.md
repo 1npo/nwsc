@@ -18,6 +18,9 @@ A text-based full-coverage National Weather Service API client for weather and d
 - [Features](#features)
 - [Demos](#demos)
 - [Installation](#installation)
+  - [Dependencies](#dependencies)
+  - [PyPI](#pypi)
+  - [GitHub](#github)
 - [Usage](#usage)
   - [Console TUI](#console-tui)
   - [CLI Options](#cli-options)
@@ -32,13 +35,11 @@ A text-based full-coverage National Weather Service API client for weather and d
   - [Documentation](#documentation)
   - [Testing](#testing)
   - [Miscellaneous](#miscellaneous)
-- [Notes](#notes)
-  - [Resources](#resources)
 
 ## Features
 - Retrieve data from every* available NWS API endpoint [(see Endpoint Coverage section)](#endpoint-coverage)
-- Uses [`requests-cache`](https://requests-cache.readthedocs.io/en/stable/) to cache API responses for fast data retrieval
-- Pretty TUI with [`Textual`](https://textual.textualize.io) for exploring the data
+- Uses [requests-cache](https://requests-cache.readthedocs.io/en/stable/) to cache API responses for fast data retrieval
+- Pretty TUI with [Textual](https://textual.textualize.io) for exploring the data
 - Output weather strings that can be piped to other tools (such as i3 status bar)
 - Export data to various repositories for analytics or reporting:
   - SQLite
@@ -48,8 +49,16 @@ A text-based full-coverage National Weather Service API client for weather and d
 ## Demos
 - [ ] Add GIFs and PNGs here
 ## Installation
+### Dependencies
+- (`requests-cache`)[https://github.com/requests-cache/requests-cache]
+- (`loguru`)[https://github.com/Delgan/loguru]
+- (`rich`)[https://github.com/Textualize/rich]
+- (`textual`)[https://github.com/Textualize/textual]
+### PyPI
 - [ ] Add PyPI installation instructions here
-- [ ] Add instructions for installing from source here
+### GitHub
+- [ ] Add instructions for installing from GitHub
+  - See: https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
 ## Usage
 ### Console TUI
 - [ ] List keybindings
@@ -113,16 +122,17 @@ A text-based full-coverage National Weather Service API client for weather and d
 - [ ] /zones
 - [ ] /zones/{type}
 - [ ] /zones/{type}/{zoneId}
-- [ ] /zones/{type}/{zoneId}/forecast
-- [ ] /zones/forecast/{zoneId}/observations
-- [ ] /zones/forecast/{zoneId}/stations
+- [x] /zones/{type}/{zoneId}/forecast
+- [x] /zones/forecast/{zoneId}/observations
+- [x] /zones/forecast/{zoneId}/stations
 
 ## License
-`nwsc` is made available under the [MIT License](https://opensource.org/license/mit)
+The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)
 
 ## Credits
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
 - Icon in logo is from [Phosphor Icons](https://phosphoricons.com/)
+- [Bruno](https://www.usebruno.com) was immensely helpful for exploring the NWS API
 
 ## TODO
 ### Data
@@ -155,6 +165,10 @@ A text-based full-coverage National Weather Service API client for weather and d
 ### Package
 - [x] Rename `nws` to `nwsc`
 - [ ] Remove `pandas` as a dependency
+- [ ] Remove `loguru` as a dependency
+- [ ] Remove `pytz` as a dependency
+- [ ] Finalize dependencies and add them to `pyproject.toml`
+- [x] Create resources folder for storing Rich demos and images
 - [ ] Review `config.py` to determine if it can be improved
 - [ ] Make any needed improvements to `config.py`
 - [x] Split `api_temp.py` into separate modules, one for each endpoint
@@ -183,9 +197,4 @@ A text-based full-coverage National Weather Service API client for weather and d
   - [ ] `repository.delta`
 ### Miscellaneous
 - [x] The /radar/queues/{host} is unexpectedly returning 404 - email the NWS NOC
-  - [x] If no response from NOC, submit issue to the github repo
-
-## Notes
-- RE: /product* endpoints: Get only the list of product types when starting nwsc. Make additional requests only when prompted by the user.
-### Resources
-- https://docs.scalar.com/swagger-editor
+  - [x] If no response from NOC, submit issue to the github repo (https://github.com/weather-gov/api/discussions/756)

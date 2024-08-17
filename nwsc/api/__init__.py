@@ -18,6 +18,9 @@ API_URL_NWS_RADAR_STATIONS = 'http://api.weather.gov/radar/stations/'
 API_URL_NWS_PRODUCTS = 'http://api.weather.gov/products/'
 API_URL_NWS_PRODUCT_TYPES = 'http://api.weather.gov/products/types'
 API_URL_NWS_PRODUCT_LOCATIONS = 'http://api.weather.gov/products/locations'
+API_URL_NWS_ZONES = 'http://api.weather.gov/zones'
+API_URL_NWS_ZONE_FORECASTS = 'http://api.weather.gov/zones/forecast'
+
 
 # See: https://codes.wmo.int/common/unit
 WMI_UNIT_MAP = {                            
@@ -46,3 +49,14 @@ METAR_CLOUD_COVER_MAP = {
 	'OVC':  'Overcast',             # 8 oktas (sky completely covered)
 }
 
+# TODO: Get these values from the API instead of hardcoding them. Doesn't look like it's possible as of 2024-8-16.
+VALID_NWS_ZONES = [
+    'land',
+    'marine',
+    'forecast',
+    'public',
+    'coastal',
+    'offshore',
+    'fire',
+    'county',
+]

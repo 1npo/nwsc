@@ -1,13 +1,84 @@
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
-from nwsc.api.conversion import convert_measures
+from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api import (
 	API_URL_NWS_SERVERS,
     API_URL_NWS_RADAR_STATIONS,
 	WMI_UNIT_MAP,
 )
+
+
+@display_spinner('Getting radar station metadata...')
+def get_radar_stations(session: CachedSession) -> list:
+	""" """
+	radar_station_data = api_request(session, API_URL_NWS_RADAR_STATIONS)
+	stations = []
+	for feature in radar_station_data.get('features', {}):
+		station_coords = feature.get('geometry', {}).get('coordinates')
+		if station_coords and isinstance(station_coords, list):
+			station_lat = station_coords[0]
+			station_lon = station_coords[1]
+		rda = feature.get('properties', {}).get('rda', {})
+		if rda is None:
+			rda = {}
+		elevation_unit = WMI_UNIT_MAP.get(feature.get('properties', {}).get('elevation', {}).get('unitCode'))
+		latency_current_unit = WMI_UNIT_MAP.get(feature.get('latency', {}).get('current', {}).get('unitCode'))
+		latency_average_unit = WMI_UNIT_MAP.get(feature.get('latency', {}).get('current', {}).get('unitCode'))
+		latency_max_unit = WMI_UNIT_MAP.get(feature.get('latency', {}).get('current', {}).get('unitCode'))
+		tx_power_unit = WMI_UNIT_MAP.get(rda.get('properties', {}).get('averageTransmitterPower', {}).get('unitCode'))
+		rcc_unit = WMI_UNIT_MAP.get(rda.get('properties', {}).get('reflectivityCalibrationCorrection', {}).get('unitCode'))
+		station = {
+			'station_lat':											station_lat,
+			'station_lon':											station_lon,
+			'station_id':											feature.get('properties', {}).get('id', {}),
+			'station_name':											feature.get('properties', {}).get('name', {}),
+			'station_type':											feature.get('properties', {}).get('stationType', {}),
+			'station_timezone':										feature.get('properties', {}).get('timeZone'),
+			f'elevation_{elevation_unit}':							feature.get('properties', {}).get('elevation', {}).get('value'),
+			f'latency_current_{latency_current_unit}':				feature.get('properties', {}).get('latency', {}).get('current', {}).get('value'),
+			f'latency_average_{latency_average_unit}':				feature.get('properties', {}).get('latency', {}).get('average', {}).get('value'),
+			f'latency_max_{latency_max_unit}':						feature.get('properties', {}).get('latency', {}).get('max', {}).get('value'),
+			'l2_latency_last_received_at':							parse_timestamp(feature.get('properties', {}).get('latency', {}).get('levelTwoLastReceivedTime')),
+			'max_latency_at':										parse_timestamp(feature.get('properties', {}).get('latency', {}).get('maxLatencyTime')),
+			'station_reporting_host':								feature.get('properties', {}).get('latency', {}).get('reportingHost'),
+			'station_server_host':									feature.get('properties', {}).get('latency', {}).get('host'),
+			'rda_refreshed_at':										parse_timestamp(rda.get('timestamp')),
+			'rda_reporting_host':									rda.get('reportingHost', {}),
+			'rda_resolution_version':								rda.get('properties', {}).get('resolutionVersion'),
+			'rda_nexrad_l2_path':									rda.get('properties', {}).get('nl2Path'),
+			'rda_volume_coverage_pattern':							rda.get('properties', {}).get('volumeCoveragePattern'),
+			'rda_control_status':									rda.get('properties', {}).get('controlStatus'),
+			'rda_build_number':										rda.get('properties', {}).get('buildNumber'),
+			'rda_alarm_summary':									rda.get('properties', {}).get('alarmSummary'),
+			'rda_mode':												rda.get('properties', {}).get('mode'),
+			'rda_generator_state':									rda.get('properties', {}).get('generatorState'),
+			'rda_super_resolution_status':							rda.get('properties', {}).get('superResolutionStatus'),
+			'rda_operability_status':								rda.get('properties', {}).get('operabilityStatus'),
+			'rda_status':											rda.get('properties', {}).get('status'),
+			f'rda_average_tx_power_{tx_power_unit}':				rda.get('properties', {}).get('averageTransmitterPower', {}).get('value'),
+			f'rda_reflectivity_calibration_correction_{rcc_unit}':	rda.get('properties', {}).get('reflectivityCalibrationCorrection', {}).get('value'),
+		}
+		station = convert_measures(station)
+		stations.append(station)
+	return stations
+
+
+@display_spinner('Getting radar station alarms...')
+def get_radar_station_alarms(session: CachedSession, radar_station_id: str) -> dict:
+	""" """
+	radar_alarm_data = api_request(session, API_URL_NWS_RADAR_STATIONS + radar_station_id + '/alarms')
+	radar_alarms = []
+	for alarm in radar_alarm_data.get('@graph', {}):
+		alarm = {
+			'alarm_status':		alarm.get('status'),
+			'alarm_message':	alarm.get('message'),
+			'alarm_event_at':	alarm.get('timestamp'),
+			'active_channel':	alarm.get('activeChannel'),
+		}
+		radar_alarms.append(alarm)
+	return radar_alarms
 
 
 # See:
@@ -21,7 +92,7 @@ from nwsc.api import (
 # NOTE: The official API documentation doesn't include a schema for the radar
 # servers and stations endpoints, so some field meanings are inferred from the data.
 @display_spinner('Getting radar server metadata...')
-def get_radar_server_data(session: CachedSession) -> list:
+def get_radar_servers(session: CachedSession) -> list:
 	""" """
 	radar_server_data = api_request(session, API_URL_NWS_SERVERS)
 	servers = []
@@ -82,74 +153,3 @@ def get_radar_server_data(session: CachedSession) -> list:
 				server['interfaces'].append(interface)
 		servers.append(server)
 	return servers
-
-
-@display_spinner('Getting radar station metadata...')
-def get_radar_station_data(session: CachedSession) -> list:
-	""" """
-	radar_station_data = api_request(session, API_URL_NWS_RADAR_STATIONS)
-	stations = []
-	for feature in radar_station_data.get('features', {}):
-		station_coords = feature.get('geometry', {}).get('coordinates')
-		if station_coords and isinstance(station_coords, list):
-			station_lat = station_coords[0]
-			station_lon = station_coords[1]
-		rda = feature.get('properties', {}).get('rda', {})
-		if rda is None:
-			rda = {}
-		elevation_unit = WMI_UNIT_MAP.get(feature.get('properties', {}).get('elevation', {}).get('unitCode'))
-		latency_current_unit = WMI_UNIT_MAP.get(feature.get('latency', {}).get('current', {}).get('unitCode'))
-		latency_average_unit = WMI_UNIT_MAP.get(feature.get('latency', {}).get('current', {}).get('unitCode'))
-		latency_max_unit = WMI_UNIT_MAP.get(feature.get('latency', {}).get('current', {}).get('unitCode'))
-		tx_power_unit = WMI_UNIT_MAP.get(rda.get('properties', {}).get('averageTransmitterPower', {}).get('unitCode'))
-		rcc_unit = WMI_UNIT_MAP.get(rda.get('properties', {}).get('reflectivityCalibrationCorrection', {}).get('unitCode'))
-		station = {
-			'station_lat':											station_lat,
-			'station_lon':											station_lon,
-			'station_id':											feature.get('properties', {}).get('id', {}),
-			'station_name':											feature.get('properties', {}).get('name', {}),
-			'station_type':											feature.get('properties', {}).get('stationType', {}),
-			'station_timezone':										feature.get('properties', {}).get('timeZone'),
-			f'elevation_{elevation_unit}':							feature.get('properties', {}).get('elevation', {}).get('value'),
-			f'latency_current_{latency_current_unit}':				feature.get('properties', {}).get('latency', {}).get('current', {}).get('value'),
-			f'latency_average_{latency_average_unit}':				feature.get('properties', {}).get('latency', {}).get('average', {}).get('value'),
-			f'latency_max_{latency_max_unit}':						feature.get('properties', {}).get('latency', {}).get('max', {}).get('value'),
-			'latency_l2_last_received_at':							parse_timestamp(feature.get('properties', {}).get('latency', {}).get('levelTwoLastReceivedTime')),
-			'max_latency_at':										parse_timestamp(feature.get('properties', {}).get('latency', {}).get('maxLatencyTime')),
-			'station_reporting_host':								feature.get('properties', {}).get('latency', {}).get('reportingHost'),
-			'station_server_host':									feature.get('properties', {}).get('latency', {}).get('host'),
-			'rda_refreshed_at':										parse_timestamp(rda.get('timestamp')),
-			'rda_reporting_host':									rda.get('reportingHost', {}),
-			'rda_resolution_version':								rda.get('properties', {}).get('resolutionVersion'),
-			'rda_nl2_path':											rda.get('properties', {}).get('nl2Path'),
-			'rda_volume_coverage_pattern':							rda.get('properties', {}).get('volumeCoveragePattern'),
-			'rda_control_status':									rda.get('properties', {}).get('controlStatus'),
-			'rda_build_number':										rda.get('properties', {}).get('buildNumber'),
-			'rda_alarm_summary':									rda.get('properties', {}).get('alarmSummary'),
-			'rda_mode':												rda.get('properties', {}).get('mode'),
-			'rda_generator_state':									rda.get('properties', {}).get('generatorState'),
-			'rda_super_resolution_status':							rda.get('properties', {}).get('superResolutionStatus'),
-			'rda_operability_status':								rda.get('properties', {}).get('operabilityStatus'),
-			'rda_status':											rda.get('properties', {}).get('status'),
-			f'rda_average_tx_power_{tx_power_unit}':				rda.get('properties', {}).get('averageTransmitterPower', {}).get('value'),
-			f'rda_reflectivity_calibration_correction_{rcc_unit}':	rda.get('properties', {}).get('reflectivityCalibrationCorrection', {}).get('value'),
-		}
-		station = convert_measures(station)
-		stations.append(station)
-	return stations
-
-
-@display_spinner('Getting radar station alarms...')
-def get_radar_station_alarm_data(session: CachedSession, radar_station_id: str) -> dict:
-	""" """
-	radar_alarm_data = api_request(session, API_URL_NWS_RADAR_STATIONS + radar_station_id + '/alarms')
-	radar_alarms = []
-	for alarm in radar_alarm_data.get('@graph', {}):
-		alarm = {
-			'alarm_status':		alarm.get('status'),
-			'alarm_message':	alarm.get('message'),
-			'alarm_event_at':	alarm.get('timestamp'),
-			'active_channel':	alarm.get('activeChannel'),
-		}
-		radar_alarms.append(alarm)
-	return radar_alarms
