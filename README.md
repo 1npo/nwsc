@@ -156,10 +156,10 @@ A full-coverage National Weather Service API client for the terminal
 - [x] /zones/forecast/{zoneId}/stations
 
 ## Purpose and Audience
-I made `nwsc` mainly for myself, for a few reasons I list below. But I tried to design and build it well so others might enjoy it or find it useful.
+I made `nwsc` mainly for myself, for a few reasons I list below. But I tried to design and build it well so that others might enjoy it or find it useful.
 
-- I get all my weather from `http://weather.gov/`, but I have some (very minor and inconsequential) gripes about the website's user experience. I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance.
-- I wanted to start and *actually finish* a "serious" software project, and this one had enough elements to keep me interested and motivated long enough to finish it.
+- I get all my weather from `http://weather.gov/`, but I have some (very minor and inconsequential) gripes about the website's user experience. I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance, in a visually pleasing way.
+- I wanted to start and *actually finish* a "serious" software project, and this one had enough elements to keep me interested and motivated long enough to produce an MVP.
 - I think it's so cool that we can see so much detail about the status of the nation's weather radars, even down to how full a generator's fuel tank is. So I thought it would be neat to see all this data presented in a nice way.
 
 ## System Design
