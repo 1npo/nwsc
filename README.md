@@ -181,5 +181,5 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - The presentation of hourly forecast data was inspired by DarkSky, specifically [this article](https://nightingaledvs.com/dark-sky-weather-data-viz/)
 
 ## Contributing
-- See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`
-- See [TODO.md](TODO.md) for things that need to be done
+- See [CONTRIBUTING](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`
+- See [TODO](TODO.md) for things that need to be done
