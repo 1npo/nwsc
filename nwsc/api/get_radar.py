@@ -10,11 +10,7 @@ from nwsc.api import (
 )
 
 
-def parse_radar_server_data(radar_server_data: dict) -> dict:
-	pass
-
-
-def parse_radar_station_data(radar_station_data: dict) -> dict:
+def process_radar_station_data(radar_station_data: dict) -> dict:
 	station_coords = radar_station_data.get('geometry', {}).get('coordinates')
 	if station_coords and isinstance(station_coords, list):
 		station_lat = station_coords[0]
@@ -117,9 +113,66 @@ def parse_radar_station_data(radar_station_data: dict) -> dict:
 			'path_loss_at4_attenuator':							adaptation.get('pathLossAT4Attenuator'),
 			'path_loss_waveguide_klystron_to_switch':			adaptation.get('pathLossWaveguideKlystronToSwitch'),
 		})
-
 	station = convert_measures(station)
 	return station
+
+
+def process_radar_server_data(radar_server_data: dict) -> dict:
+	server = {
+		'server_host':                  	radar_server_data.get('id'),
+		'server_type':                  	radar_server_data.get('type'),
+		'server_up_since':              	parse_timestamp(radar_server_data.get('hardware', {}).get('uptime')),
+		'server_hardware_refresh_at':   	parse_timestamp(radar_server_data.get('hardware', {}).get('timestamp')),
+		'server_cpu':                   	radar_server_data.get('hardware', {}).get('cpuIdle'),
+		'server_memory':                	radar_server_data.get('hardware', {}).get('memory'),
+		'server_io_utilization':        	radar_server_data.get('hardware', {}).get('ioUtilization'),
+		'server_disk':                  	radar_server_data.get('hardware', {}).get('disk'),
+		'server_load_1':                	radar_server_data.get('hardware', {}).get('load1'),
+		'server_load_5':                	radar_server_data.get('hardware', {}).get('load5'),
+		'server_load_15':               	radar_server_data.get('hardware', {}).get('load15'),
+		'command_last_executed':        	radar_server_data.get('command', {}).get('lastExecuted'),
+		'command_last_executed_at':     	parse_timestamp(radar_server_data.get('command', {}).get('lastExecutedTime')),
+		'command_last_nexrad_data_at':  	parse_timestamp(radar_server_data.get('command', {}).get('lastNexradDataTime')),
+		'command_last_received':        	radar_server_data.get('command', {}).get('lastReceived'),
+		'command_last_received_at':     	parse_timestamp(radar_server_data.get('command', {}).get('lastReceivedTime')),
+		'command_last_refresh_at':      	parse_timestamp(radar_server_data.get('command', {}).get('timestamp')),
+		'ldm_refresh_at':               	parse_timestamp(radar_server_data.get('ldm', {}).get('timestamp')),
+		'ldm_latest_product_at':        	parse_timestamp(radar_server_data.get('ldm', {}).get('latestProduct')),
+		'ldm_oldest_product_at':        	parse_timestamp(radar_server_data.get('ldm', {}).get('oldestProduct')),
+		'ldm_storage_size':             	radar_server_data.get('ldm', {}).get('storageSize'),
+		'ldm_count':                    	radar_server_data.get('ldm', {}).get('count'),
+		'is_ldm_active':                	radar_server_data.get('ldm', {}).get('active'),
+		'is_server_active':             	radar_server_data.get('active'),
+		'is_server_primary':            	radar_server_data.get('primary'),
+		'is_server_aggregate':          	radar_server_data.get('aggregate'),
+		'is_server_locked':             	radar_server_data.get('locked'),
+		'is_radar_network_up':          	radar_server_data.get('radarNetworkUp'),
+		'collection_time':              	parse_timestamp(radar_server_data.get('collectionTime')),
+		'reporting_host':               	radar_server_data.get('reportingHost'),
+		'last_ping_at':                 	parse_timestamp(radar_server_data.get('ping', {}).get('timestamp')),
+		'ping_responses_ldm':           	radar_server_data.get('ping', {}).get('targets', {}).get('ldm'),
+		'ping_responses_radar':         	radar_server_data.get('ping', {}).get('targets', {}).get('radar'),
+		'ping_responses_server':        	radar_server_data.get('ping', {}).get('targets', {}).get('server'),
+		'ping_responses_misc':          	radar_server_data.get('ping', {}).get('targets', {}).get('misc'),
+		'network_interfaces_refreshed_at':	parse_timestamp(radar_server_data.get('network', {}).get('timestamp')),
+		'interfaces':                   	[],
+	}
+	for item in radar_server_data['network']:
+		if item != 'timestamp':
+			interface = {
+				'interface_name':       radar_server_data.get('network', {}).get(item, {}).get('interface'),
+				'is_interface_active':  radar_server_data.get('network', {}).get(item, {}).get('active'),
+				'packets_out_ok':       radar_server_data.get('network', {}).get(item, {}).get('transNoError'),
+				'packets_out_error':    radar_server_data.get('network', {}).get(item, {}).get('transError'),
+				'packets_out_dropped':  radar_server_data.get('network', {}).get(item, {}).get('transDropped'),
+				'packets_out_overrun':  radar_server_data.get('network', {}).get(item, {}).get('transOverrun'),
+				'packets_in_ok':        radar_server_data.get('network', {}).get(item, {}).get('recvNoError'),
+				'packets_in_error':     radar_server_data.get('network', {}).get(item, {}).get('recvError'),
+				'packets_in_dropped':   radar_server_data.get('network', {}).get(item, {}).get('recvDropped'),
+				'packets_in_overrun':   radar_server_data.get('network', {}).get(item, {}).get('recvOverrun'),
+			}
+			server['interfaces'].append(interface)
+	return server
 
 
 @display_spinner('Getting radar station metadata...')
@@ -128,7 +181,7 @@ def get_radar_stations(session: CachedSession) -> list:
 	radar_station_data = api_request(session, API_URL_NWS_RADAR_STATIONS)
 	stations = []
 	for feature in radar_station_data.get('features', {}):
-		station = parse_radar_station_data(feature)
+		station = process_radar_station_data(feature)
 		station = convert_measures(station)
 		stations.append(station)
 	return stations
@@ -165,59 +218,6 @@ def get_radar_servers(session: CachedSession) -> list:
 	radar_server_data = api_request(session, API_URL_NWS_RADAR_SERVERS)
 	servers = []
 	for feature in radar_server_data.get('@graph', {}):
-		server = {
-			'server_host':                  feature.get('id'),
-			'server_type':                  feature.get('type'),
-			'server_up_since':              parse_timestamp(feature.get('hardware', {}).get('uptime')),
-			'server_hardware_refresh_at':   parse_timestamp(feature.get('hardware', {}).get('timestamp')),
-			'server_cpu':                   feature.get('hardware', {}).get('cpuIdle'),
-			'server_memory':                feature.get('hardware', {}).get('memory'),
-			'server_io_utilization':        feature.get('hardware', {}).get('ioUtilization'),
-			'server_disk':                  feature.get('hardware', {}).get('disk'),
-			'server_load_1':                feature.get('hardware', {}).get('load1'),
-			'server_load_5':                feature.get('hardware', {}).get('load5'),
-			'server_load_15':               feature.get('hardware', {}).get('load15'),
-			'command_last_executed':        feature.get('command', {}).get('lastExecuted'),
-			'command_last_executed_at':     parse_timestamp(feature.get('command', {}).get('lastExecutedTime')),
-			'command_last_nexrad_data_at':  parse_timestamp(feature.get('command', {}).get('lastNexradDataTime')),
-			'command_last_received':        feature.get('command', {}).get('lastReceived'),
-			'command_last_received_at':     parse_timestamp(feature.get('command', {}).get('lastReceivedTime')),
-			'command_last_refresh_at':      parse_timestamp(feature.get('command', {}).get('timestamp')),
-			'ldm_refresh_at':               parse_timestamp(feature.get('ldm', {}).get('timestamp')),
-			'ldm_latest_product_at':        parse_timestamp(feature.get('ldm', {}).get('latestProduct')),
-			'ldm_oldest_product_at':        parse_timestamp(feature.get('ldm', {}).get('oldestProduct')),
-			'ldm_storage_size':             feature.get('ldm', {}).get('storageSize'),
-			'ldm_count':                    feature.get('ldm', {}).get('count'),
-			'is_ldm_active':                feature.get('ldm', {}).get('active'),
-			'is_server_active':             feature.get('active'),
-			'is_server_primary':            feature.get('primary'),
-			'is_server_aggregate':          feature.get('aggregate'),
-			'is_server_locked':             feature.get('locked'),
-			'is_radar_network_up':          feature.get('radarNetworkUp'),
-			'collection_time':              parse_timestamp(feature.get('collectionTime')),
-			'reporting_host':               feature.get('reportingHost'),
-			'last_ping_at':                 parse_timestamp(feature.get('ping', {}).get('timestamp')),
-			'ping_responses_ldm':           feature.get('ping', {}).get('targets', {}).get('ldm'),
-			'ping_responses_radar':         feature.get('ping', {}).get('targets', {}).get('radar'),
-			'ping_responses_server':        feature.get('ping', {}).get('targets', {}).get('server'),
-			'ping_responses_misc':          feature.get('ping', {}).get('targets', {}).get('misc'),
-			'interface_refresh_at':         parse_timestamp(feature.get('network', {}).get('timestamp')),
-			'interfaces':                   [],
-		}
-		for item in feature['network']:
-			if item != 'timestamp':
-				interface = {
-					'interface_name':       feature.get('network', {}).get(item, {}).get('interface'),
-					'is_interface_active':  feature.get('network', {}).get(item, {}).get('active'),
-					'packets_out_ok':       feature.get('network', {}).get(item, {}).get('transNoError'),
-					'packets_out_error':    feature.get('network', {}).get(item, {}).get('transError'),
-					'packets_out_dropped':  feature.get('network', {}).get(item, {}).get('transDropped'),
-					'packets_out_overrun':  feature.get('network', {}).get(item, {}).get('transOverrun'),
-					'packets_in_ok':        feature.get('network', {}).get(item, {}).get('recvNoError'),
-					'packets_in_error':     feature.get('network', {}).get(item, {}).get('recvError'),
-					'packets_in_dropped':   feature.get('network', {}).get(item, {}).get('recvDropped'),
-					'packets_in_overrun':   feature.get('network', {}).get(item, {}).get('recvOverrun'),
-				}
-				server['interfaces'].append(interface)
+		server = process_radar_server_data(feature)
 		servers.append(server)
 	return servers
