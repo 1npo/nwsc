@@ -1,4 +1,19 @@
 # TODO
+Roadmap and individual tasks that need to be completed to reach MVP status.
+
+## Roadmap
+> [!NOTE]
+> The roadmap lists high-level milestones. The remaining sections list specific tasks that need to be done to reach these milestones.
+- [ ] Write functions to extract data from all endpoints
+- [ ] Create data model to organize all data available from the API into dataclasses
+- [ ] Write new functions (or update existing functions) to load API data into dataclasses
+- [ ] Create schema(s) for normalizing the data model and loading it into relational databases
+- [ ] Write the repository modules
+- [ ] Design the TUI
+- [ ] Create the TUI with Textual
+- [ ] Determine text output formats
+- [ ] Write functions to produce text outputs
+- [ ] Determine final CLI argument list and update `main` accordingly
 
 ## Data
 - [ ] Finish writing API request functions for all endpoints

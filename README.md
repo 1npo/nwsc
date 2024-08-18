@@ -43,7 +43,7 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - Explore the data with a pretty [Textual](https://textual.textualize.io) interface
 - Pretty-print data with [Rich](https://rich.readthedocs.io/en/latest/)
 - Print weather strings that can be piped to other tools (such as [i3status](https://i3wm.org/i3status/))
-- Export data to various repositories for analytics or reporting:
+- Export data to various repositories for analytics, reporting, or use by other applications:
   - CSV
   - JSON
   - SQLite
@@ -79,7 +79,6 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [ ] Describe how to enable/use data export features
 
 ## Endpoint Coverage
-
 > [!NOTE]
 > **The following endpoints are deprecated by NWS:**
 > - `/icons/{set}/{timeOfDay}/{first}`

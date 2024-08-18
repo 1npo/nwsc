@@ -36,8 +36,12 @@ WMI_UNIT_MAP = {
 	'wmoUnit:degC':             'c',        # degrees celsius
 	'wmoUnit:W':				'w',		# watts
 	'wmoUnit:dB':				'db',		# decibels
+    'wmoUnit:dB_m-1':			'db_m',		# decibels per meter
+    'nwsUnit:dBZ':				'db_z',		# decibels relative to Z
 	'F':                        'f',        # degrees fahrenheit
 	'nwsUnit:s':				's',		# seconds
+	'nwsUnit:MHz':				'mhz',		# megahertz
+    'nwsUnit:ns':				'ns',		# nanoseconds
 }
 
 # See:

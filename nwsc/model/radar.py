@@ -21,6 +21,75 @@ class RadarDataAcquisition:
     build_number: float
 
 
+
+@dataclass
+class RadarPerformance:
+    refreshed_at: datetime
+    performance_checked_at: datetime
+    reporting_host: str
+    ntp_status: int
+    command_channel: str
+    linearity: float
+    power_source: str
+    fuel_level: float
+    dynamic_range: float
+    transmitter_peak_power: float
+    transmitter_recycle_count: int
+    transmitter_imbalance: float
+    transmitter_leaving_air_temp_c: float
+    transmitter_leaving_air_temp_f: float
+    shelter_temp_c: float
+    shelter_temp_f: float
+    radome_air_temp_c: float
+    radome_air_temp_f: float
+    horizontal_noise_temp_c: float
+    horizontal_noise_temp_f: float
+    transitional_power_source: str
+    elevation_encoder_light: str
+    azimuth_encoder_light: str
+    horizontal_delta_db: float
+    vertical_delta_db: float
+    receiver_bias: float
+    horizontal_short_pulse_db: float
+    horizontal_long_pulse_db: float
+    horizontal_short_pulse_noise: float
+    horizontal_long_pulse_noise: float
+
+
+@dataclass
+class RadarPathLoss:
+    wg04_circulator: float
+    wg02_harmonic_filter: float
+    wg06_spectrum_filter: float
+    ifd_rif_anti_alias_filter: float
+    ifd_burst_anti_alias_filter: float
+    a6_arc_detector: float
+    transmitter_coupler_coupling: float
+    vertical_f_heliax_to_4at16: float
+    horizontal_f_heliax_to_4at17: float
+    at4_attenuator: float
+    waveguide_klystron_to_switch: float
+
+
+@dataclass
+class RadarAdaptation:
+    refreshed_at: datetime
+    reporting_host: str
+    transmitter_frequency: int
+    transmitter_power_data_watts_factor: float
+    antenna_gain_incl_radome: float
+    coho_power_at_a1j4: float
+    stalo_power_at_a1j2: float
+    horizontal_receiver_noise_long_pulse: float
+    horizontal_receiver_noise_short_pulse: float
+    transmitter_spectrum_filter_installed: str # bool? are "F" and "T" the only values?
+    pulse_width_transmitter_out_long_pulse: int
+    pulse_width_transmitter_out_short_pulse: int
+    ame_noise_source_horizontal_excess_noise_ratio: float
+    ame_horizontal_test_signal_power: float
+    path_loss: RadarPathLoss
+
+
 @dataclass
 class RadarStationAlarm:
     status: str
@@ -47,6 +116,8 @@ class RadarStation:
     station_server_host: str
     station_reporting_host: str
     radar_data_acquisition: RadarDataAcquisition
+    radar_performance: RadarPerformance
+    radar_adaptation: RadarAdaptation
     alarms: List[RadarStationAlarm]
 
 
