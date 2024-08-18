@@ -81,19 +81,19 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 ## Endpoint Coverage
 
 > [!NOTE]
-> **The following endpoints are deprecated:**
+> **The following endpoints are deprecated by NWS:**
 > - `/icons/{set}/{timeOfDay}/{first}`
 > - `/icons/{set}/{timeOfDay}/{first}/{second}`
 > - `/icons`
 > - `/thumbnails/satellite/{area}`
 
 > [!NOTE] 
-> **The following endpoints are unexpectedly giving a 404 response:**
+> **The following endpoints are unexpectedly responding with a 404:**
 > - `/radar/queues/{host}`
 > - `/radar/profilers/{stationId}`
 
 > [!NOTE]
-> **The following endpoints are unexpectedly giving an empty response:**
+> **The following endpoints are unexpectedly returning empty data:**
 > - `/stations/{stationId}/tafs`
 > - `/stations/{stationId}/tafs/{date}/{time}`
 
@@ -171,7 +171,7 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
 - Icon in the logo is from [Phosphor Icons](https://phosphoricons.com/)
 - [Bruno](https://www.usebruno.com) and [Swagger UI](https://swagger.io/tools/swagger-ui/) were very helpful for exploring the API
-- The way some weather data is displayed was inspired by DarkSky (specifically [this article](https://nightingaledvs.com/dark-sky-weather-data-viz/))
+- The way `nwsc` displays hourly forecast data was inspired by DarkSky, specifically [this article](https://nightingaledvs.com/dark-sky-weather-data-viz/))
 
 ## Contributing
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`
