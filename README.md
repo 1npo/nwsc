@@ -86,11 +86,13 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 > - `/icons/{set}/{timeOfDay}/{first}/{second}`
 > - `/icons`
 > - `/thumbnails/satellite/{area}`
-> 
+
+> [!NOTE] 
 > **The following endpoints are unexpectedly giving a 404 response:**
 > - `/radar/queues/{host}`
 > - `/radar/profilers/{stationId}`
->
+
+> [!NOTE]
 > **The following endpoints are unexpectedly giving an empty response:**
 > - `/stations/{stationId}/tafs`
 > - `/stations/{stationId}/tafs/{date}/{time}`
