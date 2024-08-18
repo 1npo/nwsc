@@ -81,19 +81,19 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 ## Endpoint Coverage
 
 > [!NOTE]
-> The following endpoints are deprecated:
-> - /icons/{set}/{timeOfDay}/{first}
-> - /icons/{set}/{timeOfDay}/{first}/{second}
-> - /icons
-> - /thumbnails/satellite/{area}
+> **The following endpoints are deprecated:**
+> - `/icons/{set}/{timeOfDay}/{first}`
+> - `/icons/{set}/{timeOfDay}/{first}/{second}`
+> - `/icons`
+> - `/thumbnails/satellite/{area}`
 > 
-> The following endpoints are unexpectedly giving a 404 response:
-> - /radar/queues/{host}
-> - /radar/profilers/{stationId}
+> **The following endpoints are unexpectedly giving a 404 response:**
+> - `/radar/queues/{host}`
+> - `/radar/profilers/{stationId}`
 >
-> The following endpoints are unexpectedly giving an empty response:
-> - /stations/{stationId}/tafs
-> - /stations/{stationId}/tafs/{date}/{time}
+> **The following endpoints are unexpectedly giving an empty response:**
+> - `/stations/{stationId}/tafs`
+> - `/stations/{stationId}/tafs/{date}/{time}`
 
 - [x] /alerts
 - [x] /alerts/active
@@ -169,6 +169,7 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
 - Icon in the logo is from [Phosphor Icons](https://phosphoricons.com/)
 - [Bruno](https://www.usebruno.com) and [Swagger UI](https://swagger.io/tools/swagger-ui/) were very helpful for exploring the API
+- The way some weather data is displayed was inspired by DarkSky (specifically [this article](https://nightingaledvs.com/dark-sky-weather-data-viz/))
 
 ## Contributing
 - See [CONTRIBUTING.md](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`
