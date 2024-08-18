@@ -79,6 +79,22 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [ ] Describe how to enable/use data export features
 
 ## Endpoint Coverage
+
+> [!NOTE]
+> The following endpoints are deprecated:
+> - /icons/{set}/{timeOfDay}/{first}
+> - /icons/{set}/{timeOfDay}/{first}/{second}
+> - /icons
+> - /thumbnails/satellite/{area}
+> 
+> The following endpoints are unexpectedly giving a 404 response:
+> - /radar/queues/{host}
+> - /radar/profilers/{stationId}
+>
+> The following endpoints are unexpectedly giving an empty response:
+> - /stations/{stationId}/tafs
+> - /stations/{stationId}/tafs/{date}/{time}
+
 - [x] /alerts
 - [x] /alerts/active
 - [x] /alerts/active/count
@@ -106,8 +122,8 @@ A full-coverage National Weather Service API client for the terminal. Made for w
 - [ ] /stations/{stationId}/observations
 - [x] /stations/{stationId}/observations/latest
 - [ ] /stations/{stationId}/observations/{time}
-- [ ] /stations/{stationId}/tafs
-- [ ] /stations/{stationId}/tafs/{date}/{time}
+- [ ] ~~/stations/{stationId}/tafs~~ (**EMPTY RESPONSES**)
+- [ ] ~~/stations/{stationId}/tafs/{date}/{time}~~ (**EMPTY RESPONSES**)
 - [x] /stations
 - [x] /stations/{stationId}
 - [ ] /offices/{officeId}

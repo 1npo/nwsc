@@ -3,6 +3,7 @@
 # - https://weather-gov.github.io/api/general-faqs, especially these sections:
 #   - "How do I get a forecast for a location from the API?"
 #   - "How do I know I'm getting the latest data? Do I need to use “cache busting” methods?"
+
 API_URL_USCB_GEOCODE = 'https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?benchmark=Public_AR_Current&format=json&address='
 API_URL_NWS_POINTS = 'https://api.weather.gov/points/'
 API_URL_NWS_GRIDPOINTS = 'https://api.weather.gov/gridpoints/'
@@ -14,7 +15,7 @@ API_URL_NWS_ALERTS_ZONE = 'http://api.weather.gov/alerts/active/zone/'
 API_URL_NWS_ALERT_TYPES = 'http://api.weather.gov/alerts/types'
 API_URL_NWS_ALERT_COUNTS = 'http://api.weather.gov/alerts/active/count'
 API_URL_NWS_GLOSSARY = 'https://api.weather.gov/glossary'
-API_URL_NWS_SERVERS = 'http://api.weather.gov/radar/servers'
+API_URL_NWS_RADAR_SERVERS = 'http://api.weather.gov/radar/servers'
 API_URL_NWS_RADAR_STATIONS = 'http://api.weather.gov/radar/stations/'
 API_URL_NWS_PRODUCTS = 'http://api.weather.gov/products/'
 API_URL_NWS_PRODUCT_TYPES = 'http://api.weather.gov/products/types'
@@ -24,6 +25,7 @@ API_URL_NWS_ZONE_FORECASTS = 'http://api.weather.gov/zones/forecast'
 API_URL_NWS_OFFICES = 'http://api.weather.gov/offices/'
 
 # See: https://codes.wmo.int/common/unit
+
 WMI_UNIT_MAP = {                            
 	'wmoUnit:Pa':               'pa',       # pressure in pascals
 	'wmoUnit:km_h-1':           'kmph',     # kilometers per hour
@@ -41,6 +43,7 @@ WMI_UNIT_MAP = {
 # See:
 # - https://www.atmos.albany.edu/facstaff/ralazear/ATM209/Home_files/METAR_Code.pdf
 # - https://en.wikipedia.org/wiki/Okta
+
 METAR_CLOUD_COVER_MAP = {
 	'SKC':  'Clear Sky',
 	'CLR':  'Clear Sky',
@@ -49,13 +52,6 @@ METAR_CLOUD_COVER_MAP = {
 	'BKN':  'Broken Sky',           # 4-7 oktas (5/8 - 7/8 of sky covered)
 	'OVC':  'Overcast',             # 8 oktas (sky completely covered)
 }
-
-INVALID_ENUM_MESSAGE_DELIMITER = 'Does not have a value in the enumeration'
-FAILED_TO_GET_ENUM_MESSAGE = (
-    'Unable to extract list of valid NWS $enum_type from the API. Falling back on hardcoded '
-    'values that may be out of date. This is unexpected and a bug, please report the issue '
-    'on GitHub at https://github.com/1npo/nwsc/issues.'
-)
 
 # As of 2024-8-17:
 #
@@ -70,6 +66,13 @@ FAILED_TO_GET_ENUM_MESSAGE = (
 # these enums fails for some reason (eg due to changes in the structure or format of
 # error responses).
 
+INVALID_ENUM_MESSAGE_DELIMITER = 'Does not have a value in the enumeration'
+
+FAILED_TO_GET_ENUM_MESSAGE = (
+    'Unable to extract list of valid NWS $enum_type from the API. Falling back on hardcoded '
+    'values that may be out of date. This is unexpected and a bug, please report the issue '
+    'on GitHub at https://github.com/1npo/nwsc/issues.'
+)
 
 VALID_NWS_ZONES = [
     'land',
@@ -81,7 +84,6 @@ VALID_NWS_ZONES = [
     'fire',
     'county',
 ]
-
 
 VALID_NWS_FORECAST_OFFICES = [
 	'AKQ', 	'CRP', 	'TSA', 	'LOT', 	'PSR', 

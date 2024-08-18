@@ -49,6 +49,8 @@
   - [ ] emoji-text
 - [ ] Take some cues from DarkSky, especially when visualizing hourly forecasts:
   - See: https://nightingaledvs.com/dark-sky-weather-data-viz/
+- [ ] Explore other TUI projects for inspiration:
+  - See: https://github.com/rothgar/awesome-tuis
 
 ## Package
 - [ ] Move package from `venv` to `(micro)mamba`

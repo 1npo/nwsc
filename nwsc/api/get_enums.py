@@ -1,3 +1,7 @@
+# TODO: Figure out when, how, and if these functions should be used to
+# update `nwsc.api.VALID_NWS_*` globals. In the meantime, only use the
+# hardcoded values.
+
 
 import json
 from string import Template

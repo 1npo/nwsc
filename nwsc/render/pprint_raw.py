@@ -97,7 +97,6 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 
 	return weather_data
 
-
 def nws_data_to_json(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	output_path = Path(os.path.expanduser('~')) / 'nws_data'
@@ -117,4 +116,5 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)
 
-
+abs_path = os.path.abspath(__file__)
+logger.debug(f'{abs_path=}')

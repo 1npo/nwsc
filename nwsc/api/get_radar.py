@@ -4,7 +4,7 @@ from nwsc.render.decorators import display_spinner
 from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api import (
-	API_URL_NWS_SERVERS,
+	API_URL_NWS_RADAR_SERVERS,
     API_URL_NWS_RADAR_STATIONS,
 	WMI_UNIT_MAP,
 )
@@ -94,7 +94,7 @@ def get_radar_station_alarms(session: CachedSession, radar_station_id: str) -> d
 @display_spinner('Getting radar server metadata...')
 def get_radar_servers(session: CachedSession) -> list:
 	""" """
-	radar_server_data = api_request(session, API_URL_NWS_SERVERS)
+	radar_server_data = api_request(session, API_URL_NWS_RADAR_SERVERS)
 	servers = []
 	for feature in radar_server_data.get('@graph', {}):
 		server = {
