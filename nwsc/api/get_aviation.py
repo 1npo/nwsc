@@ -3,70 +3,105 @@ from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
 from nwsc.api import (
-    API_URL_NWS_OFFICES,
-    VALID_NWS_FORECAST_OFFICES,
+    NWS_API_AVIATION_SIGMETS,
+    NWS_API_AVIATION_CWSU,
 )
 
 
-InvalidOfficeException = ValueError(
-    f'Invalid forecast office. Please specify a valid forecast office: '
-    f'{", ".join(VALID_NWS_FORECAST_OFFICES)}'
-)
-
-
-def process_headline_data(headline: dict) -> dict:
-    return {
-            'id':                   headline.get('id'),
-            'name':                 headline.get('name'),
-            'title':                headline.get('title'),
-            'issued_at':            headline.get('issuanceTime'),
-            'url':                  headline.get('link'),
-            'content':              headline.get('content'),
-            'headline_summary':     headline.get('summary'),
-            'office_url':           headline.get('office'),
-            'is_important':         headline.get('important'),
-        }
-
-
-@display_spinner('Getting office headlines...')
-def get_office_headlines(session: CachedSession, office_id: str) -> dict:
-    if office_id not in VALID_NWS_FORECAST_OFFICES:
-        raise InvalidOfficeException
-    headlines_data = api_request(session, API_URL_NWS_OFFICES + office_id + '/headlines')
-    headlines = []
-    for headline in headlines_data.get('@graph', {}):
-        headlines.append(process_headline_data(headline))
-    return headlines
-
-
-@display_spinner('Getting headline from office...')
-def get_office_headline(session: CachedSession, office_id: str, headline_id: str) -> dict:
-    if office_id not in VALID_NWS_FORECAST_OFFICES:
-        raise InvalidOfficeException
-    headline_data = api_request(session, API_URL_NWS_OFFICES + office_id + '/headlines/' + headline_id)
-    return process_headline_data(headline_data)
-
-
-@display_spinner('Getting forecast office details...')
-def get_office(session: CachedSession, office_id: str) -> dict:
-    if office_id not in VALID_NWS_FORECAST_OFFICES:
-        raise InvalidOfficeException
-    office_data = api_request(session, API_URL_NWS_OFFICES + office_id)
-    return {
-        'office_id':            office_data.get('id'),
-        'office_name':          office_data.get('name'),
-        'street_address':       office_data.get('address', {}).get('streetAddress'),
-        'city':                 office_data.get('address', {}).get('addressLocality'),
-        'state':                office_data.get('address', {}).get('addressRegion'),
-        'zip_code':             office_data.get('address', {}).get('postalCode'),
-        'phone_number':         office_data.get('telephone'),
-        'fax_number':           office_data.get('faxNumber'),
-        'email':                office_data.get('email'),
-        'office_url':           office_data.get('sameAs'),
-        'office_parent_url':    office_data.get('parentOrganization'),
-        'nws_region':           office_data.get('nwsRegion'),
-        'counties':             office_data.get('responsibleCounties'),
-        'forecast_zones':       office_data.get('responsibleForecastZones'),
-        'fire_zones':           office_data.get('responsibleFireZones'),
-        'observation_stations': office_data.get('approvedObservationStations'),
+def process_sigmets_data(sigmets: dict) -> dict:
+    sigmet = {
+        'sigmets_url':      sigmets.get('properties', {}).get('id'),
+        'issued_at':        sigmets.get('properties', {}).get('issueTime'),
+        'effective_at':     sigmets.get('properties', {}).get('start'),
+        'expires_at':       sigmets.get('properties', {}).get('end'),
+        'fir':              sigmets.get('properties', {}).get('fir'),
+        'atsu':             sigmets.get('properties', {}).get('atsu'),
+        'sequence':         sigmets.get('properties', {}).get('sequence'),
+        'phenomenon':       sigmets.get('properties', {}).get('phenomenon'),
     }
+    geometry = sigmets.get('geometry')
+    if geometry:
+        sigmet.update({'area_polygon': geometry.get('coordinates')})
+    return sigmet
+
+
+def process_sigmets(sigmets_data: list) -> list:
+    sigmets = []
+    for feature in sigmets_data.get('features', {}):
+        sigmets.append(process_sigmets_data(feature))
+    return sigmets
+
+
+def process_cwa_data(cwa: dict) -> dict:
+    cwa = {
+        'url':                  cwa.get('properties', {}).get('id'),
+        'cwsu':                 cwa.get('properties', {}).get('cwsu'),
+        'sequence':             cwa.get('properties', {}).get('sequence'),
+        'issued_at':            cwa.get('properties', {}).get('issueTime'),
+        'effective_at':         cwa.get('properties', {}).get('start'),
+        'expires_at':           cwa.get('properties', {}).get('end'),
+        'observed_property':    cwa.get('properties', {}).get('observedProperty'),
+        'text':                 cwa.get('properties', {}).get('text'),
+    }
+    geometry = cwa.get('geometry')
+    if geometry:
+        cwa.update({'area_polygon': geometry.get('coordinates')})
+    return cwa
+
+
+@display_spinner('Getting all SIGMETs...')
+def get_all_sigmets(session: CachedSession) -> dict:
+    sigmets_data = api_request(session, NWS_API_AVIATION_SIGMETS)
+    return process_sigmets(sigmets_data)
+
+
+@display_spinner('Getting all SIGMETs issued by ATSU...')
+def get_all_atsu_sigmets(session: CachedSession, atsu: str) -> list:
+    sigmets_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu)
+    return process_sigmets(sigmets_data)
+
+
+@display_spinner('Getting all SIGMETs issued by ATSU on date...')
+def get_all_atsu_sigmets_by_date(session: CachedSession, atsu: str, date_str: str) -> list:
+    sigmets_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu + f'/{date_str}')
+    return process_sigmets(sigmets_data)
+
+
+@display_spinner('Getting SIGMET...')
+def get_sigmet(session: CachedSession, atsu: str, date_str: str, time_str) -> list:
+    sigmet_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu + f'/{date_str}/{time_str}')
+    return process_sigmets_data(sigmet_data)
+
+
+@display_spinner('Getting CWSU details...')
+def get_cwsu(session: CachedSession, cwsu_id: str) -> dict:
+    cwsu_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id)
+    return {
+        'id':           cwsu_data.get('id'),
+        'name':         cwsu_data.get('name'),
+        'street':       cwsu_data.get('street'),
+        'city':         cwsu_data.get('city'),
+        'state':        cwsu_data.get('state'),
+        'zip_code':     cwsu_data.get('zipCcode'),
+        'email':        cwsu_data.get('email'),
+        'fax':          cwsu_data.get('fax'),
+        'phone':        cwsu_data.get('phone'),
+        'url':          cwsu_data.get('url'),
+        'nws_region':   cwsu_data.get('nwsRegion'),
+    }
+
+
+@display_spinner('Getting all CWAs issued by CWSU...')
+def get_cwas(session: CachedSession, cwsu_id: str) -> list:
+    cwas_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id + '/cwas')
+    cwas = []
+    for feature in cwas_data.get('features', {}):
+        cwas.append(process_cwa_data(feature))
+    return cwas
+
+
+@display_spinner('Getting CWA...')
+def get_cwa(session: CachedSession, cwsu_id: str, date_str: str, sequence: int) -> dict:
+    cwa_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id + f'/cwas/{date_str}/{sequence}')
+    return process_cwa_data(cwa_data)
+

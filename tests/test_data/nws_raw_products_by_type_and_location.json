@@ -1,37 +1,5 @@
 [
     {
-        "product_id": "74f5dbb4-a9ed-43e0-a5c3-4fecb4c05612",
-        "product_wmo_id": "NOUS74",
-        "issuing_office": "KEHU",
-        "issued_at": "2024-08-17T04:39:00+00:00",
-        "product_code": "ADA",
-        "product_name": "Alarm/Alert Administrative Msg"
-    },
-    {
-        "product_id": "36d99473-bedb-468a-85b7-dfba3ce9cd4f",
-        "product_wmo_id": "NOUS74",
-        "issuing_office": "KEHU",
-        "issued_at": "2024-08-17T04:19:00+00:00",
-        "product_code": "ADA",
-        "product_name": "Alarm/Alert Administrative Msg"
-    },
-    {
-        "product_id": "463d756a-56f7-4ffc-bdd2-c1d6cadb4949",
-        "product_wmo_id": "NOUS74",
-        "issuing_office": "KEHU",
-        "issued_at": "2024-08-17T00:11:00+00:00",
-        "product_code": "ADA",
-        "product_name": "Alarm/Alert Administrative Msg"
-    },
-    {
-        "product_id": "97cd6a0c-2526-47be-9a76-da32d99406ee",
-        "product_wmo_id": "NOUS74",
-        "issuing_office": "KEHU",
-        "issued_at": "2024-08-17T00:11:00+00:00",
-        "product_code": "ADA",
-        "product_name": "Alarm/Alert Administrative Msg"
-    },
-    {
         "product_id": "b9067379-9fb7-4ca1-a7eb-1b5d39212a29",
         "product_wmo_id": "NOUS74",
         "issuing_office": "KEHU",

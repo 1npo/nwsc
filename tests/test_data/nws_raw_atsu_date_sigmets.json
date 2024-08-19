@@ -1,0 +1,2846 @@
+[
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2355",
+        "issued_at": "2024-08-18T23:55:00+00:00",
+        "effective_at": "2024-08-18T23:55:00+00:00",
+        "expires_at": "2024-08-19T01:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "02E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    27.03,
+                    -79.69
+                ],
+                [
+                    24.720000000000002,
+                    -79.81
+                ],
+                [
+                    24.26,
+                    -78.62
+                ],
+                [
+                    26.23,
+                    -78.89
+                ],
+                [
+                    27.03,
+                    -79.69
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2355",
+        "issued_at": "2024-08-18T23:55:00+00:00",
+        "effective_at": "2024-08-18T23:55:00+00:00",
+        "expires_at": "2024-08-19T01:55:00+00:00",
+        "fir": "KZME",
+        "atsu": "KKCI",
+        "sequence": "52C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    37.05,
+                    -93.49
+                ],
+                [
+                    36.199999999999996,
+                    -95.38
+                ],
+                [
+                    32.519999999999996,
+                    -92.61999999999999
+                ],
+                [
+                    34.05,
+                    -89.56999989999998
+                ],
+                [
+                    37.05,
+                    -93.49
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2355",
+        "issued_at": "2024-08-18T23:55:00+00:00",
+        "effective_at": "2024-08-18T23:55:00+00:00",
+        "expires_at": "2024-08-19T01:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "76W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    48.33,
+                    -122.2
+                ],
+                [
+                    48.18,
+                    -124.81
+                ],
+                [
+                    46.95,
+                    -124.39
+                ],
+                [
+                    47.040000000000006,
+                    -121.14
+                ],
+                [
+                    48.33,
+                    -122.2
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2255",
+        "issued_at": "2024-08-18T22:55:00+00:00",
+        "effective_at": "2024-08-18T22:55:00+00:00",
+        "expires_at": "2024-08-19T00:55:00+00:00",
+        "fir": "KZKC",
+        "atsu": "KKCI",
+        "sequence": "46C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    38.01,
+                    -93.7099999
+                ],
+                [
+                    38.08,
+                    -95.08
+                ],
+                [
+                    35.739999999999995,
+                    -95.56
+                ],
+                [
+                    36.24999999999999,
+                    -93.5
+                ],
+                [
+                    38.01,
+                    -93.7099999
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2255",
+        "issued_at": "2024-08-18T22:55:00+00:00",
+        "effective_at": "2024-08-18T22:55:00+00:00",
+        "expires_at": "2024-08-19T00:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "95E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.81,
+                    -80.43
+                ],
+                [
+                    24.57,
+                    -79.74000000000001
+                ],
+                [
+                    24.02,
+                    -78.37
+                ],
+                [
+                    26.23,
+                    -78.89
+                ],
+                [
+                    26.81,
+                    -80.43
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2255",
+        "issued_at": "2024-08-18T22:55:00+00:00",
+        "effective_at": "2024-08-18T22:55:00+00:00",
+        "expires_at": "2024-08-19T00:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "71W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    48.18,
+                    -123.06
+                ],
+                [
+                    48.06,
+                    -124.98
+                ],
+                [
+                    46,
+                    -123.47
+                ],
+                [
+                    46.52,
+                    -122.13
+                ],
+                [
+                    48.18,
+                    -123.06
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2155",
+        "issued_at": "2024-08-18T21:55:00+00:00",
+        "effective_at": "2024-08-18T21:55:00+00:00",
+        "expires_at": "2024-08-18T23:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "66W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    48.02,
+                    -123.19
+                ],
+                [
+                    47.84,
+                    -124.92
+                ],
+                [
+                    45.5,
+                    -124.61
+                ],
+                [
+                    45.87,
+                    -122.42
+                ],
+                [
+                    48.02,
+                    -123.19
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2155",
+        "issued_at": "2024-08-18T21:55:00+00:00",
+        "effective_at": "2024-08-18T21:55:00+00:00",
+        "expires_at": "2024-08-18T23:55:00+00:00",
+        "fir": "KZKC",
+        "atsu": "KKCI",
+        "sequence": "40C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.2,
+                    -96.2099999
+                ],
+                [
+                    37.36,
+                    -96.42
+                ],
+                [
+                    36.89,
+                    -93.92
+                ],
+                [
+                    38.58,
+                    -93.51
+                ],
+                [
+                    39.2,
+                    -96.2099999
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2155",
+        "issued_at": "2024-08-18T21:55:00+00:00",
+        "effective_at": "2024-08-18T21:55:00+00:00",
+        "expires_at": "2024-08-18T23:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "89E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.68,
+                    -80.4599999
+                ],
+                [
+                    24.47,
+                    -80.3
+                ],
+                [
+                    24.02,
+                    -78.36999999999999
+                ],
+                [
+                    26.23,
+                    -78.88999999999999
+                ],
+                [
+                    26.68,
+                    -80.4599999
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2055",
+        "issued_at": "2024-08-18T20:55:00+00:00",
+        "effective_at": "2024-08-18T20:55:00+00:00",
+        "expires_at": "2024-08-18T22:55:00+00:00",
+        "fir": "KZKC",
+        "atsu": "KKCI",
+        "sequence": "35C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.76,
+                    -97.62
+                ],
+                [
+                    35.61,
+                    -96.51
+                ],
+                [
+                    35.7299999,
+                    -95.2099999
+                ],
+                [
+                    39.540000000000006,
+                    -93.94
+                ],
+                [
+                    39.76,
+                    -97.62
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2055",
+        "issued_at": "2024-08-18T20:55:00+00:00",
+        "effective_at": "2024-08-18T20:55:00+00:00",
+        "expires_at": "2024-08-18T22:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "84E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.68,
+                    -80.83
+                ],
+                [
+                    25.06,
+                    -81.28
+                ],
+                [
+                    24.02,
+                    -78.37
+                ],
+                [
+                    26.23,
+                    -78.89
+                ],
+                [
+                    26.68,
+                    -80.83
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/2055",
+        "issued_at": "2024-08-18T20:55:00+00:00",
+        "effective_at": "2024-08-18T20:55:00+00:00",
+        "expires_at": "2024-08-18T22:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "61W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    48.18,
+                    -124.81
+                ],
+                [
+                    45.51,
+                    -125.4
+                ],
+                [
+                    45.4,
+                    -123.09
+                ],
+                [
+                    48.12,
+                    -122.58
+                ],
+                [
+                    48.18,
+                    -124.81
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1955",
+        "issued_at": "2024-08-18T19:55:00+00:00",
+        "effective_at": "2024-08-18T19:55:00+00:00",
+        "expires_at": "2024-08-18T21:55:00+00:00",
+        "fir": "KZKC",
+        "atsu": "KKCI",
+        "sequence": "32C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.4799999,
+                    -95.34
+                ],
+                [
+                    39.540000000000006,
+                    -97.29
+                ],
+                [
+                    36.2,
+                    -96.81999990000001
+                ],
+                [
+                    34.68,
+                    -91.17000000000002
+                ],
+                [
+                    36.96,
+                    -94.62000000000002
+                ],
+                [
+                    39.4799999,
+                    -95.34
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1955",
+        "issued_at": "2024-08-18T19:55:00+00:00",
+        "effective_at": "2024-08-18T19:55:00+00:00",
+        "expires_at": "2024-08-18T21:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "79E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.68,
+                    -80.83
+                ],
+                [
+                    25.18,
+                    -81.14999999999999
+                ],
+                [
+                    24.02,
+                    -78.36999999999999
+                ],
+                [
+                    26.23,
+                    -78.88999999999999
+                ],
+                [
+                    26.68,
+                    -80.83
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1955",
+        "issued_at": "2024-08-18T19:55:00+00:00",
+        "effective_at": "2024-08-18T19:55:00+00:00",
+        "expires_at": "2024-08-18T21:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "57W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    48.3,
+                    -124.13
+                ],
+                [
+                    46.599999999999994,
+                    -124.66
+                ],
+                [
+                    45.94,
+                    -123.25
+                ],
+                [
+                    48.12,
+                    -122.58
+                ],
+                [
+                    48.3,
+                    -124.13
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1855",
+        "issued_at": "2024-08-18T18:55:00+00:00",
+        "effective_at": "2024-08-18T18:55:00+00:00",
+        "expires_at": "2024-08-18T20:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "73E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.22,
+                    -83.86
+                ],
+                [
+                    24.07,
+                    -83.15
+                ],
+                [
+                    24.02,
+                    -78.37
+                ],
+                [
+                    26.23,
+                    -78.89
+                ],
+                [
+                    26.22,
+                    -83.86
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1855",
+        "issued_at": "2024-08-18T18:55:00+00:00",
+        "effective_at": "2024-08-18T18:55:00+00:00",
+        "expires_at": "2024-08-18T20:55:00+00:00",
+        "fir": "KZKC",
+        "atsu": "KKCI",
+        "sequence": "30C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    41.37,
+                    -97.02
+                ],
+                [
+                    41.14,
+                    -98.66
+                ],
+                [
+                    36.2,
+                    -96.2
+                ],
+                [
+                    37.28,
+                    -94.81
+                ],
+                [
+                    41.37,
+                    -97.02
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1855",
+        "issued_at": "2024-08-18T18:55:00+00:00",
+        "effective_at": "2024-08-18T18:55:00+00:00",
+        "expires_at": "2024-08-18T20:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "55W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.67,
+                    -108.46
+                ],
+                [
+                    37.95,
+                    -110.1
+                ],
+                [
+                    35.99,
+                    -105.14
+                ],
+                [
+                    37.82,
+                    -103.83
+                ],
+                [
+                    39.67,
+                    -108.46
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1755",
+        "issued_at": "2024-08-18T17:55:00+00:00",
+        "effective_at": "2024-08-18T17:55:00+00:00",
+        "expires_at": "2024-08-18T19:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "28C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    42.82,
+                    -99.17
+                ],
+                [
+                    41.44,
+                    -99.69
+                ],
+                [
+                    38.43,
+                    -97.62
+                ],
+                [
+                    39.64,
+                    -95.2
+                ],
+                [
+                    42.85,
+                    -97.43
+                ],
+                [
+                    42.82,
+                    -99.17
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1755",
+        "issued_at": "2024-08-18T17:55:00+00:00",
+        "effective_at": "2024-08-18T17:55:00+00:00",
+        "expires_at": "2024-08-18T19:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "54W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.89,
+                    -110.93
+                ],
+                [
+                    39.3,
+                    -114.42
+                ],
+                [
+                    36.43,
+                    -112.22
+                ],
+                [
+                    37.29,
+                    -106.01
+                ],
+                [
+                    38.13,
+                    -106.06
+                ],
+                [
+                    39.89,
+                    -110.93
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1755",
+        "issued_at": "2024-08-18T17:55:00+00:00",
+        "effective_at": "2024-08-18T17:55:00+00:00",
+        "expires_at": "2024-08-18T19:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "69E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.22,
+                    -83.86
+                ],
+                [
+                    24.579999899999997,
+                    -83.26
+                ],
+                [
+                    24.019999999999996,
+                    -78.37
+                ],
+                [
+                    25.789999999999996,
+                    -79.01
+                ],
+                [
+                    26.22,
+                    -83.86
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1655",
+        "issued_at": "2024-08-18T16:55:00+00:00",
+        "effective_at": "2024-08-18T16:55:00+00:00",
+        "expires_at": "2024-08-18T18:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "26C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    44.42,
+                    -98.37
+                ],
+                [
+                    44.4,
+                    -99.7
+                ],
+                [
+                    41.739999999999995,
+                    -100.38000000000001
+                ],
+                [
+                    38.76,
+                    -97.62
+                ],
+                [
+                    39.64,
+                    -95.2
+                ],
+                [
+                    44.42,
+                    -98.37
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1655",
+        "issued_at": "2024-08-18T16:55:00+00:00",
+        "effective_at": "2024-08-18T16:55:00+00:00",
+        "expires_at": "2024-08-18T18:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "53W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    38.28,
+                    -113.05
+                ],
+                [
+                    35.93,
+                    -112.59
+                ],
+                [
+                    35.8,
+                    -109.26
+                ],
+                [
+                    38.12,
+                    -107.04
+                ],
+                [
+                    38.28,
+                    -113.05
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1655",
+        "issued_at": "2024-08-18T16:55:00+00:00",
+        "effective_at": "2024-08-18T16:55:00+00:00",
+        "expires_at": "2024-08-18T18:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "63E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.22,
+                    -83.86
+                ],
+                [
+                    24.579999899999997,
+                    -83.26
+                ],
+                [
+                    24.019999999999996,
+                    -78.37
+                ],
+                [
+                    25.789999999999996,
+                    -79.01
+                ],
+                [
+                    26.22,
+                    -83.86
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1555",
+        "issued_at": "2024-08-18T15:55:00+00:00",
+        "effective_at": "2024-08-18T15:55:00+00:00",
+        "expires_at": "2024-08-18T17:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "25C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    45.2299999,
+                    -100.17
+                ],
+                [
+                    41.800000000000004,
+                    -100.72
+                ],
+                [
+                    39.28,
+                    -98.08
+                ],
+                [
+                    39.85,
+                    -95.75
+                ],
+                [
+                    43.9,
+                    -97.63
+                ],
+                [
+                    45.2299999,
+                    -100.17
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1555",
+        "issued_at": "2024-08-18T15:55:00+00:00",
+        "effective_at": "2024-08-18T15:55:00+00:00",
+        "expires_at": "2024-08-18T17:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "58E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.82,
+                    -84.1
+                ],
+                [
+                    24.5799999,
+                    -83.25999999999999
+                ],
+                [
+                    24.02,
+                    -78.36999999999999
+                ],
+                [
+                    25.35,
+                    -79.10999999999999
+                ],
+                [
+                    25.8,
+                    -79.37999999999998
+                ],
+                [
+                    26.82,
+                    -84.1
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1555",
+        "issued_at": "2024-08-18T15:55:00+00:00",
+        "effective_at": "2024-08-18T15:55:00+00:00",
+        "expires_at": "2024-08-18T17:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "52W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    37.99,
+                    -113.61
+                ],
+                [
+                    35.31,
+                    -111.55
+                ],
+                [
+                    35.88,
+                    -109.78
+                ],
+                [
+                    37.220000000000006,
+                    -109.67
+                ],
+                [
+                    37.99,
+                    -113.61
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1455",
+        "issued_at": "2024-08-18T14:55:00+00:00",
+        "effective_at": "2024-08-18T14:55:00+00:00",
+        "expires_at": "2024-08-18T16:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "24C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    45.39,
+                    -100.63
+                ],
+                [
+                    41.72,
+                    -101.50999999999999
+                ],
+                [
+                    39.75,
+                    -98.69
+                ],
+                [
+                    40.51,
+                    -96.03999999999999
+                ],
+                [
+                    44.019999999999996,
+                    -98.05999999999999
+                ],
+                [
+                    45.39,
+                    -100.63
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1455",
+        "issued_at": "2024-08-18T14:55:00+00:00",
+        "effective_at": "2024-08-18T14:55:00+00:00",
+        "expires_at": "2024-08-18T16:55:00+00:00",
+        "fir": "KZAB",
+        "atsu": "KKCI",
+        "sequence": "51W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    37.22,
+                    -112.89
+                ],
+                [
+                    33.37,
+                    -112.2
+                ],
+                [
+                    35.419999999999995,
+                    -109.14
+                ],
+                [
+                    37.21999999999999,
+                    -109.67
+                ],
+                [
+                    37.22,
+                    -112.89
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1455",
+        "issued_at": "2024-08-18T14:55:00+00:00",
+        "effective_at": "2024-08-18T14:55:00+00:00",
+        "expires_at": "2024-08-18T16:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "55E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.82,
+                    -84.1
+                ],
+                [
+                    24.07,
+                    -83.14999999999999
+                ],
+                [
+                    24.02,
+                    -78.36999999999999
+                ],
+                [
+                    25.35,
+                    -79.10999999999999
+                ],
+                [
+                    25.8,
+                    -79.37999999999998
+                ],
+                [
+                    26.82,
+                    -84.1
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1355",
+        "issued_at": "2024-08-18T13:55:00+00:00",
+        "effective_at": "2024-08-18T13:55:00+00:00",
+        "expires_at": "2024-08-18T15:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "22C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    44.05,
+                    -99.68
+                ],
+                [
+                    41.559999999999995,
+                    -102.72000000000001
+                ],
+                [
+                    40.459999999999994,
+                    -98.85000000000001
+                ],
+                [
+                    40.979999899999996,
+                    -96.35000000000001
+                ],
+                [
+                    43.38999999999999,
+                    -98.16000000000001
+                ],
+                [
+                    44.05,
+                    -99.68
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1355",
+        "issued_at": "2024-08-18T13:55:00+00:00",
+        "effective_at": "2024-08-18T13:55:00+00:00",
+        "expires_at": "2024-08-18T15:55:00+00:00",
+        "fir": "KZAB",
+        "atsu": "KKCI",
+        "sequence": "50W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    36.9799999,
+                    -113.18
+                ],
+                [
+                    32.9799999,
+                    -113.30000000000001
+                ],
+                [
+                    35.25,
+                    -109.14000000000001
+                ],
+                [
+                    36.74,
+                    -109.55000000000001
+                ],
+                [
+                    36.9799999,
+                    -113.18
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1355",
+        "issued_at": "2024-08-18T13:55:00+00:00",
+        "effective_at": "2024-08-18T13:55:00+00:00",
+        "expires_at": "2024-08-18T15:55:00+00:00",
+        "fir": "KZMA",
+        "atsu": "KKCI",
+        "sequence": "54E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    26.48,
+                    -82.98
+                ],
+                [
+                    26.22,
+                    -83.86
+                ],
+                [
+                    24.07,
+                    -83.15
+                ],
+                [
+                    24.02,
+                    -78.37
+                ],
+                [
+                    25.35,
+                    -79.11
+                ],
+                [
+                    26.48,
+                    -82.98
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1255",
+        "issued_at": "2024-08-18T12:55:00+00:00",
+        "effective_at": "2024-08-18T12:55:00+00:00",
+        "expires_at": "2024-08-18T14:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "19C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    43.96,
+                    -97.85
+                ],
+                [
+                    43.63,
+                    -100.61
+                ],
+                [
+                    41.07,
+                    -100.52
+                ],
+                [
+                    40.19,
+                    -99.06
+                ],
+                [
+                    41.76,
+                    -96.53
+                ],
+                [
+                    43.96,
+                    -97.85
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1255",
+        "issued_at": "2024-08-18T12:55:00+00:00",
+        "effective_at": "2024-08-18T12:55:00+00:00",
+        "expires_at": "2024-08-18T14:55:00+00:00",
+        "fir": "KZOB",
+        "atsu": "KKCI",
+        "sequence": "51E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    42.76,
+                    -78.65
+                ],
+                [
+                    41.69,
+                    -79.12
+                ],
+                [
+                    41.36,
+                    -78.06
+                ],
+                [
+                    41.9799999,
+                    -77.34
+                ],
+                [
+                    42.67,
+                    -77.81
+                ],
+                [
+                    42.76,
+                    -78.65
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1255",
+        "issued_at": "2024-08-18T12:55:00+00:00",
+        "effective_at": "2024-08-18T12:55:00+00:00",
+        "expires_at": "2024-08-18T14:55:00+00:00",
+        "fir": "KZAB",
+        "atsu": "KKCI",
+        "sequence": "49W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    35.62,
+                    -111.27
+                ],
+                [
+                    35.159999899999995,
+                    -112.71
+                ],
+                [
+                    32.31999999999999,
+                    -113.33
+                ],
+                [
+                    35.589999999999996,
+                    -108.1
+                ],
+                [
+                    35.62,
+                    -111.27
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1155",
+        "issued_at": "2024-08-18T11:55:00+00:00",
+        "effective_at": "2024-08-18T11:55:00+00:00",
+        "expires_at": "2024-08-18T13:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "18C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    44.63,
+                    -99.84
+                ],
+                [
+                    42.18,
+                    -101.23
+                ],
+                [
+                    40.39,
+                    -99.98
+                ],
+                [
+                    42.72,
+                    -97.85000000000001
+                ],
+                [
+                    44.63,
+                    -99.84
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1155",
+        "issued_at": "2024-08-18T11:55:00+00:00",
+        "effective_at": "2024-08-18T11:55:00+00:00",
+        "expires_at": "2024-08-18T13:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "45W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    48.14,
+                    -121.25
+                ],
+                [
+                    47.79,
+                    -121.78
+                ],
+                [
+                    47.4,
+                    -120.45
+                ],
+                [
+                    48.14,
+                    -121.25
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1155",
+        "issued_at": "2024-08-18T11:55:00+00:00",
+        "effective_at": "2024-08-18T11:55:00+00:00",
+        "expires_at": "2024-08-18T13:55:00+00:00",
+        "fir": "KZOB",
+        "atsu": "KKCI",
+        "sequence": "48E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    43.6,
+                    -78.65
+                ],
+                [
+                    43.550000000000004,
+                    -79.47
+                ],
+                [
+                    42.81,
+                    -78.81
+                ],
+                [
+                    43.6,
+                    -78.65
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1055",
+        "issued_at": "2024-08-18T10:55:00+00:00",
+        "effective_at": "2024-08-18T10:55:00+00:00",
+        "expires_at": "2024-08-18T12:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "16C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    45.64,
+                    -103.7
+                ],
+                [
+                    44.75,
+                    -103.4599999
+                ],
+                [
+                    42.4099999,
+                    -98.9
+                ],
+                [
+                    42.78,
+                    -97.64
+                ],
+                [
+                    44.71,
+                    -99.99
+                ],
+                [
+                    45.64,
+                    -103.7
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1055",
+        "issued_at": "2024-08-18T10:55:00+00:00",
+        "effective_at": "2024-08-18T10:55:00+00:00",
+        "expires_at": "2024-08-18T12:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "41W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    48.39,
+                    -121.19
+                ],
+                [
+                    47.77,
+                    -122.31
+                ],
+                [
+                    46.74,
+                    -120.45
+                ],
+                [
+                    48.39,
+                    -121.19
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/1055",
+        "issued_at": "2024-08-18T10:55:00+00:00",
+        "effective_at": "2024-08-18T10:55:00+00:00",
+        "expires_at": "2024-08-18T12:55:00+00:00",
+        "fir": "KZOB",
+        "atsu": "KKCI",
+        "sequence": "46E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    43.67,
+                    -78.7099999
+                ],
+                [
+                    43.550000000000004,
+                    -79.47
+                ],
+                [
+                    42.81,
+                    -78.81
+                ],
+                [
+                    42.74,
+                    -78.02
+                ],
+                [
+                    43.67,
+                    -78.7099999
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0955",
+        "issued_at": "2024-08-18T09:55:00+00:00",
+        "effective_at": "2024-08-18T09:55:00+00:00",
+        "expires_at": "2024-08-18T11:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "14C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    45.64,
+                    -103.7
+                ],
+                [
+                    44.8,
+                    -104.17
+                ],
+                [
+                    42.879999999999995,
+                    -99.8199999
+                ],
+                [
+                    42.779999999999994,
+                    -97.64
+                ],
+                [
+                    44.709999999999994,
+                    -99.99
+                ],
+                [
+                    45.64,
+                    -103.7
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0955",
+        "issued_at": "2024-08-18T09:55:00+00:00",
+        "effective_at": "2024-08-18T09:55:00+00:00",
+        "expires_at": "2024-08-18T11:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "38W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    48.14,
+                    -121.25
+                ],
+                [
+                    47.09,
+                    -121.79
+                ],
+                [
+                    46.57,
+                    -120.45
+                ],
+                [
+                    47.7299999,
+                    -119.94
+                ],
+                [
+                    48.14,
+                    -121.25
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0955",
+        "issued_at": "2024-08-18T09:55:00+00:00",
+        "effective_at": "2024-08-18T09:55:00+00:00",
+        "expires_at": "2024-08-18T11:55:00+00:00",
+        "fir": "KZNY",
+        "atsu": "KKCI",
+        "sequence": "43E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    40.76,
+                    -74.18
+                ],
+                [
+                    40.339999999999996,
+                    -75.37
+                ],
+                [
+                    39.81999999999999,
+                    -74.86
+                ],
+                [
+                    40.00999999999999,
+                    -73.83
+                ],
+                [
+                    40.76,
+                    -74.18
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0855",
+        "issued_at": "2024-08-18T08:55:00+00:00",
+        "effective_at": "2024-08-18T08:55:00+00:00",
+        "expires_at": "2024-08-18T10:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "12C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    45.86,
+                    -104.18
+                ],
+                [
+                    45.15,
+                    -105.23
+                ],
+                [
+                    43.18,
+                    -99.64
+                ],
+                [
+                    44.08,
+                    -99.1
+                ],
+                [
+                    45.86,
+                    -104.18
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0855",
+        "issued_at": "2024-08-18T08:55:00+00:00",
+        "effective_at": "2024-08-18T08:55:00+00:00",
+        "expires_at": "2024-08-18T10:55:00+00:00",
+        "fir": "KZNY",
+        "atsu": "KKCI",
+        "sequence": "40E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    25.13,
+                    -74.6
+                ],
+                [
+                    25.165699999999998,
+                    -75.63489999999999
+                ],
+                [
+                    25.272799999999997,
+                    -76.66479999999999
+                ],
+                [
+                    25.450599999999998,
+                    -77.68489999999998
+                ],
+                [
+                    25.6985,
+                    -78.69029989999999
+                ],
+                [
+                    26.015,
+                    -79.67619999999998
+                ],
+                [
+                    26.3989,
+                    -80.63789999999997
+                ],
+                [
+                    26.848200000000002,
+                    -81.57079999999998
+                ],
+                [
+                    27.3607,
+                    -82.47059999999998
+                ],
+                [
+                    27.9342,
+                    -83.33279999999998
+                ],
+                [
+                    28.5657,
+                    -84.15339999999998
+                ],
+                [
+                    29.252399999999998,
+                    -84.92839999999998
+                ],
+                [
+                    29.990799999999997,
+                    -85.65429999999998
+                ],
+                [
+                    30.777699999999996,
+                    -86.32749999999997
+                ],
+                [
+                    31.608999999999995,
+                    -86.94479999999997
+                ],
+                [
+                    32.480999999999995,
+                    -87.50319999999998
+                ],
+                [
+                    33.389399999999995,
+                    -88.00019999999998
+                ],
+                [
+                    34.33,
+                    -88.43329999999997
+                ],
+                [
+                    35.2982,
+                    -88.80049999999997
+                ],
+                [
+                    36.2894,
+                    -89.09999999999997
+                ],
+                [
+                    37.2989,
+                    -89.33039999999997
+                ],
+                [
+                    38.32190000000001,
+                    -89.49059999999997
+                ],
+                [
+                    39.35360000000001,
+                    -89.57989999999997
+                ],
+                [
+                    40.38890000000001,
+                    -89.59779999999996
+                ],
+                [
+                    41.42300000000001,
+                    -89.54419999999996
+                ],
+                [
+                    42.45090000000001,
+                    -89.41939999999997
+                ],
+                [
+                    43.46779990000001,
+                    -89.22389999999997
+                ],
+                [
+                    44.46880000000001,
+                    -88.95879999999997
+                ],
+                [
+                    45.44910000000001,
+                    -88.62519999999996
+                ],
+                [
+                    46.40400000000001,
+                    -88.22489999999996
+                ],
+                [
+                    47.32909990000001,
+                    -87.75949999999996
+                ],
+                [
+                    48.219800000000006,
+                    -87.23149999999995
+                ],
+                [
+                    49.07200000000001,
+                    -86.64329999999995
+                ],
+                [
+                    49.88160000000001,
+                    -85.99769999999995
+                ],
+                [
+                    50.644700000000014,
+                    -85.29769999999995
+                ],
+                [
+                    51.357700000000015,
+                    -84.54679999999995
+                ],
+                [
+                    52.01720000000002,
+                    -83.74849999999995
+                ],
+                [
+                    52.62000000000002,
+                    -82.90659999999995
+                ],
+                [
+                    53.16330000000002,
+                    -82.02509999999995
+                ],
+                [
+                    53.64450000000002,
+                    -81.10829999999996
+                ],
+                [
+                    54.061300000000024,
+                    -80.16039999999995
+                ],
+                [
+                    54.41180000000002,
+                    -79.18599999999995
+                ],
+                [
+                    54.69410000000002,
+                    -78.18969999999995
+                ],
+                [
+                    54.90710000000002,
+                    -77.17639999999994
+                ],
+                [
+                    55.04960000000002,
+                    -76.15079999999995
+                ],
+                [
+                    55.12110000000002,
+                    -75.11769999999994
+                ],
+                [
+                    55.12110000000002,
+                    -74.08229999999995
+                ],
+                [
+                    55.04960000000002,
+                    -73.04919999999994
+                ],
+                [
+                    54.90710000000002,
+                    -72.02359999999994
+                ],
+                [
+                    54.69410000000002,
+                    -71.01029999999994
+                ],
+                [
+                    54.41180000000002,
+                    -70.01399999999994
+                ],
+                [
+                    54.061300000000024,
+                    -69.03959989999994
+                ],
+                [
+                    53.64450000000002,
+                    -68.09169999999995
+                ],
+                [
+                    53.16330000000002,
+                    -67.17489989999994
+                ],
+                [
+                    52.62000000000002,
+                    -66.29339999999995
+                ],
+                [
+                    52.01720000000002,
+                    -65.45149999999995
+                ],
+                [
+                    51.357700000000015,
+                    -64.65319999999996
+                ],
+                [
+                    50.644700000000014,
+                    -63.902299999999954
+                ],
+                [
+                    49.88160000000001,
+                    -63.20229999999995
+                ],
+                [
+                    49.07200000000001,
+                    -62.55669999999995
+                ],
+                [
+                    48.219800000000006,
+                    -61.96849999999995
+                ],
+                [
+                    47.32909990000001,
+                    -61.44049999999995
+                ],
+                [
+                    46.40400000000001,
+                    -60.97509999999995
+                ],
+                [
+                    45.44910000000001,
+                    -60.57479999999995
+                ],
+                [
+                    44.46880000000001,
+                    -60.24119999999995
+                ],
+                [
+                    43.46779990000001,
+                    -59.97609999999995
+                ],
+                [
+                    42.45090000000001,
+                    -59.78059999999995
+                ],
+                [
+                    41.42300000000001,
+                    -59.65579999999995
+                ],
+                [
+                    40.38890000000001,
+                    -59.60219999999995
+                ],
+                [
+                    39.35360000000001,
+                    -59.620099999999944
+                ],
+                [
+                    38.32190000000001,
+                    -59.709399999999945
+                ],
+                [
+                    37.2989,
+                    -59.86959999999995
+                ],
+                [
+                    36.2894,
+                    -60.09999999999995
+                ],
+                [
+                    35.2982,
+                    -60.399499999999954
+                ],
+                [
+                    34.33,
+                    -60.76669999999995
+                ],
+                [
+                    33.389399999999995,
+                    -61.199799999999954
+                ],
+                [
+                    32.480999999999995,
+                    -61.69679999999995
+                ],
+                [
+                    31.608999999999995,
+                    -62.25519999999995
+                ],
+                [
+                    30.777699999999996,
+                    -62.87249999999995
+                ],
+                [
+                    29.990799999999997,
+                    -63.545699999999954
+                ],
+                [
+                    29.252399999999998,
+                    -64.27159999999995
+                ],
+                [
+                    28.5657,
+                    -65.04659999999996
+                ],
+                [
+                    27.9342,
+                    -65.86719999999995
+                ],
+                [
+                    27.3607,
+                    -66.72939999999996
+                ],
+                [
+                    26.848200000000002,
+                    -67.62919999999995
+                ],
+                [
+                    26.3989,
+                    -68.56209999999996
+                ],
+                [
+                    26.015,
+                    -69.52379999999995
+                ],
+                [
+                    25.6985,
+                    -70.50969999999995
+                ],
+                [
+                    25.450599999999998,
+                    -71.51509999999995
+                ],
+                [
+                    25.272799999999997,
+                    -72.53519999999995
+                ],
+                [
+                    25.165699999999998,
+                    -73.56509999999994
+                ],
+                [
+                    25.13,
+                    -74.6
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0855",
+        "issued_at": "2024-08-18T08:55:00+00:00",
+        "effective_at": "2024-08-18T08:55:00+00:00",
+        "expires_at": "2024-08-18T10:55:00+00:00",
+        "fir": "KZSE",
+        "atsu": "KKCI",
+        "sequence": "35W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    49.01,
+                    -120.23
+                ],
+                [
+                    48.949999999999996,
+                    -123.09
+                ],
+                [
+                    47.44,
+                    -122.31
+                ],
+                [
+                    45.8,
+                    -120.91
+                ],
+                [
+                    49.01,
+                    -120.23
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0755",
+        "issued_at": "2024-08-18T07:55:00+00:00",
+        "effective_at": "2024-08-18T07:55:00+00:00",
+        "expires_at": "2024-08-18T09:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "11C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    44.99,
+                    -105.14
+                ],
+                [
+                    41.800000000000004,
+                    -102.03
+                ],
+                [
+                    43.93000000000001,
+                    -99.52
+                ],
+                [
+                    44.82000000000001,
+                    -100.85
+                ],
+                [
+                    44.99,
+                    -105.14
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0755",
+        "issued_at": "2024-08-18T07:55:00+00:00",
+        "effective_at": "2024-08-18T07:55:00+00:00",
+        "expires_at": "2024-08-18T09:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "31W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    38.07,
+                    -111.15
+                ],
+                [
+                    37.07,
+                    -111.98
+                ],
+                [
+                    36.12,
+                    -111.27000000000001
+                ],
+                [
+                    36.559999999999995,
+                    -109.93
+                ],
+                [
+                    38.07,
+                    -111.15
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0755",
+        "issued_at": "2024-08-18T07:55:00+00:00",
+        "effective_at": "2024-08-18T07:55:00+00:00",
+        "expires_at": "2024-08-18T09:55:00+00:00",
+        "fir": "KZBW",
+        "atsu": "KKCI",
+        "sequence": "37E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    41.42,
+                    -72.3199999
+                ],
+                [
+                    40.760000000000005,
+                    -74.7099999
+                ],
+                [
+                    39.71000000000001,
+                    -75.13
+                ],
+                [
+                    40.92000000000001,
+                    -71.66
+                ],
+                [
+                    41.42,
+                    -72.3199999
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0655",
+        "issued_at": "2024-08-18T06:55:00+00:00",
+        "effective_at": "2024-08-18T06:55:00+00:00",
+        "expires_at": "2024-08-18T08:55:00+00:00",
+        "fir": "KZMP",
+        "atsu": "KKCI",
+        "sequence": "10C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    45.02,
+                    -101.5
+                ],
+                [
+                    44.11000000000001,
+                    -102.58
+                ],
+                [
+                    43.18000000000001,
+                    -99.64
+                ],
+                [
+                    45.02,
+                    -101.5
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0655",
+        "issued_at": "2024-08-18T06:55:00+00:00",
+        "effective_at": "2024-08-18T06:55:00+00:00",
+        "expires_at": "2024-08-18T08:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "27W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    37.8,
+                    -111.02
+                ],
+                [
+                    37.449999999999996,
+                    -112.6
+                ],
+                [
+                    36.12,
+                    -111.27
+                ],
+                [
+                    36.29,
+                    -109.42999999999999
+                ],
+                [
+                    37.8,
+                    -111.02
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0655",
+        "issued_at": "2024-08-18T06:55:00+00:00",
+        "effective_at": "2024-08-18T06:55:00+00:00",
+        "expires_at": "2024-08-18T08:55:00+00:00",
+        "fir": "KZTL",
+        "atsu": "KKCI",
+        "sequence": "32E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    36.9,
+                    -81.89
+                ],
+                [
+                    35.199999999999996,
+                    -87.48
+                ],
+                [
+                    35.01,
+                    -86.54
+                ],
+                [
+                    36.29,
+                    -82.05000000000001
+                ],
+                [
+                    36.9,
+                    -81.89
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0555",
+        "issued_at": "2024-08-18T05:55:00+00:00",
+        "effective_at": "2024-08-18T05:55:00+00:00",
+        "expires_at": "2024-08-18T07:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "9C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    42.71,
+                    -102.36
+                ],
+                [
+                    42.14,
+                    -104.31
+                ],
+                [
+                    38.99,
+                    -103.52
+                ],
+                [
+                    42.71,
+                    -102.36
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0555",
+        "issued_at": "2024-08-18T05:55:00+00:00",
+        "effective_at": "2024-08-18T05:55:00+00:00",
+        "expires_at": "2024-08-18T07:55:00+00:00",
+        "fir": "KZDC",
+        "atsu": "KKCI",
+        "sequence": "26E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    38.24,
+                    -76.72
+                ],
+                [
+                    37,
+                    -77.3199999
+                ],
+                [
+                    37.12,
+                    -75.91
+                ],
+                [
+                    38.24,
+                    -76.72
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0555",
+        "issued_at": "2024-08-18T05:55:00+00:00",
+        "effective_at": "2024-08-18T05:55:00+00:00",
+        "expires_at": "2024-08-18T07:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "23W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    37.95,
+                    -110.1
+                ],
+                [
+                    37.57,
+                    -112.14999999999999
+                ],
+                [
+                    35.65,
+                    -111.85
+                ],
+                [
+                    35.879999999999995,
+                    -109.78
+                ],
+                [
+                    37.95,
+                    -110.1
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0455",
+        "issued_at": "2024-08-18T04:55:00+00:00",
+        "effective_at": "2024-08-18T04:55:00+00:00",
+        "expires_at": "2024-08-18T06:55:00+00:00",
+        "fir": "KZHU",
+        "atsu": "KKCI",
+        "sequence": "7C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    29.79,
+                    -90.18
+                ],
+                [
+                    29.169999999999998,
+                    -91.62
+                ],
+                [
+                    28.099999999999998,
+                    -90.61
+                ],
+                [
+                    29.79,
+                    -90.18
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0455",
+        "issued_at": "2024-08-18T04:55:00+00:00",
+        "effective_at": "2024-08-18T04:55:00+00:00",
+        "expires_at": "2024-08-18T06:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "19W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    38.78,
+                    -107.04
+                ],
+                [
+                    37.57,
+                    -112.15
+                ],
+                [
+                    35.65,
+                    -111.85000000000001
+                ],
+                [
+                    35.879999999999995,
+                    -109.78000000000002
+                ],
+                [
+                    38.78,
+                    -107.04
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0455",
+        "issued_at": "2024-08-18T04:55:00+00:00",
+        "effective_at": "2024-08-18T04:55:00+00:00",
+        "expires_at": "2024-08-18T06:55:00+00:00",
+        "fir": "KZDC",
+        "atsu": "KKCI",
+        "sequence": "23E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    38.24,
+                    -76.72
+                ],
+                [
+                    37,
+                    -77.3199999
+                ],
+                [
+                    37.12,
+                    -75.91
+                ],
+                [
+                    38.24,
+                    -76.72
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0355",
+        "issued_at": "2024-08-18T03:55:00+00:00",
+        "effective_at": "2024-08-18T03:55:00+00:00",
+        "expires_at": "2024-08-18T05:55:00+00:00",
+        "fir": "KZHU",
+        "atsu": "KKCI",
+        "sequence": "6C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    31.26,
+                    -92.11
+                ],
+                [
+                    29.19,
+                    -92.03
+                ],
+                [
+                    28.87,
+                    -90.25
+                ],
+                [
+                    30.73,
+                    -89.33
+                ],
+                [
+                    31.26,
+                    -92.11
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0355",
+        "issued_at": "2024-08-18T03:55:00+00:00",
+        "effective_at": "2024-08-18T03:55:00+00:00",
+        "expires_at": "2024-08-18T05:55:00+00:00",
+        "fir": "KZDC",
+        "atsu": "KKCI",
+        "sequence": "18E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.5,
+                    -76.12
+                ],
+                [
+                    37.15,
+                    -77.76
+                ],
+                [
+                    36.58,
+                    -76.36
+                ],
+                [
+                    38.79,
+                    -74.64
+                ],
+                [
+                    39.5,
+                    -76.12
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0355",
+        "issued_at": "2024-08-18T03:55:00+00:00",
+        "effective_at": "2024-08-18T03:55:00+00:00",
+        "expires_at": "2024-08-18T05:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "15W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    42.22,
+                    -103.48
+                ],
+                [
+                    40.699999999999996,
+                    -111.9
+                ],
+                [
+                    38.24999999999999,
+                    -115.24000000000001
+                ],
+                [
+                    35.169999999999995,
+                    -111.9
+                ],
+                [
+                    35.419999999999995,
+                    -107.95
+                ],
+                [
+                    42.22,
+                    -103.48
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0255",
+        "issued_at": "2024-08-18T02:55:00+00:00",
+        "effective_at": "2024-08-18T02:55:00+00:00",
+        "expires_at": "2024-08-18T04:55:00+00:00",
+        "fir": "KZHU",
+        "atsu": "KKCI",
+        "sequence": "5C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    31.26,
+                    -92.11
+                ],
+                [
+                    29.310000000000002,
+                    -92.17
+                ],
+                [
+                    29.180000000000003,
+                    -89.15
+                ],
+                [
+                    31.200000000000003,
+                    -88.91000000000001
+                ],
+                [
+                    31.26,
+                    -92.11
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0255",
+        "issued_at": "2024-08-18T02:55:00+00:00",
+        "effective_at": "2024-08-18T02:55:00+00:00",
+        "expires_at": "2024-08-18T04:55:00+00:00",
+        "fir": "KZDC",
+        "atsu": "KKCI",
+        "sequence": "12E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.5,
+                    -76.12
+                ],
+                [
+                    36.9099999,
+                    -78.06
+                ],
+                [
+                    36.440000000000005,
+                    -76.75
+                ],
+                [
+                    38.790000000000006,
+                    -74.9599999
+                ],
+                [
+                    39.5,
+                    -76.12
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0255",
+        "issued_at": "2024-08-18T02:55:00+00:00",
+        "effective_at": "2024-08-18T02:55:00+00:00",
+        "expires_at": "2024-08-18T04:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "11W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    42.2,
+                    -103.31
+                ],
+                [
+                    40.52,
+                    -111.98
+                ],
+                [
+                    37.790000000000006,
+                    -115.75
+                ],
+                [
+                    34.89000000000001,
+                    -111.92
+                ],
+                [
+                    35.040000000000006,
+                    -107.43
+                ],
+                [
+                    42.2,
+                    -103.31
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0155",
+        "issued_at": "2024-08-18T01:55:00+00:00",
+        "effective_at": "2024-08-18T01:55:00+00:00",
+        "expires_at": "2024-08-18T03:55:00+00:00",
+        "fir": "KZHU",
+        "atsu": "KKCI",
+        "sequence": "4C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    31.49,
+                    -92.22
+                ],
+                [
+                    29.77,
+                    -92.11
+                ],
+                [
+                    29.419999999999998,
+                    -90.37
+                ],
+                [
+                    29.729999999999997,
+                    -88.36
+                ],
+                [
+                    31.4,
+                    -88.36
+                ],
+                [
+                    31.49,
+                    -92.22
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0155",
+        "issued_at": "2024-08-18T01:55:00+00:00",
+        "effective_at": "2024-08-18T01:55:00+00:00",
+        "expires_at": "2024-08-18T03:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "6W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    41.89,
+                    -104.15
+                ],
+                [
+                    40.5,
+                    -112.44
+                ],
+                [
+                    37.86,
+                    -115.56
+                ],
+                [
+                    34.44,
+                    -111.73
+                ],
+                [
+                    38.419999999999995,
+                    -104.8199999
+                ],
+                [
+                    41.89,
+                    -104.15
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0155",
+        "issued_at": "2024-08-18T01:55:00+00:00",
+        "effective_at": "2024-08-18T01:55:00+00:00",
+        "expires_at": "2024-08-18T03:55:00+00:00",
+        "fir": "KZDC",
+        "atsu": "KKCI",
+        "sequence": "7E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.97,
+                    -76.22
+                ],
+                [
+                    36.64,
+                    -78.38
+                ],
+                [
+                    36.25,
+                    -77
+                ],
+                [
+                    39.1,
+                    -74.8
+                ],
+                [
+                    39.97,
+                    -76.22
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0055",
+        "issued_at": "2024-08-18T00:55:00+00:00",
+        "effective_at": "2024-08-18T00:55:00+00:00",
+        "expires_at": "2024-08-18T02:55:00+00:00",
+        "fir": "KZHU",
+        "atsu": "KKCI",
+        "sequence": "1C",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    32.22,
+                    -87.11
+                ],
+                [
+                    32.199999999999996,
+                    -92.94
+                ],
+                [
+                    30.489999999999995,
+                    -92.7
+                ],
+                [
+                    29.519999999999996,
+                    -90
+                ],
+                [
+                    30.059999999999995,
+                    -87.05
+                ],
+                [
+                    32.22,
+                    -87.11
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0055",
+        "issued_at": "2024-08-18T00:55:00+00:00",
+        "effective_at": "2024-08-18T00:55:00+00:00",
+        "expires_at": "2024-08-18T02:55:00+00:00",
+        "fir": "KZDC",
+        "atsu": "KKCI",
+        "sequence": "1E",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    39.97,
+                    -76.22
+                ],
+                [
+                    36.54,
+                    -78.78
+                ],
+                [
+                    36.24,
+                    -77.42
+                ],
+                [
+                    39.25,
+                    -74.88
+                ],
+                [
+                    39.97,
+                    -76.22
+                ]
+            ]
+        ]
+    },
+    {
+        "sigmets_url": "https://api.weather.gov/aviation/sigmets/KKCI/2024-08-18/0055",
+        "issued_at": "2024-08-18T00:55:00+00:00",
+        "effective_at": "2024-08-18T00:55:00+00:00",
+        "expires_at": "2024-08-18T02:55:00+00:00",
+        "fir": "KZDV",
+        "atsu": "KKCI",
+        "sequence": "1W",
+        "phenomenon": null,
+        "area_polygon": [
+            [
+                [
+                    43.09,
+                    -107.19
+                ],
+                [
+                    37.790000000000006,
+                    -115.75
+                ],
+                [
+                    34.800000000000004,
+                    -111.55
+                ],
+                [
+                    37.970000000000006,
+                    -105.39999999999999
+                ],
+                [
+                    40.75000000000001,
+                    -103.44999999999999
+                ],
+                [
+                    43.09,
+                    -107.19
+                ]
+            ]
+        ]
+    }
+]

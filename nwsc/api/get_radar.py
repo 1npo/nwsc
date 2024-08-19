@@ -4,8 +4,8 @@ from nwsc.render.decorators import display_spinner
 from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api import (
-	API_URL_NWS_RADAR_SERVERS,
-    API_URL_NWS_RADAR_STATIONS,
+	NWS_API_RADAR_SERVERS,
+    NWS_API_RADAR_STATIONS,
 	WMI_UNIT_MAP,
 )
 
@@ -178,7 +178,7 @@ def process_radar_server_data(radar_server_data: dict) -> dict:
 @display_spinner('Getting radar station alarms...')
 def get_radar_station_alarms(session: CachedSession, radar_station_id: str) -> dict:
 	""" """
-	radar_alarm_data = api_request(session, API_URL_NWS_RADAR_STATIONS + radar_station_id + '/alarms')
+	radar_alarm_data = api_request(session, NWS_API_RADAR_STATIONS + radar_station_id + '/alarms')
 	radar_alarms = []
 	for alarm in radar_alarm_data.get('@graph', {}):
 		alarm = {
@@ -194,7 +194,7 @@ def get_radar_station_alarms(session: CachedSession, radar_station_id: str) -> d
 @display_spinner('Getting radar stations...')
 def get_radar_stations(session: CachedSession) -> list:
 	""" """
-	radar_stations_data = api_request(session, API_URL_NWS_RADAR_STATIONS)
+	radar_stations_data = api_request(session, NWS_API_RADAR_STATIONS)
 	stations = []
 	for feature in radar_stations_data.get('features', {}):
 		station = process_radar_station_data(feature)
@@ -205,7 +205,7 @@ def get_radar_stations(session: CachedSession) -> list:
 @display_spinner('Getting radar station details...')
 def get_radar_station(session: CachedSession, station_id: str) -> dict:
 	""" """
-	radar_station_data = api_request(session, API_URL_NWS_RADAR_STATIONS + station_id)
+	radar_station_data = api_request(session, NWS_API_RADAR_STATIONS + station_id)
 	station = process_radar_station_data(radar_station_data)
 	return station
 
@@ -222,7 +222,7 @@ def get_radar_station(session: CachedSession, station_id: str) -> dict:
 @display_spinner('Getting radar servers...')
 def get_radar_servers(session: CachedSession) -> list:
 	""" """
-	radar_servers_data = api_request(session, API_URL_NWS_RADAR_SERVERS)
+	radar_servers_data = api_request(session, NWS_API_RADAR_SERVERS)
 	servers = []
 	for feature in radar_servers_data.get('@graph', {}):
 		server = process_radar_server_data(feature)
@@ -233,6 +233,6 @@ def get_radar_servers(session: CachedSession) -> list:
 @display_spinner('Getting radar server details...')
 def get_radar_server(session: CachedSession, server_id: str) -> dict:
 	""" """
-	radar_server_data = api_request(session, API_URL_NWS_RADAR_SERVERS + server_id)
+	radar_server_data = api_request(session, NWS_API_RADAR_SERVERS + server_id)
 	return process_radar_server_data(radar_server_data)
 

@@ -9,16 +9,17 @@ from rich.pretty import pprint
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
-from nwsc.api.get_location import *
-from nwsc.api.get_weather import *	
-from nwsc.api.get_stations import *
-from nwsc.api.get_radar import *
-from nwsc.api.get_products import *
-from nwsc.api.get_offices import *
-from nwsc.api.get_glossary import *
 from nwsc.api.get_alerts import *
-from nwsc.api.get_zones import *
+from nwsc.api.get_aviation import *
 from nwsc.api.get_enums import *
+from nwsc.api.get_glossary import *
+from nwsc.api.get_location import *
+from nwsc.api.get_offices import *
+from nwsc.api.get_products import *
+from nwsc.api.get_radar import *
+from nwsc.api.get_stations import *
+from nwsc.api.get_weather import *
+from nwsc.api.get_zones import *
 
 
 def get_raw_nws_data(session: CachedSession, address: str) -> dict:
@@ -74,6 +75,15 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	office_headlines = get_office_headlines(session, 'BOX')
 	office_headline = get_office_headline(session, 'BOX', 'a194056daf964fce962ec37e0d6dcdef')
 
+	# aviation
+	sigmets = get_all_sigmets(session)
+	atsu_sigmets = get_all_atsu_sigmets(session, 'KKCI')
+	atsu_date_sigmets = get_all_atsu_sigmets_by_date(session, 'KKCI', '2024-08-18')
+	sigmet = get_sigmet(session, 'KKCI', '2024-08-18', '0455')
+	cwsu = get_cwsu(session, 'ZOB')
+	cwas = get_cwas(session, 'ZOB')
+	cwa = get_cwa(session, 'ZOB', '2024-08-17', 101)
+
 	weather_data = {
 		'location_data':					location_data,
 		'local_stations_data':				local_stations_data,
@@ -108,6 +118,13 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 		'office':							office,
 		'office_headlines':					office_headlines,
 		'office_headline':					office_headline,
+		'sigmets':							sigmets,
+		'atsu_sigmets':						atsu_sigmets,
+		'atsu_date_sigmets':				atsu_date_sigmets,
+		'sigmet':							sigmet,
+		'cwas':								cwas,
+		'cwa':								cwa,
+		'cwsu':								cwsu,
 	}
 	return weather_data
 
@@ -127,6 +144,6 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		if name in ('office_headlines', 'office_headline', 'office'):
+		if name in ('cwas', 'cwa', 'cwsu'):
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)

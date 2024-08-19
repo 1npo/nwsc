@@ -7,12 +7,12 @@ from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api import (
-	API_URL_NWS_ALERTS_AREA,
-    API_URL_NWS_ALERTS_ZONE,
-    API_URL_NWS_ALERTS_REGION,
-    API_URL_NWS_ALERTS,
-    API_URL_NWS_ALERT_TYPES,
-    API_URL_NWS_ALERT_COUNTS,
+	NWS_API_ALERTS_AREA,
+    NWS_API_ALERTS_ZONE,
+    NWS_API_ALERTS_REGION,
+    NWS_API_ALERTS,
+    NWS_API_ALERT_TYPES,
+    NWS_API_ALERT_COUNTS,
 )
 
 
@@ -70,40 +70,40 @@ def process_alert_data(alerts_data: dict) -> list:
 
 @display_spinner('Getting all alerts...')
 def get_alerts(session: CachedSession) -> list:
-	alerts = api_request(session, API_URL_NWS_ALERTS)
+	alerts = api_request(session, NWS_API_ALERTS)
 	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for the local area...')
 def get_alerts_by_area(session: CachedSession, area: str) -> list:
-	alerts = api_request(session, API_URL_NWS_ALERTS_AREA + area)
+	alerts = api_request(session, NWS_API_ALERTS_AREA + area)
 	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for zone...')
 def get_alerts_by_zone(session: CachedSession, zone: str) -> list:
-	alerts = api_request(session, API_URL_NWS_ALERTS_ZONE + zone)
+	alerts = api_request(session, NWS_API_ALERTS_ZONE + zone)
 	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for marine region...')
 def get_alerts_by_region(session: CachedSession, region: str) -> list:
-	alerts = api_request(session, API_URL_NWS_ALERTS_REGION + region)
+	alerts = api_request(session, NWS_API_ALERTS_REGION + region)
 	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for marine region...')
 def get_alerts_by_id(session: CachedSession, alert_id: str) -> list:
-	alerts = api_request(session, API_URL_NWS_ALERTS + alert_id)
+	alerts = api_request(session, NWS_API_ALERTS + alert_id)
 	return process_alert_data({'features': [alerts]})
 
 
 @display_spinner('Getting alert types...')
 def get_alert_types(session: CachedSession) -> list:
-	alert_types_data = api_request(session, API_URL_NWS_ALERT_TYPES)
+	alert_types_data = api_request(session, NWS_API_ALERT_TYPES)
 	return alert_types_data.get('eventTypes')
 
 
 @display_spinner('Getting alert counts...')
 def get_alert_counts(session: CachedSession) -> list:
-	return api_request(session, API_URL_NWS_ALERT_COUNTS)
+	return api_request(session, NWS_API_ALERT_COUNTS)

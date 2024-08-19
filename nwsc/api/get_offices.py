@@ -3,7 +3,7 @@ from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
 from nwsc.api import (
-    API_URL_NWS_OFFICES,
+    NWS_API_OFFICES,
     VALID_NWS_FORECAST_OFFICES,
 )
 
@@ -32,7 +32,7 @@ def process_headline_data(headline: dict) -> dict:
 def get_office_headlines(session: CachedSession, office_id: str) -> dict:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
-    headlines_data = api_request(session, API_URL_NWS_OFFICES + office_id + '/headlines')
+    headlines_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines')
     headlines = []
     for headline in headlines_data.get('@graph', {}):
         headlines.append(process_headline_data(headline))
@@ -43,7 +43,7 @@ def get_office_headlines(session: CachedSession, office_id: str) -> dict:
 def get_office_headline(session: CachedSession, office_id: str, headline_id: str) -> dict:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
-    headline_data = api_request(session, API_URL_NWS_OFFICES + office_id + '/headlines/' + headline_id)
+    headline_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines/' + headline_id)
     return process_headline_data(headline_data)
 
 
@@ -51,7 +51,7 @@ def get_office_headline(session: CachedSession, office_id: str, headline_id: str
 def get_office(session: CachedSession, office_id: str) -> dict:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
-    office_data = api_request(session, API_URL_NWS_OFFICES + office_id)
+    office_data = api_request(session, NWS_API_OFFICES + office_id)
     return {
         'office_id':            office_data.get('id'),
         'office_name':          office_data.get('name'),

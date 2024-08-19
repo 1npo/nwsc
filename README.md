@@ -106,13 +106,13 @@ A full-coverage National Weather Service API client for the terminal
 - [x] /alerts/active/region/{region}
 - [x] /alerts/types
 - [x] /alerts/{id}
-- [ ] /aviation/cwsus/{cwsuId}
-- [ ] /aviation/cwsus/{cwsuId}/cwas
-- [ ] /aviation/cwsus/{cwsuId}/cwas/{date}/{sequence}
-- [ ] /aviation/sigmets
-- [ ] /aviation/sigmets/{atsu}
-- [ ] /aviation/sigmets/{atsu}/{date}
-- [ ] /aviation/sigmets/{atsu}/{date}/{time}
+- [x] /aviation/cwsus/{cwsuId}
+- [x] /aviation/cwsus/{cwsuId}/cwas
+- [x] /aviation/cwsus/{cwsuId}/cwas/{date}/{sequence}
+- [x] /aviation/sigmets
+- [x] /aviation/sigmets/{atsu}
+- [x] /aviation/sigmets/{atsu}/{date}
+- [x] /aviation/sigmets/{atsu}/{date}/{time}
 - [x] /glossary
 - [x] /gridpoints/{wfo}/{x},{y}
 - [x] /gridpoints/{wfo}/{x},{y}/forecast
@@ -157,10 +157,10 @@ A full-coverage National Weather Service API client for the terminal
 - [x] /zones/forecast/{zoneId}/stations
 
 ## Purpose and Audience
-I made `nwsc` for myself as a labor of love, mainly for the reasons I list below. But I tried to make it robust, user-friendly, and maintainable for anyone else who may find it useful.
+I made `nwsc` for myself as a labor of love, mainly for the reasons I list below. But I tried to make it robust, user friendly, and maintainable for anyone else who may find it useful.
 
 - I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience. I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance, in a visually pleasing way.
-- I wanted to start a **serious** software project, get an MVP released, and execute it well. This project had just the right stuff to keep me interested, challenged, and motivated long enough to produce an MVP.
+- I wanted to start a **serious, high-quality** software project, get an MVP released, and execute it well. This project had just the right stuff to keep me interested, challenged, and motivated long enough to produce an MVP.
 
 ## System Design
 ### App Architecture

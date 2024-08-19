@@ -16,12 +16,20 @@
         "product_name": "Climatological Report (Daily)"
     },
     {
+        "product_code": "FFS",
+        "product_name": "Flash Flood Statement"
+    },
+    {
         "product_code": "FFW",
         "product_name": "Flash Flood Warning"
     },
     {
         "product_code": "FLS",
         "product_name": "Flood Statement"
+    },
+    {
+        "product_code": "FLW",
+        "product_name": "Flood Warning"
     },
     {
         "product_code": "FWF",
@@ -60,6 +68,10 @@
         "product_name": "Local Storm Report"
     },
     {
+        "product_code": "NPW",
+        "product_name": "Non-Precipitation Warnings / Watches / Advisories"
+    },
+    {
         "product_code": "PFM",
         "product_name": "Point Forecast Matrices"
     },
@@ -70,6 +82,10 @@
     {
         "product_code": "REC",
         "product_name": "Recreational Report"
+    },
+    {
+        "product_code": "RER",
+        "product_name": "Record Report"
     },
     {
         "product_code": "RR1",
@@ -122,6 +138,10 @@
     {
         "product_code": "VFT",
         "product_name": "Terminal Aerodrome Forecast (TAF) Verification"
+    },
+    {
+        "product_code": "WCN",
+        "product_name": "Weather Watch Clearance Notification"
     },
     {
         "product_code": "ZFP",

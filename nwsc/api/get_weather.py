@@ -8,7 +8,7 @@ from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api.conversions import convert_measures
 from nwsc.api import (
-	API_URL_NWS_STATIONS,
+	NWS_API_STATIONS,
 	METAR_CLOUD_COVER_MAP,
 	WMI_UNIT_MAP
 )
@@ -100,7 +100,7 @@ def process_forecast_data(session: CachedSession, forecast_url: str) -> dict:
 
 @display_spinner('Getting all station observations...')
 def get_all_observations(session: CachedSession, station_id: str) -> dict:
-	observations_data = api_request(session, API_URL_NWS_STATIONS + station_id + '/observations')
+	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations')
 	observations = []
 	for feature in observations_data.get('features', {}):
 		observations.append(process_observations_data(feature))
@@ -109,13 +109,13 @@ def get_all_observations(session: CachedSession, station_id: str) -> dict:
 
 @display_spinner('Getting latest station observations...')
 def get_latest_observations(session: CachedSession, station_id: str) -> dict:
-	observations_data = api_request(session, API_URL_NWS_STATIONS + station_id + '/observations/latest')
+	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/latest')
 	return process_observations_data(observations_data)
 
 
 @display_spinner('Getting station observations at the given time...')
 def get_observations_at_time(session: CachedSession, station_id: str, timestamp: str) -> dict:
-	observations_data = api_request(session, API_URL_NWS_STATIONS + station_id + '/observations/' + timestamp)
+	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/' + timestamp)
 	return process_observations_data(observations_data)
 
 

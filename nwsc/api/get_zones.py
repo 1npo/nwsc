@@ -7,8 +7,8 @@ from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api.get_stations import process_station_data
 from nwsc.api.get_weather import process_observations_data
 from nwsc.api import (
-    API_URL_NWS_ZONES,
-    API_URL_NWS_ZONE_FORECASTS,
+    NWS_API_ZONES,
+    NWS_API_ZONE_FORECASTS,
     VALID_NWS_ZONES,
 )
 
@@ -39,16 +39,16 @@ def process_zone_data(zone_data: list) -> dict:
 def get_zone(session: CachedSession, zone_type: str, zone_id: str) -> dict:
     if zone_type not in VALID_NWS_ZONES:
         raise ValueError(f'Invalid zone type provided: {zone_type}. Valid zones are: {", ".join(VALID_NWS_ZONES)}')
-    zone_data = api_request(session, API_URL_NWS_ZONES + f'/{zone_type}/{zone_id}')
+    zone_data = api_request(session, NWS_API_ZONES + f'/{zone_type}/{zone_id}')
     return process_zone_data(zone_data)
 
 
 @display_spinner('Getting all zones...')
 def get_zones(session: CachedSession, zone_type: str = None) -> dict:
     if zone_type:
-        zones_data = api_request(session, API_URL_NWS_ZONES + f'/{zone_type}')
+        zones_data = api_request(session, NWS_API_ZONES + f'/{zone_type}')
     else:
-        zones_data = api_request(session, API_URL_NWS_ZONES)
+        zones_data = api_request(session, NWS_API_ZONES)
     zones = []
     for feature in zones_data.get('features', {}):
         zones.append(process_zone_data(feature))
@@ -57,7 +57,7 @@ def get_zones(session: CachedSession, zone_type: str = None) -> dict:
 
 @display_spinner('Getting stations servicing zone...')
 def get_zone_stations(session: CachedSession, zone_id: str) -> dict:
-    zone_stations_data = api_request(session, API_URL_NWS_ZONE_FORECASTS + f'/{zone_id}/stations')
+    zone_stations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'/{zone_id}/stations')
     zone_stations = []
     for feature in zone_stations_data.get('features', {}):
         zone_stations.append(process_station_data(feature))
@@ -66,7 +66,7 @@ def get_zone_stations(session: CachedSession, zone_id: str) -> dict:
 
 @display_spinner('Getting observations for zone...')
 def get_zone_observations(session: CachedSession, zone_id: str) -> dict:
-    zone_observations_data = api_request(session, API_URL_NWS_ZONE_FORECASTS + f'/{zone_id}/observations')
+    zone_observations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'/{zone_id}/observations')
     zone_observations = []
     for feature in zone_observations_data.get('features', {}):
         observation = process_observations_data(feature)
@@ -77,7 +77,7 @@ def get_zone_observations(session: CachedSession, zone_id: str) -> dict:
 
 @display_spinner('Getting forecast for zone...')
 def get_zone_forecast(session: CachedSession, zone_id: str) -> dict:
-    zone_forecast_data = api_request(session, API_URL_NWS_ZONE_FORECASTS + f'/{zone_id}/forecast')
+    zone_forecast_data = api_request(session, NWS_API_ZONE_FORECASTS + f'/{zone_id}/forecast')
     forecast = {'forecasted_at': parse_timestamp(zone_forecast_data.get('properties', {}).get('updated'))}
     period_forecasts = []
     for period in zone_forecast_data.get('properties', {}).get('periods', {}):

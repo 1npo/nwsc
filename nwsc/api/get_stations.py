@@ -6,8 +6,8 @@ from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request
 from nwsc.api import (
     WMI_UNIT_MAP,
-    API_URL_NWS_STATIONS,
-	API_URL_NWS_GRIDPOINTS,
+    NWS_API_STATIONS,
+	NWS_API_GRIDPOINTS,
 )
 
 
@@ -43,7 +43,7 @@ def get_stations(session: CachedSession, url: str) -> list:
 
 @display_spinner('Getting stations usable in grid area...')
 def get_stations_by_grid(session: CachedSession, forecast_office: str, gridpoints: dict) -> list:
-	return get_stations(session, API_URL_NWS_GRIDPOINTS + f'/{forecast_office}/{gridpoints}/stations')
+	return get_stations(session, NWS_API_GRIDPOINTS + f'/{forecast_office}/{gridpoints}/stations')
 
 
 @display_spinner('Getting local stations...')
@@ -53,7 +53,7 @@ def get_stations_near_location(session: CachedSession, location: dict) -> list:
 
 @display_spinner('Getting station...')
 def get_station(session: CachedSession, station_id: dict) -> dict:
-	station_data = api_request(session, API_URL_NWS_STATIONS + station_id)
+	station_data = api_request(session, NWS_API_STATIONS + station_id)
 	station = process_station_data(station_data)
 	station = convert_measures(station)
 	return station

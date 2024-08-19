@@ -4,13 +4,13 @@ from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
-from nwsc.api import API_URL_USCB_GEOCODE, API_URL_NWS_POINTS
+from nwsc.api import USCB_API_GEOCODE, NWS_API_POINTS
 
 
 # See: https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html
 def uscb_geocode(session: CachedSession, address: str) -> Tuple[float, float] | None:
 	"""Get the lat and lon for a street address using the US Census Bureau's free geocoding API"""
-	coord_data = api_request(session, API_URL_USCB_GEOCODE + address.replace(' ', '+'))
+	coord_data = api_request(session, USCB_API_GEOCODE + address.replace(' ', '+'))
 	try:
 		coords = coord_data['result']['addressMatches'][0]['coordinates']
 		lat = round(coords['y'], 2)
@@ -25,7 +25,7 @@ def uscb_geocode(session: CachedSession, address: str) -> Tuple[float, float] | 
 def get_points_for_location(session: CachedSession, address: str) -> dict:
 	coords = uscb_geocode(session, address)
 	coords_str = f'{coords[0]},{coords[1]}'
-	location_data = api_request(session, API_URL_NWS_POINTS + coords_str)
+	location_data = api_request(session, NWS_API_POINTS + coords_str)
 	location = {
 		'city':                     location_data.get('properties', {}).get('relativeLocation', {}).get('properties', {}).get('city'),
 		'state':                    location_data.get('properties', {}).get('relativeLocation', {}).get('properties', {}).get('state'),

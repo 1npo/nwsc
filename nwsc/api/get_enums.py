@@ -11,8 +11,8 @@ from loguru import logger
 from rich.pretty import pprint
 from nwsc.api.api_request import api_request
 from nwsc.api import (
-    API_URL_NWS_ZONES,
-    API_URL_NWS_OFFICES,
+    NWS_API_ZONES,
+    NWS_API_OFFICES,
     INVALID_ENUM_MESSAGE_DELIMITER,
     FAILED_TO_GET_ENUM_MESSAGE,
 )
@@ -36,14 +36,14 @@ def process_error_response(parameter_errors: dict, failure_message: str) -> Unio
 
 
 def get_valid_zones(session: CachedSession) -> list:
-    enum_data = api_request(session, API_URL_NWS_ZONES + 'DEADBEEF')
+    enum_data = api_request(session, NWS_API_ZONES + 'DEADBEEF')
     parameter_errors = enum_data.get('parameterErrors', {})
     failure_message = Template(FAILED_TO_GET_ENUM_MESSAGE).substitute(enum_type='zones')
     return process_error_response(parameter_errors, failure_message)
 
 
 def get_valid_forecast_offices(session: CachedSession) -> list:
-    enum_data = api_request(session, API_URL_NWS_OFFICES + 'DEADBEEF')
+    enum_data = api_request(session, NWS_API_OFFICES + 'DEADBEEF')
     parameter_errors = enum_data.get('parameterErrors', {})
     failure_message = Template(FAILED_TO_GET_ENUM_MESSAGE).substitute(enum_type='forecast offices')
     return process_error_response(parameter_errors, failure_message)
