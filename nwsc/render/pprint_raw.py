@@ -62,7 +62,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	# zones
 	zone = get_zone(session, 'county', 'AKC013')
 	zones = get_zones(session, 'coastal')
-	zone_stations = get_zone_stations(session, 'NJC003')
+	zone_stations = get_zone_stations(session, 'TXZ120')
 	zone_observations = get_zone_observations(session, 'TNZ061')
 	zone_forecast = get_zone_forecast(session, 'TXZ120')
 
@@ -144,6 +144,6 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		if name in ('cwas', 'cwa', 'cwsu'):
+		if name == 'zone_stations':
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)

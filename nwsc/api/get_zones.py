@@ -57,7 +57,7 @@ def get_zones(session: CachedSession, zone_type: str = None) -> dict:
 
 @display_spinner('Getting stations servicing zone...')
 def get_zone_stations(session: CachedSession, zone_id: str) -> dict:
-    zone_stations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'/{zone_id}/stations')
+    zone_stations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/stations')
     zone_stations = []
     for feature in zone_stations_data.get('features', {}):
         zone_stations.append(process_station_data(feature))
@@ -66,7 +66,7 @@ def get_zone_stations(session: CachedSession, zone_id: str) -> dict:
 
 @display_spinner('Getting observations for zone...')
 def get_zone_observations(session: CachedSession, zone_id: str) -> dict:
-    zone_observations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'/{zone_id}/observations')
+    zone_observations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/observations')
     zone_observations = []
     for feature in zone_observations_data.get('features', {}):
         observation = process_observations_data(feature)
@@ -77,7 +77,7 @@ def get_zone_observations(session: CachedSession, zone_id: str) -> dict:
 
 @display_spinner('Getting forecast for zone...')
 def get_zone_forecast(session: CachedSession, zone_id: str) -> dict:
-    zone_forecast_data = api_request(session, NWS_API_ZONE_FORECASTS + f'/{zone_id}/forecast')
+    zone_forecast_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/forecast')
     forecast = {'forecasted_at': parse_timestamp(zone_forecast_data.get('properties', {}).get('updated'))}
     period_forecasts = []
     for period in zone_forecast_data.get('properties', {}).get('periods', {}):

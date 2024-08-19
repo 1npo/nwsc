@@ -14,12 +14,13 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   
 ## Data
 ### Retrieval & Processing
-- [ ] Finish writing API request functions for all endpoints
+- [x] Finish writing API request functions for all endpoints
 - [x] Add wind speed/direction string and measurement conversions to `nwsc.api.conversions` without using dataframes
-- [ ] Fix `get_zone_stations` - it's returning an empty list
-  - [ ] Re-generate `tests/test_data/nws_raw_zone_stations.json`
+- [x] Fix `get_zone_stations` - it's returning an empty list
+  - [x] Re-generate `tests/test_data/nws_raw_zone_stations.json`
 - [x] Revamp or remove `cache.py`: use `requests-cache` instead of rolling your own cache manager
 - [x] Write `nwsc.api.get_enums` to extract `VALID_NWS_ZONES` and `VALID_NWS_FORECAST_OFFICES` enums programmatically from API error responses
+- [ ] Clean up and standardize all `nwsc.api.*` modules
 ### Modeling
 - [ ] Finish fleshing out dataclasses for all NWS data
 - [ ] Update `nwsc.api.*` to use dataclasess instead of dicts

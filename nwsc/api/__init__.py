@@ -23,7 +23,7 @@ NWS_API_PRODUCT_TYPES = 'http://api.weather.gov/products/types'
 NWS_API_RADAR_SERVERS = 'http://api.weather.gov/radar/servers/'
 NWS_API_RADAR_STATIONS = 'http://api.weather.gov/radar/stations/'
 NWS_API_STATIONS = 'http://api.weather.gov/stations/'
-NWS_API_ZONE_FORECASTS = 'http://api.weather.gov/zones/forecast'
+NWS_API_ZONE_FORECASTS = 'http://api.weather.gov/zones/forecast/'
 NWS_API_ZONES = 'http://api.weather.gov/zones/'
 
 # See: https://codes.wmo.int/common/unit

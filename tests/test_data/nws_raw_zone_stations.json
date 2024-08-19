@@ -1,1 +1,106 @@
-[]
+[
+    {
+        "station_lat": -96.85506,
+        "station_lon": 32.85416,
+        "station_id": "KDAL",
+        "station_name": "Dallas Love Field",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 145.0848
+    },
+    {
+        "station_lat": -97.02196,
+        "station_lon": 32.89743,
+        "station_id": "KDFW",
+        "station_name": "Dallas/Fort Worth International Airport",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 164.8968
+    },
+    {
+        "station_lat": -97.20061,
+        "station_lon": 33.20505,
+        "station_id": "KDTO",
+        "station_name": "Denton Enterprise Airport",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 198.12
+    },
+    {
+        "station_lat": -97.36417,
+        "station_lon": 32.82528,
+        "station_id": "KFTW",
+        "station_name": "Fort Worth, Meacham International Airport",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 216.1032
+    },
+    {
+        "station_lat": -97.09509,
+        "station_lon": 32.65829,
+        "station_id": "KGKY",
+        "station_name": "Arlington Municipal Airport",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 178.9176
+    },
+    {
+        "station_lat": -97.19694,
+        "station_lon": 33.65139,
+        "station_id": "KGLE",
+        "station_name": "Gainesville, Gainesville Municipal Airport",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 256.032
+    },
+    {
+        "station_lat": -96.06667,
+        "station_lon": 33.06667,
+        "station_id": "KGVT",
+        "station_name": "Greenville / Majors",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 163.068
+    },
+    {
+        "station_lat": -93.91667,
+        "station_lon": 44.21667,
+        "station_id": "KMKT",
+        "station_name": "Mankato, Mankato Regional Airport",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 310.896
+    },
+    {
+        "station_lat": -95.45,
+        "station_lon": 33.63333,
+        "station_id": "KPRX",
+        "station_name": "Paris / Cox Field",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 167.0304
+    },
+    {
+        "station_lat": -96.86389,
+        "station_lon": 32.67583,
+        "station_id": "KRBD",
+        "station_name": "Dallas, Redbird Airport",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 200.8632
+    },
+    {
+        "station_lat": -98.49278,
+        "station_lon": 33.97861,
+        "station_id": "KSPS",
+        "station_name": "Wichita Falls, Sheppard Air Force Base",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 309.0672
+    },
+    {
+        "station_lat": -96.26833,
+        "station_lon": 32.71361,
+        "station_id": "KTRL",
+        "station_name": "Terrell, Terrell Municipal Airport",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 143.8656
+    },
+    {
+        "station_lat": -95.40389,
+        "station_lon": 32.35861,
+        "station_id": "KTYR",
+        "station_name": "Tyler, Tyler Pounds Field",
+        "station_timezone": "America/Chicago",
+        "station_elevation_m": 164.8968
+    }
+]
