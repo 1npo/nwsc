@@ -86,6 +86,7 @@ A full-coverage National Weather Service API client for the terminal
 > - `/icons/{set}/{timeOfDay}/{first}/{second}`
 > - `/icons`
 > - `/thumbnails/satellite/{area}`
+> - `/points/{point}/stations`
 
 > [!NOTE] 
 > **The following endpoints are unexpectedly responding with a 404 (https://github.com/weather-gov/api/discussions/756)**
@@ -128,11 +129,11 @@ A full-coverage National Weather Service API client for the terminal
 - [ ] ~~/stations/{stationId}/tafs/{date}/{time}~~ (**EMPTY RESPONSES**)
 - [x] /stations
 - [x] /stations/{stationId}
-- [ ] /offices/{officeId}
-- [ ] /offices/{officeId}/headlines/{headlineId}
-- [ ] /offices/{officeId}/headlines
+- [x] /offices/{officeId}
+- [x] /offices/{officeId}/headlines/{headlineId}
+- [x] /offices/{officeId}/headlines
 - [x] /points/{point}
-- [x] /points/{point}/stations
+- [ ] ~~/points/{point}/stations~~ (**DEPRECATED**)
 - [x] /radar/servers
 - [x] /radar/servers/{id}
 - [x] /radar/stations
@@ -159,8 +160,7 @@ A full-coverage National Weather Service API client for the terminal
 I made `nwsc` mainly for myself, for a few reasons I list below. But I tried to design and build it well in case other people find it useful.
 
 - I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience. I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance, in a visually pleasing way.
-- I wanted to start and *actually finish* a "serious" software project, and this one had enough elements to keep me interested and motivated long enough to produce an MVP.
-- I think it's so cool that we can see so much detail about the status of the nation's weather radars, even down to how full a generator's fuel tank is. So I thought it would be neat to see all this data presented in a nice way.
+- I wanted to start a **serious** software project, get an MVP released, and execute it well. This project had just the right stuff to keep me interested, challenged, and motivated long enough to produce an MVP.
 
 ## System Design
 ### App Architecture

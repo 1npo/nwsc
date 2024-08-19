@@ -69,6 +69,11 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	valid_zones = get_valid_zones(session)
 	valid_forecast_offices = get_valid_forecast_offices(session)
 
+	# offices
+	office = get_office(session, 'BOX')
+	office_headlines = get_office_headlines(session, 'BOX')
+	office_headline = get_office_headline(session, 'BOX', 'a194056daf964fce962ec37e0d6dcdef')
+
 	weather_data = {
 		'location_data':					location_data,
 		'local_stations_data':				local_stations_data,
@@ -100,6 +105,9 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 		'zone_forecast':					zone_forecast,
 		'valid_zones':						valid_zones,
 		'valid_forecast_offices':			valid_forecast_offices,
+		'office':							office,
+		'office_headlines':					office_headlines,
+		'office_headline':					office_headline,
 	}
 	return weather_data
 
@@ -119,6 +127,6 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		if name in ('observations_at_time'):
+		if name in ('office_headlines', 'office_headline', 'office'):
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)
