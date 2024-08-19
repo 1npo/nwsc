@@ -34,14 +34,14 @@ def process_error_response(parameter_errors: dict, failure_message: str) -> dict
 
 
 def get_valid_zones(session: CachedSession) -> dict:
-    enum_data = api_request(session, API_URL_NWS_ZONES + '/DEADBEEF')
+    enum_data = api_request(session, API_URL_NWS_ZONES + 'DEADBEEF')
     parameter_errors = enum_data.get('parameterErrors', {})
     failure_message = Template(FAILED_TO_GET_ENUM_MESSAGE).substitute(enum_type='zones')
     return process_error_response(parameter_errors, failure_message)
 
 
 def get_valid_forecast_offices(session: CachedSession) -> dict:
-    enum_data = api_request(session, API_URL_NWS_OFFICES + '/DEADBEEF')
+    enum_data = api_request(session, API_URL_NWS_OFFICES + 'DEADBEEF')
     parameter_errors = enum_data.get('parameterErrors', {})
     failure_message = Template(FAILED_TO_GET_ENUM_MESSAGE).substitute(enum_type='forecast offices')
     return process_error_response(parameter_errors, failure_message)

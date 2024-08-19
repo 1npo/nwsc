@@ -1,15 +1,13 @@
 """
 """
 
-
+from urllib.parse import quote
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request, parse_timestamp
-from nwsc.api.geocode import uscb_geocode
 from nwsc.api.conversions import convert_measures
 from nwsc.api import (
-	API_URL_NWS_POINTS,
 	API_URL_NWS_STATIONS,
 	METAR_CLOUD_COVER_MAP,
 	WMI_UNIT_MAP
@@ -46,16 +44,18 @@ def process_observations_data(observations_data: list) -> dict:
 	for api_name, new_name in observation_type_names.items():
 		if api_name == 'cloudLayers':
 			cloud_layers = {}
-			for layer in observations_data.get('properties', {}).get(api_name):
-				layer_amount = METAR_CLOUD_COVER_MAP.get(layer.get('amount'))
-				layer_unit = WMI_UNIT_MAP.get(layer.get('base', {}).get('unitCode', {}))
-				layer_height = layer.get('base', {}).get('value')
-				if layer_height:
-					layer_name = f'{layer_height}{layer_unit}'
-				else:
-					layer_name = 'None'
-				cloud_layers.update({layer_name: layer_amount})
-			observations[new_name] = cloud_layers
+			cloud_layer_data = observations_data.get('properties')
+			if cloud_layer_data and isinstance(cloud_layer_data, dict):
+				for layer in cloud_layer_data.get(api_name):
+					layer_amount = METAR_CLOUD_COVER_MAP.get(layer.get('amount'))
+					layer_unit = WMI_UNIT_MAP.get(layer.get('base', {}).get('unitCode', {}))
+					layer_height = layer.get('base', {}).get('value')
+					if layer_height:
+						layer_name = f'{layer_height}{layer_unit}'
+					else:
+						layer_name = 'None'
+					cloud_layers.update({layer_name: layer_amount})
+				observations[new_name] = cloud_layers
 		else:
 			observation_unit = WMI_UNIT_MAP.get(observations_data.get('properties', {}).get(api_name, {}).get('unitCode'))
 			observations[f'{new_name}_{observation_unit}'] = observations_data.get('properties', {}).get(api_name, {}).get('value')
@@ -63,38 +63,7 @@ def process_observations_data(observations_data: list) -> dict:
 	return observations
 
 
-@display_spinner('Getting location data...')
-def get_location(session: CachedSession, address: str) -> dict:
-	"""Get weather station data for the given address"""
-	coords = uscb_geocode(session, address)
-	coords_str = f'{coords[0]},{coords[1]}'
-	location_data = api_request(session, API_URL_NWS_POINTS + coords_str)
-	location = {
-		'city':                     location_data.get('properties', {}).get('relativeLocation', {}).get('properties', {}).get('city'),
-		'state':                    location_data.get('properties', {}).get('relativeLocation', {}).get('properties', {}).get('state'),
-		'timezone':                 location_data.get('properties', {}).get('timeZone'),
-		'grid_x':                   location_data.get('properties', {}).get('gridX'),
-		'grid_y':                   location_data.get('properties', {}).get('gridY'),
-		'county_warning_area':      location_data.get('properties', {}).get('cwa'),
-		'forecast_office_url':      location_data.get('properties', {}).get('forecastOffice'),
-		'radar_station':            location_data.get('properties', {}).get('radarStation'),
-		'forecast_extended_url':    location_data.get('properties', {}).get('forecast'),				# /gridpoints/{wfo}/{x},{y}/forecast
-		'forecast_hourly_url':      location_data.get('properties', {}).get('forecastHourly'),			# /gridpoints/{wfo}/{x},{y}/forecast/hourly
-		'gridpoints_url':           location_data.get('properties', {}).get('forecastGridData'),		# /gridpoints/{wfo}/{x},{y}
-		'observation_stations_url': location_data.get('properties', {}).get('observationStations'),		# /gridpoints/{wfo}/{x},{y}/stations
-	}
-	return location
-
-
-@display_spinner('Getting station observations...')
-def get_station_observations(session: CachedSession, station_id: str) -> dict:
-	"""Get the current observations for the given station"""
-	observations_data = api_request(session, API_URL_NWS_STATIONS + station_id + '/observations/latest')
-	return process_observations_data(observations_data)
-
-
-def get_forecast(session: CachedSession, forecast_url: str) -> dict:
-	"""Get the forecast for the given location"""
+def process_forecast_data(session: CachedSession, forecast_url: str) -> dict:
 	forecast_data = api_request(session, forecast_url)
 	len_periods = len(forecast_data.get('properties', {}).get('periods'))
 	forecast = {}
@@ -129,12 +98,33 @@ def get_forecast(session: CachedSession, forecast_url: str) -> dict:
 	return forecast
 
 
-@display_spinner('Getting extended forecast...')
+@display_spinner('Getting all station observations...')
+def get_all_observations(session: CachedSession, station_id: str) -> dict:
+	observations_data = api_request(session, API_URL_NWS_STATIONS + station_id + '/observations')
+	observations = []
+	for feature in observations_data.get('features', {}):
+		observations.append(process_observations_data(feature))
+	return observations
+
+
+@display_spinner('Getting latest station observations...')
+def get_latest_observations(session: CachedSession, station_id: str) -> dict:
+	observations_data = api_request(session, API_URL_NWS_STATIONS + station_id + '/observations/latest')
+	return process_observations_data(observations_data)
+
+
+@display_spinner('Getting station observations at the given time...')
+def get_observations_at_time(session: CachedSession, station_id: str, timestamp: str) -> dict:
+	observations_data = api_request(session, API_URL_NWS_STATIONS + station_id + '/observations/' + timestamp)
+	return process_observations_data(observations_data)
+
+
+@display_spinner('Getting extended forecast for location...')
 def get_extended_forecast(session: CachedSession, location: dict) -> dict:
-	return get_forecast(session, location['forecast_extended_url'])
+	return process_forecast_data(session, location['forecast_extended_url'])
 
 
-@display_spinner('Getting hourly forecast...')
+@display_spinner('Getting hourly forecast for location...')
 def get_hourly_forecast(session: CachedSession, location: dict) -> dict:
-	return get_forecast(session, location['forecast_hourly_url'])
+	return process_forecast_data(session, location['forecast_hourly_url'])
 

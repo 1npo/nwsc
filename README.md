@@ -19,7 +19,7 @@ A full-coverage National Weather Service API client for the terminal
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Features](#features)
-- [Demos](#demos)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
   - [Dependencies](#dependencies)
   - [PyPI](#pypi)
@@ -51,7 +51,7 @@ A full-coverage National Weather Service API client for the terminal
   - Postgres
   - Delta/Spark
 
-## Demos
+## Screenshots
 - [ ] Add GIFs and PNGs here
 
 ## Installation
@@ -121,9 +121,9 @@ A full-coverage National Weather Service API client for the terminal
 - [ ] ~~/icons/{set}/{timeOfDay}/{first}/{second}~~ (**DEPRECATED**)
 - [ ] ~~/icons~~ (**DEPRECATED**)
 - [ ] ~~/thumbnails/satellite/{area}~~ (**DEPRECATED**)
-- [ ] /stations/{stationId}/observations
+- [x] /stations/{stationId}/observations
 - [x] /stations/{stationId}/observations/latest
-- [ ] /stations/{stationId}/observations/{time}
+- [x] /stations/{stationId}/observations/{time}
 - [ ] ~~/stations/{stationId}/tafs~~ (**EMPTY RESPONSES**)
 - [ ] ~~/stations/{stationId}/tafs/{date}/{time}~~ (**EMPTY RESPONSES**)
 - [x] /stations
@@ -134,9 +134,9 @@ A full-coverage National Weather Service API client for the terminal
 - [x] /points/{point}
 - [x] /points/{point}/stations
 - [x] /radar/servers
-- [ ] /radar/servers/{id}
+- [x] /radar/servers/{id}
 - [x] /radar/stations
-- [ ] /radar/stations/{stationId}
+- [x] /radar/stations/{stationId}
 - [x] /radar/stations/{stationId}/alarms
 - [ ] ~~/radar/queues/{host}~~ (**UNEXPECTED 404**)
 - [ ] ~~/radar/profilers/{stationId}~~ (**UNEXPECTED 404**)

@@ -1,6 +1,9 @@
 """
 """
 
+from loguru import logger
+
+
 def convert_temperatures(data: dict) -> dict:
 	"""Ensure that temperatures are represented in both metric and imperial"""
 	new_data = {}

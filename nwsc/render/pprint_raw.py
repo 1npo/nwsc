@@ -9,6 +9,7 @@ from rich.pretty import pprint
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
+from nwsc.api.get_location import *
 from nwsc.api.get_weather import *	
 from nwsc.api.get_stations import *
 from nwsc.api.get_radar import *
@@ -25,25 +26,27 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	"""
 	
 	# weather
-	location_data = get_location(session, address)
+	location_data = get_points_for_location(session, address)
 
 	# stations
-	local_stations_data = get_local_stations(session, location_data)
+	local_stations_data = get_stations_near_location(session, location_data)
 	nearest_station = local_stations_data[1]['station_id']
-
-	# weather
-	observations = get_station_observations(session, nearest_station)
+	observations_latest = get_latest_observations(session, nearest_station)
+	observations_all = get_all_observations(session, nearest_station)
+	observations_at_time = get_observations_at_time(session, 'KVGT', '2024-08-18T22:53:00+00:00')
 	forecast_extended = get_extended_forecast(session, location_data)
 	forecast_hourly = get_hourly_forecast(session, location_data)
+
+	# radar
+	radar_servers = get_radar_servers(session)
+	radar_server = get_radar_server(session, 'ldm2')
+	radar_stations = get_radar_stations(session)
+	radar_station = get_radar_station(session, 'KHPX')
+	radar_station_alarms = get_radar_station_alarms(session, 'KHPX')
 
 	# alerts
 	alerts = get_alerts_by_area(session, location_data['state'])
 	alert_counts = get_alert_counts(session)
-
-	# radar
-	radar_servers = get_radar_servers(session)
-	radar_stations = get_radar_stations(session)
-	radar_station_alarms = get_radar_station_alarms(session, 'KHPX')
 
 	# products
 	product_types = get_product_types(session)
@@ -70,12 +73,16 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 		'location_data':					location_data,
 		'local_stations_data':				local_stations_data,
 		'nearest_station':					nearest_station,
-		'observations':						observations,
+		'observations_latest':				observations_latest,
+		'observations_all':					observations_all,
+		'observations_at_time':				observations_at_time,
 		'forecast_extended':				forecast_extended,
 		'forecast_hourly':					forecast_hourly,
 		'alerts':							alerts,
 		'alert_counts':						alert_counts,
+		'radar_server':						radar_server,
 		'radar_servers':					radar_servers,
+		'radar_station':					radar_station,
 		'radar_stations':					radar_stations,
 		'radar_station_alarms':				radar_station_alarms,
 		'product_types':					product_types,
@@ -94,8 +101,8 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 		'valid_zones':						valid_zones,
 		'valid_forecast_offices':			valid_forecast_offices,
 	}
-
 	return weather_data
+
 
 def nws_data_to_json(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
@@ -112,9 +119,6 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		if name in ('valid_zones', 'valid_forecast_offices'):
+		if name in ('observations_at_time'):
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)
-
-abs_path = os.path.abspath(__file__)
-logger.debug(f'{abs_path=}')

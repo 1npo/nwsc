@@ -134,5 +134,5 @@ def main():
 			#if params.save:
 			#	df_to_file(config, 'observations', current_df.iloc[0], index=True)
 			pprint_raw_nws_data(session, '3121 S Las Vegas Blvd, Las Vegas, NV 89109')
-			nws_data_to_json(session, '3121 S Las Vegas Blvd, Las Vegas, NV 89109')
+			#nws_data_to_json(session, '3121 S Las Vegas Blvd, Las Vegas, NV 89109')
 			exit(0)

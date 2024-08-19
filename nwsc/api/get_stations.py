@@ -47,13 +47,12 @@ def get_stations_by_grid(session: CachedSession, forecast_office: str, gridpoint
 
 
 @display_spinner('Getting local stations...')
-def get_local_stations(session: CachedSession, location: dict) -> list:
+def get_stations_near_location(session: CachedSession, location: dict) -> list:
 	return get_stations(session, location['observation_stations_url'])
 
 
 @display_spinner('Getting station...')
 def get_station(session: CachedSession, station_id: dict) -> dict:
-	"""Get information about the given station ID"""
 	station_data = api_request(session, API_URL_NWS_STATIONS + station_id)
 	station = process_station_data(station_data)
 	station = convert_measures(station)

@@ -19,8 +19,6 @@ def process_radar_station_data(radar_station_data: dict) -> dict:
 	latency_current_unit = WMI_UNIT_MAP.get(radar_station_data.get('latency', {}).get('current', {}).get('unitCode'))
 	latency_average_unit = WMI_UNIT_MAP.get(radar_station_data.get('latency', {}).get('current', {}).get('unitCode'))
 	latency_max_unit = WMI_UNIT_MAP.get(radar_station_data.get('latency', {}).get('current', {}).get('unitCode'))
-	tx_power_unit = WMI_UNIT_MAP.get(rda.get('properties', {}).get('averageTransmitterPower', {}).get('unitCode'))
-	rcc_unit = WMI_UNIT_MAP.get(rda.get('properties', {}).get('reflectivityCalibrationCorrection', {}).get('unitCode'))
 	station = {
 		'station_lat':											station_lat,
 		'station_lon':											station_lon,
@@ -36,11 +34,13 @@ def process_radar_station_data(radar_station_data: dict) -> dict:
 		'max_latency_at':										parse_timestamp(radar_station_data.get('properties', {}).get('latency', {}).get('maxLatencyTime')),
 		'station_reporting_host':								radar_station_data.get('properties', {}).get('latency', {}).get('reportingHost'),
 		'station_server_host':									radar_station_data.get('properties', {}).get('latency', {}).get('host'),
-		'rda_refreshed_at':										parse_timestamp(rda.get('timestamp')),
 	}
 	rda = radar_station_data.get('properties', {}).get('rda', {})
 	if rda and isinstance(rda, dict):
+		tx_power_unit = WMI_UNIT_MAP.get(rda.get('properties', {}).get('averageTransmitterPower', {}).get('unitCode'))
+		rcc_unit = WMI_UNIT_MAP.get(rda.get('properties', {}).get('reflectivityCalibrationCorrection', {}).get('unitCode'))
 		station.update({
+			'rda_refreshed_at':										parse_timestamp(rda.get('timestamp')),
 			'rda_reporting_host':									rda.get('reportingHost', {}),
 			'rda_resolution_version':								rda.get('properties', {}).get('resolutionVersion'),
 			'rda_nexrad_l2_path':									rda.get('properties', {}).get('nl2Path'),
@@ -66,23 +66,23 @@ def process_radar_station_data(radar_station_data: dict) -> dict:
 			'command_channel':					performance.get('properties', {}).get('commandChannel'),
 			'linearity':						performance.get('properties', {}).get('linearity'),
 			'power_source':						performance.get('properties', {}).get('powerSource'),
-			'fuel_level':						performance.get('properties', {}).get('fuelLevel'),
-			'dynamic_range':					performance.get('properties', {}).get('dynamicRange'),
-			'transmitter_peak_power':			performance.get('properties', {}).get('transmitterPeakPower'),
+			'fuel_level':						performance.get('properties', {}).get('fuelLevel', {}).get('value'),
+			'dynamic_range':					performance.get('properties', {}).get('dynamicRange', {}).get('value'),
+			'transmitter_peak_power':			performance.get('properties', {}).get('transmitterPeakPower', {}).get('value'),
 			'transmitter_recycle_count':		performance.get('properties', {}).get('transmitterRecycleCount'),
-			'transmitter_imbalance':			performance.get('properties', {}).get('transmitterImbalance'),
-			'transmitter_leaving_air_temp_c':	performance.get('properties', {}).get('transmitterLeavingAirTemperature'),
-			'shelter_temp_c':					performance.get('properties', {}).get('shelterTemperature'),
-			'radome_air_temp_c':				performance.get('properties', {}).get('radomeAirTemperature'),
-			'horizontal_noise_temp_c':			performance.get('properties', {}).get('horizontalNoiseTemperature'),
+			'transmitter_imbalance':			performance.get('properties', {}).get('transmitterImbalance', {}).get('value'),
+			'transmitter_leaving_air_temp_c':	performance.get('properties', {}).get('transmitterLeavingAirTemperature', {}).get('value'),
+			'shelter_temp_c':					performance.get('properties', {}).get('shelterTemperature', {}).get('value'),
+			'radome_air_temp_c':				performance.get('properties', {}).get('radomeAirTemperature', {}).get('value'),
+			'horizontal_noise_temp_c':			performance.get('properties', {}).get('horizontalNoiseTemperature', {}).get('value'),
 			'transitional_power_source':		performance.get('properties', {}).get('transitionalPowerSource'),
 			'elevation_encoder_light':			performance.get('properties', {}).get('elevationEncoderLight'),
 			'azimuth_encoder_light':			performance.get('properties', {}).get('azimuthEncoderLight'),
-			'horizontal_delta_db':				performance.get('properties', {}).get('horizontalDeltadbZ0'),
-			'vertical_delta_db':				performance.get('properties', {}).get('verticalDeltadbZ0'),
-			'receiver_bias':					performance.get('properties', {}).get('receiverBias'),
-			'horizontal_short_pulse_noise':		performance.get('properties', {}).get('horizontalShortPulseNoise'),
-			'horizontal_long_pulse_noise':		performance.get('properties', {}).get('horizontalLongPulseNoise'),
+			'horizontal_delta_db':				performance.get('properties', {}).get('horizontalDeltadbZ0', {}).get('value'),
+			'vertical_delta_db':				performance.get('properties', {}).get('verticalDeltadbZ0', {}).get('value'),
+			'receiver_bias':					performance.get('properties', {}).get('receiverBias', {}).get('value'),
+			'horizontal_short_pulse_noise':		performance.get('properties', {}).get('horizontalShortPulseNoise', {}).get('value'),
+			'horizontal_long_pulse_noise':		performance.get('properties', {}).get('horizontalLongPulseNoise', {}).get('value'),
 		})
 	adaptation = radar_station_data.get('properties', {}).get('adaptation')
 	if adaptation and isinstance(adaptation, dict):
@@ -157,7 +157,7 @@ def process_radar_server_data(radar_server_data: dict) -> dict:
 		'network_interfaces_refreshed_at':	parse_timestamp(radar_server_data.get('network', {}).get('timestamp')),
 		'interfaces':                   	[],
 	}
-	for item in radar_server_data['network']:
+	for item in radar_server_data.get('network', {}):
 		if item != 'timestamp':
 			interface = {
 				'interface_name':       radar_server_data.get('network', {}).get(item, {}).get('interface'),
@@ -173,18 +173,6 @@ def process_radar_server_data(radar_server_data: dict) -> dict:
 			}
 			server['interfaces'].append(interface)
 	return server
-
-
-@display_spinner('Getting radar station metadata...')
-def get_radar_stations(session: CachedSession) -> list:
-	""" """
-	radar_station_data = api_request(session, API_URL_NWS_RADAR_STATIONS)
-	stations = []
-	for feature in radar_station_data.get('features', {}):
-		station = process_radar_station_data(feature)
-		station = convert_measures(station)
-		stations.append(station)
-	return stations
 
 
 @display_spinner('Getting radar station alarms...')
@@ -203,6 +191,25 @@ def get_radar_station_alarms(session: CachedSession, radar_station_id: str) -> d
 	return radar_alarms
 
 
+@display_spinner('Getting radar stations...')
+def get_radar_stations(session: CachedSession) -> list:
+	""" """
+	radar_stations_data = api_request(session, API_URL_NWS_RADAR_STATIONS)
+	stations = []
+	for feature in radar_stations_data.get('features', {}):
+		station = process_radar_station_data(feature)
+		stations.append(station)
+	return stations
+
+
+@display_spinner('Getting radar station details...')
+def get_radar_station(session: CachedSession, station_id: str) -> dict:
+	""" """
+	radar_station_data = api_request(session, API_URL_NWS_RADAR_STATIONS + station_id)
+	station = process_radar_station_data(radar_station_data)
+	return station
+
+
 # See:
 # - https://www.ncdc.noaa.gov/wct/data.php
 #
@@ -212,12 +219,20 @@ def get_radar_station_alarms(session: CachedSession, radar_station_id: str) -> d
 #
 # NOTE: The official API documentation doesn't include a schema for the radar
 # servers and stations endpoints, so some field meanings are inferred from the data.
-@display_spinner('Getting radar server metadata...')
+@display_spinner('Getting radar servers...')
 def get_radar_servers(session: CachedSession) -> list:
 	""" """
-	radar_server_data = api_request(session, API_URL_NWS_RADAR_SERVERS)
+	radar_servers_data = api_request(session, API_URL_NWS_RADAR_SERVERS)
 	servers = []
-	for feature in radar_server_data.get('@graph', {}):
+	for feature in radar_servers_data.get('@graph', {}):
 		server = process_radar_server_data(feature)
 		servers.append(server)
 	return servers
+
+
+@display_spinner('Getting radar server details...')
+def get_radar_server(session: CachedSession, server_id: str) -> dict:
+	""" """
+	radar_server_data = api_request(session, API_URL_NWS_RADAR_SERVERS + server_id)
+	return process_radar_server_data(radar_server_data)
+
