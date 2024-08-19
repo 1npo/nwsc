@@ -20,7 +20,7 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - [x] Re-generate `tests/test_data/nws_raw_zone_stations.json`
 - [x] Revamp or remove `cache.py`: use `requests-cache` instead of rolling your own cache manager
 - [x] Write `nwsc.api.get_enums` to extract `VALID_NWS_ZONES` and `VALID_NWS_FORECAST_OFFICES` enums programmatically from API error responses
-- [ ] Clean up and standardize all `nwsc.api.*` modules
+- [ ] Clean up and standardize all `nwsc.api.*` modules, to get them ready to use dataclasses
 ### Modeling
 - [ ] Finish fleshing out dataclasses for all NWS data
 - [ ] Update `nwsc.api.*` to use dataclasess instead of dicts
