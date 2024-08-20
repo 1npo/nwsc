@@ -9,13 +9,18 @@ from string import Template
 from requests_cache import CachedSession
 from loguru import logger
 from rich.pretty import pprint
+from nwsc.main import BUG_REPORT_MESSAGE
 from nwsc.api.api_request import api_request
 from nwsc.api import (
     NWS_API_ZONES,
     NWS_API_OFFICES,
-    INVALID_ENUM_MESSAGE_DELIMITER,
-    FAILED_TO_GET_ENUM_MESSAGE,
 )
+
+INVALID_ENUM_MESSAGE_DELIMITER = 'Does not have a value in the enumeration'
+FAILED_TO_GET_ENUM_MESSAGE = (
+    'Unable to extract list of valid NWS $enum_type from the API. Falling back on hardcoded '
+    'values that may be out of date. '
+) + BUG_REPORT_MESSAGE
 
 
 def process_error_response(parameter_errors: dict, failure_message: str) -> Union[dict, None]:

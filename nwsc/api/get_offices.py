@@ -14,18 +14,18 @@ InvalidOfficeException = ValueError(
 )
 
 
-def process_headline_data(headline: dict) -> dict:
+def process_headline_data(headline_data: dict) -> dict:
     return {
-            'id':                   headline.get('id'),
-            'name':                 headline.get('name'),
-            'title':                headline.get('title'),
-            'issued_at':            headline.get('issuanceTime'),
-            'url':                  headline.get('link'),
-            'content':              headline.get('content'),
-            'headline_summary':     headline.get('summary'),
-            'office_url':           headline.get('office'),
-            'is_important':         headline.get('important'),
-        }
+        'id':                   headline_data.get('id'),
+        'name':                 headline_data.get('name'),
+        'title':                headline_data.get('title'),
+        'issued_at':            headline_data.get('issuanceTime'),
+        'url':                  headline_data.get('link'),
+        'content':              headline_data.get('content'),
+        'headline_summary':     headline_data.get('summary'),
+        'office_url':           headline_data.get('office'),
+        'is_important':         headline_data.get('important'),
+    }
 
 
 @display_spinner('Getting office headlines...')

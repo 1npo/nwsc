@@ -3,7 +3,6 @@
 # - https://weather-gov.github.io/api/general-faqs, especially these sections:
 #   - "How do I get a forecast for a location from the API?"
 #   - "How do I know I'm getting the latest data? Do I need to use “cache busting” methods?"
-
 USCB_API_GEOCODE = 'http://geocoding.geo.census.gov/geocoder/locations/onelineaddress?benchmark=Public_AR_Current&format=json&address='
 NWS_API_ALERTS = 'http://api.weather.gov/alerts/'
 NWS_API_ALERTS_AREA = 'http://api.weather.gov/alerts/active/area/'
@@ -26,17 +25,18 @@ NWS_API_STATIONS = 'http://api.weather.gov/stations/'
 NWS_API_ZONE_FORECASTS = 'http://api.weather.gov/zones/forecast/'
 NWS_API_ZONES = 'http://api.weather.gov/zones/'
 
-# See: https://codes.wmo.int/common/unit
 
+# See: https://codes.wmo.int/common/unit
 WMI_UNIT_MAP = {                            
 	'wmoUnit:Pa':               'pa',       # pressure in pascals
-	'wmoUnit:km_h-1':           'kmph',     # kilometers per hour
+	'wmoUnit:km_h-1':           'kmh',      # kilometers per hour
 	'wmoUnit:m':                'm',        # meters
 	'wmoUnit:percent':          'pc',       # percent
 	'wmoUnit:mm':               'mm',       # milimeters
 	'wmoUnit:degree_(angle)':   'deg_ang',  # degrees (angle)
 	'wmoUnit:degC':             'c',        # degrees celsius
 	'wmoUnit:W':				'w',		# watts
+    'wmoUnit:kW':				'kw',		# kilowatts
 	'wmoUnit:dB':				'db',		# decibels
     'wmoUnit:dB_m-1':			'db_m',		# decibels per meter
     'nwsUnit:dBZ':				'db_z',		# decibels relative to Z
@@ -46,10 +46,10 @@ WMI_UNIT_MAP = {
     'nwsUnit:ns':				'ns',		# nanoseconds
 }
 
+
 # See:
 # - https://www.atmos.albany.edu/facstaff/ralazear/ATM209/Home_files/METAR_Code.pdf
 # - https://en.wikipedia.org/wiki/Okta
-
 METAR_CLOUD_COVER_MAP = {
 	'SKC':  'Clear Sky',
 	'CLR':  'Clear Sky',
@@ -58,6 +58,7 @@ METAR_CLOUD_COVER_MAP = {
 	'BKN':  'Broken Sky',           # 4-7 oktas (5/8 - 7/8 of sky covered)
 	'OVC':  'Overcast',             # 8 oktas (sky completely covered)
 }
+
 
 # As of 2024-8-17:
 #
@@ -71,15 +72,6 @@ METAR_CLOUD_COVER_MAP = {
 # These values are hardcoded to prevent crashing/exceptions in the event that extracting
 # these enums fails for some reason (eg due to changes in the structure or format of
 # error responses).
-
-INVALID_ENUM_MESSAGE_DELIMITER = 'Does not have a value in the enumeration'
-
-FAILED_TO_GET_ENUM_MESSAGE = (
-    'Unable to extract list of valid NWS $enum_type from the API. Falling back on hardcoded '
-    'values that may be out of date. This is unexpected and a bug, please report the issue '
-    'on GitHub at https://github.com/1npo/nwsc/issues.'
-)
-
 VALID_NWS_ZONES = [
     'land',
     'marine',
@@ -90,7 +82,6 @@ VALID_NWS_ZONES = [
     'fire',
     'county',
 ]
-
 VALID_NWS_FORECAST_OFFICES = [
 	'AKQ', 	'CRP', 	'TSA', 	'LOT', 	'PSR', 
 	'ALY', 	'EPZ', 	'ABR', 	'LSX', 	'REV', 

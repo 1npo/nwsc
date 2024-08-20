@@ -2,16 +2,146 @@
 """
 
 from urllib.parse import quote
+from string import Template
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
+from nwsc.main import BUG_REPORT_MESSAGE
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api.conversions import convert_measures
 from nwsc.api import (
 	NWS_API_STATIONS,
 	METAR_CLOUD_COVER_MAP,
-	WMI_UNIT_MAP
+	WMI_UNIT_MAP,
 )
+
+
+def process_measurement_values(
+	data: dict,
+	field_map: dict,
+	expected_units: dict
+) -> dict:
+	"""Flatten measurement values in API responses
+	
+	The NWS API returns measurements as a dictionary of two items, where one item
+	is a string that describes the unit of measure, and the other is the actual
+	measurement value.
+
+	This function standardizes the field name, adds the unit of measure as a suffix
+	to the field name, and returns a dictionary where the key is this new field name
+	and the value is the measurement.
+	
+	For example, this dictionary:
+	
+	{
+		'temperature': {
+			'unitCode': 'wmoUnit:degC',
+			'value': 31.2,
+		},
+		"windSpeed": {
+			"unitCode": "wmoUnit:km_h-1",
+			"value": 3.564,
+		}
+	}
+
+	Will be flattened into this dictionary:
+
+	{
+		'temperature_c': 31.2,
+		'wind_speed_kmh': 3.564,
+	}
+
+	The WMI_UNIT_MAP global in `nwsc.api.__init__` maps all the WMO unit strings to
+	appreviated field suffixes.
+	
+	:param data: A dictionary containing a set of measurements.
+	:param field_map: A mapping of API response field names to standardized `nwsc` field names.
+	:param expected_units: The units of measure that are expected from the API for each measurement in `data`. Must
+		contain the same number of items as `field_map` and have the same keys.
+	:returns: Any items in `data` that are present in `field_map`, reformatted as a flat dictionary where all values are measurements instead of dicts.
+	"""
+
+	if set(field_map.keys()) != set(expected_units.keys()):
+		raise ValueError((
+			'The given field_map and expected_units don\'t contain the same keys. '
+			f'{field_map.keys()=}, {expected_units.keys()=}. {BUG_REPORT_MESSAGE}'
+		))
+	
+	new_data = {}
+	for old_name, new_name in field_map.items():
+		value = data.get(old_name, {}).get('value')
+		expected_unit = expected_units.get(old_name)
+		actual_unit = data.get(old_name, {}).get('unitCode')
+		if actual_unit:
+			if actual_unit != expected_unit:
+				logger.debug((
+					f'An actual value and unit are present for {old_name}, but the measurement unit '
+					f'is unexpected ({expected_unit=}, {actual_unit=}). Using actual unit.'))
+			if actual_unit not in WMI_UNIT_MAP:
+				logger.debug((
+					f'No standard field suffix for measurement unit ({actual_unit}). Using the expected unit '
+					f'field suffix instead. {BUG_REPORT_MESSAGE}'))
+				unit_suffix = WMI_UNIT_MAP.get(expected_unit)
+			else:
+				unit_suffix = WMI_UNIT_MAP.get(actual_unit)
+		else:
+			unit_suffix = WMI_UNIT_MAP.get(expected_unit)
+		new_data.update({f'{new_name}_{unit_suffix}': value})
+	return new_data
+
+
+def process_cloud_layers(cloud_layers_data: list) -> dict:
+	"""Flatten cloud layers and convert cloud cover codes to English descriptions
+
+	The NWS API returns a list dictionaries to describe cloud layers. Each dictionary contains
+	a measurement that indicates the height of the cloud layer, and a code that describes the
+	cloud cover at that layer.
+
+	This function processes this list and returns a dictionary where the keys are strings
+	that represent the cloud layer height, and the values are an English description
+	of the cloud cover for that layer.
+
+	For example, this list of dictionaries:
+
+    "cloudLayers": [
+      {
+        "base": {
+          "unitCode": "wmoUnit:m",
+          "value": 370
+        },
+        "amount": "FEW"
+      },
+      {
+        "base": {
+          "unitCode": "wmoUnit:m",
+          "value": 640
+        },
+        "amount": "SCT"
+      },
+	}
+
+	Will be flattened into this dictionary:
+
+	{
+		'370m': 'Few Clouds',
+		'640m': 'Scattered Clouds',
+	}
+
+	The METAR_CLOUD_COVER_MAP global in `nwsc.api.__init__` maps all the cloud cover codes to
+	English descriptions.
+	"""
+
+	cloud_layers = {}
+	for layer in cloud_layers_data:
+		if layer and isinstance(layer, dict):
+			cloud_layer_height_unit = layer.get('base', {}).get('unitCode')
+			cloud_layer_height_unit = WMI_UNIT_MAP.get(cloud_layer_height_unit)
+			cloud_layer_height = layer.get('base', {}).get('value')
+			cloud_layer = f'{cloud_layer_height}{cloud_layer_height_unit}'
+			cloud_cover_at_layer = layer.get('amount')
+			cloud_cover_at_layer = METAR_CLOUD_COVER_MAP.get(cloud_cover_at_layer)
+			cloud_layers.update({cloud_layer: cloud_cover_at_layer})
+	return cloud_layers
 
 
 def process_observations_data(observations_data: list) -> dict:
@@ -21,7 +151,7 @@ def process_observations_data(observations_data: list) -> dict:
 		'text_description': observations_data.get('properties', {}).get('textDescription'),
 		'raw_message':		observations_data.get('properties', {}).get('rawMessage'),
 	}
-	observation_type_names = {
+	observation_field_map = {
 		'elevation':                    'station_elevation',
 		'temperature':                  'temperature',
 		'dewpoint':                     'dew_point',
@@ -39,62 +169,82 @@ def process_observations_data(observations_data: list) -> dict:
 		'relativeHumidity':             'relative_humidity',
 		'windChill':                    'wind_chill',
 		'heatIndex':                    'heat_index',
-		'cloudLayers':                  'cloud_layers',
 	}
-	for api_name, new_name in observation_type_names.items():
-		if api_name == 'cloudLayers':
-			cloud_layers = {}
-			cloud_layer_data = observations_data.get('properties')
-			if cloud_layer_data and isinstance(cloud_layer_data, dict):
-				for layer in cloud_layer_data.get(api_name):
-					layer_amount = METAR_CLOUD_COVER_MAP.get(layer.get('amount'))
-					layer_unit = WMI_UNIT_MAP.get(layer.get('base', {}).get('unitCode', {}))
-					layer_height = layer.get('base', {}).get('value')
-					if layer_height:
-						layer_name = f'{layer_height}{layer_unit}'
-					else:
-						layer_name = 'None'
-					cloud_layers.update({layer_name: layer_amount})
-				observations[new_name] = cloud_layers
-		else:
-			observation_unit = WMI_UNIT_MAP.get(observations_data.get('properties', {}).get(api_name, {}).get('unitCode'))
-			observations[f'{new_name}_{observation_unit}'] = observations_data.get('properties', {}).get(api_name, {}).get('value')
+	expected_units = {
+		'elevation':                    'wmoUnit:m',
+		'temperature':                  'wmoUnit:degC',
+		'dewpoint':                     'wmoUnit:degC',
+		'windDirection':                'wmoUnit:degree_(angle)',    
+		'windSpeed':                    'wmoUnit:km_h-1',
+		'windGust':                     'wmoUnit:km_h-1',
+		'barometricPressure':           'wmoUnit:Pa',
+		'seaLevelPressure':             'wmoUnit:Pa',
+		'visibility':                   'wmoUnit:m',
+		'maxTemperatureLast24Hours':    'wmoUnit:degC',
+		'minTemperatureLast24Hours':    'wmoUnit:degC',
+		'precipitationLastHour':        'wmoUnit:mm',
+		'precipitationLast3Hours':      'wmoUnit:mm',
+		'precipitationLast6Hours':      'wmoUnit:mm',
+		'relativeHumidity':             'wmoUnit:percent',
+		'windChill':                    'wmoUnit:degC',
+		'heatIndex':                    'wmoUnit:degC',
+	}
+	observation_measurements = observations_data.get('properties', {})
+	observations.update(process_measurement_values(observation_measurements,
+												   observation_field_map,
+												   expected_units))
+	cloud_layer_data = observations_data.get('properties', {}).get('cloudLayers')
+	cloud_layers = process_cloud_layers(cloud_layer_data)
+	observations.update({'cloud_layers': cloud_layers})
 	observations = convert_measures(observations)
 	return observations
 
 
-def process_forecast_data(session: CachedSession, forecast_url: str) -> dict:
-	forecast_data = api_request(session, forecast_url)
+def process_forecast_data(forecast_data: list) -> dict:
 	len_periods = len(forecast_data.get('properties', {}).get('periods'))
-	forecast = {}
+	forecast = {
+		'forecast_generated_at':	parse_timestamp(forecast_data.get('properties', {}).get('generatedAt')),
+		'forecast_updated_at':		parse_timestamp(forecast_data.get('properties', {}).get('updateTime')),
+		'forecast_periods':			[],
+	}
 	for i in range(0, len_periods):
 		period = forecast_data.get('properties', {}).get('periods', {})
 		if period and isinstance(period, list):
 			period = period[i]
+			# The temperature unit and value in a forecast response aren't combined in a dict
+			# with 'unitCode' and 'value' keys like all other measures. They're flat fields
+			# ('temperatureUnit' and 'temperature'), so I don't include them in the
+			# process_measurement_values() call.
+			#
+			# TODO: Find a better and more uniform way to process all measurements.
 			temp_unit = WMI_UNIT_MAP.get(period.get('temperatureUnit'))
-			humidity_unit = WMI_UNIT_MAP.get(period.get('relativeHumidity', {}).get('unitCode'))
-			precip_unit = WMI_UNIT_MAP.get(period.get('probabilityOfPrecipitation', {}).get('unitCode'))
-			dew_point_unit = WMI_UNIT_MAP.get(period.get('dewpoint', {}).get('unitCode'))
 			period_forecast = {
-				'forecast_generated_at':        parse_timestamp(forecast_data.get('properties', {}).get('generatedAt')),
-				'forecast_updated_at':          parse_timestamp(forecast_data.get('properties', {}).get('updateTime')),
-				'period_start_at':              parse_timestamp(period.get('startTime')),
-				'period_end_at':                parse_timestamp(period.get('endTime')),
-				'period_name':                  period.get('name'),
-				'period_forecast_short':        period.get('shortForecast'),
-				'period_forecast_detailed':     period.get('detailedForecast'),
-				'period_forecast_icon_url':     period.get('icon'),
+				'period_num':					period.get('number'), 
+				'period_name':              	period.get('name'),
+				'forecast_short':        		period.get('shortForecast'),
+				'forecast_detailed':     		period.get('detailedForecast'),
+				'forecast_icon_url':     		period.get('icon'),
 				'is_daytime':                   period.get('isDaytime'),
 				'wind_speed':                   period.get('windSpeed'),
 				'wind_direction':               period.get('windDirection'),
 				'temperature_trend':            period.get('temperatureTrend'),
 				f'temperature_{temp_unit}':		period.get('temperature'),
-				f'dew_point_{dew_point_unit}':	period.get('dewpoint', {}).get('value'),
-				f'humidity_{humidity_unit}':	period.get('relativeHumidity', {}).get('value'),
-				f'precipitation_{precip_unit}':	period.get('probabilityOfPrecipitation', {}).get('value'),
+				'period_start_at':          	parse_timestamp(period.get('startTime')),
+				'period_end_at':            	parse_timestamp(period.get('endTime')),
 			}
+			field_map = {
+				'dewpoint':						'dewpoint',
+				'relativeHumidity':				'relative_humidity',
+				'probabilityOfPrecipitation':	'precipitation_probability',
+			}
+			expected_types = {
+				'dewpoint':						'wmoUnit:degC',
+				'relativeHumidity':				'wmoUnit:percent',
+				'probabilityOfPrecipitation':	'wmoUnit:percent',
+			}
+			period_forecast.update(process_measurement_values(period, field_map, expected_types))
 			period_forecast = convert_measures(period_forecast)
-			forecast.update({period['number']: period_forecast})
+			forecast['forecast_periods'].append(period_forecast)
 	return forecast
 
 
@@ -121,10 +271,11 @@ def get_observations_at_time(session: CachedSession, station_id: str, timestamp:
 
 @display_spinner('Getting extended forecast for location...')
 def get_extended_forecast(session: CachedSession, location: dict) -> dict:
-	return process_forecast_data(session, location['forecast_extended_url'])
+	forecast_data = api_request(session, location['forecast_extended_url'])
+	return process_forecast_data(forecast_data)
 
 
 @display_spinner('Getting hourly forecast for location...')
 def get_hourly_forecast(session: CachedSession, location: dict) -> dict:
-	return process_forecast_data(session, location['forecast_hourly_url'])
-
+	forecast_data = api_request(session, location['forecast_hourly_url'])
+	return process_forecast_data(forecast_data)

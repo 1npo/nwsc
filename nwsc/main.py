@@ -1,4 +1,8 @@
 __version__ = '0.1.0'
+BUG_REPORT_MESSAGE = (
+    'This is an unexpected result and probably a bug. Please report it '
+    'on GitHub at https://github.com/1npo/nwsc/issues.'
+)
 
 
 import os
@@ -133,6 +137,11 @@ def main():
 			#rich_print_current_conditions(current_df.iloc[0])
 			#if params.save:
 			#	df_to_file(config, 'observations', current_df.iloc[0], index=True)
-			pprint_raw_nws_data(session, '3121 S Las Vegas Blvd, Las Vegas, NV 89109')
-			nws_data_to_json(session, '3121 S Las Vegas Blvd, Las Vegas, NV 89109')
+			test_addr1 = '3121 S Las Vegas Blvd, Las Vegas, NV 89109'
+			test_addr2 = '589 Mt. Auburn St., Watertown, MA 02472'
+			test_addr3 = '600 Bennington St. Boston, MA 02128'
+			test_addr4 = '2 15th St NW, Washington, DC 20024'
+			test_addr5 = '3001 Connecticut Ave NW, Washington, DC 20008'
+			pprint_raw_nws_data(session, test_addr5)
+			nws_data_to_json(session, test_addr5)
 			exit(0)

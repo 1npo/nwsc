@@ -2,7 +2,6 @@ from requests_cache import CachedSession
 from rich.pretty import pprint
 from loguru import logger
 from nwsc.render.decorators import display_spinner
-from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api.get_stations import process_station_data
 from nwsc.api.get_weather import process_observations_data
@@ -69,9 +68,7 @@ def get_zone_observations(session: CachedSession, zone_id: str) -> dict:
     zone_observations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/observations')
     zone_observations = []
     for feature in zone_observations_data.get('features', {}):
-        observation = process_observations_data(feature)
-        observation = convert_measures(observation)
-        zone_observations.append(observation)
+        zone_observations.append(process_observations_data(feature))
     return zone_observations
 
 

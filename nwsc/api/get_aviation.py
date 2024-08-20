@@ -8,18 +8,18 @@ from nwsc.api import (
 )
 
 
-def process_sigmets_data(sigmets: dict) -> dict:
+def process_sigmet_data(sigmet_data: dict) -> dict:
     sigmet = {
-        'sigmets_url':      sigmets.get('properties', {}).get('id'),
-        'issued_at':        sigmets.get('properties', {}).get('issueTime'),
-        'effective_at':     sigmets.get('properties', {}).get('start'),
-        'expires_at':       sigmets.get('properties', {}).get('end'),
-        'fir':              sigmets.get('properties', {}).get('fir'),
-        'atsu':             sigmets.get('properties', {}).get('atsu'),
-        'sequence':         sigmets.get('properties', {}).get('sequence'),
-        'phenomenon':       sigmets.get('properties', {}).get('phenomenon'),
+        'sigmet_url':       sigmet_data.get('properties', {}).get('id'),
+        'issued_at':        sigmet_data.get('properties', {}).get('issueTime'),
+        'effective_at':     sigmet_data.get('properties', {}).get('start'),
+        'expires_at':       sigmet_data.get('properties', {}).get('end'),
+        'fir':              sigmet_data.get('properties', {}).get('fir'),
+        'atsu':             sigmet_data.get('properties', {}).get('atsu'),
+        'sequence':         sigmet_data.get('properties', {}).get('sequence'),
+        'phenomenon':       sigmet_data.get('properties', {}).get('phenomenon'),
     }
-    geometry = sigmets.get('geometry')
+    geometry = sigmet_data.get('geometry')
     if geometry:
         sigmet.update({'area_polygon': geometry.get('coordinates')})
     return sigmet
@@ -28,25 +28,8 @@ def process_sigmets_data(sigmets: dict) -> dict:
 def process_sigmets(sigmets_data: list) -> list:
     sigmets = []
     for feature in sigmets_data.get('features', {}):
-        sigmets.append(process_sigmets_data(feature))
+        sigmets.append(process_sigmet_data(feature))
     return sigmets
-
-
-def process_cwa_data(cwa: dict) -> dict:
-    cwa = {
-        'url':                  cwa.get('properties', {}).get('id'),
-        'cwsu':                 cwa.get('properties', {}).get('cwsu'),
-        'sequence':             cwa.get('properties', {}).get('sequence'),
-        'issued_at':            cwa.get('properties', {}).get('issueTime'),
-        'effective_at':         cwa.get('properties', {}).get('start'),
-        'expires_at':           cwa.get('properties', {}).get('end'),
-        'observed_property':    cwa.get('properties', {}).get('observedProperty'),
-        'text':                 cwa.get('properties', {}).get('text'),
-    }
-    geometry = cwa.get('geometry')
-    if geometry:
-        cwa.update({'area_polygon': geometry.get('coordinates')})
-    return cwa
 
 
 @display_spinner('Getting all SIGMETs...')
@@ -70,7 +53,24 @@ def get_all_atsu_sigmets_by_date(session: CachedSession, atsu: str, date_str: st
 @display_spinner('Getting SIGMET...')
 def get_sigmet(session: CachedSession, atsu: str, date_str: str, time_str) -> list:
     sigmet_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu + f'/{date_str}/{time_str}')
-    return process_sigmets_data(sigmet_data)
+    return process_sigmet_data(sigmet_data)
+
+
+def process_cwa_data(cwa: dict) -> dict:
+    cwa = {
+        'url':                  cwa.get('properties', {}).get('id'),
+        'cwsu':                 cwa.get('properties', {}).get('cwsu'),
+        'sequence':             cwa.get('properties', {}).get('sequence'),
+        'issued_at':            cwa.get('properties', {}).get('issueTime'),
+        'effective_at':         cwa.get('properties', {}).get('start'),
+        'expires_at':           cwa.get('properties', {}).get('end'),
+        'observed_property':    cwa.get('properties', {}).get('observedProperty'),
+        'text':                 cwa.get('properties', {}).get('text'),
+    }
+    geometry = cwa.get('geometry')
+    if geometry:
+        cwa.update({'area_polygon': geometry.get('coordinates')})
+    return cwa
 
 
 @display_spinner('Getting CWSU details...')
@@ -104,4 +104,3 @@ def get_cwas(session: CachedSession, cwsu_id: str) -> list:
 def get_cwa(session: CachedSession, cwsu_id: str, date_str: str, sequence: int) -> dict:
     cwa_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id + f'/cwas/{date_str}/{sequence}')
     return process_cwa_data(cwa_data)
-

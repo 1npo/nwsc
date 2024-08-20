@@ -21,7 +21,6 @@ class RadarDataAcquisition:
     build_number: float
 
 
-
 @dataclass
 class RadarPerformance:
     refreshed_at: datetime

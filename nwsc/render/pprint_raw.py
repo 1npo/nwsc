@@ -34,7 +34,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	nearest_station = local_stations_data[1]['station_id']
 	observations_latest = get_latest_observations(session, nearest_station)
 	observations_all = get_all_observations(session, nearest_station)
-	observations_at_time = get_observations_at_time(session, 'KVGT', '2024-08-18T22:53:00+00:00')
+	observations_at_time = get_observations_at_time(session, 'KBOS', '2024-08-19T18:54:00+00:00')
 	forecast_extended = get_extended_forecast(session, location_data)
 	forecast_hourly = get_hourly_forecast(session, location_data)
 
@@ -42,7 +42,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	radar_servers = get_radar_servers(session)
 	radar_server = get_radar_server(session, 'ldm2')
 	radar_stations = get_radar_stations(session)
-	radar_station = get_radar_station(session, 'KHPX')
+	radar_station = get_radar_station(session, 'KMVX')
 	radar_station_alarms = get_radar_station_alarms(session, 'KHPX')
 
 	# alerts
@@ -144,6 +144,6 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		if name == 'zone_stations':
+		if name == 'forecast_extended':
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)
