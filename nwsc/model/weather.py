@@ -1,41 +1,6 @@
-from typing import Dict
-from datetime import datetime
 from dataclasses import dataclass
-
-
-@dataclass
-class Glossary:
-    term: str
-    definition: str
-
-
-@dataclass
-class Location:
-    city: str
-    state: str
-    timezone: str
-    grid_x: int
-    grid_y: int
-    forecast_office: str
-    forecast_office_url: str
-    url_forecast: str
-    url_hourly: str
-    url_grid_data: str
-    url_observation_stations: str
-
-
-@dataclass
-class ObservationStation:
-    id: str
-    name: str
-    timezone: str
-    lat: float
-    lon: float
-    elevation_m: float
-    elevation_mi: float
-    forecast_url: str
-    county_url: str
-    fire_weather_zone_url: str
+from datetime import datetime
+from typing import Dict, List
 
 
 @dataclass
@@ -51,9 +16,9 @@ class Observation:
     dew_point_f: float
     wind_direction_deg_ang: int
     wind_direction_compass: str
-    wind_speed_kmph: float
+    wind_speed_kmh: float
     wind_speed_mph: float
-    wind_gust_kmph: float
+    wind_gust_kmh: float
     wind_gust_mph: float
     barometric_pressure_pa: int
     barometric_pressure_inhg: float
@@ -76,19 +41,19 @@ class Observation:
     wind_chill_f: float
     heat_index_c: float
     heat_index_f: float
-    cloud_layers: Dict[str, int]
+    cloud_layers: Dict[str, str]
 
 
 @dataclass
-class Forecast:
-    forecast_generated_at: datetime
-    forecast_updated_at: datetime
-    period_start_at: datetime
-    period_end_at: datetime
-    period_name: str
-    period_forecast_short: str
-    period_forecast_detailed: str
-    period_forecast_icon_url: str
+class ForecastPeriod:
+    num: int
+    name: str
+    start_at: datetime
+    end_at: datetime
+    name: str
+    forecast_short: str
+    forecast_detailed: str
+    forecast_icon_url: str
     is_daytime: bool
     wind_speed: str
     wind_direction: str
@@ -99,3 +64,11 @@ class Forecast:
     dew_point_f: float
     humidity_pc: float
     precipitation_pc: float
+
+
+@dataclass
+class Forecast:
+    generated_at: datetime
+    updated_at: datetime
+    periods: List[ForecastPeriod]
+

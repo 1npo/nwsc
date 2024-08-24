@@ -1,5 +1,4 @@
 from requests_cache import CachedSession
-from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
 from nwsc.api import (
@@ -13,12 +12,12 @@ def process_product_data(products_data: dict) -> list:
 	products = []
 	for product in products_data:
 		products.append({
-			'product_id':		product.get('id'),
-			'product_wmo_id':	product.get('wmoCollectiveId'),
+			'id':				product.get('id'),
+			'wmo_id':			product.get('wmoCollectiveId'),
+			'code':				product.get('productCode'),
+			'name':				product.get('productName'),
 			'issuing_office':	product.get('issuingOffice'),
 			'issued_at':		product.get('issuanceTime'),
-			'product_code':		product.get('productCode'),
-			'product_name':		product.get('productName'),
 		})
 	return products
 
@@ -27,8 +26,8 @@ def process_product_types_data(product_types_data: list) -> list:
 	product_types = []
 	for product_type in product_types_data.get('@graph', {}):
 		product_types.append({
-			'product_code':	product_type.get('productCode'),
-			'product_name': product_type.get('productName'),
+			'code':	product_type.get('productCode'),
+			'name': product_type.get('productName'),
 		})
 	return product_types
 
@@ -39,8 +38,8 @@ def process_product_locations_data(product_locations_data: dict) -> list:
 	if product_locations_data and isinstance(product_locations_data, dict):
 		for location, code in product_locations_data.items():
 			product_locations.append({
-				'location_code': location,
-				'location_name': code,
+				'code': location,
+				'name': code,
 			})
 		return product_locations
 	return []
@@ -94,6 +93,6 @@ def get_product(session: CachedSession, product_id: str) -> dict:
 	""" """
 	product_data = api_request(session, NWS_API_PRODUCTS + product_id)
 	product = process_product_data([product_data])[0]
-	product.update({'product_text': product_data.get('productText')})
+	product.update({'text': product_data.get('productText')})
 	return product
 

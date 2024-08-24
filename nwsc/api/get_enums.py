@@ -8,7 +8,6 @@ from typing import Union
 from string import Template
 from requests_cache import CachedSession
 from loguru import logger
-from rich.pretty import pprint
 from nwsc.main import BUG_REPORT_MESSAGE
 from nwsc.api.api_request import api_request
 from nwsc.api import (

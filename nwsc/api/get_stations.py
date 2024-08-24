@@ -1,6 +1,4 @@
 from requests_cache import CachedSession
-from rich.pretty import pprint
-from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.get_weather import process_measurement_values
 from nwsc.api.conversions import convert_measures
@@ -18,11 +16,14 @@ def process_station_data(feature: dict) -> dict:
 		station_lat = None
 		station_lon = None
 	station = {
-		'station_lat':                          station_lat,
-		'station_lon':                          station_lon,
-		'station_id':                           feature.get('properties').get('stationIdentifier', {}),
-		'station_name':                         feature.get('properties').get('name', {}),
-		'station_timezone':                     feature.get('properties').get('timeZone', {}),
+		'id':      					feature.get('properties', {}).get('stationIdentifier'),
+		'name':    					feature.get('properties', {}).get('name'),
+		'lat':     					station_lat,
+		'lon':     					station_lon,
+		'timezone':					feature.get('properties', {}).get('timeZone'),
+		'forecast_url':				feature.get('properties', {}).get('forecast'),
+		'county_url':				feature.get('properties', {}).get('county'),
+		'fire_weather_zone_url':	feature.get('properties', {}).get('fireWeatherZone'),
 	}
 	elevation_measure = feature.get('properties', {})
 	station.update(process_measurement_values(elevation_measure,
@@ -47,7 +48,7 @@ def get_stations_by_grid(session: CachedSession, forecast_office: str, gridpoint
 
 @display_spinner('Getting local stations...')
 def get_stations_near_location(session: CachedSession, location: dict) -> list:
-	return get_stations(session, location['observation_stations_url'])
+	return get_stations(session, location.observation_stations_url)
 
 
 @display_spinner('Getting station...')

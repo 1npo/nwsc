@@ -1,5 +1,4 @@
 from requests_cache import CachedSession
-from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
 from nwsc.api import (
@@ -53,8 +52,8 @@ def get_office(session: CachedSession, office_id: str) -> dict:
         raise InvalidOfficeException
     office_data = api_request(session, NWS_API_OFFICES + office_id)
     return {
-        'office_id':            office_data.get('id'),
-        'office_name':          office_data.get('name'),
+        'id':                   office_data.get('id'),
+        'name':                 office_data.get('name'),
         'street_address':       office_data.get('address', {}).get('streetAddress'),
         'city':                 office_data.get('address', {}).get('addressLocality'),
         'state':                office_data.get('address', {}).get('addressRegion'),
@@ -62,8 +61,8 @@ def get_office(session: CachedSession, office_id: str) -> dict:
         'phone_number':         office_data.get('telephone'),
         'fax_number':           office_data.get('faxNumber'),
         'email':                office_data.get('email'),
-        'office_url':           office_data.get('sameAs'),
-        'office_parent_url':    office_data.get('parentOrganization'),
+        'url':                  office_data.get('sameAs'),
+        'parent_url':           office_data.get('parentOrganization'),
         'nws_region':           office_data.get('nwsRegion'),
         'counties':             office_data.get('responsibleCounties'),
         'forecast_zones':       office_data.get('responsibleForecastZones'),

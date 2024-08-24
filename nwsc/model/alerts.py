@@ -7,52 +7,52 @@ from dataclasses import dataclass
 # is referenced in the new alert response
 @dataclass
 class PriorAlert:
-    prior_alert_url: str
-    prior_alert_id: str
-    prior_alert_sent_at: datetime
+    id: str
+    url: str
+    sent_at: datetime
 
 
 @dataclass
 class Alert:
-    alert_title: str
-    alert_updated_at: datetime
-    alert_url: str
-    alert_id: str
-    alert_area_desc: str
-    alert_area_urls: list
-    alert_areas_ugc: list
-    alert_areas_same: list
-    alert_sent_by: str
-    alert_sent_by_name: str
-    alert_sent_at: datetime
-    alert_effective_at: datetime
-    alert_ends_at: datetime
-    alert_status: str
-    alert_message_type: str
-    alert_category: str
-    alert_certainty: str
-    alert_urgency: str
-    alert_event_type: str
-    alert_onset_at: datetime
-    alert_expires_at: datetime
-    alert_headline: str
-    alert_description: str
-    alert_instruction: str
-    alert_response_type: str
-    alert_cap_awips_id: list
-    alert_cap_wmo_id: list
-    alert_cap_headline: list
-    alert_cap_blocked_channels: list
-    alert_cap_vtec: list
+    id: str
+    url: str
+    updated_at: datetime
+    title: str
+    headline: str
+    description: str
+    instruction: str
+    urgency: str
+    area_description: str
+    affected_zones_urls: list
+    areas_ugc: list
+    areas_same: list
+    sent_by: str
+    sent_by_name: str
+    sent_at: datetime
+    effective_at: datetime
+    ends_at: datetime
+    status: str
+    message_type: str
+    category: str
+    certainty: str
+    event_type: str
+    onset_at: datetime
+    expires_at: datetime
+    response_type: str
+    cap_awips_id: list
+    cap_wmo_id: list
+    cap_headline: list
+    cap_blocked_channels: list
+    cap_vtec: list
     prior_alerts: List[PriorAlert]
 
 
 @dataclass
 class AlertCounts:
-    total_alerts: int
-    land_alerts: int
-    marine_alerts: int
-    region_alerts: Dict[str, int]
-    area_alerts: Dict[str, int]
-    zone_alerts: Dict[str, int]
+    total: int
+    land: int
+    marine: int
+    regions: Dict[str, int]
+    areas: Dict[str, int]
+    zones: Dict[str, int]
 

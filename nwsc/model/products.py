@@ -5,22 +5,22 @@ from dataclasses import dataclass
 
 @dataclass
 class ProductType:
-    product_code: str
-    product_name: str
+    code: str
+    name: str
 
 
 @dataclass
 class ProductLocation:
-    location_code: str
-    location_name: str
+    code: str
+    name: str
 
 
 @dataclass
 class Product:
-    product_id: str
-    product_wmo_id: str
+    id: str
+    wmo_id: str
+    type: ProductType
+    text: str
     issuing_office: str
     issued_at: datetime
-    product_type: ProductType
-    product_text: str
 

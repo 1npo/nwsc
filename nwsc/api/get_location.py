@@ -5,6 +5,7 @@ from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
 from nwsc.api import USCB_API_GEOCODE, NWS_API_POINTS
+from nwsc.model.locations import Location
 
 
 # See: https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html
@@ -22,22 +23,22 @@ def uscb_geocode(session: CachedSession, address: str) -> Tuple[float, float] | 
 
 
 @display_spinner('Getting location data...')
-def get_points_for_location(session: CachedSession, address: str) -> dict:
+def get_points_for_location(session: CachedSession, address: str) -> Location:
 	coords = uscb_geocode(session, address)
 	coords_str = f'{coords[0]},{coords[1]}'
 	location_data = api_request(session, NWS_API_POINTS + coords_str)
-	location = {
+	location_dict = {
 		'city':                     location_data.get('properties', {}).get('relativeLocation', {}).get('properties', {}).get('city'),
 		'state':                    location_data.get('properties', {}).get('relativeLocation', {}).get('properties', {}).get('state'),
 		'timezone':                 location_data.get('properties', {}).get('timeZone'),
 		'grid_x':                   location_data.get('properties', {}).get('gridX'),
 		'grid_y':                   location_data.get('properties', {}).get('gridY'),
 		'county_warning_area':      location_data.get('properties', {}).get('cwa'),
-		'forecast_office_url':      location_data.get('properties', {}).get('forecastOffice'),
 		'radar_station':            location_data.get('properties', {}).get('radarStation'),
+		'forecast_office_url':      location_data.get('properties', {}).get('forecastOffice'),
 		'forecast_extended_url':    location_data.get('properties', {}).get('forecast'),				# /gridpoints/{wfo}/{x},{y}/forecast
 		'forecast_hourly_url':      location_data.get('properties', {}).get('forecastHourly'),			# /gridpoints/{wfo}/{x},{y}/forecast/hourly
 		'gridpoints_url':           location_data.get('properties', {}).get('forecastGridData'),		# /gridpoints/{wfo}/{x},{y}
 		'observation_stations_url': location_data.get('properties', {}).get('observationStations'),		# /gridpoints/{wfo}/{x},{y}/stations
 	}
-	return location
+	return Location(**location_dict)

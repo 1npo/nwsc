@@ -1,8 +1,6 @@
 """
 """
 
-from urllib.parse import quote
-from string import Template
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
@@ -203,9 +201,9 @@ def process_observations_data(observations_data: list) -> dict:
 def process_forecast_data(forecast_data: list) -> dict:
 	len_periods = len(forecast_data.get('properties', {}).get('periods'))
 	forecast = {
-		'forecast_generated_at':	parse_timestamp(forecast_data.get('properties', {}).get('generatedAt')),
-		'forecast_updated_at':		parse_timestamp(forecast_data.get('properties', {}).get('updateTime')),
-		'forecast_periods':			[],
+		'generated_at':	parse_timestamp(forecast_data.get('properties', {}).get('generatedAt')),
+		'updated_at':	parse_timestamp(forecast_data.get('properties', {}).get('updateTime')),
+		'periods':		[],
 	}
 	for i in range(0, len_periods):
 		period = forecast_data.get('properties', {}).get('periods', {})
@@ -244,7 +242,7 @@ def process_forecast_data(forecast_data: list) -> dict:
 			}
 			period_forecast.update(process_measurement_values(period, field_map, expected_types))
 			period_forecast = convert_measures(period_forecast)
-			forecast['forecast_periods'].append(period_forecast)
+			forecast['periods'].append(period_forecast)
 	return forecast
 
 
@@ -271,11 +269,11 @@ def get_observations_at_time(session: CachedSession, station_id: str, timestamp:
 
 @display_spinner('Getting extended forecast for location...')
 def get_extended_forecast(session: CachedSession, location: dict) -> dict:
-	forecast_data = api_request(session, location['forecast_extended_url'])
+	forecast_data = api_request(session, location.forecast_extended_url)
 	return process_forecast_data(forecast_data)
 
 
 @display_spinner('Getting hourly forecast for location...')
 def get_hourly_forecast(session: CachedSession, location: dict) -> dict:
-	forecast_data = api_request(session, location['forecast_hourly_url'])
+	forecast_data = api_request(session, location.forecast_hourly_url)
 	return process_forecast_data(forecast_data)

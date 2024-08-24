@@ -1,6 +1,4 @@
 from requests_cache import CachedSession
-from rich.pretty import pprint
-from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api.get_stations import process_station_data
@@ -16,22 +14,23 @@ def process_zone_data(zone_data: list) -> dict:
     zone_geometry = zone_data.get('geometry', {})
     if zone_geometry:
         zone_geometry = zone_geometry.get('coordinates')
-    return {
-        'zone_id':              zone_data.get('properties', {}).get('id'),
+    zone = {
+        'id':                   zone_data.get('properties', {}).get('id'),
         'grid_id':              zone_data.get('properties', {}).get('gridIdentifier'),
         'awips_id':             zone_data.get('properties', {}).get('awipsLocationIdentifier'),
-        'zone_type':            zone_data.get('properties', {}).get('type'),
-        'zone_name':            zone_data.get('properties', {}).get('name'),
-        'zone_url':             zone_data.get('properties', {}).get('@id'),
+        'name':                 zone_data.get('properties', {}).get('name'),
+        'type':                 zone_data.get('properties', {}).get('type'),
         'state':                zone_data.get('properties', {}).get('state'),
+        'url':                  zone_data.get('properties', {}).get('@id'),
         'timezones':            zone_data.get('properties', {}).get('timeZone'),
         'county_warning_areas': zone_data.get('properties', {}).get('cwa'),
-        'zone_effective_at':    parse_timestamp(zone_data.get('properties', {}).get('effectiveDate')),
-        'zone_expires_at':      parse_timestamp(zone_data.get('properties', {}).get('expirationDate')),
+        'effective_at':         parse_timestamp(zone_data.get('properties', {}).get('effectiveDate')),
+        'expires_at':           parse_timestamp(zone_data.get('properties', {}).get('expirationDate')),
         'forecast_offices':     zone_data.get('properties', {}).get('forecastOffices'),
         'observation_stations': zone_data.get('properties', {}).get('observationStations'),
         'multi_polygon':        zone_geometry,
     }
+    return zone
 
 
 @display_spinner('Getting zone...')
@@ -80,9 +79,9 @@ def get_zone_forecast(session: CachedSession, zone_id: str) -> dict:
     for period in zone_forecast_data.get('properties', {}).get('periods', {}):
         if period and isinstance(period, dict):
             period_forecasts.append({
-                'period_num':               period.get('number'),
-                'period_name':              period.get('name'),
-                'period_forecast_detailed': period.get('detailedForecast'),
+                'num':               period.get('number'),
+                'name':              period.get('name'),
+                'forecast_detailed': period.get('detailedForecast'),
             })
     forecast['period_forecasts'] = period_forecasts
     return forecast

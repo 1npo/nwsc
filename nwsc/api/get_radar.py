@@ -1,5 +1,4 @@
 from requests_cache import CachedSession
-from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.get_weather import process_measurement_values
 from nwsc.api.conversions import convert_measures
@@ -7,7 +6,7 @@ from nwsc.api.api_request import api_request, parse_timestamp
 from nwsc.api import (
 	NWS_API_RADAR_SERVERS,
     NWS_API_RADAR_STATIONS,
-	WMI_UNIT_MAP,
+	NWS_API_RADAR_QUEUES,
 )
 
 
@@ -16,19 +15,19 @@ def process_radar_station_rda_data(radar_station_data: dict) -> dict:
 	station = {}
 	if rda and isinstance(rda, dict):
 		station.update({
-			'rda_refreshed_at':				parse_timestamp(rda.get('timestamp')),
-			'rda_reporting_host':			rda.get('reportingHost', {}),
-			'rda_resolution_version':		rda.get('properties', {}).get('resolutionVersion'),
-			'rda_nexrad_l2_path':			rda.get('properties', {}).get('nl2Path'),
-			'rda_volume_coverage_pattern':	rda.get('properties', {}).get('volumeCoveragePattern'),
-			'rda_control_status':			rda.get('properties', {}).get('controlStatus'),
-			'rda_build_number':				rda.get('properties', {}).get('buildNumber'),
-			'rda_alarm_summary':			rda.get('properties', {}).get('alarmSummary'),
-			'rda_mode':						rda.get('properties', {}).get('mode'),
-			'rda_generator_state':			rda.get('properties', {}).get('generatorState'),
-			'rda_super_resolution_status':	rda.get('properties', {}).get('superResolutionStatus'),
-			'rda_operability_status':		rda.get('properties', {}).get('operabilityStatus'),
-			'rda_status':					rda.get('properties', {}).get('status'),
+			'refreshed_at':				parse_timestamp(rda.get('timestamp')),
+			'reporting_host':			rda.get('reportingHost', {}),
+			'resolution_version':		rda.get('properties', {}).get('resolutionVersion'),
+			'nexrad_l2_path':			rda.get('properties', {}).get('nl2Path'),
+			'volume_coverage_pattern':	rda.get('properties', {}).get('volumeCoveragePattern'),
+			'control_status':			rda.get('properties', {}).get('controlStatus'),
+			'build_number':				rda.get('properties', {}).get('buildNumber'),
+			'alarm_summary':			rda.get('properties', {}).get('alarmSummary'),
+			'mode':						rda.get('properties', {}).get('mode'),
+			'generator_state':			rda.get('properties', {}).get('generatorState'),
+			'super_resolution_status':	rda.get('properties', {}).get('superResolutionStatus'),
+			'operability_status':		rda.get('properties', {}).get('operabilityStatus'),
+			'status':					rda.get('properties', {}).get('status'),
 		})
 		field_map = {
 			'averageTransmitterPower': 				'rda_average_tx_power',
@@ -136,16 +135,16 @@ def process_radar_station_data(radar_station_data: dict) -> dict:
 		station_lat = station_coords[0]
 		station_lon = station_coords[1]
 	station = {
-		'station_lat':								station_lat,
-		'station_lon':								station_lon,
-		'station_id':								radar_station_data.get('properties', {}).get('id', {}),
-		'station_name':								radar_station_data.get('properties', {}).get('name', {}),
-		'station_type':								radar_station_data.get('properties', {}).get('stationType', {}),
-		'station_timezone':							radar_station_data.get('properties', {}).get('timeZone'),
-		'latency_nexrad_l2_last_received_at':		parse_timestamp(radar_station_data.get('properties', {}).get('latency', {}).get('levelTwoLastReceivedTime')),
-		'latency_max_at':							parse_timestamp(radar_station_data.get('properties', {}).get('latency', {}).get('maxLatencyTime')),
-		'station_reporting_host':					radar_station_data.get('properties', {}).get('latency', {}).get('reportingHost'),
-		'station_server_host':						radar_station_data.get('properties', {}).get('latency', {}).get('host'),
+		'lat':									station_lat,
+		'lon':									station_lon,
+		'server_host':							radar_station_data.get('properties', {}).get('latency', {}).get('host'),
+		'reporting_host':						radar_station_data.get('properties', {}).get('latency', {}).get('reportingHost'),
+		'id':									radar_station_data.get('properties', {}).get('id', {}),
+		'name':									radar_station_data.get('properties', {}).get('name', {}),
+		'type':									radar_station_data.get('properties', {}).get('stationType', {}),
+		'timezone':								radar_station_data.get('properties', {}).get('timeZone'),
+		'latency_nexrad_l2_last_received_at':	parse_timestamp(radar_station_data.get('properties', {}).get('latency', {}).get('levelTwoLastReceivedTime')),
+		'latency_max_at':						parse_timestamp(radar_station_data.get('properties', {}).get('latency', {}).get('maxLatencyTime')),
 	}
 	elevation_measures = radar_station_data.get('properties', {})
 	station.update(process_measurement_values(elevation_measures,
@@ -164,17 +163,17 @@ def process_radar_station_data(radar_station_data: dict) -> dict:
 
 def process_radar_server_data(radar_server_data: dict) -> dict:
 	server = {
-		'server_host':                  	radar_server_data.get('id'),
-		'server_type':                  	radar_server_data.get('type'),
-		'server_up_since':              	parse_timestamp(radar_server_data.get('hardware', {}).get('uptime')),
-		'server_hardware_refresh_at':   	parse_timestamp(radar_server_data.get('hardware', {}).get('timestamp')),
-		'server_cpu':                   	radar_server_data.get('hardware', {}).get('cpuIdle'),
-		'server_memory':                	radar_server_data.get('hardware', {}).get('memory'),
-		'server_io_utilization':        	radar_server_data.get('hardware', {}).get('ioUtilization'),
-		'server_disk':                  	radar_server_data.get('hardware', {}).get('disk'),
-		'server_load_1':                	radar_server_data.get('hardware', {}).get('load1'),
-		'server_load_5':                	radar_server_data.get('hardware', {}).get('load5'),
-		'server_load_15':               	radar_server_data.get('hardware', {}).get('load15'),
+		'host':                  			radar_server_data.get('id'),
+		'type':                  			radar_server_data.get('type'),
+		'up_since':              			parse_timestamp(radar_server_data.get('hardware', {}).get('uptime')),
+		'hardware_refresh_at':   			parse_timestamp(radar_server_data.get('hardware', {}).get('timestamp')),
+		'cpu':                   			radar_server_data.get('hardware', {}).get('cpuIdle'),
+		'memory':                			radar_server_data.get('hardware', {}).get('memory'),
+		'io_utilization':        			radar_server_data.get('hardware', {}).get('ioUtilization'),
+		'disk':                  			radar_server_data.get('hardware', {}).get('disk'),
+		'load_1':                			radar_server_data.get('hardware', {}).get('load1'),
+		'load_5':                			radar_server_data.get('hardware', {}).get('load5'),
+		'load_15':               			radar_server_data.get('hardware', {}).get('load15'),
 		'command_last_executed':        	radar_server_data.get('command', {}).get('lastExecuted'),
 		'command_last_executed_at':     	parse_timestamp(radar_server_data.get('command', {}).get('lastExecutedTime')),
 		'command_last_nexrad_data_at':  	parse_timestamp(radar_server_data.get('command', {}).get('lastNexradDataTime')),
@@ -226,9 +225,9 @@ def get_radar_station_alarms(session: CachedSession, radar_station_id: str) -> d
 	radar_alarms = []
 	for alarm in radar_alarm_data.get('@graph', {}):
 		radar_alarms.append({
-			'alarm_status':		alarm.get('status'),
-			'alarm_message':	alarm.get('message'),
-			'alarm_event_at':	alarm.get('timestamp'),
+			'status':			alarm.get('status'),
+			'message':			alarm.get('message'),
+			'event_at':			alarm.get('timestamp'),
 			'active_channel':	alarm.get('activeChannel'),
 		})
 	return radar_alarms
@@ -276,3 +275,22 @@ def get_radar_server(session: CachedSession, server_id: str) -> dict:
 	radar_server_data = api_request(session, NWS_API_RADAR_SERVERS + server_id)
 	return process_radar_server_data(radar_server_data)
 
+
+@display_spinner('Getting radar queue for host and station...')
+def get_radar_queue(session: CachedSession, ldm_host: str, station_id: str) -> dict:
+	""" """
+	radar_queue_data = api_request(session, NWS_API_RADAR_QUEUES + ldm_host + f'?station={station_id}')
+	radar_queue = []
+	for item in radar_queue_data.get('@graph', {}):
+		radar_queue.append({
+			'host':					item.get('host'),
+			'arrived_at':			item.get('arrivalTime'),
+			'created_at':			item.get('createdAt'),
+			'station_id':			item.get('stationId'),
+			'type':					item.get('type'),
+			'feed':					item.get('feed'),
+			'resolution_version':	item.get('resolutionVersion'),
+			'sequence_number':		item.get('sequenceNumber'),
+			'size':					item.get('size'),
+		})
+	return radar_queue

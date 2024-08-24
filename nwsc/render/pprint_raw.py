@@ -31,7 +31,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 
 	# stations
 	local_stations_data = get_stations_near_location(session, location_data)
-	nearest_station = local_stations_data[1]['station_id']
+	nearest_station = local_stations_data[1]['id']
 	observations_latest = get_latest_observations(session, nearest_station)
 	observations_all = get_all_observations(session, nearest_station)
 	observations_at_time = get_observations_at_time(session, 'KBOS', '2024-08-19T18:54:00+00:00')
@@ -44,16 +44,17 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	radar_stations = get_radar_stations(session)
 	radar_station = get_radar_station(session, 'KMVX')
 	radar_station_alarms = get_radar_station_alarms(session, 'KHPX')
+	radar_queue = get_radar_queue(session, 'rds', 'KBOX')
 
 	# alerts
-	alerts = get_alerts_by_area(session, location_data['state'])
+	alerts = get_alerts_by_area(session, 'FL')
 	alert_counts = get_alert_counts(session)
 
 	# products
 	product_types = get_product_types(session)
 	product_types_by_location = get_product_types_by_location(session, 'BGM')
 	product_locations = get_product_locations(session)
-	product_locations_by_type = get_product_locations_by_type(session, 'AWO')
+	product_locations_by_type = get_product_locations_by_type(session, 'RVF')
 	products = get_products(session)
 	products_by_type = get_products_by_type(session, 'RR2')
 	products_by_type_and_location = get_products_by_type_and_location(session, 'ADA', 'SRH')
@@ -84,6 +85,9 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 	cwas = get_cwas(session, 'ZOB')
 	cwa = get_cwa(session, 'ZOB', '2024-08-17', 101)
 
+	# glossary
+	glossary = get_glossary(session)
+
 	weather_data = {
 		'location_data':					location_data,
 		'local_stations_data':				local_stations_data,
@@ -100,6 +104,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 		'radar_station':					radar_station,
 		'radar_stations':					radar_stations,
 		'radar_station_alarms':				radar_station_alarms,
+		'radar_queue':						radar_queue,
 		'product_types':					product_types,
 		'product_types_by_location':		product_types_by_location,
 		'product_locations':				product_locations,
@@ -125,6 +130,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 		'cwas':								cwas,
 		'cwa':								cwa,
 		'cwsu':								cwsu,
+		'glossary':							glossary,
 	}
 	return weather_data
 
@@ -144,6 +150,6 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		if name == 'forecast_extended':
+		if name in ('radar_queue'):
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)

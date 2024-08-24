@@ -6,6 +6,7 @@ from dataclasses import dataclass
 # See: https://www.ncei.noaa.gov/products/radar/next-generation-weather-radar
 @dataclass
 class RadarDataAcquisition:
+    refreshed_at: str
     reporting_host: str
     mode: str
     status: str
@@ -14,7 +15,6 @@ class RadarDataAcquisition:
     super_resolution_status: str
     generator_state: str
     alarm_summary: str
-    refreshed_at: str
     resolution_version: str
     nexrad_l2_path: str
     volume_coverage_pattern: str
@@ -98,25 +98,31 @@ class RadarStationAlarm:
 
 
 @dataclass
+class RadarQueue:
+    pass
+
+
+@dataclass
 class RadarStation:
-    station_id: str
-    station_name: str
-    station_type: str
-    station_timezone: str
-    station_lat: float
-    station_lon: float
-    station_elevation_m: float
-    station_elevation_mi: float 
+    id: str
+    name: str
+    type: str
+    timezone: str
+    lat: float
+    lon: float
+    server_host: str
+    reporting_host: str
+    elevation_m: float
+    elevation_mi: float 
     latency_current_s: float
     latency_average_s: float
     latency_max_s: float
     nexrad_l2_latency_last_received_at: datetime
     max_latency_at: datetime
-    station_server_host: str
-    station_reporting_host: str
     radar_data_acquisition: RadarDataAcquisition
     radar_performance: RadarPerformance
     radar_adaptation: RadarAdaptation
+    radar_queue: List[RadarQueue]
     alarms: List[RadarStationAlarm]
 
 
@@ -137,18 +143,18 @@ class NetworkInterface:
 
 @dataclass
 class RadarServer:
-    server_host: str
-    server_type: str
-    server_up_since: datetime
-    server_hardware_refresh_at: datetime
-    server_cpu: float
-    server_memory: float
-    server_io_utilization: float
-    server_disk: int
-    server_load_1: float
-    server_load_5: float
-    server_load_15: float
-    server_ports: List[NetworkInterface]
+    host: str
+    type: str
+    up_since: datetime
+    hardware_refresh_at: datetime
+    cpu: float
+    memory: float
+    io_utilization: float
+    disk: int
+    load_1: float
+    load_5: float
+    load_15: float
+    ports: List[NetworkInterface]
     command_last_executed: str
     command_last_executed_at: datetime
     command_last_nexrad_data_at: datetime
