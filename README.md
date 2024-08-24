@@ -97,6 +97,7 @@ A full-coverage National Weather Service API client for the terminal
 > **The following endpoints are unexpectedly returning empty data (https://github.com/weather-gov/api/discussions/759)**
 > - `/stations/{stationId}/tafs`
 > - `/stations/{stationId}/tafs/{date}/{time}`
+> 
 > TAFs can be found via `/products/types/TAF` or from the [Aviation Weather Center API](https://aviationweather.gov/data/api/#/Data/dataTaf) via their `/data/api/taf` endpoint.
 
 - [x] /alerts
