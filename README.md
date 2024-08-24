@@ -183,7 +183,7 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - Icon in the logo is from [Phosphor Icons](https://phosphoricons.com/)
 - [Bruno](https://www.usebruno.com) and [Swagger UI](https://swagger.io/tools/swagger-ui/) were very helpful for exploring the API
 - The presentation of hourly forecast data was inspired by DarkSky, specifically [this article](https://nightingaledvs.com/dark-sky-weather-data-viz/)
-
+- The NWS IT/API team have been responsive on their [GitHub page](https://github.com/weather-gov/api) and helpful with troubleshooting endpoint issues
 ## Contributing
 - See [CONTRIBUTING](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`
 - See [TODO](TODO.md) for things that need to be done
