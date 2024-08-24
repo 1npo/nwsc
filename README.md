@@ -169,7 +169,7 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 ## System Design
 ### App Architecture
 <div align='center'>
-<img src='https://github.com/1npo/nwsc/blob/main/resources/img/nwsc_architecture.svg' alt='nwsc system architecture diagram'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/nwsc_architecture.png' alt='nwsc system architecture diagram'>
 </div>
 
 ### Data Model
