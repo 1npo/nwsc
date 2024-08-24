@@ -150,6 +150,6 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		if name in ('radar_queue'):
+		if name in ('office', 'office_headline'):
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)

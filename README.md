@@ -143,7 +143,7 @@ A full-coverage National Weather Service API client for the terminal
 - [x] /radar/stations
 - [x] /radar/stations/{stationId}
 - [x] /radar/stations/{stationId}/alarms
-- [ ] ~~/radar/queues/{host}~~ (**UNEXPECTED 404**)
+- [x] /radar/queues/{host}
 - [ ] ~~/radar/profilers/{stationId}~~ (**UNEXPECTED 404**)
 - [x] /products
 - [x] /products/locations

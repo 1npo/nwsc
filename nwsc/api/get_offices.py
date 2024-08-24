@@ -1,3 +1,4 @@
+from typing import List
 from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
@@ -5,6 +6,7 @@ from nwsc.api import (
     NWS_API_OFFICES,
     VALID_NWS_FORECAST_OFFICES,
 )
+from nwsc.model.offices import Office, OfficeHeadline
 
 
 InvalidOfficeException = ValueError(
@@ -14,7 +16,7 @@ InvalidOfficeException = ValueError(
 
 
 def process_headline_data(headline_data: dict) -> dict:
-    return {
+    headline_dict = {
         'id':                   headline_data.get('id'),
         'name':                 headline_data.get('name'),
         'title':                headline_data.get('title'),
@@ -25,10 +27,11 @@ def process_headline_data(headline_data: dict) -> dict:
         'office_url':           headline_data.get('office'),
         'is_important':         headline_data.get('important'),
     }
+    return OfficeHeadline(**headline_dict)
 
 
 @display_spinner('Getting office headlines...')
-def get_office_headlines(session: CachedSession, office_id: str) -> dict:
+def get_office_headlines(session: CachedSession, office_id: str) -> List[OfficeHeadline]:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     headlines_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines')
@@ -39,7 +42,7 @@ def get_office_headlines(session: CachedSession, office_id: str) -> dict:
 
 
 @display_spinner('Getting headline from office...')
-def get_office_headline(session: CachedSession, office_id: str, headline_id: str) -> dict:
+def get_office_headline(session: CachedSession, office_id: str, headline_id: str) -> OfficeHeadline:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     headline_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines/' + headline_id)
@@ -47,11 +50,11 @@ def get_office_headline(session: CachedSession, office_id: str, headline_id: str
 
 
 @display_spinner('Getting forecast office details...')
-def get_office(session: CachedSession, office_id: str) -> dict:
+def get_office(session: CachedSession, office_id: str) -> Office:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     office_data = api_request(session, NWS_API_OFFICES + office_id)
-    return {
+    office_dict = {
         'id':                   office_data.get('id'),
         'name':                 office_data.get('name'),
         'street_address':       office_data.get('address', {}).get('streetAddress'),
@@ -69,3 +72,4 @@ def get_office(session: CachedSession, office_id: str) -> dict:
         'fire_zones':           office_data.get('responsibleFireZones'),
         'observation_stations': office_data.get('approvedObservationStations'),
     }
+    return Office(**office_dict)
