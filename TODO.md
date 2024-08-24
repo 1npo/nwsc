@@ -5,9 +5,9 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
 > [!NOTE]
 > The roadmap lists high-level milestones. The remaining sections list specific tasks that need to be done to reach these milestones.
 - [x] Get all data from all endpoints
-- [ ] Create a model of all API data
-- [ ] Create schemas for normalizing API data
+- [x] Create a model of all API data
 - [ ] Create repositories for loading modeled API data into databases
+- [ ] Create schemas for normalizing API data
 - [ ] Design and build a user interface
 - [ ] Design and build a suite of unit tests
 - [ ] Complete and finalize MVP documentation

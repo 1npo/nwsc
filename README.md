@@ -1,5 +1,5 @@
 <div align='center'>
-<img src='https://github.com/1npo/nwsc/blob/main/resources/img/nwsc-logo.png' alt='nwsc logo by http://logomvp.com/, https://x.com/lentesdev; using https://phosphoricons.com/'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/nwsc_logo.png' alt='nwsc logo by http://logomvp.com/, https://x.com/lentesdev; using https://phosphoricons.com/'>
 
 ---
 
@@ -168,8 +168,10 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 
 ## System Design
 ### App Architecture
-- [ ] Create application architecture diagram, export to PNG
-- [ ] Add diagram to `resources.img` and embed here
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/nwsc_architecture.svg' alt='nwsc system architecture diagram'>
+</div>
+
 ### Data Model
 - [ ] Describe dataclasses here
 ### Package Structure
