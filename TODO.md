@@ -48,14 +48,15 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - See: https://www.weather.gov/nl2/ServerView
 - [ ] Revise `model.radar` to better model NWS radars and servers
 
-## Repository
+## Repository & Service
 - [x] Create a `repository` subpackage for recording historical weather responses
 - [ ] Create repository modules:
-  - [ ] `in-memory`
-  - [ ] `sqlite`
+  - [x] `in-memory`
+  - [x] `sqlite`
   - [ ] `postgresql`
   - [ ] `delta`
-- [ ] Define tables for:
+  - [ ] `json`
+- [ ] Define table schema for:
   - [ ] locations
   - [ ] stations
   - [ ] observations
@@ -71,7 +72,8 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - [ ] center weather service units
   - [ ] center weather advisories
   - [ ] glossary
-
+- [ ] Create repository services:
+  - [ ] 
 ## Interface
 - [ ] Create an interactive TUI with Textual
 - [ ] Update `main.py` to start the TUI by default
@@ -133,6 +135,8 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - [ ] `api.conversions`
   - [ ] `api.geocode`
   - [ ] `api.get_alerts`
+  - [ ] `api.get_aviation`
+  - [ ] `api.get_enums`
   - [ ] `api.get_glossary`
   - [ ] `api.get_offices`
   - [ ] `api.get_products`
@@ -141,11 +145,12 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - [ ] `api.get_weather`
   - [ ] `api.get_zones`
   - [ ] `render.decorators`
-  - [ ] `repository.base`
-  - [ ] `repository.in_memory`
-  - [ ] `repository.sqlite`
-  - [ ] `repository.postgres`
-  - [ ] `repository.delta`
+  - [ ] `repository.base_repository`
+  - [ ] `repository.in_memory_repository`
+  - [ ] `repository.sqlite_repository`
+  - [ ] `repository.postgres_repository`
+  - [ ] `repository.delta_repository`
+  - [ ] `repository.json_repository`
 - [ ] Set up GitHub Action(s) to run unit tests
 
 ## Miscellaneous
