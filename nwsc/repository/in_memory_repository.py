@@ -1,4 +1,4 @@
-from nwsc.nwsc.repository.base import IRepository
+from nwsc.nwsc.repository.base_repository import IRepository
 
 
 class InMemoryRepository(IRepository):
@@ -21,9 +21,9 @@ class InMemoryRepository(IRepository):
             for key, value in filter.items():
                 records.append(next((item for item in self._repository if item.get(key) == value), None))
             return records
-        
+    
     def create(self, item: dict) -> dict:
-        item['id'] = len(self._repository) + 1
+        item.get('id') = len(self._repository) + 1
         self._repository.append(item)
         return item
     

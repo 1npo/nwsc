@@ -245,7 +245,10 @@ def process_radar_server_data(radar_server_data: dict) -> dict:
 
 
 @display_spinner('Getting radar station alarms...')
-def get_radar_station_alarms(session: CachedSession, radar_station_id: str) -> List[RadarStationAlarm]:
+def get_radar_station_alarms(
+	session: CachedSession,
+	radar_station_id: str
+) -> List[RadarStationAlarm]:
 	""" """
 	radar_alarm_data = api_request(session, NWS_API_RADAR_STATIONS + radar_station_id + '/alarms')
 	radar_alarms = []
@@ -271,7 +274,10 @@ def get_radar_stations(session: CachedSession) -> List[RadarStation]:
 
 
 @display_spinner('Getting radar station details...')
-def get_radar_station(session: CachedSession, station_id: str) -> RadarStation:
+def get_radar_station(
+	session: CachedSession,
+	station_id: str
+) -> RadarStation:
 	""" """
 	radar_station_data = api_request(session, NWS_API_RADAR_STATIONS + station_id)
 	return process_radar_station_data(radar_station_data)
@@ -297,14 +303,21 @@ def get_radar_servers(session: CachedSession) -> List[RadarServer]:
 
 
 @display_spinner('Getting radar server details...')
-def get_radar_server(session: CachedSession, server_id: str) -> RadarServer:
+def get_radar_server(
+	session: CachedSession,
+	server_id: str
+) -> RadarServer:
 	""" """
 	radar_server_data = api_request(session, NWS_API_RADAR_SERVERS + server_id)
 	return process_radar_server_data(radar_server_data)
 
 
 @display_spinner('Getting radar queue for host and station...')
-def get_radar_queue(session: CachedSession, ldm_host: str, station_id: str) -> List[RadarQueueItem]:
+def get_radar_queue(
+	session: CachedSession,
+	ldm_host: str,
+	station_id: str
+) -> List[RadarQueueItem]:
 	""" """
 	radar_queue_data = api_request(session, NWS_API_RADAR_QUEUES + ldm_host + f'?station={station_id}')
 	radar_queue = []

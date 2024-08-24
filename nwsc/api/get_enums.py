@@ -22,7 +22,10 @@ FAILED_TO_GET_ENUM_MESSAGE = (
 ) + BUG_REPORT_MESSAGE
 
 
-def process_error_response(parameter_errors: dict, failure_message: str) -> Union[dict, None]:
+def process_error_response(
+    parameter_errors: dict,
+    failure_message: str
+) -> Union[dict, None]:
     enums = []
     if isinstance(parameter_errors, list):
         for error in parameter_errors:

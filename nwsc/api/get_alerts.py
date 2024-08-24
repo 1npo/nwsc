@@ -77,25 +77,37 @@ def get_alerts(session: CachedSession) -> List[Alert]:
 
 
 @display_spinner('Getting alerts for the local area...')
-def get_alerts_by_area(session: CachedSession, area: str) -> List[Alert]:
+def get_alerts_by_area(
+	session: CachedSession,
+	area: str
+) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_AREA + area)
 	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for zone...')
-def get_alerts_by_zone(session: CachedSession, zone: str) -> List[Alert]:
+def get_alerts_by_zone(
+	session: CachedSession,
+	zone: str
+) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_ZONE + zone)
 	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for marine region...')
-def get_alerts_by_region(session: CachedSession, region: str) -> List[Alert]:
+def get_alerts_by_region(
+	session: CachedSession,
+	region: str
+) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_REGION + region)
 	return process_alert_data(alerts)
 
 
 @display_spinner('Getting alerts for marine region...')
-def get_alerts_by_id(session: CachedSession, alert_id: str) -> List[Alert]:
+def get_alerts_by_id(
+	session: CachedSession,
+	alert_id: str
+) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS + alert_id)
 	return process_alert_data({'features': [alerts]})
 

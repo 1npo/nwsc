@@ -1,7 +1,7 @@
 import os
 import sqlite3
 from loguru import logger
-from bourdain.repo.repo_base import IRepository
+from nwsc.nwsc.repository.base_repository import IRepository
 
 
 SQLITE_SCHEMA_FILE = os.path.join(os.path.dirname(__file__), 'schema_sqlite3.sql')

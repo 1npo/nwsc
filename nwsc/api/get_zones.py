@@ -38,7 +38,11 @@ def process_zone_data(zone_data: list) -> Zone:
 
 
 @display_spinner('Getting zone...')
-def get_zone(session: CachedSession, zone_type: str, zone_id: str) -> Zone:
+def get_zone(
+    session: CachedSession,
+    zone_type: str,
+    zone_id: str
+) -> Zone:
     if zone_type not in VALID_NWS_ZONES:
         raise ValueError(f'Invalid zone type provided: {zone_type}. Valid zones are: {", ".join(VALID_NWS_ZONES)}')
     zone_data = api_request(session, NWS_API_ZONES + f'/{zone_type}/{zone_id}')
@@ -46,7 +50,10 @@ def get_zone(session: CachedSession, zone_type: str, zone_id: str) -> Zone:
 
 
 @display_spinner('Getting all zones...')
-def get_zones(session: CachedSession, zone_type: str = None) -> List[Zone]:
+def get_zones(
+    session: CachedSession,
+    zone_type: str = None
+) -> List[Zone]:
     if zone_type:
         zones_data = api_request(session, NWS_API_ZONES + f'/{zone_type}')
     else:
@@ -58,7 +65,10 @@ def get_zones(session: CachedSession, zone_type: str = None) -> List[Zone]:
 
 
 @display_spinner('Getting stations servicing zone...')
-def get_zone_stations(session: CachedSession, zone_id: str) -> List[Station]:
+def get_zone_stations(
+    session: CachedSession,
+    zone_id: str
+) -> List[Station]:
     zone_stations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/stations')
     zone_stations = []
     for feature in zone_stations_data.get('features', {}):
@@ -67,7 +77,10 @@ def get_zone_stations(session: CachedSession, zone_id: str) -> List[Station]:
 
 
 @display_spinner('Getting observations for zone...')
-def get_zone_observations(session: CachedSession, zone_id: str) -> List[Observation]:
+def get_zone_observations(
+    session: CachedSession,
+    zone_id: str
+) -> List[Observation]:
     zone_observations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/observations')
     zone_observations = []
     for feature in zone_observations_data.get('features', {}):
@@ -76,7 +89,10 @@ def get_zone_observations(session: CachedSession, zone_id: str) -> List[Observat
 
 
 @display_spinner('Getting forecast for zone...')
-def get_zone_forecast(session: CachedSession, zone_id: str) -> ZoneForecast:
+def get_zone_forecast(
+    session: CachedSession,
+    zone_id: str
+) -> ZoneForecast:
     zone_forecast_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/forecast')
     forecast_dict = {
         'forecasted_at':    parse_timestamp(zone_forecast_data.get('properties', {}).get('updated')),

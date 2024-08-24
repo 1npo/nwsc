@@ -34,7 +34,6 @@ A full-coverage National Weather Service API client for the terminal
 - [System Design](#system-design)
   - [App Architecture](#app-architecture)
   - [Data Model](#data-model)
-  - [Package Structure](#package-structure)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
@@ -173,9 +172,43 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 </div>
 
 ### Data Model
-- [ ] Describe dataclasses here
-### Package Structure
-- [ ] Describe package structure here
+- `alerts`
+  - `Alert`
+  - `PriorAlert`
+  - `AlertCounts`
+- `aviation`
+  - `SIGMET`
+  - `CenterWeatherAdvisory`
+  - `CentralWeatherServiceUnit`
+- `locations`
+  - `Location`
+- `offices`
+  - `Office`
+  - `OfficeHeadline`
+- `products`
+  - `Product`
+  - `ProductLocation`
+  - `ProductType`
+- `radar`
+  - `RadarDataAcquisition`
+  - `RadarPerformance`
+  - `RadarPathLoss`
+  - `RadarAdaptation`
+  - `RadarStationAlarm`
+  - `RadarQueueItem`
+  - `RadarStation`
+  - `NetworkInterface`
+  - `RadarServer`
+- `stations`
+  - `Station`
+- `weather`
+  - `Observation`
+  - `ForecastPeriod`
+  - `Forecast`
+- `zones`
+  - `Zone`
+  - `ZoneForecastPeriod`
+  - `ZoneForecast`
 
 ## License
 The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)

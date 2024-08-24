@@ -3,7 +3,10 @@ from datetime import datetime
 from requests_cache import CachedSession
 
 
-def api_request(session: CachedSession, url: str) -> dict:
+def api_request(
+	session: CachedSession,
+	url: str
+) -> dict:
 	return session.get(url).json()
 
 

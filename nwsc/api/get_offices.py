@@ -31,7 +31,10 @@ def process_headline_data(headline_data: dict) -> dict:
 
 
 @display_spinner('Getting office headlines...')
-def get_office_headlines(session: CachedSession, office_id: str) -> List[OfficeHeadline]:
+def get_office_headlines(
+    session: CachedSession,
+    office_id: str
+) -> List[OfficeHeadline]:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     headlines_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines')
@@ -42,7 +45,11 @@ def get_office_headlines(session: CachedSession, office_id: str) -> List[OfficeH
 
 
 @display_spinner('Getting headline from office...')
-def get_office_headline(session: CachedSession, office_id: str, headline_id: str) -> OfficeHeadline:
+def get_office_headline(
+    session: CachedSession,
+    office_id: str,
+    headline_id: str
+) -> OfficeHeadline:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     headline_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines/' + headline_id)
@@ -50,7 +57,10 @@ def get_office_headline(session: CachedSession, office_id: str, headline_id: str
 
 
 @display_spinner('Getting forecast office details...')
-def get_office(session: CachedSession, office_id: str) -> Office:
+def get_office(
+    session: CachedSession,
+    office_id: str
+) -> Office:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     office_data = api_request(session, NWS_API_OFFICES + office_id)

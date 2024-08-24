@@ -35,7 +35,10 @@ def process_station_data(feature: dict) -> Station:
 	return Station(**station)
 
 
-def get_stations(session: CachedSession, url: str) -> List[Station]:
+def get_stations(
+	session: CachedSession,
+	url: str
+) -> List[Station]:
 	stations_data = api_request(session, url)
 	stations = []
 	for feature in stations_data.get('features', {}):
@@ -44,17 +47,27 @@ def get_stations(session: CachedSession, url: str) -> List[Station]:
 
 
 @display_spinner('Getting stations usable in grid area...')
-def get_stations_by_grid(session: CachedSession, forecast_office: str, gridpoints: dict) -> List[Station]:
+def get_stations_by_grid(
+	session: CachedSession,
+	forecast_office: str,
+	gridpoints: dict
+) -> List[Station]:
 	return get_stations(session, NWS_API_GRIDPOINTS + f'/{forecast_office}/{gridpoints}/stations')
 
 
 @display_spinner('Getting local stations...')
-def get_stations_near_location(session: CachedSession, location: dict) -> List[Station]:
+def get_stations_near_location(
+	session: CachedSession,
+	location: dict
+) -> List[Station]:
 	return get_stations(session, location.observation_stations_url)
 
 
 @display_spinner('Getting station...')
-def get_station(session: CachedSession, station_id: dict) -> Station:
+def get_station(
+	session: CachedSession,
+	station_id: dict
+) -> Station:
 	station_data = api_request(session, NWS_API_STATIONS + station_id)
 	return process_station_data(station_data)
 

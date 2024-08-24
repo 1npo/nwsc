@@ -251,7 +251,10 @@ def process_forecast_data(forecast_data: list) -> Forecast:
 
 
 @display_spinner('Getting all station observations...')
-def get_all_observations(session: CachedSession, station_id: str) -> List[Observation]:
+def get_all_observations(
+	session: CachedSession,
+	station_id: str
+) -> List[Observation]:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations')
 	observations = []
 	for feature in observations_data.get('features', {}):
@@ -260,24 +263,37 @@ def get_all_observations(session: CachedSession, station_id: str) -> List[Observ
 
 
 @display_spinner('Getting latest station observations...')
-def get_latest_observations(session: CachedSession, station_id: str) -> Observation:
+def get_latest_observations(
+	session: CachedSession,
+	station_id: str
+) -> Observation:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/latest')
 	return process_observations_data(observations_data)
 
 
 @display_spinner('Getting station observations at the given time...')
-def get_observations_at_time(session: CachedSession, station_id: str, timestamp: str) -> Observation:
+def get_observations_at_time(
+	session: CachedSession,
+	station_id: str,
+	timestamp: str
+) -> Observation:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/' + timestamp)
 	return process_observations_data(observations_data)
 
 
 @display_spinner('Getting extended forecast for location...')
-def get_extended_forecast(session: CachedSession, location: dict) -> Forecast:
+def get_extended_forecast(
+	session: CachedSession,
+	location: dict
+) -> Forecast:
 	forecast_data = api_request(session, location.forecast_extended_url)
 	return process_forecast_data(forecast_data)
 
 
 @display_spinner('Getting hourly forecast for location...')
-def get_hourly_forecast(session: CachedSession, location: dict) -> Forecast:
+def get_hourly_forecast(
+	session: CachedSession,
+	location: dict
+) -> Forecast:
 	forecast_data = api_request(session, location.forecast_hourly_url)
 	return process_forecast_data(forecast_data)

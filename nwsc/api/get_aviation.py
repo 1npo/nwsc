@@ -41,19 +41,31 @@ def get_all_sigmets(session: CachedSession) -> List[SIGMET]:
 
 
 @display_spinner('Getting all SIGMETs issued by ATSU...')
-def get_all_atsu_sigmets(session: CachedSession, atsu: str) -> List[SIGMET]:
+def get_all_atsu_sigmets(
+    session: CachedSession,
+    atsu: str
+) -> List[SIGMET]:
     sigmets_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu)
     return process_sigmets(sigmets_data)
 
 
 @display_spinner('Getting all SIGMETs issued by ATSU on date...')
-def get_all_atsu_sigmets_by_date(session: CachedSession, atsu: str, date_str: str) -> List[SIGMET]:
+def get_all_atsu_sigmets_by_date(
+    session: CachedSession,
+    atsu: str,
+    date_str: str
+) -> List[SIGMET]:
     sigmets_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu + f'/{date_str}')
     return process_sigmets(sigmets_data)
 
 
 @display_spinner('Getting SIGMET...')
-def get_sigmet(session: CachedSession, atsu: str, date_str: str, time_str) -> SIGMET:
+def get_sigmet(
+    session: CachedSession,
+    atsu: str,
+    date_str: str,
+    time_str
+) -> SIGMET:
     sigmet_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu + f'/{date_str}/{time_str}')
     return process_sigmet_data(sigmet_data)
 
@@ -77,7 +89,10 @@ def process_cwa_data(cwa_data: dict) -> CenterWeatherAdvisory:
 
 
 @display_spinner('Getting CWSU details...')
-def get_cwsu(session: CachedSession, cwsu_id: str) -> CentralWeatherServiceUnit:
+def get_cwsu(
+    session: CachedSession,
+    cwsu_id: str
+) -> CentralWeatherServiceUnit:
     cwsu_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id)
     cwsu_dict = {
         'id':           cwsu_data.get('id'),
@@ -96,7 +111,10 @@ def get_cwsu(session: CachedSession, cwsu_id: str) -> CentralWeatherServiceUnit:
 
 
 @display_spinner('Getting all CWAs issued by CWSU...')
-def get_cwas(session: CachedSession, cwsu_id: str) -> List[CenterWeatherAdvisory]:
+def get_cwas(
+    session: CachedSession,
+    cwsu_id: str
+) -> List[CenterWeatherAdvisory]:
     cwas_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id + '/cwas')
     cwas = []
     for feature in cwas_data.get('features', {}):
@@ -105,6 +123,11 @@ def get_cwas(session: CachedSession, cwsu_id: str) -> List[CenterWeatherAdvisory
 
 
 @display_spinner('Getting CWA...')
-def get_cwa(session: CachedSession, cwsu_id: str, date_str: str, sequence: int) -> CenterWeatherAdvisory:
+def get_cwa(
+    session: CachedSession,
+    cwsu_id: str,
+    date_str: str,
+    sequence: int
+) -> CenterWeatherAdvisory:
     cwa_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id + f'/cwas/{date_str}/{sequence}')
     return process_cwa_data(cwa_data)

@@ -9,7 +9,10 @@ from nwsc.model.locations import Location
 
 
 # See: https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html
-def uscb_geocode(session: CachedSession, address: str) -> Tuple[float, float] | None:
+def uscb_geocode(
+	session: CachedSession,
+	address: str
+) -> Tuple[float, float] | None:
 	"""Get the lat and lon for a street address using the US Census Bureau's free geocoding API"""
 	coord_data = api_request(session, USCB_API_GEOCODE + address.replace(' ', '+'))
 	try:
@@ -23,7 +26,10 @@ def uscb_geocode(session: CachedSession, address: str) -> Tuple[float, float] | 
 
 
 @display_spinner('Getting location data...')
-def get_points_for_location(session: CachedSession, address: str) -> Location:
+def get_points_for_location(
+	session: CachedSession,
+	address: str
+) -> Location:
 	coords = uscb_geocode(session, address)
 	coords_str = f'{coords[0]},{coords[1]}'
 	location_data = api_request(session, NWS_API_POINTS + coords_str)

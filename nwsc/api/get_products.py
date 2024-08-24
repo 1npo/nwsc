@@ -59,7 +59,10 @@ def get_product_types(session: CachedSession) -> List[ProductType]:
 
 
 @display_spinner('Getting product types available from the issuing location...')
-def get_product_types_by_location(session: CachedSession, location_id: str) -> List[ProductType]:
+def get_product_types_by_location(
+	session: CachedSession,
+	location_id: str
+) -> List[ProductType]:
 	product_types_data = api_request(session, NWS_API_PRODUCT_LOCATIONS + f'/{location_id}/types')
 	return process_product_types_data(product_types_data)
 
@@ -71,7 +74,10 @@ def get_product_locations(session: CachedSession) -> List[ProductLocation]:
 
 
 @display_spinner('Getting product issuing locations by type...')
-def get_product_locations_by_type(session: CachedSession, type_id: str) -> List[ProductLocation]:
+def get_product_locations_by_type(
+	session: CachedSession,
+	type_id: str
+) -> List[ProductLocation]:
 	product_locations_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}/locations')
 	return process_product_locations_data(product_locations_data)
 
@@ -83,19 +89,29 @@ def get_products(session: CachedSession) -> List[Product]:
 
 
 @display_spinner('Getting listing of all products by type...')
-def get_products_by_type(session: CachedSession, type_id: str) -> List[Product]:
+def get_products_by_type(
+	session: CachedSession,
+	type_id: str
+) -> List[Product]:
 	products_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}')
 	return process_product_data(products_data.get('@graph', {}))
 
 
 @display_spinner('Getting listing of all products by type from the issuing location...')
-def get_products_by_type_and_location(session: CachedSession, type_id: str, location_id: str) -> List[Product]:
+def get_products_by_type_and_location(
+	session: CachedSession, 
+	type_id: str,
+	location_id: str
+) -> List[Product]:
 	products_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}/locations/{location_id}')
 	return process_product_data(products_data.get('@graph', {}))
 
 
 @display_spinner('Getting product content...')
-def get_product(session: CachedSession, product_id: str) -> Product:
+def get_product(
+	session: CachedSession,
+	product_id: str
+) -> Product:
 	""" """
 	product_data = api_request(session, NWS_API_PRODUCTS + product_id)
 	product = process_product_data([product_data])[0]
