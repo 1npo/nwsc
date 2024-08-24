@@ -10,9 +10,9 @@ class Zone:
     grid_id: str
     awips_id: str
     name: str
+    zone_type: str
     state: str
     url: str
-    radar_station: str
     county_warning_areas: List[str]
     observation_stations: List[str]
     forecast_offices: List[str]
@@ -32,5 +32,5 @@ class ZoneForecastPeriod:
 @dataclass
 class ZoneForecast:
     forecasted_at: datetime
-    forecast_periods: List[ZoneForecastPeriod]
+    periods: List[ZoneForecastPeriod]
 

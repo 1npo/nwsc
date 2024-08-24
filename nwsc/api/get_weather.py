@@ -1,6 +1,7 @@
 """
 """
 
+from typing import List
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
@@ -12,6 +13,7 @@ from nwsc.api import (
 	METAR_CLOUD_COVER_MAP,
 	WMI_UNIT_MAP,
 )
+from nwsc.model.weather import Observation, Forecast, ForecastPeriod
 
 
 def process_measurement_values(
@@ -142,7 +144,7 @@ def process_cloud_layers(cloud_layers_data: list) -> dict:
 	return cloud_layers
 
 
-def process_observations_data(observations_data: list) -> dict:
+def process_observations_data(observations_data: list) -> Observation:
 	observations = {
 		'observed_at':      parse_timestamp(observations_data.get('properties', {}).get('timestamp')),
 		'icon_url':         observations_data.get('properties', {}).get('icon'),
@@ -195,16 +197,17 @@ def process_observations_data(observations_data: list) -> dict:
 	cloud_layers = process_cloud_layers(cloud_layer_data)
 	observations.update({'cloud_layers': cloud_layers})
 	observations = convert_measures(observations)
-	return observations
+	return Observation(**observations)
 
 
-def process_forecast_data(forecast_data: list) -> dict:
+def process_forecast_data(forecast_data: list) -> Forecast:
 	len_periods = len(forecast_data.get('properties', {}).get('periods'))
-	forecast = {
+	forecast_dict = {
 		'generated_at':	parse_timestamp(forecast_data.get('properties', {}).get('generatedAt')),
 		'updated_at':	parse_timestamp(forecast_data.get('properties', {}).get('updateTime')),
 		'periods':		[],
 	}
+	forecast = Forecast(**forecast_dict)
 	for i in range(0, len_periods):
 		period = forecast_data.get('properties', {}).get('periods', {})
 		if period and isinstance(period, list):
@@ -216,22 +219,22 @@ def process_forecast_data(forecast_data: list) -> dict:
 			#
 			# TODO: Find a better and more uniform way to process all measurements.
 			temp_unit = WMI_UNIT_MAP.get(period.get('temperatureUnit'))
-			period_forecast = {
-				'period_num':					period.get('number'), 
-				'period_name':              	period.get('name'),
-				'forecast_short':        		period.get('shortForecast'),
-				'forecast_detailed':     		period.get('detailedForecast'),
-				'forecast_icon_url':     		period.get('icon'),
-				'is_daytime':                   period.get('isDaytime'),
-				'wind_speed':                   period.get('windSpeed'),
-				'wind_direction':               period.get('windDirection'),
-				'temperature_trend':            period.get('temperatureTrend'),
-				f'temperature_{temp_unit}':		period.get('temperature'),
-				'period_start_at':          	parse_timestamp(period.get('startTime')),
-				'period_end_at':            	parse_timestamp(period.get('endTime')),
+			forecast_period_dict = {
+				'num':						period.get('number'), 
+				'name':              		period.get('name'),
+				'forecast_short':        	period.get('shortForecast'),
+				'forecast_detailed':     	period.get('detailedForecast'),
+				'forecast_icon_url':     	period.get('icon'),
+				'is_daytime':               period.get('isDaytime'),
+				'wind_speed':               period.get('windSpeed'),
+				'wind_direction':           period.get('windDirection'),
+				'temperature_trend':        period.get('temperatureTrend'),
+				f'temperature_{temp_unit}':	period.get('temperature'),
+				'start_at':          		parse_timestamp(period.get('startTime')),
+				'end_at':            		parse_timestamp(period.get('endTime')),
 			}
 			field_map = {
-				'dewpoint':						'dewpoint',
+				'dewpoint':						'dew_point',
 				'relativeHumidity':				'relative_humidity',
 				'probabilityOfPrecipitation':	'precipitation_probability',
 			}
@@ -240,14 +243,15 @@ def process_forecast_data(forecast_data: list) -> dict:
 				'relativeHumidity':				'wmoUnit:percent',
 				'probabilityOfPrecipitation':	'wmoUnit:percent',
 			}
-			period_forecast.update(process_measurement_values(period, field_map, expected_types))
-			period_forecast = convert_measures(period_forecast)
-			forecast['periods'].append(period_forecast)
+			forecast_period_dict.update(process_measurement_values(period, field_map, expected_types))
+			forecast_period_dict = convert_measures(forecast_period_dict)
+			forecast_period = ForecastPeriod(**forecast_period_dict)
+			forecast.periods.append(forecast_period)
 	return forecast
 
 
 @display_spinner('Getting all station observations...')
-def get_all_observations(session: CachedSession, station_id: str) -> dict:
+def get_all_observations(session: CachedSession, station_id: str) -> List[Observation]:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations')
 	observations = []
 	for feature in observations_data.get('features', {}):
@@ -256,24 +260,24 @@ def get_all_observations(session: CachedSession, station_id: str) -> dict:
 
 
 @display_spinner('Getting latest station observations...')
-def get_latest_observations(session: CachedSession, station_id: str) -> dict:
+def get_latest_observations(session: CachedSession, station_id: str) -> Observation:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/latest')
 	return process_observations_data(observations_data)
 
 
 @display_spinner('Getting station observations at the given time...')
-def get_observations_at_time(session: CachedSession, station_id: str, timestamp: str) -> dict:
+def get_observations_at_time(session: CachedSession, station_id: str, timestamp: str) -> Observation:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/' + timestamp)
 	return process_observations_data(observations_data)
 
 
 @display_spinner('Getting extended forecast for location...')
-def get_extended_forecast(session: CachedSession, location: dict) -> dict:
+def get_extended_forecast(session: CachedSession, location: dict) -> Forecast:
 	forecast_data = api_request(session, location.forecast_extended_url)
 	return process_forecast_data(forecast_data)
 
 
 @display_spinner('Getting hourly forecast for location...')
-def get_hourly_forecast(session: CachedSession, location: dict) -> dict:
+def get_hourly_forecast(session: CachedSession, location: dict) -> Forecast:
 	forecast_data = api_request(session, location.forecast_hourly_url)
 	return process_forecast_data(forecast_data)

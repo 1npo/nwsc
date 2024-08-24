@@ -3,6 +3,7 @@
 
 import os
 import json
+from dataclasses import dataclass, asdict, is_dataclass
 from pathlib import Path
 from rich.console import Console
 from rich.pretty import pprint
@@ -31,7 +32,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 
 	# stations
 	local_stations_data = get_stations_near_location(session, location_data)
-	nearest_station = local_stations_data[1]['id']
+	nearest_station = local_stations_data[1].id
 	observations_latest = get_latest_observations(session, nearest_station)
 	observations_all = get_all_observations(session, nearest_station)
 	observations_at_time = get_observations_at_time(session, 'KBOS', '2024-08-19T18:54:00+00:00')
@@ -141,6 +142,8 @@ def nws_data_to_json(session: CachedSession, address: str):
 	Path(output_path).mkdir(parents=True, exist_ok=True)
 	for name, data in nws_data.items():
 		output_file = output_path / f'nws_raw_{name}.json'
+		if is_dataclass(data):
+			data = asdict(data)
 		with open(output_file, 'w') as f:
 			f.write(json.dumps(data, default=str, indent=4))
 		logger.success(f'Wrote {name} to {output_file}')
@@ -150,6 +153,6 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 	nws_data = get_raw_nws_data(session, address)
 	console = Console()
 	for name, data in nws_data.items():
-		if name in ('office', 'office_headline'):
+		if name:
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)

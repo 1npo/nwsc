@@ -19,6 +19,8 @@ class RadarDataAcquisition:
     nexrad_l2_path: str
     volume_coverage_pattern: str
     build_number: float
+    average_tx_power_w: float
+    reflectivity_calibration_correction_db: float
 
 
 @dataclass
@@ -30,11 +32,11 @@ class RadarPerformance:
     command_channel: str
     linearity: float
     power_source: str
-    fuel_level: float
-    dynamic_range: float
-    transmitter_peak_power: float
+    fuel_level_pc: float
+    dynamic_range_db: float
+    transmitter_peak_power_kw: float
     transmitter_recycle_count: int
-    transmitter_imbalance: float
+    transmitter_imbalance_db: float
     transmitter_leaving_air_temp_c: float
     transmitter_leaving_air_temp_f: float
     shelter_temp_c: float
@@ -48,11 +50,11 @@ class RadarPerformance:
     azimuth_encoder_light: str
     horizontal_delta_db: float
     vertical_delta_db: float
-    receiver_bias: float
-    horizontal_short_pulse_db: float
-    horizontal_long_pulse_db: float
-    horizontal_short_pulse_noise: float
-    horizontal_long_pulse_noise: float
+    receiver_bias_db: float
+    horizontal_short_pulse_noise_db_m: float
+    horizontal_short_pulse_noise_db_mi: float
+    horizontal_long_pulse_noise_db_m: float
+    horizontal_long_pulse_noise_db_mi: float
 
 
 @dataclass
@@ -98,15 +100,23 @@ class RadarStationAlarm:
 
 
 @dataclass
-class RadarQueue:
-    pass
+class RadarQueueItem:
+    host: str
+    arrived_at: datetime
+    created_at: datetime
+    station_id: str
+    queue_item_type: str
+    feed: str
+    resolution_version: int
+    sequence_number: str
+    size: int
 
 
 @dataclass
 class RadarStation:
     id: str
     name: str
-    type: str
+    station_type: str
     timezone: str
     lat: float
     lon: float
@@ -117,19 +127,16 @@ class RadarStation:
     latency_current_s: float
     latency_average_s: float
     latency_max_s: float
-    nexrad_l2_latency_last_received_at: datetime
+    latency_nexrad_l2_last_received_at: datetime
     max_latency_at: datetime
     radar_data_acquisition: RadarDataAcquisition
-    radar_performance: RadarPerformance
-    radar_adaptation: RadarAdaptation
-    radar_queue: List[RadarQueue]
-    alarms: List[RadarStationAlarm]
+    performance: RadarPerformance
+    adaptation: RadarAdaptation
 
 
 @dataclass
 class NetworkInterface:
     interface_name: str
-    interface_refresh_at: datetime
     is_interface_active: bool
     packets_out_ok: int
     packets_out_error: int
@@ -144,9 +151,10 @@ class NetworkInterface:
 @dataclass
 class RadarServer:
     host: str
-    type: str
+    server_type: str
     up_since: datetime
-    hardware_refresh_at: datetime
+    hardware_refreshed_at: datetime
+    network_interfaces_refreshed_at: datetime
     cpu: float
     memory: float
     io_utilization: float
@@ -154,15 +162,16 @@ class RadarServer:
     load_1: float
     load_5: float
     load_15: float
-    ports: List[NetworkInterface]
+    interfaces: List[NetworkInterface]
     command_last_executed: str
     command_last_executed_at: datetime
     command_last_nexrad_data_at: datetime
     command_last_received: str
     command_last_received_at: datetime
-    command_last_refresh_at: datetime
-    ldm_latest_product: datetime
-    ldm_oldest_product: datetime
+    command_last_refreshed_at: datetime
+    ldm_refreshed_at: datetime
+    ldm_latest_product_at: datetime
+    ldm_oldest_product_at: datetime
     ldm_storage_size: int
     ldm_count: int
     is_ldm_active: bool

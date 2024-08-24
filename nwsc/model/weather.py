@@ -8,6 +8,7 @@ class Observation:
     observed_at: datetime
     icon_url: str
     text_description: str
+    raw_message: str
     station_elevation_m: int
     station_elevation_mi: float
     temperature_c: float
@@ -30,12 +31,9 @@ class Observation:
     max_temp_last_24h_f: float
     min_temp_last_24h_c: float
     min_temp_last_24h_f: float
-    precip_last_1h_c: float
-    precip_last_1h_f: float
-    precip_last_3h_c: float
-    precip_last_3h_f: float
-    precip_last_6h_c: float
-    precip_last_6h_f: float
+    precip_last_1h_mm: float
+    precip_last_3h_mm: float
+    precip_last_6h_mm: float
     relative_humidity_pc: float
     wind_chill_c: float
     wind_chill_f: float
@@ -62,8 +60,8 @@ class ForecastPeriod:
     temperature_f: float
     dew_point_c: float
     dew_point_f: float
-    humidity_pc: float
-    precipitation_pc: float
+    relative_humidity_pc: float
+    precipitation_probability_pc: float
 
 
 @dataclass

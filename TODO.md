@@ -33,17 +33,18 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - [x] stations
   - [x] weather
   - [x] zones
-- [ ] Update `nwsc.api.*` to use dataclasess instead of dicts
+- [x] Update `nwsc.api.*` to use dataclasess instead of dicts
   - [x] alerts
   - [x] aviation
   - [x] locations
-  - [ ] offices
-  - [ ] products
-  - [ ] radar
-  - [ ] stations
-  - [ ] weather
-  - [ ] zones
+  - [x] offices
+  - [x] products
+  - [x] radar
+  - [x] stations
+  - [x] weather
+  - [x] zones
 - [ ] Do some research on NWS' radars and data processing systems (eg NEXRAD) to understand what all the API response fields mean
+  - See: https://www.weather.gov/nl2/ServerView
 - [ ] Revise `model.radar` to better model NWS radars and servers
 
 ## Repository

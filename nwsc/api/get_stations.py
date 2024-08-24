@@ -1,12 +1,14 @@
+from typing import List
 from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.get_weather import process_measurement_values
 from nwsc.api.conversions import convert_measures
 from nwsc.api.api_request import api_request
 from nwsc.api import NWS_API_STATIONS, NWS_API_GRIDPOINTS
+from nwsc.model.stations import Station
 
 
-def process_station_data(feature: dict) -> dict:
+def process_station_data(feature: dict) -> Station:
 	"""Format the station data returned from /gridpoints or /stations"""
 	station_coords = feature.get('geometry').get('coordinates')
 	if station_coords and isinstance(station_coords, list):
@@ -30,10 +32,10 @@ def process_station_data(feature: dict) -> dict:
 											  {'elevation': 'elevation'},
 											  {'elevation': 'wmoUnit:m'}))
 	station = convert_measures(station)
-	return station
+	return Station(**station)
 
 
-def get_stations(session: CachedSession, url: str) -> list:
+def get_stations(session: CachedSession, url: str) -> List[Station]:
 	stations_data = api_request(session, url)
 	stations = []
 	for feature in stations_data.get('features', {}):
@@ -42,17 +44,17 @@ def get_stations(session: CachedSession, url: str) -> list:
 
 
 @display_spinner('Getting stations usable in grid area...')
-def get_stations_by_grid(session: CachedSession, forecast_office: str, gridpoints: dict) -> list:
+def get_stations_by_grid(session: CachedSession, forecast_office: str, gridpoints: dict) -> List[Station]:
 	return get_stations(session, NWS_API_GRIDPOINTS + f'/{forecast_office}/{gridpoints}/stations')
 
 
 @display_spinner('Getting local stations...')
-def get_stations_near_location(session: CachedSession, location: dict) -> list:
+def get_stations_near_location(session: CachedSession, location: dict) -> List[Station]:
 	return get_stations(session, location.observation_stations_url)
 
 
 @display_spinner('Getting station...')
-def get_station(session: CachedSession, station_id: dict) -> dict:
+def get_station(session: CachedSession, station_id: dict) -> Station:
 	station_data = api_request(session, NWS_API_STATIONS + station_id)
 	return process_station_data(station_data)
 

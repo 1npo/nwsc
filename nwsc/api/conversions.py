@@ -29,14 +29,14 @@ def convert_speeds(data: dict) -> dict:
 	new_data = {}
 	for field, value in data.items():
 		new_data[field] = value
-		if field[-5:] == '_kmph':
-			field_mph = f'{field[:-5]}_mph'
+		if field[-4:] == '_kmh':
+			field_mph = f'{field[:-4]}_mph'
 			if field_mph not in data:
 				new_data[field_mph] = None
 				if value:
 					new_data[field_mph] = value / 1.609344
 		if field[-4:] == '_mph':
-			field_kmph = f'{field[:-4]}_kmph'
+			field_kmph = f'{field[:-4]}_kmh'
 			if field_kmph not in data:
 				new_data[field_kmph] = None
 				if value:
@@ -119,6 +119,11 @@ def convert_directions(data: dict) -> dict:
 			data['wind_direction_compass'] = 'NW'
 		elif 337.5 <= data['wind_direction_deg_ang'] <= 359.9:
 			data['wind_direction_compass'] = 'NNW'
+		else:
+			data['wind_direction_compass'] = None
+	else:
+		if 'wind_direction_deg_ang' in data:
+			data['wind_direction_compass'] = None
 	return data
 
 

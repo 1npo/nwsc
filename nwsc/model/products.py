@@ -19,7 +19,8 @@ class ProductLocation:
 class Product:
     id: str
     wmo_id: str
-    type: ProductType
+    name: str
+    code: str
     text: str
     issuing_office: str
     issued_at: datetime
