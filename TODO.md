@@ -51,11 +51,11 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
 ## Repository & Service
 - [x] Create a `repository` subpackage for recording historical weather responses
 - [ ] Create repository modules:
-  - [x] `in-memory`
-  - [x] `sqlite`
-  - [ ] `postgresql`
-  - [ ] `delta`
-  - [ ] `json`
+  - [x] in-memory
+  - [x] sqlite
+  - [ ] postgresql
+  - [ ] delta
+  - [ ] json
 - [ ] Define table schema for:
   - [ ] locations
   - [ ] stations
