@@ -89,16 +89,18 @@ A full-coverage National Weather Service API client for the terminal
 > - `/points/{point}/stations`
 
 > [!NOTE] 
-> **The following endpoints are unexpectedly responding with a 404 (https://github.com/weather-gov/api/discussions/756)**
+> **The following endpoints are unexpectedly responding with a 503/404 (https://github.com/weather-gov/api/discussions/756)**
 > - `/radar/queues/{host}`
 > - `/radar/profilers/{stationId}`
+>
+> There's a known issue with the `/radar/queues/{host}` endpoint returning a 503 due to too many records. The workaround is to specify the radar station (`/radar/queues/{host}?station={station_id}`)
 
 > [!NOTE]
 > **The following endpoints are unexpectedly returning empty data (https://github.com/weather-gov/api/discussions/759)**
 > - `/stations/{stationId}/tafs`
 > - `/stations/{stationId}/tafs/{date}/{time}`
 > 
-> TAFs can be found via `/products/types/TAF` or from the [Aviation Weather Center API](https://aviationweather.gov/data/api/#/Data/dataTaf) via their `/data/api/taf` endpoint.
+> This is a known issue. The workaround is to get TAFs via `/products/types/TAF` or from the [Aviation Weather Center API](https://aviationweather.gov/data/api/#/Data/dataTaf) via their `/data/api/taf` endpoint.
 
 - [x] /alerts
 - [x] /alerts/active
