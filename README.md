@@ -183,24 +183,24 @@ The NWS API exposes different kinds of weather-related information:
 - NWS Zones (land, marine, forecast, public, coastal, offshore, fire, and county)
 
 This app uses dataclasses to model and describe this information:
-- `alerts`
+- **`alerts`**
   - `Alert`
   - `PriorAlert`
   - `AlertCounts`
-- `aviation`
+- **`aviation`**
   - `SIGMET`
   - `CenterWeatherAdvisory`
   - `CentralWeatherServiceUnit`
-- `locations`
+- **`locations`**
   - `Location`
-- `offices`
+- **`offices`**
   - `Office`
   - `OfficeHeadline`
-- `products`
+- **`products`**
   - `Product`
   - `ProductLocation`
   - `ProductType`
-- `radar`
+- **`radar`**
   - `RadarDataAcquisition`
   - `RadarPerformance`
   - `RadarPathLoss`
@@ -210,13 +210,13 @@ This app uses dataclasses to model and describe this information:
   - `RadarStation`
   - `NetworkInterface`
   - `RadarServer`
-- `stations`
+- **`stations`**
   - `Station`
-- `weather`
+- **`weather`**
   - `Observation`
   - `ForecastPeriod`
   - `Forecast`
-- `zones`
+- **`zones`**
   - `Zone`
   - `ZoneForecastPeriod`
   - `ZoneForecast`
