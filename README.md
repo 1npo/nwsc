@@ -94,9 +94,9 @@ A full-coverage National Weather Service API client for the terminal
 > - `/radar/profilers/{stationId}`
 
 > [!NOTE]
-> **There's a known issue with the `/radar/queues/{host}` endpoint returning a 503 due to too many records.**
+> **There's a known issue with the `/radar/queues/{host}` endpoint returning a 503 due to too many records (https://github.com/weather-gov/api/discussions/756)**
 > 
-> The workaround is to specify the radar station: `/radar/queues/{host}?station={station_id}`. (See: https://github.com/weather-gov/api/discussions/756)
+> The workaround is to specify the radar station: `/radar/queues/{host}?station={station_id}`.
 
 > [!NOTE]
 > **The following endpoints are unexpectedly returning empty data (https://github.com/weather-gov/api/discussions/759)**
