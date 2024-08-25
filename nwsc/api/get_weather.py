@@ -33,23 +33,27 @@ def process_measurement_values(
 	
 	For example, this dictionary:
 	
-	{
-		'temperature': {
-			'unitCode': 'wmoUnit:degC',
-			'value': 31.2,
-		},
-		"windSpeed": {
-			"unitCode": "wmoUnit:km_h-1",
-			"value": 3.564,
+	.. code-block:: python
+
+		{
+			'temperature': {
+				'unitCode': 'wmoUnit:degC',
+				'value': 31.2,
+			},
+			"windSpeed": {
+				"unitCode": "wmoUnit:km_h-1",
+				"value": 3.564,
+			}
 		}
-	}
 
 	Will be flattened into this dictionary:
 
-	{
-		'temperature_c': 31.2,
-		'wind_speed_kmh': 3.564,
-	}
+	.. code-block:: python
+
+		{
+			'temperature_c': 31.2,
+			'wind_speed_kmh': 3.564,
+		}
 
 	The WMI_UNIT_MAP global in `nwsc.api.__init__` maps all the WMO unit strings to
 	appreviated field suffixes.
