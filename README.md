@@ -171,6 +171,22 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 <img src='https://github.com/1npo/nwsc/blob/main/resources/img/nwsc_architecture.png' alt='nwsc system architecture diagram'>
 </div>
 
+- `main.py` is the app's entry point. It parses command-line arguments and runs the app as requested by the user.
+- `config.py` provides a simple interface for getting and setting the user's settings.
+- `api.*` sends API requests to the NWS endpoints, ensures that measurements are available in both metric and imperial, and formats responses as dataclasses.
+- `model.*` provides dataclasses that describe the different kinds of information the NWS API offers, using a standardized naming convention:
+  - Weather (current observations and forecasts)
+  - Locations (street addresses and their coordinates)
+  - [Alerts](https://alerts.weather.gov)
+  - [Aviation Weather](https://www.weather.gov/ilm/aviation)
+  - [Forecast Offices](https://www.weather.gov/srh/nwsoffices)
+  - [Text Products](https://forecast.weather.gov/product_types.php)
+  - [Radar Stations, Servers, and Alerts](https://www.weather.gov/nl2/)
+  - NWS Zones (land, marine, forecast, public, coastal, offshore, fire, and county)
+- `repository.*` provides abstractions for creating, reading, updating, and deleting data in CSV/JSON files and relational databases.
+- `service.*` provides a second layer of abstraction that uses `repository.*` to manage the different kinds of information offered by the NWS API.
+- `render.*` provides an interactive text-based user interface, and functions for pretty-printing NWS information.
+
 ### Data Model
 - `alerts`
   - `Alert`
