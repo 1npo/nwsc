@@ -178,10 +178,10 @@ The NWS API exposes different kinds of weather-related information. And this app
 
 #### Available Information
 > [!NOTE]
-> Location information is part of the data model, but it doesn't come from the NWS API. Street addresses come from the user, and coordinates come from the [USCB geocoding service](https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html).
+> Location information is part of the data model, but it's the only item in this list that doesn't come from the NWS API. Street addresses come from the user, and coordinates come from the [USCB geocoding service](https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html).
 
-- Weather (current observations and forecasts)
 - Locations (street addresses and their coordinates)
+- Weather (current observations and forecasts)
 - [Alerts](https://alerts.weather.gov)
 - [Aviation Weather](https://www.weather.gov/ilm/aviation)
 - [Forecast Offices](https://www.weather.gov/srh/nwsoffices)
