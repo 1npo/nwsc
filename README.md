@@ -34,6 +34,8 @@ A full-coverage National Weather Service API client for the terminal
 - [System Design](#system-design)
   - [App Architecture](#app-architecture)
   - [Data Model](#data-model)
+    - [Available Information](#available-information)
+    - [Dataclasses](#dataclasses)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
@@ -172,7 +174,12 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 </div>
 
 ### Data Model
-The NWS API exposes different kinds of weather-related information:
+The NWS API exposes different kinds of weather-related information. And this app uses dataclasses to model and describe that information.
+
+#### Available Information
+> [!NOTE]
+> Location information doesn't come from the NWS API. Street addresses come from the user, and coordinates come from the [USCB geocoding service](https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html)
+
 - Weather (current observations and forecasts)
 - Locations (street addresses and their coordinates)
 - [Alerts](https://alerts.weather.gov)
@@ -182,7 +189,7 @@ The NWS API exposes different kinds of weather-related information:
 - [Radar Stations, Servers, and Alerts](https://www.weather.gov/nl2/)
 - NWS Zones (land, marine, forecast, public, coastal, offshore, fire, and county)
 
-This app uses dataclasses to model and describe this information:
+#### Dataclasses
 - **`alerts`**
   - `Alert`
   - `PriorAlert`
@@ -231,6 +238,7 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 - The presentation of hourly forecast data was inspired by DarkSky, specifically [this article](https://nightingaledvs.com/dark-sky-weather-data-viz/)
 - The NWS IT/API team have been responsive on their [GitHub page](https://github.com/weather-gov/api) and helpful with troubleshooting endpoint issues
 - Parts of the CSV and JSON repositories come from [Red Bird](https://red-bird.readthedocs.io/en/stable/)'s repository pattern examples
+- Street address geocoding is done using the US Census Bureau's [geocoding service](https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html)
 
 ## Contributing
 - See [CONTRIBUTING](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`
