@@ -1,7 +1,7 @@
 import csv
 from typing import List, TextIO
 from dataclasses import is_dataclass, fields
-from nwsc.repository.base_repository import IRepository
+from nwsc.repository.base import IRepository
 
 
 class CSVRepository(IRepository):
@@ -18,16 +18,10 @@ class CSVRepository(IRepository):
         self.kwargs_csv = kwargs_csv
         self.model = model
 
-    def _get_writer(
-        self,
-        buff: TextIO
-    ) -> csv.DictWriter:
+    def _get_writer(self, buff: TextIO) -> csv.DictWriter:
         return csv.DictWriter(buff, fieldnames=self._get_columns(), **self.kwargs_csv)
     
-    def _get_reader(
-        self,
-        buff: TextIO
-    ) -> csv.DictReader:
+    def _get_reader(self, buff: TextIO) -> csv.DictReader:
         return csv.DictReader(buff, fieldnames=self._get_columns(), **self.kwargs_csv)
     
     def _get_columns(self) -> List[str]:
@@ -41,32 +35,17 @@ class CSVRepository(IRepository):
     def get_all(self) -> list:
         return self._repository
 
-    def get_by_id(
-        self,
-        id: int
-    ) -> dict:
+    def get_by_id(self, id: int) -> dict:
         pass
     
-    def get_by_filter(
-        self,
-        filter: dict
-    ) -> list:
+    def get_by_filter(self, filter: dict) -> list:
         pass
     
-    def create(
-        self,
-        item: dict
-    ) -> dict:
+    def create(self, item: dict) -> dict:
         pass
     
-    def update(
-        self,
-        item: dict
-    ) -> bool:
+    def update(self, item: dict) -> bool:
         pass
     
-    def delete(
-        self,
-        id
-    ) -> bool:
+    def delete(self, id) -> bool:
         pass

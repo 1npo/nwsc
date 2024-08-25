@@ -1,17 +1,17 @@
 from abc import ABC, abstractmethod
 
 
-class IRepository(ABC):
+class BaseRepository(ABC):
     @abstractmethod
     def get_all(self):
         raise NotImplementedError
 
     @abstractmethod
-    def get_by_id(self, id):
+    def get(self, id):
         raise NotImplementedError
     
     @abstractmethod
-    def get_by_filter(self, key, value):
+    def filter_by(self, filter):
         raise NotImplementedError
 
     @abstractmethod

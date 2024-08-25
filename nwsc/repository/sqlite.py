@@ -1,13 +1,13 @@
 import os
 import sqlite3
 from loguru import logger
-from nwsc.repository.base_repository import IRepository
+from nwsc.repository.base import BaseRepository
 
 
 SQLITE_SCHEMA_FILE = os.path.join(os.path.dirname(__file__), 'schema_sqlite3.sql')
 
 
-class SQLiteRepository(IRepository):
+class SQLiteRepository(BaseRepository):
     """
     :param sqlite_path: The path to the SQLite database to open (default: in-memory)
     :param sqlite_schema: The path to a file containing the schema to initialize a new database with
@@ -36,31 +36,19 @@ class SQLiteRepository(IRepository):
             self.curs.executescript(file.read())
             logger.info(f'Initialized new SQLite3 database at {self.sqlite_path}')
     
-    def get_all(
-        self,
-        table: str
-    ) -> list:
+    def get_all(self, table: str) -> list:
         res = self.curs.execute(f'SELECT * FROM {table}').fetchall()
         res_cols = [desc[0] for desc in self.curs.description]
         res_records = [{k:v for k,v in zip(res_cols, record)} for record in res]
         return res_records
 
-    def get_by_id(
-        self,
-        table: str,
-        id: int,
-        id_field: str = 'id'
-    ) -> list:
+    def get(self, table: str, id: int, id_field: str = 'id') -> list:
         res = self.curs.execute(f'SELECT * FROM {table} WHERE {id_field} = ?', str(id)).fetchall()
         res_cols = [desc[0] for desc in self.curs.description]
         res_records = [{k:v for k,v in zip(res_cols, record)} for record in res]
         return res_records
     
-    def get_by_filter(
-        self,
-        table: str,
-        filter: dict
-    ) -> list:
+    def get_by_filter(self, table: str, filter: dict) -> list:
         if len(filter) == 1:
             key = list(filter.keys())[0]
             filter_str = f'WHERE IFNULL({key}, "") = :{key}'
@@ -77,11 +65,7 @@ class SQLiteRepository(IRepository):
         res_records = [{k:v for k,v in zip(res_cols, record)} for record in res]
         return res_records
     
-    def create(
-        self,
-        table: str,
-        record: dict
-    ) -> int:
+    def create(self, table: str, record: dict) -> int:
         if 'id' not in record:
             raise KeyError('`record` requires an "id" field, but none was provided')
         
@@ -91,11 +75,7 @@ class SQLiteRepository(IRepository):
         self.conn.commit()
         return self.curs.lastrowid
 
-    def update(
-        self,
-        table: str,
-        record: dict
-    ):
+    def update(self, table: str, record: dict):
         if 'id' not in record:
             raise KeyError('`record` requires an "id" field, but none was provided')
 
@@ -103,10 +83,6 @@ class SQLiteRepository(IRepository):
         self.curs.execute(f'UPDATE OR IGNORE {table} SET {update_str} WHERE id = :id', record)
         self.conn.commit()
 
-    def delete(
-        self,
-        table: str,
-        id: int
-    ):
+    def delete(self, table: str, id: int):
         self.curs.execute(f'DELETE FROM {table} WHERE id = ?', str(id))
         self.conn.commit()

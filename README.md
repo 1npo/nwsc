@@ -176,7 +176,7 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 </div>
 
 ### Data Model
-The NWS API exposes different kinds of weather-related information. And this app uses dataclasses to model and describe that information.
+The NWS API exposes different kinds of weather-related information. This app uses dataclasses to model and describe that information.
 
 #### Available Information
 > [!NOTE]
