@@ -172,7 +172,7 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 </div>
 
 ### Data Model
-This app uses dataclasses to describe the different kinds of information that the NWS API offers:
+The NWS API exposes different kinds of weather-related information:
 - Weather (current observations and forecasts)
 - Locations (street addresses and their coordinates)
 - [Alerts](https://alerts.weather.gov)
@@ -182,6 +182,7 @@ This app uses dataclasses to describe the different kinds of information that th
 - [Radar Stations, Servers, and Alerts](https://www.weather.gov/nl2/)
 - NWS Zones (land, marine, forecast, public, coastal, offshore, fire, and county)
 
+This app uses dataclasses to model and describe this information. 
 - `alerts`
   - `Alert`
   - `PriorAlert`
