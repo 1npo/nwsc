@@ -182,7 +182,7 @@ The NWS API exposes different kinds of weather-related information:
 - [Radar Stations, Servers, and Alerts](https://www.weather.gov/nl2/)
 - NWS Zones (land, marine, forecast, public, coastal, offshore, fire, and county)
 
-This app uses dataclasses to model and describe this information. 
+This app uses dataclasses to model and describe this information:
 - `alerts`
   - `Alert`
   - `PriorAlert`
