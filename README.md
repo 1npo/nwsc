@@ -173,14 +173,14 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 
 ### Data Model
 This app uses dataclasses to describe the different kinds of information that the NWS API offers:
-  - Weather (current observations and forecasts)
-  - Locations (street addresses and their coordinates)
-  - [Alerts](https://alerts.weather.gov)
-  - [Aviation Weather](https://www.weather.gov/ilm/aviation)
-  - [Forecast Offices](https://www.weather.gov/srh/nwsoffices)
-  - [Text Products](https://forecast.weather.gov/product_types.php)
-  - [Radar Stations, Servers, and Alerts](https://www.weather.gov/nl2/)
-  - NWS Zones (land, marine, forecast, public, coastal, offshore, fire, and county)
+- Weather (current observations and forecasts)
+- Locations (street addresses and their coordinates)
+- [Alerts](https://alerts.weather.gov)
+- [Aviation Weather](https://www.weather.gov/ilm/aviation)
+- [Forecast Offices](https://www.weather.gov/srh/nwsoffices)
+- [Text Products](https://forecast.weather.gov/product_types.php)
+- [Radar Stations, Servers, and Alerts](https://www.weather.gov/nl2/)
+- NWS Zones (land, marine, forecast, public, coastal, offshore, fire, and county)
 
 - `alerts`
   - `Alert`
