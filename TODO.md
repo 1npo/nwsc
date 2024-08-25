@@ -21,7 +21,7 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - [x] Re-generate `tests/test_data/nws_raw_zone_stations.json`
 - [x] Revamp or remove `cache.py`: use `requests-cache` instead of rolling your own cache manager
 - [x] Write `nwsc.api.get_enums` to extract `VALID_NWS_ZONES` and `VALID_NWS_FORECAST_OFFICES` enums programmatically from API error responses
-- [ ] Clean up and standardize all `nwsc.api.*` modules, to get them ready to use dataclasses
+- [x] Clean up and standardize all `nwsc.api.*` modules, to get them ready to use dataclasses
 ### Modeling
 - [x] Finish fleshing out dataclasses for all NWS data
   - [x] alerts
@@ -53,9 +53,10 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
 - [ ] Create repository modules:
   - [x] in-memory
   - [x] sqlite
+  - [ ] json
+  - [ ] csv
   - [ ] postgresql
   - [ ] delta
-  - [ ] json
 - [ ] Define table schema for:
   - [ ] locations
   - [ ] stations
@@ -73,7 +74,15 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - [ ] center weather advisories
   - [ ] glossary
 - [ ] Create repository services:
-  - [ ] 
+  - [ ] locations
+  - [ ] weather
+  - [ ] alerts
+  - [ ] aviation weather
+  - [ ] forecast offices
+  - [ ] text products
+  - [ ] radars
+  - [ ] zones
+
 ## Interface
 - [ ] Create an interactive TUI with Textual
 - [ ] Update `main.py` to start the TUI by default
@@ -81,12 +90,13 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - [ ] json
   - [ ] plain-text
   - [ ] emoji-text
-  - [ ] rich-table
+  - [ ] rich
 - [x] Create a `render` subpackage and move `render_rich.py` into it
 - [ ] Create additional renderers:
   - [ ] json
   - [ ] plain-text
   - [ ] emoji-text
+  - [ ] rich
 - [ ] Take some cues from DarkSky, especially when visualizing hourly forecasts:
   - See: https://nightingaledvs.com/dark-sky-weather-data-viz/
 - [ ] Explore other TUI projects for inspiration:
