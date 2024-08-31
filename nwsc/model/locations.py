@@ -15,3 +15,4 @@ class Location:
     forecast_hourly_url: str
     gridpoints_url: str
     observation_stations_url: str
+    id: int = None # repository item id

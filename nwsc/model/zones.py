@@ -6,7 +6,7 @@ from dataclasses import dataclass
 # See: https://www.weather.gov/gis/CWABounds
 @dataclass
 class Zone:
-    id: str
+    zone_id: str
     grid_id: str
     awips_id: str
     name: str
@@ -20,6 +20,7 @@ class Zone:
     expires_at: datetime
     timezones: List[str]
     multi_polygon: List[List[List[float]]]
+    id: int = None # repository item id
 
 
 @dataclass
@@ -27,10 +28,11 @@ class ZoneForecastPeriod:
     num: int
     name: str
     forecast_detailed: str
+    id: int = None # repository item id
 
 
 @dataclass
 class ZoneForecast:
     forecasted_at: datetime
     periods: List[ZoneForecastPeriod]
-
+    id: int = None # repository item id

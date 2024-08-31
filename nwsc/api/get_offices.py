@@ -17,7 +17,7 @@ InvalidOfficeException = ValueError(
 
 def process_headline_data(headline_data: dict) -> dict:
     headline_dict = {
-        'id':                   headline_data.get('id'),
+        'headline_id':          headline_data.get('id'),
         'name':                 headline_data.get('name'),
         'title':                headline_data.get('title'),
         'issued_at':            headline_data.get('issuanceTime'),
@@ -65,7 +65,7 @@ def get_office(
         raise InvalidOfficeException
     office_data = api_request(session, NWS_API_OFFICES + office_id)
     office_dict = {
-        'id':                   office_data.get('id'),
+        'office_id':            office_data.get('id'),
         'name':                 office_data.get('name'),
         'street_address':       office_data.get('address', {}).get('streetAddress'),
         'city':                 office_data.get('address', {}).get('addressLocality'),

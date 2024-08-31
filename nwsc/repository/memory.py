@@ -1,4 +1,6 @@
+from typing import List
 from nwsc.repository.base import BaseRepository
+from nwsc.model import NWSItem
 
 
 class InMemoryRepository(BaseRepository):
@@ -9,35 +11,40 @@ class InMemoryRepository(BaseRepository):
         return self._repository
 
     def get(self, id: int) -> dict:
-        return next((item for item in self._repository if item.get('id') == id), None)
+        return next((obj for obj in self._repository if obj.get('id') == id), None)
     
-    def filter_by(self, filter: dict) -> list:
+    def filter_by(self, filter: dict) -> List[NWSItem]:
         if len(filter) == 1:
             key = list(filter.keys())[0]
             value = list(filter.values())[0]
-            return [next((item for item in self._repository if item.get(key) == value), None)]
+            return [next((obj for obj in self._repository if obj.get(key) == value), None)]
         else:
-            records = []
+            items = []
             for key, value in filter.items():
-                records.append(next((item for item in self._repository if item.get(key) == value), None))
-            return records
+                items.append(next((obj for obj in self._repository if obj.get(key) == value), None))
+            return items
     
-    def create(self, item: dict) -> dict:
-        item.get('id') = len(self._repository) + 1
+    def create(self, item: NWSItem) -> NWSItem:
+        item.id = len(self._repository) + 1
         self._repository.append(item)
         return item
     
-    def update(self, item: dict) -> bool:
-        index = next((i for i, obj in enumerate(self._repository) if obj.get('id') == item.get('id')), None)
+    def update(self, item: NWSItem) -> bool:
+        index = next((i for i, obj in enumerate(self._repository) if obj.get('id') == item.id), None)
         if index is not None:
             self._repository[index] = item
             return True
-    
         return False
     
-    def delete(self, id) -> bool:
-        index = next((i for i, obj in enumerate(self._repository) if obj.get('id') == id), None)
+    def delete(self, item: NWSItem) -> bool:
+        index = next((i for i, obj in enumerate(self._repository) if obj.get('id') == item.id), None)
         if index is not None:
             self._repository.pop(index)
             return True
         return False
+    
+    def serialize(self, item):
+        raise NotImplementedError
+    
+    def deserialize(self, data):
+        raise NotImplementedError

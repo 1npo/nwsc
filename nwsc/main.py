@@ -17,7 +17,7 @@ from requests_cache import CachedSession, SQLiteCache, FileCache
 
 from nwsc.config import ConfigManager
 from nwsc.render.decorators import display_spinner
-from nwsc.render.pprint_raw import pprint_raw_nws_data, nws_data_to_json
+from nwsc.render.pprint_raw import pprint_raw_nws_data, nws_data_to_json, test_memory_repository
 from nwsc.render.rich_print import (
     rich_print_current_conditions,
 	rich_print_extended_forecast,
@@ -143,5 +143,6 @@ def main():
 			test_addr4 = '2 15th St NW, Washington, DC 20024'
 			test_addr5 = '3001 Connecticut Ave NW, Washington, DC 20008'
 			pprint_raw_nws_data(session, test_addr5)
-			nws_data_to_json(session, test_addr5)
+			#nws_data_to_json(session, test_addr5)
+			#test_memory_repository(session, test_addr1)
 			exit(0)

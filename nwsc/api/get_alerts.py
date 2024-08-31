@@ -25,7 +25,7 @@ def process_alert_data(alert_data: dict) -> List[Alert]:
 	alerts = []
 	for feature in alert_data.get('features', {}):
 		alert_dict = {
-			'id':                   feature.get('properties', {}).get('id'),
+			'alert_id':				feature.get('properties', {}).get('id'),
 			'url':                  feature.get('id'),
 			'updated_at':           parse_timestamp(feature.get('updated')),
 			'title':                feature.get('title'),
@@ -60,9 +60,9 @@ def process_alert_data(alert_data: dict) -> List[Alert]:
 		alert = Alert(**alert_dict)
 		for reference in feature.get('properties', {}).get('references', {}):
 			prior_alert_dict = {
-				'id':           reference.get('identifier'),
-				'url':          reference.get('@id'),
-				'sent_at':      parse_timestamp(reference.get('sent')),
+				'prior_alert_id':   reference.get('identifier'),
+				'url':          	reference.get('@id'),
+				'sent_at':      	parse_timestamp(reference.get('sent')),
 			}
 			prior_alert = PriorAlert(**prior_alert_dict)
 			alert.prior_alerts.append(prior_alert)

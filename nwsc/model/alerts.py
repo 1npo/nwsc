@@ -7,14 +7,15 @@ from dataclasses import dataclass
 # is referenced in the new alert response
 @dataclass
 class PriorAlert:
-    id: str
+    prior_alert_id: str
     url: str
     sent_at: datetime
+    id: int = None # repository item id
 
 
 @dataclass
 class Alert:
-    id: str
+    alert_id: str
     url: str
     updated_at: datetime
     title: str
@@ -45,6 +46,7 @@ class Alert:
     cap_blocked_channels: list
     cap_vtec: list
     prior_alerts: List[PriorAlert]
+    id: int = None # repository item id
 
 
 @dataclass
@@ -55,4 +57,4 @@ class AlertCounts:
     regions: Dict[str, int]
     areas: Dict[str, int]
     zones: Dict[str, int]
-
+    id: int = None # repository item id

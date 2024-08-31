@@ -5,7 +5,7 @@ from typing import List
 
 @dataclass
 class Office:
-    id: str
+    office_id: str
     name: str
     street_address: str
     city: str
@@ -21,11 +21,12 @@ class Office:
     forecast_zones: List[str]
     fire_zones: List[str]
     observation_stations: List[str]
+    id: int = None # repository item id
 
 
 @dataclass
 class OfficeHeadline:
-    id: str
+    headline_id: str
     name: str
     title: str
     issued_at: datetime
@@ -34,4 +35,4 @@ class OfficeHeadline:
     headline_summary: str
     office_url: str
     is_important: bool
-
+    id: int = None # repository item id

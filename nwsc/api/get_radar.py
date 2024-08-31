@@ -162,7 +162,7 @@ def process_radar_station_data(radar_station_data: dict) -> RadarStation:
 		'lon':									station_lon,
 		'server_host':							radar_station_data.get('properties', {}).get('latency', {}).get('host'),
 		'reporting_host':						radar_station_data.get('properties', {}).get('latency', {}).get('reportingHost'),
-		'id':									radar_station_data.get('properties', {}).get('id', {}),
+		'radar_station_id':						radar_station_data.get('properties', {}).get('id', {}),
 		'name':									radar_station_data.get('properties', {}).get('name', {}),
 		'station_type':							radar_station_data.get('properties', {}).get('stationType', {}),
 		'timezone':								radar_station_data.get('properties', {}).get('timeZone'),
@@ -221,7 +221,7 @@ def process_radar_server_data(radar_server_data: dict) -> dict:
 		'ping_responses_ldm':           	radar_server_data.get('ping', {}).get('targets', {}).get('ldm'),
 		'ping_responses_radar':         	radar_server_data.get('ping', {}).get('targets', {}).get('radar'),
 		'ping_responses_server':        	radar_server_data.get('ping', {}).get('targets', {}).get('server'),
-		'ping_responses_misc':          	radar_server_data.get('ping', {}).get('targets', {}).get('misc'),
+		'ping_responses_network':          	radar_server_data.get('ping', {}).get('targets', {}).get('misc'),
 		'network_interfaces_refreshed_at':	parse_timestamp(radar_server_data.get('network', {}).get('timestamp')),
 		'interfaces':                   	[],
 	}

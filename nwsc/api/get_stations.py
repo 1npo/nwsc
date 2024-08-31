@@ -18,7 +18,7 @@ def process_station_data(feature: dict) -> Station:
 		station_lat = None
 		station_lon = None
 	station = {
-		'id':      					feature.get('properties', {}).get('stationIdentifier'),
+		'station_id':      			feature.get('properties', {}).get('stationIdentifier'),
 		'name':    					feature.get('properties', {}).get('name'),
 		'lat':     					station_lat,
 		'lon':     					station_lon,

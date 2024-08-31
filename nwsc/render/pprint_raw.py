@@ -9,6 +9,7 @@ from rich.console import Console
 from rich.pretty import pprint
 from requests_cache import CachedSession
 from loguru import logger
+from nwsc.repository.memory import InMemoryRepository
 from nwsc.render.decorators import display_spinner
 from nwsc.api.get_alerts import *
 from nwsc.api.get_aviation import *
@@ -21,9 +22,10 @@ from nwsc.api.get_radar import *
 from nwsc.api.get_stations import *
 from nwsc.api.get_weather import *
 from nwsc.api.get_zones import *
+from nwsc.model import *
 
 
-def get_raw_nws_data(session: CachedSession, address: str) -> dict:
+def get_all_nws_data(session: CachedSession, address: str) -> dict:
 	"""Get sample weather data for testing
 	"""
 	
@@ -32,7 +34,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 
 	# stations
 	local_stations_data = get_stations_near_location(session, location_data)
-	nearest_station = local_stations_data[1].id
+	nearest_station = local_stations_data[1].station_id
 	observations_latest = get_latest_observations(session, nearest_station)
 	observations_all = get_all_observations(session, nearest_station)
 	observations_at_time = get_observations_at_time(session, 'KBOS', '2024-08-19T18:54:00+00:00')
@@ -137,7 +139,7 @@ def get_raw_nws_data(session: CachedSession, address: str) -> dict:
 
 
 def nws_data_to_json(session: CachedSession, address: str):
-	nws_data = get_raw_nws_data(session, address)
+	nws_data = get_all_nws_data(session, address)
 	output_path = Path(os.path.expanduser('~')) / 'nws_data'
 	Path(output_path).mkdir(parents=True, exist_ok=True)
 	for name, data in nws_data.items():
@@ -150,9 +152,56 @@ def nws_data_to_json(session: CachedSession, address: str):
 
 
 def pprint_raw_nws_data(session: CachedSession, address: str):
-	nws_data = get_raw_nws_data(session, address)
+	nws_data = get_all_nws_data(session, address)
 	console = Console()
+	data_item_filter = [
+		'alerts',
+		'sigmet',
+		'location_data',
+		'office',
+		'product',
+		'radar_station',
+		'local_stations_data',
+		'observations_latest',
+		'zone',
+	]
 	for name, data in nws_data.items():
-		if name:
+		if name in ('zone', 'zone_forecast'): # in data_item_filter:
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)
+
+
+def test_memory_repository(session: CachedSession, address: str):
+	nws_data = get_all_nws_data(session, address)
+	repo = InMemoryRepository()
+	test_item_alerts = nws_data.get('alerts')
+	test_item_aviation = nws_data.get('sigmet')
+	test_item_locations = nws_data.get('location_data')
+	test_item_offices = nws_data.get('office')
+	test_item_products = nws_data.get('product')
+	test_item_radar = nws_data.get('radar_station')
+	test_item_stations = nws_data.get('local_stations_data')
+	test_item_weather = nws_data.get('observations_latest')
+	test_item_zones = nws_data.get('zone')
+
+	items = [
+		test_item_alerts,
+		test_item_aviation,
+		test_item_locations,
+		test_item_offices,
+		test_item_products,
+		test_item_radar,
+		test_item_stations,
+		test_item_weather,
+		test_item_zones,
+	]
+
+	for item in items:
+		if isinstance(item, list):
+			for i in item:
+				repo.create(i)
+				logger.success(f'Added item to in-memory repo: {i=}')
+		else:
+			repo.create(item)
+			logger.success(f'Added item to in-memory repo: {item=}')			
+

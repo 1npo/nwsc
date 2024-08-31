@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from nwsc.model import NWSItem
 
 
 class BaseRepository(ABC):
@@ -7,21 +8,29 @@ class BaseRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def get(self, id):
+    def get(self, id: int):
         raise NotImplementedError
     
     @abstractmethod
-    def filter_by(self, filter):
+    def filter_by(self, filter: dict):
         raise NotImplementedError
 
     @abstractmethod
-    def create(self, item):
+    def create(self, item: NWSItem) -> NWSItem:
         raise NotImplementedError
 
     @abstractmethod
-    def update(self, item):
+    def update(self, item: NWSItem) -> bool:
         raise NotImplementedError
 
     @abstractmethod
-    def delete(self, id):
+    def delete(self, item: NWSItem) -> bool:
+        raise NotImplementedError
+    
+    @abstractmethod
+    def serialize(self, item: NWSItem) -> dict:
+        raise NotImplementedError
+    
+    @abstractmethod
+    def deserialize(self, data: dict) -> NWSItem:
         raise NotImplementedError

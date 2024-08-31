@@ -40,6 +40,7 @@ class Observation:
     heat_index_c: float
     heat_index_f: float
     cloud_layers: Dict[str, str]
+    id: int = None # repository item id
 
 
 @dataclass
@@ -62,6 +63,7 @@ class ForecastPeriod:
     dew_point_f: float
     relative_humidity_pc: float
     precipitation_probability_pc: float
+    id: int = None # repository item id
 
 
 @dataclass
@@ -69,4 +71,4 @@ class Forecast:
     generated_at: datetime
     updated_at: datetime
     periods: List[ForecastPeriod]
-
+    id: int = None # repository item id

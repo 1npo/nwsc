@@ -14,6 +14,7 @@ class SIGMET:
     sequence: str
     phenomenon: str
     area_polygon: List[List[list]]
+    id: int = None # repository item id
 
 
 @dataclass
@@ -27,11 +28,12 @@ class CenterWeatherAdvisory:
     expires_at: datetime
     observed_property_url: str
     area_polygon: List[List[list]]
+    id: int = None # repository item id
 
 
 @dataclass
 class CentralWeatherServiceUnit:
-    id: str
+    cwsu_id: str
     name: str
     street: str
     city: str
@@ -42,3 +44,4 @@ class CentralWeatherServiceUnit:
     phone: str
     url: str
     nws_region: str
+    id: int = None # repository item id

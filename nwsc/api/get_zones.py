@@ -19,7 +19,7 @@ def process_zone_data(zone_data: list) -> Zone:
     if zone_geometry:
         zone_geometry = zone_geometry.get('coordinates')
     zone_dict = {
-        'id':                   zone_data.get('properties', {}).get('id'),
+        'zone_id':              zone_data.get('properties', {}).get('id'),
         'grid_id':              zone_data.get('properties', {}).get('gridIdentifier'),
         'awips_id':             zone_data.get('properties', {}).get('awipsLocationIdentifier'),
         'name':                 zone_data.get('properties', {}).get('name'),

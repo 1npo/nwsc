@@ -95,7 +95,7 @@ def get_cwsu(
 ) -> CentralWeatherServiceUnit:
     cwsu_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id)
     cwsu_dict = {
-        'id':           cwsu_data.get('id'),
+        'cwsu_id':      cwsu_data.get('id'),
         'name':         cwsu_data.get('name'),
         'street':       cwsu_data.get('street'),
         'city':         cwsu_data.get('city'),

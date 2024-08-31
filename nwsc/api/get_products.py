@@ -14,7 +14,7 @@ def process_product_data(products_data: dict) -> List[Product]:
 	products = []
 	for product in products_data:
 		product_dict = {
-			'id':				product.get('id'),
+			'product_id':		product.get('id'),
 			'wmo_id':			product.get('wmoCollectiveId'),
 			'text':				None,
 			'code':				product.get('productCode'),
