@@ -90,20 +90,19 @@ A full-coverage National Weather Service API client for the terminal
 > - `/points/{point}/stations`
 
 > [!NOTE] 
-> **This endpoint is unexpectedly responding with a 404**
-> - `/radar/profilers/{stationId}`
+> **The `/radar/profilers/{stationId}` endpoint is unexpectedly responding with a 404**
 
 > [!NOTE]
-> **There's a known issue with the `/radar/queues/{host}` endpoint returning a 503 due to too many records (https://github.com/weather-gov/api/discussions/756)**
+> **The `/radar/queues/{host}` endpoint is unexpectedly responding with a 503**
 > 
-> The workaround is to specify the radar station: `/radar/queues/{host}?station={station_id}`.
+> This is a known issue (https://github.com/weather-gov/api/discussions/756). The endpoint returns too many records. The workaround is to specify the radar station: `/radar/queues/{host}?station={station_id}`.
 
 > [!NOTE]
-> **The following endpoints are unexpectedly returning empty data (https://github.com/weather-gov/api/discussions/759)**
+> **The following endpoints are unexpectedly returning empty data**
 > - `/stations/{stationId}/tafs`
 > - `/stations/{stationId}/tafs/{date}/{time}`
 > 
-> This is a known issue. The workaround is to get TAFs via `/products/types/TAF` or from the [Aviation Weather Center API](https://aviationweather.gov/data/api/#/Data/dataTaf) via their `/data/api/taf` endpoint.
+> This is a known issue (https://github.com/weather-gov/api/discussions/759). The workaround is to get TAFs via `/products/types/TAF` or from the [Aviation Weather Center API](https://aviationweather.gov/data/api/#/Data/dataTaf) via their `/data/api/taf` endpoint.
 
 - [x] /alerts
 - [x] /alerts/active
@@ -180,7 +179,7 @@ The NWS API exposes different kinds of weather-related information. This app use
 
 #### Available Information
 > [!NOTE]
-> Location information is part of the data model, but it's the only item in this list that doesn't come from the NWS API. Street addresses come from the user, and coordinates come from the [USCB geocoding service](https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html).
+> Location information is part of the data model, but it's the only item that doesn't come from the NWS API. Street addresses come from the user, and coordinates come from the [USCB geocoding service](https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html).
 
 - Locations (street addresses and their coordinates)
 - Weather (current observations and forecasts)
