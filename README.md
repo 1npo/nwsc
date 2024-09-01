@@ -89,8 +89,8 @@ I made `nwsc` for myself for these reasons:
   - Is user-friendly
   - Is well-documented
   - Uses CI/CD for tests and releases
-- I get my weather from [the National Weather Service](http://weather.gov/), but I have some minor gripes about the website's user experience.
-- I wanted to be able to see any weather data I want in a terminal, in a visually pleasing way.
+- I get my weather from [the National Weather Service](http://weather.gov/), but I have some minor gripes about the website's user experience
+  - I wanted to be able to see the weather data I want in an ergonomic and visually pleasing way
 
 ## Acknowledgements
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
