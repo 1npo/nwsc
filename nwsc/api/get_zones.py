@@ -1,3 +1,4 @@
+import json
 from typing import List
 from datetime import datetime
 from requests_cache import CachedSession
@@ -16,9 +17,10 @@ from nwsc.model.weather import Observation
 
 
 def process_zone_data(zone_data: list, response_timestamp: datetime) -> Zone:
-    zone_geometry = zone_data.get('geometry', {})
-    if zone_geometry:
-        zone_geometry = zone_geometry.get('coordinates')
+    geometry = zone_data.get('geometry', {})
+    geometry_json = None
+    if geometry:
+        geometry_json = json.dumps({'coordinates': geometry.get('coordinates')})
     zone_dict = {
         'response_timestamp':   response_timestamp,
         'zone_id':              zone_data.get('properties', {}).get('id'),
@@ -34,7 +36,7 @@ def process_zone_data(zone_data: list, response_timestamp: datetime) -> Zone:
         'expires_at':           parse_timestamp(zone_data.get('properties', {}).get('expirationDate')),
         'forecast_offices':     zone_data.get('properties', {}).get('forecastOffices'),
         'observation_stations': zone_data.get('properties', {}).get('observationStations'),
-        'multi_polygon':        zone_geometry,
+        'multi_polygon':        geometry_json,
     }
     return Zone(**zone_dict)
 

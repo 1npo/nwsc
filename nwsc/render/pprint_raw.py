@@ -135,7 +135,8 @@ def get_all_nws_data(session: CachedSession, address: str) -> dict:
 		'cwsu':								cwsu,
 		'glossary':							glossary,
 	}
-	return weather_data
+	weather_data_sorted = {k: v for k, v in sorted(weather_data.items(), key=lambda i: i[0])}
+	return weather_data_sorted
 
 
 def nws_data_to_json(session: CachedSession, address: str):

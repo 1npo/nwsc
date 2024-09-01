@@ -20,7 +20,7 @@ class Zone:
     effective_at: datetime
     expires_at: datetime
     timezones: List[str]
-    multi_polygon: List[List[List[float]]]
+    multi_polygon: str
     id: int = 0 # repository item id
 
 

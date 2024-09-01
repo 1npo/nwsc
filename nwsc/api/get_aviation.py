@@ -1,3 +1,4 @@
+import json
 from typing import List
 from datetime import datetime
 from requests_cache import CachedSession
@@ -25,7 +26,8 @@ def process_sigmet_data(sigmet_data: dict, response_timestamp: datetime) -> SIGM
     }
     geometry = sigmet_data.get('geometry')
     if geometry:
-        sigmet_dict.update({'area_polygon': geometry.get('coordinates')})
+        geometry_json = json.dumps({'coordinates': geometry.get('coordinates')})
+        sigmet_dict.update({'area_polygon': geometry_json})
     return SIGMET(**sigmet_dict)
 
 
@@ -109,9 +111,9 @@ def get_cwsu(
     response_timestamp = cwsu_data.get('response_timestamp')
     cwsu_dict = {
         'response_timestamp':   response_timestamp,
-        'cwsu_id':              response.get('name'),
-        'street':               response.get('id'),
-        'name':                 response.get('street'),
+        'cwsu_id':              response.get('id'),
+        'street':               response.get('street'),
+        'name':                 response.get('name'),
         'city':                 response.get('city'),
         'state':                response.get('state'),
         'zip_code':             response.get('zipCcode'),

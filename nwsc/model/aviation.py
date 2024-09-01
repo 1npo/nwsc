@@ -14,7 +14,7 @@ class SIGMET:
     atsu: str
     sequence: str
     phenomenon: str
-    area_polygon: List[List[list]]
+    area_polygon: str
     id: int = 0 # repository item id
 
 
@@ -29,7 +29,7 @@ class CenterWeatherAdvisory:
     effective_at: datetime
     expires_at: datetime
     observed_property_url: str
-    area_polygon: List[List[list]]
+    area_polygon: str
     id: int = 0 # repository item id
 
 
