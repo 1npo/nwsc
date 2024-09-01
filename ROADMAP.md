@@ -50,6 +50,10 @@ Roadmap and individual work items that need to be completed to complete the MVP.
 
 ## Repository
 - [x] Create a `repository` subpackage for recording historical weather responses
+- [ ] Define table schema for:
+  - [x] sqlite
+  - [ ] postgresql
+  - [ ] spark
 - [ ] Create repository modules:
   - [x] in-memory
   - [ ] sqlite
@@ -57,10 +61,7 @@ Roadmap and individual work items that need to be completed to complete the MVP.
   - [ ] csv
   - [ ] postgresql
   - [ ] spark
-- [ ] Define table schema for:
-  - [ ] sqlite
-  - [ ] postgresql
-  - [ ] spark
+
 
 ## Service
 - [ ] Create repository services:
