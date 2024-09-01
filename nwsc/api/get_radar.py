@@ -340,6 +340,7 @@ def get_radar_queue(
 	for item in response.get('@graph', {}):
 		radar_queue_dict = {
 			'response_timestamp':	response_timestamp,
+			'radar_station_id':		station_id,
 			'host':					item.get('host'),
 			'arrived_at':			item.get('arrivalTime'),
 			'created_at':			item.get('createdAt'),

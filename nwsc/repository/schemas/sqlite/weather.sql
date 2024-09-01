@@ -49,7 +49,8 @@ CREATE TABLE IF NOT EXISTS observations_cloud_layers
     station_id              TEXT,
     cloud_layer_height	    TEXT,
     cloud_layer_description	TEXT,
-    PRIMARY KEY             (retrieved_at, station_id, cloud_layer_height)
+    PRIMARY KEY             (retrieved_at, station_id, cloud_layer_height),
+    FOREIGN KEY             (retrieved_at, station_id) REFERENCES observations (retrieved_at, station_id)
 );
 
 CREATE TABLE IF NOT EXISTS forecasts

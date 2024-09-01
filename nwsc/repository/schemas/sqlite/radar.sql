@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS radar_adaptation
     pulse_width_transmitter_out_short_pulse	        INTEGER,
     ame_noise_source_horizontal_excess_noise_ratio	REAL,
     ame_horizontal_test_signal_power	            REAL,
-    PRIMARY KEY                                     (retrieved_at, radar_station_id)
+    PRIMARY KEY                                     (retrieved_at, radar_station_id),
+    FOREIGN KEY                                     (retrieved_at, radar_station_id) REFERENCES radar_stations (retrieved_at, radar_station_id)
 );
 
 CREATE TABLE IF NOT EXISTS radar_performance
@@ -78,7 +79,9 @@ CREATE TABLE IF NOT EXISTS radar_performance
     horizontal_short_pulse_noise_db_mi	REAL,
     horizontal_long_pulse_noise_db_m	REAL,
     horizontal_long_pulse_noise_db_mi	REAL,
-    PRIMARY KEY                         (retrieved_at, radar_station_id)
+    PRIMARY KEY                         (retrieved_at, radar_station_id),
+    FOREIGN KEY                         (retrieved_at, radar_station_id) REFERENCES radar_stations (retrieved_at, radar_station_id)
+
 );
 
 CREATE TABLE IF NOT EXISTS radar_path_loss
@@ -97,6 +100,7 @@ CREATE TABLE IF NOT EXISTS radar_path_loss
     at4_attenuator	                REAL,
     waveguide_klystron_to_switch	REAL,
     PRIMARY KEY                     (retrieved_at, radar_station_id)
+    FOREIGN KEY                     (retrieved_at, radar_station_id) REFERENCES radar_stations (retrieved_at, radar_station_id)
 );
 
 CREATE TABLE IF NOT EXISTS radar_data_acquisition
@@ -118,7 +122,8 @@ CREATE TABLE IF NOT EXISTS radar_data_acquisition
     build_number	                        REAL,
     average_tx_power_w	                    REAL,
     reflectivity_calibration_correction_db	REAL,
-    PRIMARY KEY                             (retrieved_at, radar_station_id)
+    PRIMARY KEY                             (retrieved_at, radar_station_id),
+    FOREIGN KEY                             (retrieved_at, radar_station_id) REFERENCES radar_stations (retrieved_at, radar_station_id)
 );
 
 ----------------
@@ -128,7 +133,6 @@ CREATE TABLE IF NOT EXISTS radar_data_acquisition
 CREATE TABLE IF NOT EXISTS radar_servers
 (
     retrieved_at                    TEXT, -- ISO8601 timestamp
-    radar_station_id                TEXT,   
     host	                        TEXT,
     server_type	                    TEXT,
     up_since	                    TEXT, -- ISO8601 timestamp
@@ -161,13 +165,13 @@ CREATE TABLE IF NOT EXISTS radar_servers
     collection_time	                TEXT, -- ISO8601 timestamp
     reporting_host	                TEXT,
     last_ping_at	                TEXT, -- ISO8601 timestamp
-    PRIMARY KEY                     (retrieved_at, radar_station_id)
+    PRIMARY KEY                     (retrieved_at, host)
 );
 
 CREATE TABLE IF NOT EXISTS rader_server_ping_responses
 (
     retrieved_at        TEXT, -- ISO8601 timestamp
-    radar_station_id    TEXT,   
+    host                TEXT,   
     ldm_name	        TEXT,
     ldm_response	    INTEGER, -- boolean
     radar_name	        TEXT,
@@ -176,14 +180,15 @@ CREATE TABLE IF NOT EXISTS rader_server_ping_responses
     server_response	    INTEGER, -- boolean
     network_name	    TEXT,
     network_response	INTEGER, -- boolean
-    PRIMARY KEY         (retrieved_at, radar_station_id)
+    PRIMARY KEY         (retrieved_at, host)
+    FOREIGN KEY         (retrieved_at, host) REFERENCES radar_servers (retrieved_at, host)
+
 )
 
--- related to radar_servers
 CREATE TABLE IF NOT EXISTS network_interfaces
 (
     retrieved_at        TEXT, -- ISO8601 timestamp
-    radar_station_id    TEXT,   
+    host                TEXT,   
     interface_name	    TEXT,
     is_interface_active	INTEGER, -- boolean
     packets_out_ok	    INTEGER,
@@ -194,7 +199,8 @@ CREATE TABLE IF NOT EXISTS network_interfaces
     packets_in_error	INTEGER,
     packets_in_dropped	INTEGER,
     packets_in_overrun	INTEGER,
-    PRIMARY KEY         (retrieved_at, radar_station_id)
+    PRIMARY KEY         (retrieved_at, host)
+    FOREIGN KEY         (retrieved_at, host) REFERENCES radar_servers (retrieved_at, host)
 );
 
 ---------------
@@ -204,17 +210,16 @@ CREATE TABLE IF NOT EXISTS network_interfaces
 CREATE TABLE IF NOT EXISTS radar_queues
 (
     retrieved_at        TEXT, -- ISO8601 timestamp
-    radar_station_id    TEXT,
     host	            TEXT,
+    station_id	        TEXT,
     arrived_at	        TEXT, -- ISO8601 timestamp
     created_at	        TEXT, -- ISO8601 timestamp
-    station_id	        TEXT,
     queue_item_type	    TEXT,
     feed	            TEXT,
     resolution_version	INTEGER,
     sequence_number	    TEXT,
     size	            INTEGER,
-    PRIMARY KEY         (retrieved_at, radar_station_id)   
+    PRIMARY KEY         (retrieved_at, host, station_id)   
 );
 
 ---------------

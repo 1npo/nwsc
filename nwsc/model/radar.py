@@ -108,6 +108,7 @@ class RadarStationAlarm:
 @dataclass
 class RadarQueueItem:
     response_timestamp: datetime
+    radar_station_id: str
     host: str
     arrived_at: datetime
     created_at: datetime

@@ -28,6 +28,7 @@ class Office:
 @dataclass
 class OfficeHeadline:
     response_timestamp: datetime
+    office_id: str
     headline_id: str
     name: str
     title: str

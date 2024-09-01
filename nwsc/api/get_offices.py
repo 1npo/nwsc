@@ -16,9 +16,14 @@ InvalidOfficeException = ValueError(
 )
 
 
-def process_headline_data(headline_data: dict, response_timestamp: datetime) -> dict:
+def process_headline_data(
+    headline_data: dict,
+    response_timestamp: datetime,
+    office_id: str
+) -> dict:
     headline_dict = {
         'response_timestamp':   response_timestamp,
+        'office_id':            office_id,
         'headline_id':          headline_data.get('id'),
         'name':                 headline_data.get('name'),
         'title':                headline_data.get('title'),
@@ -44,7 +49,7 @@ def get_office_headlines(
     response_timestamp = headlines_data.get('response_timestamp')
     headlines = []
     for headline in response.get('@graph', {}):
-        headlines.append(process_headline_data(headline, response_timestamp))
+        headlines.append(process_headline_data(headline, response_timestamp, office_id))
     return headlines
 
 
@@ -59,7 +64,7 @@ def get_office_headline(
     headline_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines/' + headline_id)
     response = headline_data.get('response')
     response_timestamp = headline_data.get('response_timestamp')
-    return process_headline_data(response, response_timestamp)
+    return process_headline_data(response, response_timestamp, office_id)
 
 
 @display_spinner('Getting forecast office details...')
