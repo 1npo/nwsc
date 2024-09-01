@@ -35,7 +35,7 @@ A full-coverage National Weather Service API client for the terminal
 - [Contributing](#contributing)
 
 ## Features
-- Retrieve data from every available NWS API endpoint (see [Endpoint Coverage](#endpoint-coverage))
+- Retrieve data from every available NWS API endpoint
 - Explore the data with a pretty [Textual](https://textual.textualize.io) interface
 - Pretty-print data with [Rich](https://rich.readthedocs.io/en/latest/)
 - Print weather strings that can be piped to other tools (such as [i3status](https://i3wm.org/i3status/))
@@ -71,9 +71,15 @@ A full-coverage National Weather Service API client for the terminal
 - [ ] Show how to create weather strings that can be piped to other tools
 
 ## Purpose and Audience
-I made `nwsc` for myself as a labor of love, mainly for the reasons I list below. But I tried to make it robust, user friendly, and maintainable for anyone else who may find it useful.
-- I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience. I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance, in a visually pleasing way.
-- I wanted to start a **serious, high-quality** software project, get an MVP released, and execute it well. This project had just the right stuff to keep me interested, challenged, and motivated long enough to produce an MVP.
+I made `nwsc` for myself for these reasons:
+
+- For fun
+- I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience. So I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance, in a way that I find visually pleasing.
+- I wanted to start and finish a MVP for a moderately complex software project, and execute it well. Meaning the MVP:
+  - Provides all the listed features
+  - Is robust (ie, has full test coverage and all tests pass)
+  - Is well-documented
+  - Is user-friendly
 
 ## Documentation
 > [!NOTE]
