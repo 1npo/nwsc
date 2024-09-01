@@ -29,6 +29,9 @@ A full-coverage National Weather Service API client for the terminal
   - [How to pretty-print NWS information](#how-to-pretty-print-nws-information)
   - [How to print pipeable weather strings](#how-to-print-pipeable-weather-strings)
 - [Documentation](#documentation)
+  - [Endpoint Coverage](#endpoint-coverage)
+  - [System Design](#system-design)
+  - [Configuration](#configuration)
 - [License](#license)
 - [Purpose](#purpose)
 - [Acknowledgements](#acknowledgements)
@@ -73,9 +76,9 @@ A full-coverage National Weather Service API client for the terminal
 ## Documentation
 > [!NOTE]
 > The content of these markdown files will eventually move into the Sphinx docs
-- [Endpoint Coverage](docs/endpoint_coverage.md)
-- [System Design](docs/system_design.md)
-- [Configuration](docs/configuration.md)
+### [Endpoint Coverage](docs/endpoint_coverage.md)
+### [System Design](docs/system_design.md)
+### [Configuration](docs/configuration.md)
 
 ## License
 The National Weather Service Client (**nwsc**) is made available under the [MIT License](LICENSE.md)
