@@ -13,4 +13,4 @@ class Station:
     forecast_url: str
     county_url: str
     fire_weather_zone_url: str
-    id: int = None # repository item id
+    id: int = 0 # repository item id

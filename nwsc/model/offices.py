@@ -21,7 +21,7 @@ class Office:
     forecast_zones: List[str]
     fire_zones: List[str]
     observation_stations: List[str]
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -35,4 +35,4 @@ class OfficeHeadline:
     headline_summary: str
     office_url: str
     is_important: bool
-    id: int = None # repository item id
+    id: int = 0 # repository item id

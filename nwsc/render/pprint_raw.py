@@ -166,7 +166,7 @@ def pprint_raw_nws_data(session: CachedSession, address: str):
 		'zone',
 	]
 	for name, data in nws_data.items():
-		if name in ('zone', 'zone_forecast'): # in data_item_filter:
+		if name:
 			console.print(f'{name}\n{"=" * len(name)}', style='bold red')
 			pprint(data)
 
@@ -175,27 +175,28 @@ def test_memory_repository(session: CachedSession, address: str):
 	nws_data = get_all_nws_data(session, address)
 	repo = InMemoryRepository()
 	test_item_alerts = nws_data.get('alerts')
-	test_item_aviation = nws_data.get('sigmet')
-	test_item_locations = nws_data.get('location_data')
-	test_item_offices = nws_data.get('office')
-	test_item_products = nws_data.get('product')
-	test_item_radar = nws_data.get('radar_station')
+	test_item_sigmet = nws_data.get('sigmet')
+	test_item_location = nws_data.get('location_data')
+	test_item_office = nws_data.get('office')
+	test_item_product = nws_data.get('product')
+	test_item_radar_station = nws_data.get('radar_station')
 	test_item_stations = nws_data.get('local_stations_data')
-	test_item_weather = nws_data.get('observations_latest')
+	test_item_observation = nws_data.get('observations_latest')
 	test_item_zones = nws_data.get('zone')
 
 	items = [
 		test_item_alerts,
-		test_item_aviation,
-		test_item_locations,
-		test_item_offices,
-		test_item_products,
-		test_item_radar,
+		test_item_sigmet,
+		test_item_location,
+		test_item_office,
+		test_item_product,
+		test_item_radar_station,
 		test_item_stations,
-		test_item_weather,
+		test_item_observation,
 		test_item_zones,
 	]
 
+	'''
 	for item in items:
 		if isinstance(item, list):
 			for i in item:
@@ -204,4 +205,14 @@ def test_memory_repository(session: CachedSession, address: str):
 		else:
 			repo.create(item)
 			logger.success(f'Added item to in-memory repo: {item=}')			
+	'''
+
+
+	for i in range(1, 5):
+		pprint(repo.create(test_item_location))
+
+	#pprint(f'Printing ALL')
+	#pprint(repo.get_all())
+	#pprint(f'Printing ONE')
+	pprint(repo.filter_by({'city': 'Winchester'}))
 

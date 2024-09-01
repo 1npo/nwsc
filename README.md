@@ -28,11 +28,13 @@ A full-coverage National Weather Service API client for the terminal
   - [Console TUI](#console-tui)
   - [CLI Options](#cli-options)
   - [Configuration](#configuration)
+  - [Available User Settings](#available-user-settings)
   - [Data Export](#data-export)
 - [Endpoint Coverage](#endpoint-coverage)
 - [Purpose and Audience](#purpose-and-audience)
 - [System Design](#system-design)
-  - [App Architecture](#app-architecture)
+  - [Architecture](#architecture)
+  - [Data Retrieval](#data-retrieval)
   - [Data Model](#data-model)
     - [Available Information](#available-information)
     - [Dataclasses](#dataclasses)
@@ -74,8 +76,11 @@ A full-coverage National Weather Service API client for the terminal
 ### CLI Options
 - [ ] Show how to print weather strings for piping
 ### Configuration
-- [ ] Show how to use the configuration manager
-- [ ] List available config settings
+- [ ] Describehow to use the configuration manager
+### Available User Settings
+| Name | Type | Default Value
+| --- | --- | --- |
+| foo | bar | baz |
 ### Data Export
 - [ ] Describe how to set up repositories for data export
 - [ ] Describe how to enable/use data export features
@@ -169,11 +174,15 @@ I made `nwsc` for myself as a labor of love, mainly for the reasons I list below
 - I wanted to start a **serious, high-quality** software project, get an MVP released, and execute it well. This project had just the right stuff to keep me interested, challenged, and motivated long enough to produce an MVP.
 
 ## System Design
-### App Architecture
+### Architecture
 <div align='center'>
 <img src='https://github.com/1npo/nwsc/blob/main/resources/img/nwsc_architecture.png' alt='nwsc system architecture diagram'>
 </div>
 
+### Data Retrieval
+1. Any data that doesn't come directly from the user (eg location data and configuration settings) is retrieved from an API endpoint
+2. All API responses are cached by `request-cache` unless caching is disabled by the user
+3. 
 ### Data Model
 The NWS API exposes different kinds of weather-related information. This app uses dataclasses to model and describe that information.
 

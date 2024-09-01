@@ -10,7 +10,7 @@ class PriorAlert:
     prior_alert_id: str
     url: str
     sent_at: datetime
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -46,7 +46,7 @@ class Alert:
     cap_blocked_channels: list
     cap_vtec: list
     prior_alerts: List[PriorAlert]
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -57,4 +57,4 @@ class AlertCounts:
     regions: Dict[str, int]
     areas: Dict[str, int]
     zones: Dict[str, int]
-    id: int = None # repository item id
+    id: int = 0 # repository item id

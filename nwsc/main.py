@@ -13,7 +13,7 @@ from pathlib import Path
 from datetime import datetime
 
 from loguru import logger
-from requests_cache import CachedSession, SQLiteCache, FileCache
+from requests_cache import CachedSession, SQLiteCache, FileCache, NEVER_EXPIRE
 
 from nwsc.config import ConfigManager
 from nwsc.render.decorators import display_spinner
@@ -91,7 +91,12 @@ def main():
 	params, other = parser.parse_known_args()
 	address = params.address if params.address else config.get('address')
 	backend = SQLiteCache()
-	session = CachedSession('nwsc_cache', backend=backend, use_cache_dir=True)
+	session = CachedSession('nwsc_cache',
+						 	backend=backend,
+							use_cache_dir=True,
+							cache_control=True,
+							expire_after=NEVER_EXPIRE,
+							)
 	with session:
 		if params.debug:
 			log_filter.level = 'DEBUG'

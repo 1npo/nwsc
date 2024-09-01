@@ -20,7 +20,7 @@ class Zone:
     expires_at: datetime
     timezones: List[str]
     multi_polygon: List[List[List[float]]]
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -28,11 +28,11 @@ class ZoneForecastPeriod:
     num: int
     name: str
     forecast_detailed: str
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
 class ZoneForecast:
     forecasted_at: datetime
     periods: List[ZoneForecastPeriod]
-    id: int = None # repository item id
+    id: int = 0 # repository item id

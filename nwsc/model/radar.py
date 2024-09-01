@@ -21,7 +21,7 @@ class RadarDataAcquisition:
     build_number: float
     average_tx_power_w: float
     reflectivity_calibration_correction_db: float
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -56,7 +56,7 @@ class RadarPerformance:
     horizontal_short_pulse_noise_db_mi: float
     horizontal_long_pulse_noise_db_m: float
     horizontal_long_pulse_noise_db_mi: float
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -72,7 +72,7 @@ class RadarPathLoss:
     horizontal_f_heliax_to_4at17: float
     at4_attenuator: float
     waveguide_klystron_to_switch: float
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -92,7 +92,7 @@ class RadarAdaptation:
     ame_noise_source_horizontal_excess_noise_ratio: float
     ame_horizontal_test_signal_power: float
     path_loss: RadarPathLoss
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -101,7 +101,7 @@ class RadarStationAlarm:
     message: str
     active_channel: int
     event_at: datetime
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -115,7 +115,7 @@ class RadarQueueItem:
     resolution_version: int
     sequence_number: str
     size: int
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -138,7 +138,7 @@ class RadarStation:
     radar_data_acquisition: RadarDataAcquisition
     performance: RadarPerformance
     adaptation: RadarAdaptation
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -153,7 +153,7 @@ class NetworkInterface:
     packets_in_error: int
     packets_in_dropped: int
     packets_in_overrun: int
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -195,4 +195,4 @@ class RadarServer:
     ping_responses_radar: Dict[str, bool]
     ping_responses_server: Dict[str, bool]
     ping_responses_network: Dict[str, bool]
-    id: int = None # repository item id
+    id: int = 0 # repository item id

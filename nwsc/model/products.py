@@ -7,14 +7,14 @@ from dataclasses import dataclass
 class ProductType:
     code: str
     name: str
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
 class ProductLocation:
     code: str
     name: str
-    id: int = None # repository item id
+    id: int = 0 # repository item id
 
 
 @dataclass
@@ -26,4 +26,4 @@ class Product:
     text: str
     issuing_office: str
     issued_at: datetime
-    id: int = None # repository item id
+    id: int = 0 # repository item id

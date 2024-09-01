@@ -48,31 +48,21 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
   - See: https://www.weather.gov/nl2/ServerView
 - [ ] Revise `model.radar` to better model NWS radars and servers
 
-## Repository & Service
+## Repository
 - [x] Create a `repository` subpackage for recording historical weather responses
 - [ ] Create repository modules:
   - [x] in-memory
-  - [x] sqlite
+  - [ ] sqlite
   - [ ] json
   - [ ] csv
   - [ ] postgresql
-  - [ ] delta
+  - [ ] spark
 - [ ] Define table schema for:
-  - [ ] locations
-  - [ ] stations
-  - [ ] observations
-  - [ ] forecasts
-  - [ ] alerts
-  - [ ] radar servers
-  - [ ] radar stations
-  - [ ] radar station alarms
-  - [ ] text products
-  - [ ] zones
-  - [ ] offices
-  - [ ] sigmets
-  - [ ] center weather service units
-  - [ ] center weather advisories
-  - [ ] glossary
+  - [ ] sqlite
+  - [ ] postgresql
+  - [ ] spark
+
+## Service
 - [ ] Create repository services:
   - [ ] locations
   - [ ] weather
@@ -102,6 +92,13 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
 - [ ] Explore other TUI projects for inspiration:
   - See: https://github.com/rothgar/awesome-tuis
 
+## Configuration
+- [ ] Compile full list of available settings
+  - disable_cache
+  - offline_mode
+  - 
+- [ ] Update default initialized configuration to include all available settings
+
 ## Package
 - [ ] Move package from `venv` to `(micro)mamba`
 - [ ] Set up badges:
@@ -123,6 +120,7 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
 - [ ] Make any needed improvements to `config.py`
 - [x] Split `api_temp.py` into separate modules, one for each endpoint
 - [ ] Set up GitHub Actions CI/CD to publish new versions of `nwsc` to PyPI
+- [ ] Set up GitHub Actions CI/CD to purge README image cache
 
 ## Documentation
 - [x] Find some examples of great project READMEs (See links below for inspo)
@@ -137,6 +135,7 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
 - [x] Create "API Coverage" checklist in README and identify all API features that are implemented
 - [ ] Take static screenshots of some printed outputs
 - [ ] Record GIFs showing how to navigate the app to do some basic things
+- [ ] Move all possible documentation off the README and into Sphinx prose section (or not?)
 
 ## Testing
 - [ ] Write unit tests for every (possible) function in:
