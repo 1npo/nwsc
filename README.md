@@ -84,13 +84,14 @@ I made `nwsc` for myself for these reasons:
 - I wanted to start and finish a moderately complex minimum viable product, and execute it well. Meaning it:
   - Provides all the listed features
   - Is robust (ie, has full test coverage and all tests pass)
-  - Is well-documented
   - Is user-friendly
-- I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience.
-- I wanted to be able to type a command into a terminal and see all the NWS data I want at a glance, in a way that I find visually pleasing.
+  - Is well-documented
+  - Uses CI/CD for tests and releases
+- I get my weather from [the National Weather Service](http://weather.gov/), but I have some minor gripes about the website's user experience.
+- I wanted to be able to see any weather data I want in a terminal, in a visually pleasing way.
 
 ## License
-The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)
+The National Weather Service Client (**nwsc**) is made available under the [MIT License](LICENSE.md)
 
 ## Acknowledgements
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
@@ -103,4 +104,4 @@ The National Weather Service Client (**nwsc**) is made available under the [MIT 
 
 ## Contributing
 - See [CONTRIBUTING](CONTRIBUTING.md) for instructions on how to contribute to `nwsc`
-- See [TODO](TODO.md) for things that need to be done
+- See [ROADMAP](ROADMAP.md) for things that need to be done

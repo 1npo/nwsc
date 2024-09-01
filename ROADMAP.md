@@ -1,7 +1,6 @@
-# TODO
-Roadmap and individual tasks that need to be completed to reach MVP status.
+# Roadmap
+Roadmap and individual work items that need to be completed to complete the MVP.
 
-## Roadmap
 > [!NOTE]
 > The roadmap lists high-level milestones. The remaining sections list specific tasks that need to be done to reach these milestones.
 - [x] Get all data from all endpoints
@@ -12,7 +11,8 @@ Roadmap and individual tasks that need to be completed to reach MVP status.
 - [ ] Design and build a user interface
 - [ ] Design and build a suite of unit tests
 - [ ] Complete and finalize MVP documentation
-  
+
+# TODO
 ## Data
 ### Retrieval & Processing
 - [x] Finish writing API request functions for all endpoints
