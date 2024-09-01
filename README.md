@@ -28,8 +28,8 @@ A full-coverage National Weather Service API client for the terminal
   - [How to start the TUI](#how-to-start-the-tui)
   - [How to pretty-print NWS information](#how-to-pretty-print-nws-information)
   - [How to print pipeable weather strings](#how-to-print-pipeable-weather-strings)
-- [Purpose and Audience](#purpose-and-audience)
 - [Documentation](#documentation)
+- [Purpose](#purpose)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
@@ -70,16 +70,6 @@ A full-coverage National Weather Service API client for the terminal
 ### How to print pipeable weather strings
 - [ ] Show how to create weather strings that can be piped to other tools
 
-## Purpose and Audience
-I made `nwsc` for myself for these reasons:
-
-- For fun
-- I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience. So I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance, in a way that I find visually pleasing.
-- I wanted to start and finish a MVP for a moderately complex software project, and execute it well. Meaning the MVP:
-  - Provides all the listed features
-  - Is robust (ie, has full test coverage and all tests pass)
-  - Is well-documented
-  - Is user-friendly
 
 ## Documentation
 > [!NOTE]
@@ -87,6 +77,17 @@ I made `nwsc` for myself for these reasons:
 - [Endpoint Coverage](docs/endpoint_coverage.md)
 - [System Design](docs/system_design.md)
 - [Configuration](docs/configuration.md)
+
+## Purpose
+I made `nwsc` for myself for these reasons:
+- For fun
+- I wanted to start and finish a MVP for a moderately complex software project, and execute it well. Meaning the MVP:
+  - Provides all the listed features
+  - Is robust (ie, has full test coverage and all tests pass)
+  - Is well-documented
+  - Is user-friendly
+- I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience.
+- I wanted to be able to type a command into a terminal and see all the NWS data I want at a glance, in a way that I find visually pleasing.
 
 ## License
 The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)
