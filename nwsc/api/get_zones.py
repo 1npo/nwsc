@@ -96,7 +96,7 @@ def get_zone_observations(
     response_timestamp = zone_observations_data.get('response_timestamp')
     zone_observations = []
     for feature in response.get('features', {}):
-        zone_observations.append(process_observations_data(feature, response_timestamp))
+        zone_observations.append(process_observations_data(feature, response_timestamp, zone_id))
     return zone_observations
 
 
@@ -110,11 +110,12 @@ def get_zone_forecast(
     response_timestamp = zone_forecast_data.get('response_timestamp')
     forecast_dict = {
         'response_timestamp':   response_timestamp,
+        'zone_id':              zone_id,
         'forecasted_at':        parse_timestamp(response.get('properties', {}).get('updated')),
         'periods':              []
     }
     forecast = ZoneForecast(**forecast_dict)
-    for period in zone_forecast_data.get('properties', {}).get('periods', {}):
+    for period in response.get('properties', {}).get('periods', {}):
         if period and isinstance(period, dict):
             period_dict = {
                 'num':               period.get('number'),

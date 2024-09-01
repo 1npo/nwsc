@@ -8,7 +8,7 @@ class Location:
     timezone: str
     grid_x: int
     grid_y: int
-    county_warning_area: str
+    forecast_office: str
     radar_station: str
     forecast_office_url: str
     forecast_extended_url: str

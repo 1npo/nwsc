@@ -27,7 +27,7 @@ def uscb_geocode(
 
 
 @display_spinner('Getting location data...')
-def get_points_for_location(
+def get_location(
 	session: CachedSession,
 	address: str
 ) -> Location:
@@ -41,7 +41,7 @@ def get_points_for_location(
 		'timezone':                 response.get('properties', {}).get('timeZone'),
 		'grid_x':                   response.get('properties', {}).get('gridX'),
 		'grid_y':                   response.get('properties', {}).get('gridY'),
-		'county_warning_area':      response.get('properties', {}).get('cwa'),
+		'forecast_office':      	response.get('properties', {}).get('cwa'),
 		'radar_station':            response.get('properties', {}).get('radarStation'),
 		'forecast_office_url':      response.get('properties', {}).get('forecastOffice'),
 		'forecast_extended_url':    response.get('properties', {}).get('forecast'),				# /gridpoints/{wfo}/{x},{y}/forecast

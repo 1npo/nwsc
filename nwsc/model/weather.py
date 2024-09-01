@@ -6,6 +6,7 @@ from typing import Dict, List
 @dataclass
 class Observation:
     response_timestamp: datetime
+    station_or_zone_id: str
     observed_at: datetime
     icon_url: str
     text_description: str
@@ -70,6 +71,9 @@ class ForecastPeriod:
 @dataclass
 class Forecast:
     response_timestamp: datetime
+    forecast_office: str
+    grid_x: int
+    grid_y: int
     generated_at: datetime
     updated_at: datetime
     periods: List[ForecastPeriod]

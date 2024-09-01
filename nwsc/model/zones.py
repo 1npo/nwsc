@@ -35,6 +35,7 @@ class ZoneForecastPeriod:
 @dataclass
 class ZoneForecast:
     response_timestamp: datetime
+    zone_id: str
     forecasted_at: datetime
     periods: List[ZoneForecastPeriod]
     id: int = 0 # repository item id
