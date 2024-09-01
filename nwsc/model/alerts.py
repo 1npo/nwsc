@@ -15,6 +15,7 @@ class PriorAlert:
 
 @dataclass
 class Alert:
+    response_timestamp: datetime
     alert_id: str
     url: str
     updated_at: datetime
@@ -51,6 +52,7 @@ class Alert:
 
 @dataclass
 class AlertCounts:
+    response_timestamp: datetime
     total: int
     land: int
     marine: int

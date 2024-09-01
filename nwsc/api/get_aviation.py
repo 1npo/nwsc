@@ -1,4 +1,5 @@
 from typing import List
+from datetime import datetime
 from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
@@ -9,17 +10,18 @@ from nwsc.api import (
 from nwsc.model.aviation import SIGMET, CenterWeatherAdvisory, CentralWeatherServiceUnit
 
 
-def process_sigmet_data(sigmet_data: dict) -> SIGMET:
+def process_sigmet_data(sigmet_data: dict, response_timestamp: datetime) -> SIGMET:
     sigmet_dict = {
-        'url':              sigmet_data.get('properties', {}).get('id'),
-        'issued_at':        sigmet_data.get('properties', {}).get('issueTime'),
-        'effective_at':     sigmet_data.get('properties', {}).get('start'),
-        'expires_at':       sigmet_data.get('properties', {}).get('end'),
-        'fir':              sigmet_data.get('properties', {}).get('fir'),
-        'atsu':             sigmet_data.get('properties', {}).get('atsu'),
-        'sequence':         sigmet_data.get('properties', {}).get('sequence'),
-        'phenomenon':       sigmet_data.get('properties', {}).get('phenomenon'),
-        'area_polygon':     None,
+        'response_timestamp':   response_timestamp,
+        'url':                  sigmet_data.get('properties', {}).get('id'),
+        'issued_at':            sigmet_data.get('properties', {}).get('issueTime'),
+        'effective_at':         sigmet_data.get('properties', {}).get('start'),
+        'expires_at':           sigmet_data.get('properties', {}).get('end'),
+        'fir':                  sigmet_data.get('properties', {}).get('fir'),
+        'atsu':                 sigmet_data.get('properties', {}).get('atsu'),
+        'sequence':             sigmet_data.get('properties', {}).get('sequence'),
+        'phenomenon':           sigmet_data.get('properties', {}).get('phenomenon'),
+        'area_polygon':         None,
     }
     geometry = sigmet_data.get('geometry')
     if geometry:
@@ -70,8 +72,9 @@ def get_sigmet(
     return process_sigmet_data(sigmet_data)
 
 
-def process_cwa_data(cwa_data: dict) -> CenterWeatherAdvisory:
+def process_cwa_data(cwa_data: dict, response_timestamp: datetime) -> CenterWeatherAdvisory:
     cwa_dict = {
+        'response_timestamp':       response_timestamp,
         'url':                      cwa_data.get('properties', {}).get('id'),
         'text':                     cwa_data.get('properties', {}).get('text'),
         'cwsu':                     cwa_data.get('properties', {}).get('cwsu'),
@@ -94,18 +97,21 @@ def get_cwsu(
     cwsu_id: str
 ) -> CentralWeatherServiceUnit:
     cwsu_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id)
+    response = cwsu_data.get('response')
+    response_timestamp = cwsu_data.get('response_timestamp')
     cwsu_dict = {
-        'cwsu_id':      cwsu_data.get('id'),
-        'name':         cwsu_data.get('name'),
-        'street':       cwsu_data.get('street'),
-        'city':         cwsu_data.get('city'),
-        'state':        cwsu_data.get('state'),
-        'zip_code':     cwsu_data.get('zipCcode'),
-        'email':        cwsu_data.get('email'),
-        'fax':          cwsu_data.get('fax'),
-        'phone':        cwsu_data.get('phone'),
-        'url':          cwsu_data.get('url'),
-        'nws_region':   cwsu_data.get('nwsRegion'),
+        'response_timestamp':   response_timestamp,
+        'cwsu_id':              response.get('name'),
+        'street':               response.get('id'),
+        'name':                 response.get('street'),
+        'city':                 response.get('city'),
+        'state':                response.get('state'),
+        'zip_code':             response.get('zipCcode'),
+        'email':                response.get('email'),
+        'fax':                  response.get('fax'),
+        'phone':                response.get('phone'),
+        'url':                  response.get('url'),
+        'nws_region':           response.get('nwsRegion'),
     }
     return CentralWeatherServiceUnit(**cwsu_dict)
 
