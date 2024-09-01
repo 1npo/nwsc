@@ -40,17 +40,17 @@ CREATE TABLE IF NOT EXISTS observations
     wind_chill_f	            REAL,
     heat_index_c	            REAL,
     heat_index_f	            REAL,
-    PRIMARY KEY                 (retrieved_at, station_id)
+    PRIMARY KEY                 (retrieved_at, station_or_zone_id)
 );
 
 CREATE TABLE IF NOT EXISTS observations_cloud_layers
 (
     retrieved_at            TEXT, -- ISO8601 timestamp
-    station_id              TEXT,
+    station_or_zone_id      TEXT,
     cloud_layer_height	    TEXT,
     cloud_layer_description	TEXT,
-    PRIMARY KEY             (retrieved_at, station_id, cloud_layer_height),
-    FOREIGN KEY             (retrieved_at, station_id) REFERENCES observations (retrieved_at, station_id)
+    PRIMARY KEY             (retrieved_at, station_or_zone_id, cloud_layer_height),
+    FOREIGN KEY             (retrieved_at, station_or_zone_id) REFERENCES observations (retrieved_at, station_or_zone_id)
 );
 
 CREATE TABLE IF NOT EXISTS forecasts
@@ -61,11 +61,10 @@ CREATE TABLE IF NOT EXISTS forecasts
     grid_y                          INTEGER,
     generated_at	                TEXT, -- ISO8601 timestamp
     updated_at	                    TEXT, -- ISO8601 timestamp
-    num	                            INTEGER,
-    name	                        TEXT,
+    period_num	                    INTEGER,
+    period_name	                    TEXT,
     start_at	                    TEXT, -- ISO8601 timestamp
     end_at	                        TEXT, -- ISO8601 timestamp
-    name	                        TEXT,
     forecast_short	                TEXT,
     forecast_detailed	            TEXT,
     forecast_icon_url	            TEXT,

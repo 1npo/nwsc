@@ -16,13 +16,13 @@ from nwsc.model.stations import Station
 from nwsc.model.weather import Observation
 
 
-def process_zone_data(zone_data: list, response_timestamp: datetime) -> Zone:
+def process_zone_data(zone_data: list, retrieved_at: datetime) -> Zone:
     geometry = zone_data.get('geometry', {})
     geometry_json = None
     if geometry:
         geometry_json = json.dumps({'coordinates': geometry.get('coordinates')})
     zone_dict = {
-        'response_timestamp':   response_timestamp,
+        'retrieved_at':   retrieved_at,
         'zone_id':              zone_data.get('properties', {}).get('id'),
         'grid_id':              zone_data.get('properties', {}).get('gridIdentifier'),
         'awips_id':             zone_data.get('properties', {}).get('awipsLocationIdentifier'),
@@ -51,8 +51,8 @@ def get_zone(
         raise ValueError(f'Invalid zone type provided: {zone_type}. Valid zones are: {", ".join(VALID_NWS_ZONES)}')
     zone_data = api_request(session, NWS_API_ZONES + f'/{zone_type}/{zone_id}')
     response = zone_data.get('response')
-    response_timestamp = zone_data.get('response_timestamp')
-    return process_zone_data(response, response_timestamp)
+    retrieved_at = zone_data.get('retrieved_at')
+    return process_zone_data(response, retrieved_at)
 
 
 @display_spinner('Getting all zones...')
@@ -65,10 +65,10 @@ def get_zones(
     else:
         zones_data = api_request(session, NWS_API_ZONES)
     response = zones_data.get('response')
-    response_timestamp = zones_data.get('response_timestamp')
+    retrieved_at = zones_data.get('retrieved_at')
     zones = []
     for feature in response.get('features', {}):
-        zones.append(process_zone_data(feature, response_timestamp))
+        zones.append(process_zone_data(feature, retrieved_at))
     return zones
 
 
@@ -79,10 +79,10 @@ def get_zone_stations(
 ) -> List[Station]:
     zone_stations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/stations')
     response = zone_stations_data.get('response')
-    response_timestamp = zone_stations_data.get('response_timestamp')
+    retrieved_at = zone_stations_data.get('retrieved_at')
     zone_stations = []
     for feature in response.get('features', {}):
-        zone_stations.append(process_station_data(feature, response_timestamp))
+        zone_stations.append(process_station_data(feature, retrieved_at))
     return zone_stations
 
 
@@ -93,10 +93,10 @@ def get_zone_observations(
 ) -> List[Observation]:
     zone_observations_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/observations')
     response = zone_observations_data.get('response')
-    response_timestamp = zone_observations_data.get('response_timestamp')
+    retrieved_at = zone_observations_data.get('retrieved_at')
     zone_observations = []
     for feature in response.get('features', {}):
-        zone_observations.append(process_observations_data(feature, response_timestamp, zone_id))
+        zone_observations.append(process_observations_data(feature, retrieved_at, zone_id))
     return zone_observations
 
 
@@ -107,9 +107,9 @@ def get_zone_forecast(
 ) -> ZoneForecast:
     zone_forecast_data = api_request(session, NWS_API_ZONE_FORECASTS + f'{zone_id}/forecast')
     response = zone_forecast_data.get('response')
-    response_timestamp = zone_forecast_data.get('response_timestamp')
+    retrieved_at = zone_forecast_data.get('retrieved_at')
     forecast_dict = {
-        'response_timestamp':   response_timestamp,
+        'retrieved_at':   retrieved_at,
         'zone_id':              zone_id,
         'forecasted_at':        parse_timestamp(response.get('properties', {}).get('updated')),
         'periods':              []
@@ -118,8 +118,8 @@ def get_zone_forecast(
     for period in response.get('properties', {}).get('periods', {}):
         if period and isinstance(period, dict):
             period_dict = {
-                'num':               period.get('number'),
-                'name':              period.get('name'),
+                'period_num':        period.get('number'),
+                'period_name':       period.get('name'),
                 'forecast_detailed': period.get('detailedForecast'),
             }
             forecast_period = ZoneForecastPeriod(**period_dict)

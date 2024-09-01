@@ -156,12 +156,12 @@ def process_cloud_layers(cloud_layers_data: list) -> dict:
 
 def process_observations_data(
 	observations_data: list,
-	response_timestamp: datetime,
-	station_id: str
+	retrieved_at: datetime,
+	station_or_zone_id: str
 ) -> Observation:
 	observations = {
-		'response_timestamp':	response_timestamp,
-		'station_id':			station_id,
+		'retrieved_at':	retrieved_at,
+		'station_or_zone_id':	station_or_zone_id,
 		'observed_at':      	parse_timestamp(observations_data.get('properties', {}).get('timestamp')),
 		'icon_url':         	observations_data.get('properties', {}).get('icon'),
 		'text_description': 	observations_data.get('properties', {}).get('textDescription'),
@@ -218,12 +218,12 @@ def process_observations_data(
 
 def process_forecast_data(
 	forecast_data: list,
-	response_timestamp: datetime,
+	retrieved_at: datetime,
 	location: Location
 ) -> Forecast:
 	len_periods = len(forecast_data.get('properties', {}).get('periods'))
 	forecast_dict = {
-		'response_timestamp':	response_timestamp,
+		'retrieved_at':	retrieved_at,
 		'forecast_office':		location.forecast_office,
 		'grid_x':				location.grid_x,
 		'grid_y':				location.grid_y,
@@ -244,8 +244,8 @@ def process_forecast_data(
 			# TODO: Find a better and more uniform way to process all measurements.
 			temp_unit = WMI_UNIT_MAP.get(period.get('temperatureUnit'))
 			forecast_period_dict = {
-				'num':						period.get('number'), 
-				'name':              		period.get('name'),
+				'period_num':				period.get('number'), 
+				'period_name':              period.get('name'),
 				'forecast_short':        	period.get('shortForecast'),
 				'forecast_detailed':     	period.get('detailedForecast'),
 				'forecast_icon_url':     	period.get('icon'),
@@ -281,10 +281,10 @@ def get_all_observations(
 ) -> List[Observation]:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations')
 	response = observations_data.get('response')
-	response_timestamp = observations_data.get('response_timestamp')
+	retrieved_at = observations_data.get('retrieved_at')
 	observations = []
 	for feature in response.get('features', {}):
-		observations.append(process_observations_data(feature, response_timestamp, station_id))
+		observations.append(process_observations_data(feature, retrieved_at, station_id))
 	return observations
 
 
@@ -295,8 +295,8 @@ def get_latest_observations(
 ) -> Observation:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/latest')
 	response = observations_data.get('response')
-	response_timestamp = observations_data.get('response_timestamp')
-	return process_observations_data(response, response_timestamp, station_id)
+	retrieved_at = observations_data.get('retrieved_at')
+	return process_observations_data(response, retrieved_at, station_id)
 
 
 @display_spinner('Getting station observations at the given time...')
@@ -307,8 +307,8 @@ def get_observations_at_time(
 ) -> Observation:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/' + timestamp)
 	response = observations_data.get('response')
-	response_timestamp = observations_data.get('response_timestamp')
-	return process_observations_data(response, response_timestamp, station_id)
+	retrieved_at = observations_data.get('retrieved_at')
+	return process_observations_data(response, retrieved_at, station_id)
 
 
 @display_spinner('Getting extended forecast for location...')
@@ -318,8 +318,8 @@ def get_extended_forecast(
 ) -> Forecast:
 	forecast_data = api_request(session, location.forecast_extended_url)
 	response = forecast_data.get('response')
-	response_timestamp = forecast_data.get('response_timestamp')
-	return process_forecast_data(response, response_timestamp, location)
+	retrieved_at = forecast_data.get('retrieved_at')
+	return process_forecast_data(response, retrieved_at, location)
 
 
 @display_spinner('Getting hourly forecast for location...')
@@ -329,5 +329,5 @@ def get_hourly_forecast(
 ) -> Forecast:
 	forecast_data = api_request(session, location.forecast_hourly_url)
 	response = forecast_data.get('response')
-	response_timestamp = forecast_data.get('response_timestamp')
-	return process_forecast_data(response, response_timestamp, location)
+	retrieved_at = forecast_data.get('retrieved_at')
+	return process_forecast_data(response, retrieved_at, location)

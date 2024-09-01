@@ -10,6 +10,7 @@ from rich.pretty import pprint
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.repository.memory import InMemoryRepository
+from nwsc.repository.sqlite import SQLiteRepository
 from nwsc.render.decorators import display_spinner
 from nwsc.api.get_alerts import *
 from nwsc.api.get_aviation import *
@@ -217,3 +218,7 @@ def test_memory_repository(session: CachedSession, address: str):
 	#pprint(f'Printing ONE')
 	pprint(repo.filter_by({'city': 'Winchester'}))
 
+
+def test_sqlite_repository(session: CachedSession, address: str):
+	#nws_data = get_all_nws_data(session, address)
+	repo = SQLiteRepository(sqlite_path='C:/Users/Nick/Downloads/nwsc.db')

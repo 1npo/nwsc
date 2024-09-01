@@ -48,13 +48,13 @@ CREATE TABLE IF NOT EXISTS zone_timezones
     FOREIGN KEY (zone_id) REFERENCES zones (zone_id)
 );
 
-CREATE TABLE IF NOT EXISTS zone_forecast:
+CREATE TABLE IF NOT EXISTS zone_forecast
 (
     zone_id             TEXT,
     forecasted_at	    TEXT, -- ISO8601 timestamp
-    num	                INTEGER,
-    name	            TEXT,
+    period_num	        INTEGER,
+    period_name	        TEXT,
     forecast_detailed	TEXT,
-    PRIMARY KEY         (zone_id, forecasted_at, num),
+    PRIMARY KEY         (zone_id, forecasted_at, period_num),
     FOREIGN KEY         (zone_id) REFERENCES zones (zone_id)
 );

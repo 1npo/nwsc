@@ -21,12 +21,12 @@ from nwsc.model.alerts import PriorAlert, Alert, AlertCounts
 # - https://vlab.noaa.gov/web/nws-common-alerting-protocol
 # - https://www.weather.gov/media/alert/CAP_v12_guide_05-16-2017.pdf
 # - https://www.weather.gov/vtec/
-def process_alert_data(alert_data: dict, response_timestamp: datetime) -> List[Alert]:
+def process_alert_data(alert_data: dict, retrieved_at: datetime) -> List[Alert]:
 	"""Get all current alerts for the given area, zone, or region"""
 	alerts = []
 	for feature in alert_data.get('features', {}):
 		alert_dict = {
-			'response_timestamp':	response_timestamp,
+			'retrieved_at':	retrieved_at,
 			'alert_id':				feature.get('properties', {}).get('id'),
 			'url':                  feature.get('id'),
 			'updated_at':           parse_timestamp(feature.get('updated')),
@@ -76,8 +76,8 @@ def process_alert_data(alert_data: dict, response_timestamp: datetime) -> List[A
 def get_alerts(session: CachedSession) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS)
 	response = alerts.get('response')
-	response_timestamp = alerts.get('response_timestamp')
-	return process_alert_data(response, response_timestamp)
+	retrieved_at = alerts.get('retrieved_at')
+	return process_alert_data(response, retrieved_at)
 
 
 @display_spinner('Getting alerts for the local area...')
@@ -87,8 +87,8 @@ def get_alerts_by_area(
 ) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_AREA + area)
 	response = alerts.get('response')
-	response_timestamp = alerts.get('response_timestamp')
-	return process_alert_data(response, response_timestamp)
+	retrieved_at = alerts.get('retrieved_at')
+	return process_alert_data(response, retrieved_at)
 
 
 @display_spinner('Getting alerts for zone...')
@@ -98,8 +98,8 @@ def get_alerts_by_zone(
 ) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_ZONE + zone)
 	response = alerts.get('response')
-	response_timestamp = alerts.get('response_timestamp')
-	return process_alert_data(response, response_timestamp)
+	retrieved_at = alerts.get('retrieved_at')
+	return process_alert_data(response, retrieved_at)
 
 
 @display_spinner('Getting alerts for marine region...')
@@ -109,8 +109,8 @@ def get_alerts_by_region(
 ) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_REGION + region)
 	response = alerts.get('response')
-	response_timestamp = alerts.get('response_timestamp')
-	return process_alert_data(response, response_timestamp)
+	retrieved_at = alerts.get('retrieved_at')
+	return process_alert_data(response, retrieved_at)
 
 
 @display_spinner('Getting alerts for marine region...')
@@ -120,8 +120,8 @@ def get_alerts_by_id(
 ) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS + alert_id)
 	response = alerts.get('response')
-	response_timestamp = alerts.get('response_timestamp')
-	return process_alert_data({'features': [response]}, response_timestamp)
+	retrieved_at = alerts.get('retrieved_at')
+	return process_alert_data({'features': [response]}, retrieved_at)
 
 
 @display_spinner('Getting alert types...')
@@ -134,9 +134,9 @@ def get_alert_types(session: CachedSession) -> List[str]:
 def get_alert_counts(session: CachedSession) -> AlertCounts:
 	alert_counts_data = api_request(session, NWS_API_ALERT_COUNTS)
 	response = alert_counts_data.get('response')
-	response_timestamp = alert_counts_data.get('response_timestamp')
+	retrieved_at = alert_counts_data.get('retrieved_at')
 	alert_counts_dict = {
-		'response_timestamp':	response_timestamp,
+		'retrieved_at':	retrieved_at,
 		'total':				response.get('total'),
 		'land':					response.get('land'),
 		'marine':				response.get('marine'),

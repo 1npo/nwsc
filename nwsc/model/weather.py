@@ -5,7 +5,7 @@ from typing import Dict, List
 
 @dataclass
 class Observation:
-    response_timestamp: datetime
+    retrieved_at: datetime
     station_or_zone_id: str
     observed_at: datetime
     icon_url: str
@@ -47,11 +47,10 @@ class Observation:
 
 @dataclass
 class ForecastPeriod:
-    num: int
-    name: str
+    period_num: int
+    period_name: str
     start_at: datetime
     end_at: datetime
-    name: str
     forecast_short: str
     forecast_detailed: str
     forecast_icon_url: str
@@ -70,7 +69,7 @@ class ForecastPeriod:
 
 @dataclass
 class Forecast:
-    response_timestamp: datetime
+    retrieved_at: datetime
     forecast_office: str
     grid_x: int
     grid_y: int

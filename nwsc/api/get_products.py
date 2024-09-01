@@ -11,11 +11,11 @@ from nwsc.api import (
 from nwsc.model.products import Product, ProductLocation, ProductType
 
 
-def process_product_data(products_data: dict, response_timestamp: datetime) -> List[Product]:
+def process_product_data(products_data: dict, retrieved_at: datetime) -> List[Product]:
 	products = []
 	for product in products_data:
 		product_dict = {
-			'response_timestamp':	response_timestamp,
+			'retrieved_at':	retrieved_at,
 			'product_id':			product.get('id'),
 			'wmo_id':				product.get('wmoCollectiveId'),
 			'text':					None,
@@ -88,8 +88,8 @@ def get_product_locations_by_type(
 def get_products(session: CachedSession) -> List[Product]:
 	products_data = api_request(session, NWS_API_PRODUCTS)
 	response = products_data.get('response')
-	response_timestamp = products_data.get('response_timestamp')
-	return process_product_data(response.get('@graph', {}), response_timestamp)
+	retrieved_at = products_data.get('retrieved_at')
+	return process_product_data(response.get('@graph', {}), retrieved_at)
 
 
 @display_spinner('Getting listing of all products by type...')
@@ -99,8 +99,8 @@ def get_products_by_type(
 ) -> List[Product]:
 	products_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}')
 	response = products_data.get('response')
-	response_timestamp = products_data.get('response_timestamp')
-	return process_product_data(response.get('@graph', {}), response_timestamp)
+	retrieved_at = products_data.get('retrieved_at')
+	return process_product_data(response.get('@graph', {}), retrieved_at)
 
 
 @display_spinner('Getting listing of all products by type from the issuing location...')
@@ -111,8 +111,8 @@ def get_products_by_type_and_location(
 ) -> List[Product]:
 	products_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}/locations/{location_id}')
 	response = products_data.get('response')
-	response_timestamp = products_data.get('response_timestamp')
-	return process_product_data(response.get('@graph', {}), response_timestamp)
+	retrieved_at = products_data.get('retrieved_at')
+	return process_product_data(response.get('@graph', {}), retrieved_at)
 
 
 @display_spinner('Getting product content...')
@@ -123,8 +123,8 @@ def get_product(
 	""" """
 	product_data = api_request(session, NWS_API_PRODUCTS + product_id)
 	response = product_data.get('response')
-	response_timestamp = product_data.get('response_timestamp')
-	product = process_product_data([response], response_timestamp)[0]
+	retrieved_at = product_data.get('retrieved_at')
+	product = process_product_data([response], retrieved_at)[0]
 	product.text = response.get('productText')
 	return product
 

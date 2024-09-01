@@ -19,7 +19,7 @@ class ProductLocation:
 
 @dataclass
 class Product:
-    response_timestamp: datetime
+    retrieved_at: datetime
     product_id: str
     wmo_id: str
     name: str

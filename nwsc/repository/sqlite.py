@@ -1,10 +1,12 @@
 import os
 import sqlite3
+import glob
+from pathlib import Path
 from loguru import logger
 from nwsc.repository.base import BaseRepository
 
 
-SQLITE_SCHEMA_FILE = os.path.join(os.path.dirname(__file__), 'schema_sqlite3.sql')
+SQLITE_SCHEMA_PATH = os.path.join(os.path.dirname(__file__), 'schemas/sqlite/')
 
 
 class SQLiteRepository(BaseRepository):
@@ -16,10 +18,10 @@ class SQLiteRepository(BaseRepository):
     def __init__(
         self,
         sqlite_path: str = ':memory:',
-        sqlite_schema: str = SQLITE_SCHEMA_FILE
+        sqlite_schema_path: str = SQLITE_SCHEMA_PATH
     ):
         self.sqlite_path = sqlite_path
-        self.sqlite_schema = sqlite_schema
+        self.sqlite_schema_path = sqlite_schema_path
         self.conn = sqlite3.connect(self.sqlite_path)
         self.curs = self.conn.cursor()
 
@@ -32,9 +34,12 @@ class SQLiteRepository(BaseRepository):
                 self._init_new_sqlite_db()
 
     def _init_new_sqlite_db(self):
-        with open(self.sqlite_schema) as file:
-            self.curs.executescript(file.read())
-            logger.info(f'Initialized new SQLite3 database at {self.sqlite_path}')
+        schema_files = glob.glob(os.path.join(self.sqlite_schema_path, '*.sql'))
+        for schema_file in schema_files:
+            with open(schema_file) as file:
+                self.curs.executescript(file.read())
+                logger.debug(f'Created "{Path(schema_file).stem}" tables')
+        logger.info(f'Initialized new SQLite3 database at {self.sqlite_path}')
     
     def get_all(self, table: str) -> list:
         res = self.curs.execute(f'SELECT * FROM {table}').fetchall()
@@ -42,13 +47,18 @@ class SQLiteRepository(BaseRepository):
         res_records = [{k:v for k,v in zip(res_cols, record)} for record in res]
         return res_records
 
-    def get(self, table: str, id: int, id_field: str = 'id') -> list:
+    def get(
+        self,
+        table: str,
+        id: int,
+        id_field: str = 'id'
+    ) -> list:
         res = self.curs.execute(f'SELECT * FROM {table} WHERE {id_field} = ?', str(id)).fetchall()
         res_cols = [desc[0] for desc in self.curs.description]
         res_records = [{k:v for k,v in zip(res_cols, record)} for record in res]
         return res_records
     
-    def get_by_filter(self, table: str, filter: dict) -> list:
+    def filter_by(self, table: str, filter: dict) -> list:
         if len(filter) == 1:
             key = list(filter.keys())[0]
             filter_str = f'WHERE IFNULL({key}, "") = :{key}'
@@ -86,3 +96,9 @@ class SQLiteRepository(BaseRepository):
     def delete(self, table: str, id: int):
         self.curs.execute(f'DELETE FROM {table} WHERE id = ?', str(id))
         self.conn.commit()
+
+    def serialize(self, item):
+        pass
+
+    def deserialize(self, data):
+        pass

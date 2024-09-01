@@ -3,7 +3,7 @@ from datetime import datetime
 
 @dataclass
 class Station:
-    response_timestamp: datetime
+    retrieved_at: datetime
     station_id: str
     name: str
     timezone: str

@@ -153,13 +153,13 @@ def process_radar_station_adaptation_data(radar_station_data: dict) -> RadarAdap
 	return adaptation
 
 
-def process_radar_station_data(radar_station_data: dict, response_timestamp: datetime) -> RadarStation:
+def process_radar_station_data(radar_station_data: dict, retrieved_at: datetime) -> RadarStation:
 	station_coords = radar_station_data.get('geometry', {}).get('coordinates')
 	if station_coords and isinstance(station_coords, list):
 		station_lat = station_coords[0]
 		station_lon = station_coords[1]
 	station_dict = {
-		'response_timestamp':					response_timestamp,
+		'retrieved_at':					retrieved_at,
 		'lat':									station_lat,
 		'lon':									station_lon,
 		'server_host':							radar_station_data.get('properties', {}).get('latency', {}).get('host'),
@@ -187,9 +187,9 @@ def process_radar_station_data(radar_station_data: dict, response_timestamp: dat
 	return RadarStation(**station_dict)
 
 
-def process_radar_server_data(radar_server_data: dict, response_timestamp: datetime) -> dict:
+def process_radar_server_data(radar_server_data: dict, retrieved_at: datetime) -> dict:
 	server_dict = {
-		'response_timestamp':				response_timestamp,
+		'retrieved_at':				retrieved_at,
 		'host':                  			radar_server_data.get('id'),
 		'server_type':                  	radar_server_data.get('type'),
 		'up_since':              			parse_timestamp(radar_server_data.get('hardware', {}).get('uptime')),
@@ -255,11 +255,11 @@ def get_radar_station_alarms(
 	""" """
 	radar_alarm_data = api_request(session, NWS_API_RADAR_STATIONS + radar_station_id + '/alarms')
 	response = radar_alarm_data.get('response')
-	response_timestamp = radar_alarm_data.get('response_timestamp')
+	retrieved_at = radar_alarm_data.get('retrieved_at')
 	radar_alarms = []
 	for alarm in response.get('@graph', {}):
 		alarm_dict = {
-			'response_timestamp':	response_timestamp,
+			'retrieved_at':	retrieved_at,
 			'status':				alarm.get('status'),
 			'message':				alarm.get('message'),
 			'event_at':				alarm.get('timestamp'),
@@ -274,10 +274,10 @@ def get_radar_stations(session: CachedSession) -> List[RadarStation]:
 	""" """
 	radar_stations_data = api_request(session, NWS_API_RADAR_STATIONS)
 	response = radar_stations_data.get('response')
-	response_timestamp = radar_stations_data.get('response_timestamp')
+	retrieved_at = radar_stations_data.get('retrieved_at')
 	stations = []
 	for feature in response.get('features', {}):
-		stations.append(process_radar_station_data(feature, response_timestamp))
+		stations.append(process_radar_station_data(feature, retrieved_at))
 	return stations
 
 
@@ -289,8 +289,8 @@ def get_radar_station(
 	""" """
 	radar_station_data = api_request(session, NWS_API_RADAR_STATIONS + station_id)
 	response = radar_station_data.get('response')
-	response_timestamp = radar_station_data.get('response_timestamp')
-	return process_radar_station_data(response, response_timestamp)
+	retrieved_at = radar_station_data.get('retrieved_at')
+	return process_radar_station_data(response, retrieved_at)
 
 
 # See:
@@ -307,10 +307,10 @@ def get_radar_servers(session: CachedSession) -> List[RadarServer]:
 	""" """
 	radar_servers_data = api_request(session, NWS_API_RADAR_SERVERS)
 	response = radar_servers_data.get('response')
-	response_timestamp = radar_servers_data.get('response_timestamp')
+	retrieved_at = radar_servers_data.get('retrieved_at')
 	servers = []
 	for feature in response.get('@graph', {}):
-		servers.append(process_radar_server_data(feature, response_timestamp))
+		servers.append(process_radar_server_data(feature, retrieved_at))
 	return servers
 
 
@@ -322,8 +322,8 @@ def get_radar_server(
 	""" """
 	radar_server_data = api_request(session, NWS_API_RADAR_SERVERS + server_id)
 	response = radar_server_data.get('response')
-	response_timestamp = radar_server_data.get('response_timestamp')
-	return process_radar_server_data(response, response_timestamp)
+	retrieved_at = radar_server_data.get('retrieved_at')
+	return process_radar_server_data(response, retrieved_at)
 
 
 @display_spinner('Getting radar queue for host and station...')
@@ -335,11 +335,11 @@ def get_radar_queue(
 	""" """
 	radar_queue_data = api_request(session, NWS_API_RADAR_QUEUES + ldm_host + f'?station={station_id}')
 	response = radar_queue_data.get('response')
-	response_timestamp = radar_queue_data.get('response_timestamp')
+	retrieved_at = radar_queue_data.get('retrieved_at')
 	radar_queue = []
 	for item in response.get('@graph', {}):
 		radar_queue_dict = {
-			'response_timestamp':	response_timestamp,
+			'retrieved_at':	retrieved_at,
 			'radar_station_id':		station_id,
 			'host':					item.get('host'),
 			'arrived_at':			item.get('arrivalTime'),

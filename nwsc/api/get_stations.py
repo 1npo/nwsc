@@ -9,7 +9,7 @@ from nwsc.api import NWS_API_STATIONS, NWS_API_GRIDPOINTS
 from nwsc.model.stations import Station
 
 
-def process_station_data(feature: dict, response_timestamp: datetime) -> Station:
+def process_station_data(feature: dict, retrieved_at: datetime) -> Station:
 	"""Format the station data returned from /gridpoints or /stations"""
 	station_coords = feature.get('geometry').get('coordinates')
 	if station_coords and isinstance(station_coords, list):
@@ -19,7 +19,7 @@ def process_station_data(feature: dict, response_timestamp: datetime) -> Station
 		station_lat = None
 		station_lon = None
 	station = {
-		'response_timestamp':		response_timestamp,
+		'retrieved_at':		retrieved_at,
 		'station_id':      			feature.get('properties', {}).get('stationIdentifier'),
 		'name':    					feature.get('properties', {}).get('name'),
 		'lat':     					station_lat,
@@ -41,17 +41,17 @@ def process_station_data(feature: dict, response_timestamp: datetime) -> Station
 def get_station(session: CachedSession, station_id: dict) -> Station:
 	station_data = api_request(session, NWS_API_STATIONS + station_id)
 	response = station_data.get('response')
-	response_timestamp = station_data.get('response_timestamp')
-	return process_station_data(response, response_timestamp)
+	retrieved_at = station_data.get('retrieved_at')
+	return process_station_data(response, retrieved_at)
 
 
 def get_stations(session: CachedSession, url: str) -> List[Station]:
 	stations_data = api_request(session, url)
 	response = stations_data.get('response')
-	response_timestamp = stations_data.get('response_timestamp')
+	retrieved_at = stations_data.get('retrieved_at')
 	stations = []
 	for feature in response.get('features', {}):
-		stations.append(process_station_data(feature, response_timestamp))
+		stations.append(process_station_data(feature, retrieved_at))
 	return stations
 
 

@@ -18,11 +18,11 @@ InvalidOfficeException = ValueError(
 
 def process_headline_data(
     headline_data: dict,
-    response_timestamp: datetime,
+    retrieved_at: datetime,
     office_id: str
 ) -> dict:
     headline_dict = {
-        'response_timestamp':   response_timestamp,
+        'retrieved_at':   retrieved_at,
         'office_id':            office_id,
         'headline_id':          headline_data.get('id'),
         'name':                 headline_data.get('name'),
@@ -46,10 +46,10 @@ def get_office_headlines(
         raise InvalidOfficeException
     headlines_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines')
     response = headlines_data.get('response')
-    response_timestamp = headlines_data.get('response_timestamp')
+    retrieved_at = headlines_data.get('retrieved_at')
     headlines = []
     for headline in response.get('@graph', {}):
-        headlines.append(process_headline_data(headline, response_timestamp, office_id))
+        headlines.append(process_headline_data(headline, retrieved_at, office_id))
     return headlines
 
 
@@ -63,8 +63,8 @@ def get_office_headline(
         raise InvalidOfficeException
     headline_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines/' + headline_id)
     response = headline_data.get('response')
-    response_timestamp = headline_data.get('response_timestamp')
-    return process_headline_data(response, response_timestamp, office_id)
+    retrieved_at = headline_data.get('retrieved_at')
+    return process_headline_data(response, retrieved_at, office_id)
 
 
 @display_spinner('Getting forecast office details...')
@@ -76,9 +76,9 @@ def get_office(
         raise InvalidOfficeException
     office_data = api_request(session, NWS_API_OFFICES + office_id)
     response = office_data.get('response')
-    response_timestamp = office_data.get('response_timestamp')
+    retrieved_at = office_data.get('retrieved_at')
     office_dict = {
-        'response_timestamp':   response_timestamp,
+        'retrieved_at':   retrieved_at,
         'office_id':            response.get('id'),
         'name':                 response.get('name'),
         'street_address':       response.get('address', {}).get('streetAddress'),

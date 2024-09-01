@@ -10,7 +10,7 @@ def api_request(
 	response = session.get(url)
 	data = response.json()
 	created_at = response.created_at
-	return {'response': data, 'response_timestamp': created_at}
+	return {'response': data, 'retrieved_at': created_at}
 
 
 def parse_timestamp(timestamp: str) -> datetime | None:

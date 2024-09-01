@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS sigmets
     atsu	        TEXT,
     sequence	    TEXT,
     phenomenon	    TEXT,
-    area_polygon    TEXT -- GeoJSON polygon coordinate string
+    area_polygon    TEXT, -- GeoJSON polygon coordinate string
     PRIMARY KEY     (retrieved_at, issued_at, fir, atsu, sequence)
 );
 
