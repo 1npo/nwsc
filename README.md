@@ -80,8 +80,8 @@ A full-coverage National Weather Service API client for the terminal
 
 ## Purpose
 I made `nwsc` for myself for these reasons:
-- For fun
-- I wanted to start and finish a MVP for a moderately complex software project, and execute it well. Meaning the MVP:
+- For fun, because I enjoy software engineering
+- I wanted to start and finish a moderately complex minimum viable product, and execute it well. Meaning it:
   - Provides all the listed features
   - Is robust (ie, has full test coverage and all tests pass)
   - Is well-documented
