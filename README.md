@@ -95,6 +95,8 @@ I made `nwsc` for myself for these reasons:
 ## Acknowledgements
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
 - Icon in the logo is from [Phosphor Icons](https://phosphoricons.com/)
+- Architecture diagram was created with [Lucidchart](https://lucidchart.com/)
+- Entity-relationship diagrams were created with [SQLFlow](https://sqlflow.gudusoft.com/#/)
 - [Bruno](https://www.usebruno.com) and [Swagger UI](https://swagger.io/tools/swagger-ui/) were very helpful for exploring the API
 - The presentation of hourly forecast data was inspired by DarkSky, specifically [this article](https://nightingaledvs.com/dark-sky-weather-data-viz/)
 - The NWS IT/API team have been responsive on their [GitHub page](https://github.com/weather-gov/api) and helpful with troubleshooting endpoint issues
