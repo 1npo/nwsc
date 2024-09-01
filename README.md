@@ -28,8 +28,8 @@ A full-coverage National Weather Service API client for the terminal
   - [How to start the TUI](#how-to-start-the-tui)
   - [How to pretty-print NWS information](#how-to-pretty-print-nws-information)
   - [How to print pipeable weather strings](#how-to-print-pipeable-weather-strings)
-- [Documentation](#documentation)
 - [Purpose and Audience](#purpose-and-audience)
+- [Documentation](#documentation)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
@@ -70,17 +70,17 @@ A full-coverage National Weather Service API client for the terminal
 ### How to print pipeable weather strings
 - [ ] Show how to create weather strings that can be piped to other tools
 
+## Purpose and Audience
+I made `nwsc` for myself as a labor of love, mainly for the reasons I list below. But I tried to make it robust, user friendly, and maintainable for anyone else who may find it useful.
+- I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience. I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance, in a visually pleasing way.
+- I wanted to start a **serious, high-quality** software project, get an MVP released, and execute it well. This project had just the right stuff to keep me interested, challenged, and motivated long enough to produce an MVP.
+
 ## Documentation
 > [!NOTE]
 > The content of these markdown files will eventually move into the Sphinx docs
 - [Endpoint Coverage](docs/endpoint_coverage.md)
 - [System Design](docs/system_design.md)
 - [Configuration](docs/configuration.md)
-
-## Purpose and Audience
-I made `nwsc` for myself as a labor of love, mainly for the reasons I list below. But I tried to make it robust, user friendly, and maintainable for anyone else who may find it useful.
-- I get my weather from [the National Weather Service](http://weather.gov/), but I have some (very minor) gripes about the website's user experience. I wanted to be able to just type `nwsc` once into a terminal and see all the NWS data I want at a glance, in a visually pleasing way.
-- I wanted to start a **serious, high-quality** software project, get an MVP released, and execute it well. This project had just the right stuff to keep me interested, challenged, and motivated long enough to produce an MVP.
 
 ## License
 The National Weather Service Client (**nwsc**) is made available under the [MIT License](https://opensource.org/license/mit)

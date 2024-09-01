@@ -1,7 +1,7 @@
 # Endpoint Coverage
 
 > [!NOTE]
-> **The following endpoints are deprecated by NWS**
+> The following endpoints are deprecated by NWS
 > - `/icons/{set}/{timeOfDay}/{first}`
 > - `/icons/{set}/{timeOfDay}/{first}/{second}`
 > - `/icons`
@@ -9,15 +9,15 @@
 > - `/points/{point}/stations`
 
 > [!NOTE] 
-> **The `/radar/profilers/{stationId}` endpoint is unexpectedly responding with a 404**
+> The `/radar/profilers/{stationId}` endpoint is unexpectedly responding with a 404
 
 > [!NOTE]
-> **The `/radar/queues/{host}` endpoint is unexpectedly responding with a 503**
+> The `/radar/queues/{host}` endpoint is unexpectedly responding with a 503
 > 
 > This is a known issue (https://github.com/weather-gov/api/discussions/756). The endpoint returns too many records. The workaround is to specify the radar station: `/radar/queues/{host}?station={station_id}`.
 
 > [!NOTE]
-> **The following endpoints are unexpectedly returning empty data**
+> The following endpoints are unexpectedly returning empty data
 > - `/stations/{stationId}/tafs`
 > - `/stations/{stationId}/tafs/{date}/{time}`
 > 

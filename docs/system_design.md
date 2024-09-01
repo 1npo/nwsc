@@ -6,8 +6,9 @@
 
 ## Data Retrieval
 1. Any data that doesn't come directly from the user (eg location data and configuration settings) is retrieved from an API endpoint
-2. All API responses are cached by `request-cache` unless caching is disabled by the user
-3. 
+2. Whenever the user initiates an API request, cached responses are always used until they expire
+3. The user can choose to retrieve data from a repository instead of from the API
+
 ## Data Model
 The NWS API exposes different kinds of weather-related information. This app uses dataclasses to model and describe that information.
 

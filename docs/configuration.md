@@ -3,7 +3,7 @@
 
 ## Available User Settings
 > [!WARNING]
-> **It is strongly advised not to disable caching, for a few reasons:**
+> It is strongly advised not to disable caching, for a few reasons:
 > 1. The NWS API responses include cache-control headers to tell you when a response will expire.
 >   - You will always get the same response until that expiration date.
 > 2. This API client uses `requests-cache` to cache responses, and will only make network calls when a response has expired.
