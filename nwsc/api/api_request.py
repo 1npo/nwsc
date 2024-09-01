@@ -7,7 +7,10 @@ def api_request(
 	session: CachedSession,
 	url: str
 ) -> dict:
-	return session.get(url).json()
+	response = session.get(url)
+	data = response.json()
+	created_at = response.created_at.isoformat()
+	return {'data': data, 'created_at': created_at}
 
 
 def parse_timestamp(timestamp: str) -> datetime | None:
