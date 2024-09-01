@@ -6,13 +6,13 @@
 CREATE TABLE IF NOT EXISTS sigmets
 (
     retrieved_at    TEXT, -- ISO8601 timestamp
-    url	            TEXT,
     issued_at	    TEXT, -- ISO8601 timestamp
-    effective_at	TEXT, -- ISO8601 timestamp
-    expires_at	    TEXT, -- ISO8601 timestamp
     fir	            TEXT,
     atsu	        TEXT,
     sequence	    TEXT,
+    url	            TEXT,
+    effective_at	TEXT, -- ISO8601 timestamp
+    expires_at	    TEXT, -- ISO8601 timestamp
     phenomenon	    TEXT,
     area_polygon    TEXT, -- GeoJSON polygon coordinate string
     PRIMARY KEY     (retrieved_at, issued_at, fir, atsu, sequence)
@@ -21,11 +21,11 @@ CREATE TABLE IF NOT EXISTS sigmets
 CREATE TABLE IF NOT EXISTS center_weather_advisories
 (
     retrieved_at            TEXT, -- ISO8601 timestamp
-    url	                    TEXT,
-    text	                TEXT,
     cwsu	                TEXT,
     sequence	            TEXT,
     issued_at	            TEXT, -- ISO8601 timestamp
+    url	                    TEXT,
+    text	                TEXT,
     effective_at	        TEXT, -- ISO8601 timestamp
     expires_at	            TEXT, -- ISO8601 timestamp
     observed_property_url	TEXT,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS center_weather_advisories
 
 CREATE TABLE IF NOT EXISTS central_weather_service_units
 (
-    cwsu_id	        TEXT PRIMARY KEY,
+    cwsu_id	        TEXT,
     name	        TEXT,
     street	        TEXT,
     city	        TEXT,
@@ -45,5 +45,6 @@ CREATE TABLE IF NOT EXISTS central_weather_service_units
     fax	            TEXT,
     phone	        TEXT,
     url	            TEXT,
-    nws_region	    TEXT
+    nws_region	    TEXT,
+    PRIMARY KEY     (cwsu_id)
 );

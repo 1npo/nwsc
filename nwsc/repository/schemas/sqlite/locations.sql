@@ -4,12 +4,12 @@
 
 CREATE TABLE IF NOT EXISTS locations
 (
+    forecast_office	            TEXT,
+    grid_x	                    INTEGER,
+    grid_y	                    INTEGER,
     city	                    TEXT,
     state	                    TEXT,
     timezone	                TEXT,
-    grid_x	                    INTEGER,
-    grid_y	                    INTEGER,
-    forecast_office	            TEXT,
     radar_station	            TEXT,
     forecast_office_url	        TEXT,
     forecast_extended_url	    TEXT,

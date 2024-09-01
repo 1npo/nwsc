@@ -70,3 +70,49 @@ The NWS API exposes different kinds of weather-related information. This app use
   - `Zone`
   - `ZoneForecastPeriod`
   - `ZoneForecast`
+
+### Entity-Relationship Diagrams
+#### Alerts
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_alerts.png' alt='erd for alerts'>
+</div>
+
+#### Aviation
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_aviation.png' alt='erd for aviation'>
+</div>
+
+#### Locations
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_locations.png' alt='erd for alerts'>
+</div>
+
+#### Offices
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_offices.png' alt='erd for alerts'>
+</div>
+
+#### Products
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_products.png' alt='erd for alerts'>
+</div>
+
+#### Radars
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_radars.png' alt='erd for alerts'>
+</div>
+
+#### Stations
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_stations.png' alt='erd for alerts'>
+</div>
+
+#### Weather
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_weather.png' alt='erd for alerts'>
+</div>
+
+#### Zones
+<div align='center'>
+<img src='https://github.com/1npo/nwsc/blob/main/resources/img/erd/erd_zones.png' alt='erd for alerts'>
+</div>

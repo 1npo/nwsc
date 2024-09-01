@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS zones
 (
-    zone_id	        TEXT PRIMARY KEY,
+    zone_id	        TEXT,
     grid_id	        TEXT,
     awips_id	    TEXT,
     name	        TEXT,
@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS zones
     url	            TEXT,
     effective_at	TEXT, -- ISO8601 timestamp
     expires_at	    TEXT, -- ISO8601 timestamp
-    multi_polygon   TEXT -- GeoJSON multi-polygon coordinate string
+    multi_polygon   TEXT, -- GeoJSON multi-polygon coordinate string
+    PRIMARY KEY     (zone_id)
 );
 
 CREATE TABLE IF NOT EXISTS zone_county_warning_areas

@@ -119,10 +119,11 @@ CREATE TABLE IF NOT EXISTS prior_alerts
 
 CREATE TABLE IF NOT EXISTS alert_counts_total_land_marine
 (
-    retrieved_at    TEXT PRIMARY KEY, -- ISO8601 timestamp
+    retrieved_at    TEXT, -- ISO8601 timestamp
     total_alerts	INTEGER,
     land_alerts	    INTEGER,
-    marine_alerts	INTEGER
+    marine_alerts	INTEGER,
+    PRIMARY KEY     (retrieved_at)
 );
 
 CREATE TABLE IF NOT EXISTS alert_counts_region

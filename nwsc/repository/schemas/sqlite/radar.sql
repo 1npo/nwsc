@@ -226,8 +226,9 @@ CREATE TABLE IF NOT EXISTS radar_queues
 
 CREATE TABLE IF NOT EXISTS radar_station_alarms
 (
-    event_at	    TEXT PRIMARY KEY, -- ISO8601 timestamp
+    event_at	    TEXT, -- ISO8601 timestamp
     status	        TEXT,
     message	        TEXT,
-    active_channel	INTEGER
+    active_channel	INTEGER,
+    PRIMARY KEY     (event_at)
 );

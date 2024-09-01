@@ -17,12 +17,14 @@ CREATE TABLE IF NOT EXISTS products
 
 CREATE TABLE IF NOT EXISTS product_locations
 (
-    location_code	TEXT PRIMARY KEY,
-    location_name	TEXT
+    location_code	TEXT,
+    location_name	TEXT,
+    PRIMARY KEY     (location_code)
 );
 
 CREATE TABLE IF NOT EXISTS product_types
 (
-    type_code	TEXT PRIMARY KEY,
-    type_name	TEXT
+    type_code	TEXT,
+    type_name	TEXT,
+    PRIMARY KEY (type_code)
 );

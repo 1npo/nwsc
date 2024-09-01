@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS offices
 (
-    office_id	    TEXT PRIMARY KEY,
+    office_id	    TEXT,
     name	        TEXT,
     street_address	TEXT,
     city	        TEXT,
@@ -15,34 +15,39 @@ CREATE TABLE IF NOT EXISTS offices
     email	        TEXT,
     url	            TEXT,
     parent_url	    TEXT,
-    nws_region	    TEXT
+    nws_region	    TEXT,
+    PRIMARY KEY     (office_id)
 );
 
 CREATE TABLE IF NOT EXISTS office_counties
 (
-    office_id	TEXT PRIMARY KEY,
+    office_id	TEXT,
     county_url  TEXT,
+    PRIMARY KEY (office_id),
     FOREIGN KEY (office_id) REFERENCES offices (office_id)
 );
 
 CREATE TABLE IF NOT EXISTS office_forecast_zones
 (
-    office_id	        TEXT PRIMARY KEY,
+    office_id	        TEXT,
     forecast_zone_url   TEXT,
+    PRIMARY KEY         (office_id),
     FOREIGN KEY         (office_id) REFERENCES offices (office_id)
 );
 
 CREATE TABLE IF NOT EXISTS office_fire_zones
 (
-    office_id       TEXT PRIMARY KEY,
+    office_id       TEXT,
     fire_zones_url  TEXT,
+    PRIMARY KEY     (office_id),
     FOREIGN KEY     (office_id) REFERENCES offices (office_id)
 );
 
 CREATE TABLE IF NOT EXISTS office_observation_stations
 (
-    office_id               TEXT PRIMARY KEY,
+    office_id               TEXT,
     observation_station_url TEXT,
+    PRIMARY KEY             (office_id),
     FOREIGN KEY             (office_id) REFERENCES offices (office_id)
 );
 
