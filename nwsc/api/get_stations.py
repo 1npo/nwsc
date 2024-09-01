@@ -1,4 +1,5 @@
 from typing import List
+from datetime import datetime
 from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.get_weather import process_measurement_values
@@ -8,7 +9,7 @@ from nwsc.api import NWS_API_STATIONS, NWS_API_GRIDPOINTS
 from nwsc.model.stations import Station
 
 
-def process_station_data(feature: dict) -> Station:
+def process_station_data(feature: dict, response_timestamp: datetime) -> Station:
 	"""Format the station data returned from /gridpoints or /stations"""
 	station_coords = feature.get('geometry').get('coordinates')
 	if station_coords and isinstance(station_coords, list):
@@ -18,6 +19,7 @@ def process_station_data(feature: dict) -> Station:
 		station_lat = None
 		station_lon = None
 	station = {
+		'response_timestamp':		response_timestamp,
 		'station_id':      			feature.get('properties', {}).get('stationIdentifier'),
 		'name':    					feature.get('properties', {}).get('name'),
 		'lat':     					station_lat,
@@ -35,14 +37,21 @@ def process_station_data(feature: dict) -> Station:
 	return Station(**station)
 
 
-def get_stations(
-	session: CachedSession,
-	url: str
-) -> List[Station]:
+@display_spinner('Getting station...')
+def get_station(session: CachedSession, station_id: dict) -> Station:
+	station_data = api_request(session, NWS_API_STATIONS + station_id)
+	response = station_data.get('response')
+	response_timestamp = station_data.get('response_timestamp')
+	return process_station_data(response, response_timestamp)
+
+
+def get_stations(session: CachedSession, url: str) -> List[Station]:
 	stations_data = api_request(session, url)
+	response = stations_data.get('response')
+	response_timestamp = stations_data.get('response_timestamp')
 	stations = []
-	for feature in stations_data.get('features', {}):
-		stations.append(process_station_data(feature))
+	for feature in response.get('features', {}):
+		stations.append(process_station_data(feature, response_timestamp))
 	return stations
 
 
@@ -56,18 +65,5 @@ def get_stations_by_grid(
 
 
 @display_spinner('Getting local stations...')
-def get_stations_near_location(
-	session: CachedSession,
-	location: dict
-) -> List[Station]:
+def get_stations_near_location(session: CachedSession, location: dict) -> List[Station]:
 	return get_stations(session, location.observation_stations_url)
-
-
-@display_spinner('Getting station...')
-def get_station(
-	session: CachedSession,
-	station_id: dict
-) -> Station:
-	station_data = api_request(session, NWS_API_STATIONS + station_id)
-	return process_station_data(station_data)
-

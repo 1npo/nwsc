@@ -1,4 +1,5 @@
 from typing import List
+from datetime import datetime
 from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
@@ -10,17 +11,18 @@ from nwsc.api import (
 from nwsc.model.products import Product, ProductLocation, ProductType
 
 
-def process_product_data(products_data: dict) -> List[Product]:
+def process_product_data(products_data: dict, response_timestamp: datetime) -> List[Product]:
 	products = []
 	for product in products_data:
 		product_dict = {
-			'product_id':		product.get('id'),
-			'wmo_id':			product.get('wmoCollectiveId'),
-			'text':				None,
-			'code':				product.get('productCode'),
-			'name':				product.get('productName'),
-			'issuing_office':	product.get('issuingOffice'),
-			'issued_at':		product.get('issuanceTime'),
+			'response_timestamp':	response_timestamp,
+			'product_id':			product.get('id'),
+			'wmo_id':				product.get('wmoCollectiveId'),
+			'text':					None,
+			'code':					product.get('productCode'),
+			'name':					product.get('productName'),
+			'issuing_office':		product.get('issuingOffice'),
+			'issued_at':			product.get('issuanceTime'),
 		}
 		products.append(Product(**product_dict))
 	return products
@@ -54,7 +56,7 @@ def process_product_locations_data(product_locations_data: dict) -> List[Product
 # See: https://www.weather.gov/mlb/text
 @display_spinner('Getting all product types...')
 def get_product_types(session: CachedSession) -> List[ProductType]:
-	product_types_data = api_request(session, NWS_API_PRODUCT_TYPES)
+	product_types_data = api_request(session, NWS_API_PRODUCT_TYPES).get('response')
 	return process_product_types_data(product_types_data)
 
 
@@ -63,13 +65,13 @@ def get_product_types_by_location(
 	session: CachedSession,
 	location_id: str
 ) -> List[ProductType]:
-	product_types_data = api_request(session, NWS_API_PRODUCT_LOCATIONS + f'/{location_id}/types')
+	product_types_data = api_request(session, NWS_API_PRODUCT_LOCATIONS + f'/{location_id}/types').get('response')
 	return process_product_types_data(product_types_data)
 
 
 @display_spinner('Getting all product issuing locations...')
 def get_product_locations(session: CachedSession) -> List[ProductLocation]:
-	product_locations_data = api_request(session, NWS_API_PRODUCT_LOCATIONS)
+	product_locations_data = api_request(session, NWS_API_PRODUCT_LOCATIONS).get('response')
 	return process_product_locations_data(product_locations_data)
 
 
@@ -78,14 +80,16 @@ def get_product_locations_by_type(
 	session: CachedSession,
 	type_id: str
 ) -> List[ProductLocation]:
-	product_locations_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}/locations')
+	product_locations_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}/locations').get('response')
 	return process_product_locations_data(product_locations_data)
 
 
 @display_spinner('Getting listing of all products...')
 def get_products(session: CachedSession) -> List[Product]:
 	products_data = api_request(session, NWS_API_PRODUCTS)
-	return process_product_data(products_data.get('@graph', {}))
+	response = products_data.get('response')
+	response_timestamp = products_data.get('response_timestamp')
+	return process_product_data(response.get('@graph', {}), response_timestamp)
 
 
 @display_spinner('Getting listing of all products by type...')
@@ -94,7 +98,9 @@ def get_products_by_type(
 	type_id: str
 ) -> List[Product]:
 	products_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}')
-	return process_product_data(products_data.get('@graph', {}))
+	response = products_data.get('response')
+	response_timestamp = products_data.get('response_timestamp')
+	return process_product_data(response.get('@graph', {}), response_timestamp)
 
 
 @display_spinner('Getting listing of all products by type from the issuing location...')
@@ -104,7 +110,9 @@ def get_products_by_type_and_location(
 	location_id: str
 ) -> List[Product]:
 	products_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}/locations/{location_id}')
-	return process_product_data(products_data.get('@graph', {}))
+	response = products_data.get('response')
+	response_timestamp = products_data.get('response_timestamp')
+	return process_product_data(response.get('@graph', {}), response_timestamp)
 
 
 @display_spinner('Getting product content...')
@@ -114,7 +122,9 @@ def get_product(
 ) -> Product:
 	""" """
 	product_data = api_request(session, NWS_API_PRODUCTS + product_id)
-	product = process_product_data([product_data])[0]
-	product.text = product_data.get('productText')
+	response = product_data.get('response')
+	response_timestamp = product_data.get('response_timestamp')
+	product = process_product_data([response], response_timestamp)[0]
+	product.text = response.get('productText')
 	return product
 

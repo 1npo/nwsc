@@ -5,6 +5,7 @@ from typing import List
 
 @dataclass
 class Office:
+    response_timestamp: datetime
     office_id: str
     name: str
     street_address: str
@@ -26,6 +27,7 @@ class Office:
 
 @dataclass
 class OfficeHeadline:
+    response_timestamp: datetime
     headline_id: str
     name: str
     title: str

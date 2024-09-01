@@ -2,6 +2,7 @@
 """
 
 from typing import List
+from datetime import datetime
 from requests_cache import CachedSession
 from loguru import logger
 from nwsc.render.decorators import display_spinner
@@ -148,12 +149,13 @@ def process_cloud_layers(cloud_layers_data: list) -> dict:
 	return cloud_layers
 
 
-def process_observations_data(observations_data: list) -> Observation:
+def process_observations_data(observations_data: list, response_timestamp: datetime) -> Observation:
 	observations = {
-		'observed_at':      parse_timestamp(observations_data.get('properties', {}).get('timestamp')),
-		'icon_url':         observations_data.get('properties', {}).get('icon'),
-		'text_description': observations_data.get('properties', {}).get('textDescription'),
-		'raw_message':		observations_data.get('properties', {}).get('rawMessage'),
+		'response_timestamp':	response_timestamp,
+		'observed_at':      	parse_timestamp(observations_data.get('properties', {}).get('timestamp')),
+		'icon_url':         	observations_data.get('properties', {}).get('icon'),
+		'text_description': 	observations_data.get('properties', {}).get('textDescription'),
+		'raw_message':			observations_data.get('properties', {}).get('rawMessage'),
 	}
 	observation_field_map = {
 		'elevation':                    'station_elevation',
@@ -204,12 +206,13 @@ def process_observations_data(observations_data: list) -> Observation:
 	return Observation(**observations)
 
 
-def process_forecast_data(forecast_data: list) -> Forecast:
+def process_forecast_data(forecast_data: list, response_timestamp: datetime) -> Forecast:
 	len_periods = len(forecast_data.get('properties', {}).get('periods'))
 	forecast_dict = {
-		'generated_at':	parse_timestamp(forecast_data.get('properties', {}).get('generatedAt')),
-		'updated_at':	parse_timestamp(forecast_data.get('properties', {}).get('updateTime')),
-		'periods':		[],
+		'response_timestamp':	response_timestamp,
+		'generated_at':			parse_timestamp(forecast_data.get('properties', {}).get('generatedAt')),
+		'updated_at':			parse_timestamp(forecast_data.get('properties', {}).get('updateTime')),
+		'periods':				[],
 	}
 	forecast = Forecast(**forecast_dict)
 	for i in range(0, len_periods):
@@ -260,9 +263,11 @@ def get_all_observations(
 	station_id: str
 ) -> List[Observation]:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations')
+	response = observations_data.get('response')
+	response_timestamp = observations_data.get('response_timestamp')
 	observations = []
-	for feature in observations_data.get('features', {}):
-		observations.append(process_observations_data(feature))
+	for feature in response.get('features', {}):
+		observations.append(process_observations_data(feature, response_timestamp))
 	return observations
 
 
@@ -272,7 +277,9 @@ def get_latest_observations(
 	station_id: str
 ) -> Observation:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/latest')
-	return process_observations_data(observations_data)
+	response = observations_data.get('response')
+	response_timestamp = observations_data.get('response_timestamp')
+	return process_observations_data(response, response_timestamp)
 
 
 @display_spinner('Getting station observations at the given time...')
@@ -282,7 +289,9 @@ def get_observations_at_time(
 	timestamp: str
 ) -> Observation:
 	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/' + timestamp)
-	return process_observations_data(observations_data)
+	response = observations_data.get('response')
+	response_timestamp = observations_data.get('response_timestamp')
+	return process_observations_data(response, response_timestamp)
 
 
 @display_spinner('Getting extended forecast for location...')
@@ -291,7 +300,9 @@ def get_extended_forecast(
 	location: dict
 ) -> Forecast:
 	forecast_data = api_request(session, location.forecast_extended_url)
-	return process_forecast_data(forecast_data)
+	response = forecast_data.get('response')
+	response_timestamp = forecast_data.get('response_timestamp')
+	return process_forecast_data(response, response_timestamp)
 
 
 @display_spinner('Getting hourly forecast for location...')
@@ -300,4 +311,6 @@ def get_hourly_forecast(
 	location: dict
 ) -> Forecast:
 	forecast_data = api_request(session, location.forecast_hourly_url)
-	return process_forecast_data(forecast_data)
+	response = forecast_data.get('response')
+	response_timestamp = forecast_data.get('response_timestamp')
+	return process_forecast_data(response, response_timestamp)

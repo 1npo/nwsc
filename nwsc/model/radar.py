@@ -97,6 +97,7 @@ class RadarAdaptation:
 
 @dataclass
 class RadarStationAlarm:
+    response_timestamp: datetime
     status: str
     message: str
     active_channel: int
@@ -106,6 +107,7 @@ class RadarStationAlarm:
 
 @dataclass
 class RadarQueueItem:
+    response_timestamp: datetime
     host: str
     arrived_at: datetime
     created_at: datetime
@@ -120,6 +122,7 @@ class RadarQueueItem:
 
 @dataclass
 class RadarStation:
+    response_timestamp: datetime
     radar_station_id: str
     name: str
     station_type: str
@@ -158,6 +161,7 @@ class NetworkInterface:
 
 @dataclass
 class RadarServer:
+    response_timestamp: datetime
     host: str
     server_type: str
     up_since: datetime

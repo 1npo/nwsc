@@ -44,13 +44,15 @@ def process_error_response(
 
 def get_valid_zones(session: CachedSession) -> list:
     enum_data = api_request(session, NWS_API_ZONES + 'DEADBEEF')
-    parameter_errors = enum_data.get('parameterErrors', {})
+    response = enum_data.get('response')
+    parameter_errors = response.get('parameterErrors', {})
     failure_message = Template(FAILED_TO_GET_ENUM_MESSAGE).substitute(enum_type='zones')
     return process_error_response(parameter_errors, failure_message)
 
 
 def get_valid_forecast_offices(session: CachedSession) -> list:
     enum_data = api_request(session, NWS_API_OFFICES + 'DEADBEEF')
-    parameter_errors = enum_data.get('parameterErrors', {})
+    response = enum_data.get('response')
+    parameter_errors = response.get('parameterErrors', {})
     failure_message = Template(FAILED_TO_GET_ENUM_MESSAGE).substitute(enum_type='forecast offices')
     return process_error_response(parameter_errors, failure_message)

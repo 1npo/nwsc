@@ -5,6 +5,7 @@ from typing import List
 
 @dataclass
 class SIGMET:
+    response_timestamp: datetime
     url: str
     issued_at: datetime
     effective_at: datetime
@@ -19,6 +20,7 @@ class SIGMET:
 
 @dataclass
 class CenterWeatherAdvisory:
+    response_timestamp: datetime
     url: str
     text: str
     cwsu: str
@@ -33,6 +35,7 @@ class CenterWeatherAdvisory:
 
 @dataclass
 class CentralWeatherServiceUnit:
+    response_timestamp: datetime
     cwsu_id: str
     name: str
     street: str

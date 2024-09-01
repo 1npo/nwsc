@@ -1,4 +1,5 @@
 from typing import List
+from datetime import datetime
 from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.get_weather import process_measurement_values
@@ -152,12 +153,13 @@ def process_radar_station_adaptation_data(radar_station_data: dict) -> RadarAdap
 	return adaptation
 
 
-def process_radar_station_data(radar_station_data: dict) -> RadarStation:
+def process_radar_station_data(radar_station_data: dict, response_timestamp: datetime) -> RadarStation:
 	station_coords = radar_station_data.get('geometry', {}).get('coordinates')
 	if station_coords and isinstance(station_coords, list):
 		station_lat = station_coords[0]
 		station_lon = station_coords[1]
 	station_dict = {
+		'response_timestamp':					response_timestamp,
 		'lat':									station_lat,
 		'lon':									station_lon,
 		'server_host':							radar_station_data.get('properties', {}).get('latency', {}).get('host'),
@@ -185,8 +187,9 @@ def process_radar_station_data(radar_station_data: dict) -> RadarStation:
 	return RadarStation(**station_dict)
 
 
-def process_radar_server_data(radar_server_data: dict) -> dict:
+def process_radar_server_data(radar_server_data: dict, response_timestamp: datetime) -> dict:
 	server_dict = {
+		'response_timestamp':				response_timestamp,
 		'host':                  			radar_server_data.get('id'),
 		'server_type':                  	radar_server_data.get('type'),
 		'up_since':              			parse_timestamp(radar_server_data.get('hardware', {}).get('uptime')),
@@ -251,13 +254,16 @@ def get_radar_station_alarms(
 ) -> List[RadarStationAlarm]:
 	""" """
 	radar_alarm_data = api_request(session, NWS_API_RADAR_STATIONS + radar_station_id + '/alarms')
+	response = radar_alarm_data.get('response')
+	response_timestamp = radar_alarm_data.get('response_timestamp')
 	radar_alarms = []
-	for alarm in radar_alarm_data.get('@graph', {}):
+	for alarm in response.get('@graph', {}):
 		alarm_dict = {
-			'status':			alarm.get('status'),
-			'message':			alarm.get('message'),
-			'event_at':			alarm.get('timestamp'),
-			'active_channel':	alarm.get('activeChannel'),
+			'response_timestamp':	response_timestamp,
+			'status':				alarm.get('status'),
+			'message':				alarm.get('message'),
+			'event_at':				alarm.get('timestamp'),
+			'active_channel':		alarm.get('activeChannel'),
 		}
 		radar_alarms.append(RadarStationAlarm(**alarm_dict))
 	return radar_alarms
@@ -267,9 +273,11 @@ def get_radar_station_alarms(
 def get_radar_stations(session: CachedSession) -> List[RadarStation]:
 	""" """
 	radar_stations_data = api_request(session, NWS_API_RADAR_STATIONS)
+	response = radar_stations_data.get('response')
+	response_timestamp = radar_stations_data.get('response_timestamp')
 	stations = []
-	for feature in radar_stations_data.get('features', {}):
-		stations.append(process_radar_station_data(feature))
+	for feature in response.get('features', {}):
+		stations.append(process_radar_station_data(feature, response_timestamp))
 	return stations
 
 
@@ -280,7 +288,9 @@ def get_radar_station(
 ) -> RadarStation:
 	""" """
 	radar_station_data = api_request(session, NWS_API_RADAR_STATIONS + station_id)
-	return process_radar_station_data(radar_station_data)
+	response = radar_station_data.get('response')
+	response_timestamp = radar_station_data.get('response_timestamp')
+	return process_radar_station_data(response, response_timestamp)
 
 
 # See:
@@ -296,9 +306,11 @@ def get_radar_station(
 def get_radar_servers(session: CachedSession) -> List[RadarServer]:
 	""" """
 	radar_servers_data = api_request(session, NWS_API_RADAR_SERVERS)
+	response = radar_servers_data.get('response')
+	response_timestamp = radar_servers_data.get('response_timestamp')
 	servers = []
-	for feature in radar_servers_data.get('@graph', {}):
-		servers.append(process_radar_server_data(feature))
+	for feature in response.get('@graph', {}):
+		servers.append(process_radar_server_data(feature, response_timestamp))
 	return servers
 
 
@@ -309,7 +321,9 @@ def get_radar_server(
 ) -> RadarServer:
 	""" """
 	radar_server_data = api_request(session, NWS_API_RADAR_SERVERS + server_id)
-	return process_radar_server_data(radar_server_data)
+	response = radar_server_data.get('response')
+	response_timestamp = radar_server_data.get('response_timestamp')
+	return process_radar_server_data(response, response_timestamp)
 
 
 @display_spinner('Getting radar queue for host and station...')
@@ -320,9 +334,12 @@ def get_radar_queue(
 ) -> List[RadarQueueItem]:
 	""" """
 	radar_queue_data = api_request(session, NWS_API_RADAR_QUEUES + ldm_host + f'?station={station_id}')
+	response = radar_queue_data.get('response')
+	response_timestamp = radar_queue_data.get('response_timestamp')
 	radar_queue = []
-	for item in radar_queue_data.get('@graph', {}):
+	for item in response.get('@graph', {}):
 		radar_queue_dict = {
+			'response_timestamp':	response_timestamp,
 			'host':					item.get('host'),
 			'arrived_at':			item.get('arrivalTime'),
 			'created_at':			item.get('createdAt'),

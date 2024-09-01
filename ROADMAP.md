@@ -73,7 +73,7 @@ Roadmap and individual work items that need to be completed to complete the MVP.
   - [ ] radars
   - [ ] zones
 
-## Interface
+## User Interface
 - [ ] Create an interactive TUI with Textual
 - [ ] Update `main.py` to start the TUI by default
 - [ ] Update `main.py` argument parser to let the user specify print output types:
@@ -154,12 +154,12 @@ Roadmap and individual work items that need to be completed to complete the MVP.
   - [ ] `api.get_weather`
   - [ ] `api.get_zones`
   - [ ] `render.decorators`
-  - [ ] `repository.base_repository`
-  - [ ] `repository.in_memory_repository`
-  - [ ] `repository.sqlite_repository`
-  - [ ] `repository.postgres_repository`
-  - [ ] `repository.delta_repository`
-  - [ ] `repository.json_repository`
+  - [ ] `repository.base`
+  - [ ] `repository.in_memory`
+  - [ ] `repository.sqlite`
+  - [ ] `repository.postgres`
+  - [ ] `repository.spark`
+  - [ ] `repository.json`
 - [ ] Set up GitHub Action(s) to run unit tests
 
 ## Miscellaneous

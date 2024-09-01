@@ -6,6 +6,7 @@ from dataclasses import dataclass
 # See: https://www.weather.gov/gis/CWABounds
 @dataclass
 class Zone:
+    response_timestamp: datetime
     zone_id: str
     grid_id: str
     awips_id: str
@@ -33,6 +34,7 @@ class ZoneForecastPeriod:
 
 @dataclass
 class ZoneForecast:
+    response_timestamp: datetime
     forecasted_at: datetime
     periods: List[ZoneForecastPeriod]
     id: int = 0 # repository item id

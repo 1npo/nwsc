@@ -2,6 +2,7 @@
 """
 
 from typing import List
+from datetime import datetime
 from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request, parse_timestamp

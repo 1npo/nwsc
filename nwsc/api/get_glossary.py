@@ -8,10 +8,12 @@ from nwsc.api import NWS_API_GLOSSARY
 def get_glossary(session: CachedSession) -> dict:
 	"""Get the glossary of weather terms"""
 	glossary_data = api_request(session, NWS_API_GLOSSARY)
+	response = glossary_data.get('response')
 	glossary = {}
-	for entry in glossary_data.get('glossary', {}):
+	for entry in response.get('glossary', {}):
 		term = entry.get('term')
 		definition = entry.get('definition')
 		if term and definition:
 			glossary.update({term: definition})
 	return glossary
+

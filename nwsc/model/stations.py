@@ -1,8 +1,9 @@
 from dataclasses import dataclass
-
+from datetime import datetime
 
 @dataclass
 class Station:
+    response_timestamp: datetime
     station_id: str
     name: str
     timezone: str

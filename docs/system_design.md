@@ -25,6 +25,10 @@ The NWS API exposes different kinds of weather-related information. This app use
 - [Text Products](https://forecast.weather.gov/product_types.php)
 - [Radar Stations, Servers, and Alerts](https://www.weather.gov/nl2/)
 - NWS Zones (land, marine, forecast, public, coastal, offshore, fire, and county)
+- Miscellaneous
+  - Glossary
+  - Types
+  - Enums
 
 ### Dataclasses
 - **`alerts`**
@@ -35,6 +39,8 @@ The NWS API exposes different kinds of weather-related information. This app use
   - `SIGMET`
   - `CenterWeatherAdvisory`
   - `CentralWeatherServiceUnit`
+- **`glossary`**
+  - **`Glossary`**
 - **`locations`**
   - `Location`
 - **`offices`**

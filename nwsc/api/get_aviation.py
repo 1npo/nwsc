@@ -29,17 +29,19 @@ def process_sigmet_data(sigmet_data: dict, response_timestamp: datetime) -> SIGM
     return SIGMET(**sigmet_dict)
 
 
-def process_sigmets(sigmets_data: list) -> List[SIGMET]:
+def process_sigmets(sigmets_data: list, response_timestamp: datetime) -> List[SIGMET]:
     sigmets = []
     for feature in sigmets_data.get('features', {}):
-        sigmets.append(process_sigmet_data(feature))
+        sigmets.append(process_sigmet_data(feature, response_timestamp))
     return sigmets
 
 
 @display_spinner('Getting all SIGMETs...')
 def get_all_sigmets(session: CachedSession) -> List[SIGMET]:
     sigmets_data = api_request(session, NWS_API_AVIATION_SIGMETS)
-    return process_sigmets(sigmets_data)
+    response = sigmets_data.get('response')
+    response_timestamp = sigmets_data.get('response_timestamp')
+    return process_sigmets(response, response_timestamp)
 
 
 @display_spinner('Getting all SIGMETs issued by ATSU...')
@@ -48,7 +50,9 @@ def get_all_atsu_sigmets(
     atsu: str
 ) -> List[SIGMET]:
     sigmets_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu)
-    return process_sigmets(sigmets_data)
+    response = sigmets_data.get('response')
+    response_timestamp = sigmets_data.get('response_timestamp')
+    return process_sigmets(response, response_timestamp)
 
 
 @display_spinner('Getting all SIGMETs issued by ATSU on date...')
@@ -58,7 +62,9 @@ def get_all_atsu_sigmets_by_date(
     date_str: str
 ) -> List[SIGMET]:
     sigmets_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu + f'/{date_str}')
-    return process_sigmets(sigmets_data)
+    response = sigmets_data.get('response')
+    response_timestamp = sigmets_data.get('response_timestamp')
+    return process_sigmets(response, response_timestamp)
 
 
 @display_spinner('Getting SIGMET...')
@@ -69,7 +75,9 @@ def get_sigmet(
     time_str
 ) -> SIGMET:
     sigmet_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu + f'/{date_str}/{time_str}')
-    return process_sigmet_data(sigmet_data)
+    response = sigmet_data.get('response')
+    response_timestamp = sigmet_data.get('response_timestamp')
+    return process_sigmets(response, response_timestamp)
 
 
 def process_cwa_data(cwa_data: dict, response_timestamp: datetime) -> CenterWeatherAdvisory:
@@ -122,9 +130,11 @@ def get_cwas(
     cwsu_id: str
 ) -> List[CenterWeatherAdvisory]:
     cwas_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id + '/cwas')
+    response = cwas_data.get('response')
+    response_timestamp = cwas_data.get('response_timestamp')
     cwas = []
-    for feature in cwas_data.get('features', {}):
-        cwas.append(process_cwa_data(feature))
+    for feature in response.get('features', {}):
+        cwas.append(process_cwa_data(feature, response_timestamp))
     return cwas
 
 
@@ -136,4 +146,6 @@ def get_cwa(
     sequence: int
 ) -> CenterWeatherAdvisory:
     cwa_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id + f'/cwas/{date_str}/{sequence}')
-    return process_cwa_data(cwa_data)
+    response = cwa_data.get('response')
+    response_timestamp = cwa_data.get('response_timestamp')
+    return process_cwa_data(response, response_timestamp)

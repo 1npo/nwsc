@@ -1,4 +1,5 @@
 from typing import List
+from datetime import datetime
 from requests_cache import CachedSession
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
@@ -15,8 +16,9 @@ InvalidOfficeException = ValueError(
 )
 
 
-def process_headline_data(headline_data: dict) -> dict:
+def process_headline_data(headline_data: dict, response_timestamp: datetime) -> dict:
     headline_dict = {
+        'response_timestamp':   response_timestamp,
         'headline_id':          headline_data.get('id'),
         'name':                 headline_data.get('name'),
         'title':                headline_data.get('title'),
@@ -38,9 +40,11 @@ def get_office_headlines(
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     headlines_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines')
+    response = headlines_data.get('response')
+    response_timestamp = headlines_data.get('response_timestamp')
     headlines = []
-    for headline in headlines_data.get('@graph', {}):
-        headlines.append(process_headline_data(headline))
+    for headline in response.get('@graph', {}):
+        headlines.append(process_headline_data(headline, response_timestamp))
     return headlines
 
 
@@ -53,7 +57,9 @@ def get_office_headline(
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     headline_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines/' + headline_id)
-    return process_headline_data(headline_data)
+    response = headline_data.get('response')
+    response_timestamp = headline_data.get('response_timestamp')
+    return process_headline_data(response, response_timestamp)
 
 
 @display_spinner('Getting forecast office details...')
@@ -64,7 +70,10 @@ def get_office(
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
     office_data = api_request(session, NWS_API_OFFICES + office_id)
+    response = office_data.get('response')
+    response_timestamp = office_data.get('response_timestamp')
     office_dict = {
+        'response_timestamp':   response_timestamp,
         'office_id':            office_data.get('id'),
         'name':                 office_data.get('name'),
         'street_address':       office_data.get('address', {}).get('streetAddress'),
