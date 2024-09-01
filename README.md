@@ -25,7 +25,7 @@ A full-coverage National Weather Service API client for the terminal
   - [PyPI](#pypi)
   - [GitHub](#github)
 - [Getting Started](#getting-started)
-  - [How to start the TUI](#how-to-start-the-tui)
+  - [How to start and use the TUI](#how-to-start-and-use-the-tui)
   - [How to pretty-print NWS information](#how-to-pretty-print-nws-information)
   - [How to print pipeable weather strings](#how-to-print-pipeable-weather-strings)
 - [Documentation](#documentation)
@@ -65,7 +65,7 @@ A full-coverage National Weather Service API client for the terminal
   - See: https://stackoverflow.com/questions/15268953/how-to-install-python-package-from-github
 
 ## Getting Started
-### How to start the TUI
+### How to start and use the TUI
 - [ ] Describe TUI panels/components
 - [ ] List keybindings
 ### How to pretty-print NWS information
