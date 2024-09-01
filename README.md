@@ -29,8 +29,8 @@ A full-coverage National Weather Service API client for the terminal
   - [How to pretty-print NWS information](#how-to-pretty-print-nws-information)
   - [How to print pipeable weather strings](#how-to-print-pipeable-weather-strings)
 - [Documentation](#documentation)
-- [Purpose](#purpose)
 - [License](#license)
+- [Purpose](#purpose)
 - [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
 
@@ -70,13 +70,15 @@ A full-coverage National Weather Service API client for the terminal
 ### How to print pipeable weather strings
 - [ ] Show how to create weather strings that can be piped to other tools
 
-
 ## Documentation
 > [!NOTE]
 > The content of these markdown files will eventually move into the Sphinx docs
 - [Endpoint Coverage](docs/endpoint_coverage.md)
 - [System Design](docs/system_design.md)
 - [Configuration](docs/configuration.md)
+
+## License
+The National Weather Service Client (**nwsc**) is made available under the [MIT License](LICENSE.md)
 
 ## Purpose
 I made `nwsc` for myself for these reasons:
@@ -89,9 +91,6 @@ I made `nwsc` for myself for these reasons:
   - Uses CI/CD for tests and releases
 - I get my weather from [the National Weather Service](http://weather.gov/), but I have some minor gripes about the website's user experience.
 - I wanted to be able to see any weather data I want in a terminal, in a visually pleasing way.
-
-## License
-The National Weather Service Client (**nwsc**) is made available under the [MIT License](LICENSE.md)
 
 ## Acknowledgements
 - Logo by [LogoMVP](https://logomvp.com), which was created by [Eduardo Higareda](https://x.com/lentesdev)
