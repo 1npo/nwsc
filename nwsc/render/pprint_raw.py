@@ -220,5 +220,45 @@ def test_memory_repository(session: CachedSession, address: str):
 
 
 def test_sqlite_repository(session: CachedSession, address: str):
-	#nws_data = get_all_nws_data(session, address)
 	repo = SQLiteRepository(sqlite_path='C:/Users/Nick/Downloads/nwsc.db')
+	test_addr1 = '3121 S Las Vegas Blvd, Las Vegas, NV 89109'
+	test_addr2 = '589 Mt. Auburn St., Watertown, MA 02472'
+	test_addr3 = '600 Bennington St. Boston, MA 02128'
+	test_addr4 = '2 15th St NW, Washington, DC 20024'
+	test_addr5 = '3001 Connecticut Ave NW, Washington, DC 20008'
+	test_addrs = [
+		#test_addr1,
+		test_addr2,
+		test_addr3,
+		test_addr4,
+		test_addr5,
+	]
+	#for addr in test_addrs:
+	#	location = get_location(session, addr)
+	#	created = repo.create('locations', location)
+	#	print(f'Created location record (row_id = {created})')
+	
+	locations = repo.get_all('locations', Location)
+	pprint(locations)
+
+	deleted = repo.delete('locations', {'city': 'Watertown Town'})
+	if deleted:
+		print(f'Deleted record')
+	else:
+		print(f'Record not found!')
+	
+	winchester_filter = {'city': 'Winchester'}
+	winchester_location = repo.filter_by('locations', Location, winchester_filter)[0]
+	winchester_location.grid_x = 69
+	winchester_location.grid_y = 420
+	updated = repo.update('locations', winchester_location, winchester_filter)
+	if updated:
+		print(f'Updated record')
+	else:
+		print(f'Failed to update record!')
+
+	winchester_location = repo.filter_by('locations', Location, winchester_filter)[0]
+	print(winchester_location)
+
+	locations = repo.get_all('locations', Location)
+	pprint(locations)

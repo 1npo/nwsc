@@ -1,24 +1,25 @@
 
 from datetime import datetime
 from dataclasses import dataclass
+from nwsc.model.nws_item import NWSItem
 
 
-@dataclass
-class ProductType:
+@dataclass(kw_only=True)
+class ProductType(NWSItem):
     code: str
     name: str
-    id: int = 0 # repository item id
+    
 
 
-@dataclass
-class ProductLocation:
+@dataclass(kw_only=True)
+class ProductLocation(NWSItem):
     code: str
     name: str
-    id: int = 0 # repository item id
+    
 
 
-@dataclass
-class Product:
+@dataclass(kw_only=True)
+class Product(NWSItem):
     retrieved_at: datetime
     product_id: str
     wmo_id: str
@@ -27,4 +28,3 @@ class Product:
     text: str
     issuing_office: str
     issued_at: datetime
-    id: int = 0 # repository item id

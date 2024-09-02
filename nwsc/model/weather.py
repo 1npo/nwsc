@@ -1,10 +1,11 @@
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Dict, List
+from nwsc.model.nws_item import NWSItem
 
 
-@dataclass
-class Observation:
+@dataclass(kw_only=True)
+class Observation(NWSItem):
     retrieved_at: datetime
     station_or_zone_id: str
     observed_at: datetime
@@ -42,11 +43,10 @@ class Observation:
     heat_index_c: float
     heat_index_f: float
     cloud_layers: Dict[str, str]
-    id: int = None # repository item id
 
 
-@dataclass
-class ForecastPeriod:
+@dataclass(kw_only=True)
+class ForecastPeriod(NWSItem):
     period_num: int
     period_name: str
     start_at: datetime
@@ -64,11 +64,10 @@ class ForecastPeriod:
     dew_point_f: float
     relative_humidity_pc: float
     precipitation_probability_pc: float
-    id: int = None # repository item id
 
 
-@dataclass
-class Forecast:
+@dataclass(kw_only=True)
+class Forecast(NWSItem):
     retrieved_at: datetime
     forecast_office: str
     grid_x: int
@@ -76,4 +75,3 @@ class Forecast:
     generated_at: datetime
     updated_at: datetime
     periods: List[ForecastPeriod]
-    id: int = None # repository item id

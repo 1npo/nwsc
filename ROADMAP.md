@@ -56,7 +56,7 @@ Roadmap and individual work items that need to be completed to complete the MVP.
   - [ ] spark
 - [ ] Create repository modules:
   - [x] in-memory
-  - [ ] sqlite
+  - [x] sqlite
   - [ ] json
   - [ ] csv
   - [ ] postgresql

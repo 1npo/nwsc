@@ -1,11 +1,12 @@
 from typing import List
 from datetime import datetime
 from dataclasses import dataclass
+from nwsc.model.nws_item import NWSItem
 
 
 # See: https://www.weather.gov/gis/CWABounds
-@dataclass
-class Zone:
+@dataclass(kw_only=True)
+class Zone(NWSItem):
     retrieved_at: datetime
     zone_id: str
     grid_id: str
@@ -21,21 +22,18 @@ class Zone:
     expires_at: datetime
     timezones: List[str]
     multi_polygon: str
-    id: int = 0 # repository item id
 
 
-@dataclass
-class ZoneForecastPeriod:
+@dataclass(kw_only=True)
+class ZoneForecastPeriod(NWSItem):
     period_num: int
     period_name: str
     forecast_detailed: str
-    id: int = 0 # repository item id
 
 
-@dataclass
-class ZoneForecast:
+@dataclass(kw_only=True)
+class ZoneForecast(NWSItem):
     retrieved_at: datetime
     zone_id: str
     forecasted_at: datetime
     periods: List[ZoneForecastPeriod]
-    id: int = 0 # repository item id

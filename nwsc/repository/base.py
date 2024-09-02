@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from nwsc.model import NWSItem
+from nwsc.model.nws_item import NWSItem
 
 
 class BaseRepository(ABC):

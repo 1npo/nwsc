@@ -1,9 +1,11 @@
 import os
 import sqlite3
 import glob
+from dataclasses import asdict
 from pathlib import Path
 from loguru import logger
 from nwsc.repository.base import BaseRepository
+from nwsc.model.nws_item import NWSItem
 
 
 SQLITE_SCHEMA_PATH = os.path.join(os.path.dirname(__file__), 'schemas/sqlite/')
@@ -41,64 +43,76 @@ class SQLiteRepository(BaseRepository):
                 logger.debug(f'Created "{Path(schema_file).stem}" tables')
         logger.info(f'Initialized new SQLite3 database at {self.sqlite_path}')
     
-    def get_all(self, table: str) -> list:
-        res = self.curs.execute(f'SELECT * FROM {table}').fetchall()
+    def _res_to_item(self, res, nws_item: NWSItem) -> sqlite3.Cursor:
         res_cols = [desc[0] for desc in self.curs.description]
-        res_records = [{k:v for k,v in zip(res_cols, record)} for record in res]
-        return res_records
+        records = []
+        for row in res:
+            record = {k:v for k,v in zip(res_cols, row)}
+            records.append(nws_item(**record))
+        return records
 
-    def get(
-        self,
-        table: str,
-        id: int,
-        id_field: str = 'id'
-    ) -> list:
-        res = self.curs.execute(f'SELECT * FROM {table} WHERE {id_field} = ?', str(id)).fetchall()
-        res_cols = [desc[0] for desc in self.curs.description]
-        res_records = [{k:v for k,v in zip(res_cols, record)} for record in res]
-        return res_records
-    
-    def filter_by(self, table: str, filter: dict) -> list:
+    def _get_filter_str(self, filter: dict) -> str:
         if len(filter) == 1:
             key = list(filter.keys())[0]
-            filter_str = f'WHERE IFNULL({key}, "") = :{key}'
+            value = list(filter.values())[0]
+            if isinstance(value, str):
+                value = f'"{value}"'
+            filter_str = f'WHERE {key} == {value}'
         else:
             filter_str = ''
-            for key in filter.keys():
+            for key, value in filter.items():
+                if isinstance(value, str):
+                    value = f'"{value}"'
                 if not filter_str:
-                    filter_str = f'WHERE IFNULL({key}, "") = :{key}'
+                    filter_str = f'WHERE {key} == {value}'
                 else:
-                    filter_str += f' AND IFNULL({key}, "") = :{key}'
-        
-        res = self.curs.execute(f'SELECT * FROM {table} {filter_str}', filter).fetchall()
-        res_cols = [desc[0] for desc in self.curs.description]
-        res_records = [{k:v for k,v in zip(res_cols, record)} for record in res]
-        return res_records
+                    filter_str += f' AND {key} == {value}'
+        return filter_str
+
+    def get_all(self, table: str, nws_item: NWSItem) -> list:
+        res = self.curs.execute(f'SELECT * FROM {table}').fetchall()
+        return self._res_to_item(res, nws_item)
+
+    def get(self, table: str, id_field: str, id_value: str, nws_item: NWSItem) -> list:
+        res = self.curs.execute(f'SELECT * FROM {table} WHERE {id_field} == {id_value}').fetchall()
+        return self._res_to_item(res, nws_item)
     
-    def create(self, table: str, record: dict) -> int:
-        if 'id' not in record:
-            raise KeyError('`record` requires an "id" field, but none was provided')
-        
+    def filter_by(self, table: str, nws_item: NWSItem, filter: dict) -> list:
+        filter_str = self._get_filter_str(filter)
+        res = self.curs.execute(f'SELECT * FROM {table} {filter_str}').fetchall()
+        return self._res_to_item(res, nws_item)
+    
+    def create(self, table: str, item: NWSItem) -> int:
+        record = self.serialize(item)
         fields = ', '.join([k for k in record.keys()])
         named_params = ', '.join([f':{k}' for k in record.keys()])
         self.curs.execute(f'INSERT OR IGNORE INTO {table} ({fields}) VALUES ({named_params})', record)
         self.conn.commit()
         return self.curs.lastrowid
 
-    def update(self, table: str, record: dict):
-        if 'id' not in record:
-            raise KeyError('`record` requires an "id" field, but none was provided')
-
+    def update(self, table: str, item: NWSItem, filter: dict) -> bool:
+        record = self.serialize(item)
         update_str = ', '.join([f'{k} = :{k}' for k in record.keys() if k != 'id'])
-        self.curs.execute(f'UPDATE OR IGNORE {table} SET {update_str} WHERE id = :id', record)
+        filter_str = self._get_filter_str(filter)
+        self.curs.execute(f'UPDATE OR IGNORE {table} SET {update_str} {filter_str}', record)
         self.conn.commit()
+        if self.curs.rowcount >= 1:
+            return True
+        else:
+            return False
 
-    def delete(self, table: str, id: int):
-        self.curs.execute(f'DELETE FROM {table} WHERE id = ?', str(id))
+    def delete(self, table: str, filter: dict) -> bool:
+        filter_str = self._get_filter_str(filter)
+        print(filter_str)
+        self.curs.execute(f'DELETE FROM {table} {filter_str}', )
         self.conn.commit()
+        if self.curs.rowcount >= 1:
+            return True
+        else:
+            return False
+    
+    def serialize(self, nws_item: NWSItem) -> dict:
+        return asdict(nws_item)
 
-    def serialize(self, item):
-        pass
-
-    def deserialize(self, data):
-        pass
+    def deserialize(self, data, nws_item: NWSItem) -> NWSItem:
+        return nws_item(**data)

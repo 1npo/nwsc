@@ -1,8 +1,10 @@
 from dataclasses import dataclass
 from datetime import datetime
+from nwsc.model.nws_item import NWSItem
 
-@dataclass
-class Station:
+
+@dataclass(kw_only=True)
+class Station(NWSItem):
     retrieved_at: datetime
     station_id: str
     name: str
@@ -14,4 +16,3 @@ class Station:
     forecast_url: str
     county_url: str
     fire_weather_zone_url: str
-    id: int = 0 # repository item id

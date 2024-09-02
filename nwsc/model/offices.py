@@ -1,10 +1,11 @@
 from datetime import datetime
 from dataclasses import dataclass
 from typing import List
+from nwsc.model.nws_item import NWSItem
 
 
-@dataclass
-class Office:
+@dataclass(kw_only=True)
+class Office(NWSItem):
     retrieved_at: datetime
     office_id: str
     name: str
@@ -22,11 +23,11 @@ class Office:
     forecast_zones: List[str]
     fire_zones: List[str]
     observation_stations: List[str]
-    id: int = 0 # repository item id
+    
 
 
-@dataclass
-class OfficeHeadline:
+@dataclass(kw_only=True)
+class OfficeHeadline(NWSItem):
     retrieved_at: datetime
     office_id: str
     headline_id: str
@@ -38,4 +39,3 @@ class OfficeHeadline:
     headline_summary: str
     office_url: str
     is_important: bool
-    id: int = 0 # repository item id

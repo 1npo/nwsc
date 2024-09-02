@@ -1,11 +1,12 @@
 from typing import List, Dict
 from datetime import datetime
 from dataclasses import dataclass
+from nwsc.model.nws_item import NWSItem
 
 
 # See: https://www.ncei.noaa.gov/products/radar/next-generation-weather-radar
-@dataclass
-class RadarDataAcquisition:
+@dataclass(kw_only=True)
+class RadarDataAcquisition(NWSItem):
     refreshed_at: str
     reporting_host: str
     mode: str
@@ -21,11 +22,10 @@ class RadarDataAcquisition:
     build_number: float
     average_tx_power_w: float
     reflectivity_calibration_correction_db: float
-    id: int = 0 # repository item id
 
 
-@dataclass
-class RadarPerformance:
+@dataclass(kw_only=True)
+class RadarPerformance(NWSItem):
     refreshed_at: datetime
     performance_checked_at: datetime
     reporting_host: str
@@ -56,11 +56,10 @@ class RadarPerformance:
     horizontal_short_pulse_noise_db_mi: float
     horizontal_long_pulse_noise_db_m: float
     horizontal_long_pulse_noise_db_mi: float
-    id: int = 0 # repository item id
 
 
-@dataclass
-class RadarPathLoss:
+@dataclass(kw_only=True)
+class RadarPathLoss(NWSItem):
     wg04_circulator: float
     wg02_harmonic_filter: float
     wg06_spectrum_filter: float
@@ -72,11 +71,10 @@ class RadarPathLoss:
     horizontal_f_heliax_to_4at17: float
     at4_attenuator: float
     waveguide_klystron_to_switch: float
-    id: int = 0 # repository item id
 
 
-@dataclass
-class RadarAdaptation:
+@dataclass(kw_only=True)
+class RadarAdaptation(NWSItem):
     refreshed_at: datetime
     reporting_host: str
     transmitter_frequency: int
@@ -92,21 +90,19 @@ class RadarAdaptation:
     ame_noise_source_horizontal_excess_noise_ratio: float
     ame_horizontal_test_signal_power: float
     path_loss: RadarPathLoss
-    id: int = 0 # repository item id
 
 
-@dataclass
-class RadarStationAlarm:
+@dataclass(kw_only=True)
+class RadarStationAlarm(NWSItem):
     retrieved_at: datetime
     status: str
     message: str
     active_channel: int
     event_at: datetime
-    id: int = 0 # repository item id
 
 
-@dataclass
-class RadarQueueItem:
+@dataclass(kw_only=True)
+class RadarQueueItem(NWSItem):
     retrieved_at: datetime
     radar_station_id: str
     host: str
@@ -118,11 +114,10 @@ class RadarQueueItem:
     resolution_version: int
     sequence_number: str
     size: int
-    id: int = 0 # repository item id
 
 
-@dataclass
-class RadarStation:
+@dataclass(kw_only=True)
+class RadarStation(NWSItem):
     retrieved_at: datetime
     radar_station_id: str
     name: str
@@ -142,11 +137,10 @@ class RadarStation:
     radar_data_acquisition: RadarDataAcquisition
     performance: RadarPerformance
     adaptation: RadarAdaptation
-    id: int = 0 # repository item id
 
 
-@dataclass
-class NetworkInterface:
+@dataclass(kw_only=True)
+class NetworkInterface(NWSItem):
     interface_name: str
     is_interface_active: bool
     packets_out_ok: int
@@ -157,11 +151,10 @@ class NetworkInterface:
     packets_in_error: int
     packets_in_dropped: int
     packets_in_overrun: int
-    id: int = 0 # repository item id
 
 
-@dataclass
-class RadarServer:
+@dataclass(kw_only=True)
+class RadarServer(NWSItem):
     retrieved_at: datetime
     host: str
     server_type: str
@@ -200,4 +193,4 @@ class RadarServer:
     ping_responses_radar: Dict[str, bool]
     ping_responses_server: Dict[str, bool]
     ping_responses_network: Dict[str, bool]
-    id: int = 0 # repository item id
+    

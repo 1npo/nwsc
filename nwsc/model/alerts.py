@@ -1,20 +1,19 @@
 from typing import List, Dict
 from datetime import datetime
 from dataclasses import dataclass
-
+from nwsc.model.nws_item import NWSItem
 
 # If a new alert is issued as an update to a prior alert, the prior alert
 # is referenced in the new alert response
-@dataclass
-class PriorAlert:
+@dataclass(kw_only=True)
+class PriorAlert(NWSItem):
     prior_alert_id: str
     url: str
     sent_at: datetime
-    id: int = 0 # repository item id
 
 
-@dataclass
-class Alert:
+@dataclass(kw_only=True)
+class Alert(NWSItem):
     retrieved_at: datetime
     alert_id: str
     url: str
@@ -47,11 +46,10 @@ class Alert:
     cap_blocked_channels: list
     cap_vtec: list
     prior_alerts: List[PriorAlert]
-    id: int = 0 # repository item id
+    
 
-
-@dataclass
-class AlertCounts:
+@dataclass(kw_only=True)
+class AlertCounts(NWSItem):
     retrieved_at: datetime
     total: int
     land: int
@@ -59,4 +57,4 @@ class AlertCounts:
     regions: Dict[str, int]
     areas: Dict[str, int]
     zones: Dict[str, int]
-    id: int = 0 # repository item id
+    

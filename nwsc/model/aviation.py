@@ -1,10 +1,11 @@
 from dataclasses import dataclass
 from datetime import datetime
 from typing import List
+from nwsc.model.nws_item import NWSItem
 
 
-@dataclass
-class SIGMET:
+@dataclass(kw_only=True)
+class SIGMET(NWSItem):
     retrieved_at: datetime
     url: str
     issued_at: datetime
@@ -15,11 +16,10 @@ class SIGMET:
     sequence: str
     phenomenon: str
     area_polygon: str
-    id: int = 0 # repository item id
 
 
-@dataclass
-class CenterWeatherAdvisory:
+@dataclass(kw_only=True)
+class CenterWeatherAdvisory(NWSItem):
     retrieved_at: datetime
     url: str
     text: str
@@ -30,11 +30,10 @@ class CenterWeatherAdvisory:
     expires_at: datetime
     observed_property_url: str
     area_polygon: str
-    id: int = 0 # repository item id
 
 
-@dataclass
-class CentralWeatherServiceUnit:
+@dataclass(kw_only=True)
+class CentralWeatherServiceUnit(NWSItem):
     retrieved_at: datetime
     cwsu_id: str
     name: str
@@ -47,4 +46,3 @@ class CentralWeatherServiceUnit:
     phone: str
     url: str
     nws_region: str
-    id: int = 0 # repository item id

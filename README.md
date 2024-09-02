@@ -75,10 +75,16 @@ A full-coverage National Weather Service API client for the terminal
 
 ## Documentation
 > [!NOTE]
-> The content of these markdown files will eventually move into the Sphinx docs
-### [Endpoint Coverage](docs/endpoint_coverage.md)
-### [System Design](docs/system_design.md)
-### [Configuration](docs/configuration.md)
+> These markdown files will eventually migrate into the Sphinx docs
+
+### Endpoint Coverage
+See the [endpoint coverage](docs/endpoint_coverage.md) markdown file.
+
+### System Design
+See the [system design](docs/system_design.md) markdown file.
+
+### Configuration
+See the [configuration](docs/configuration.md) markdown file.
 
 ## License
 The National Weather Service Client (**nwsc**) is made available under the [MIT License](LICENSE.md)

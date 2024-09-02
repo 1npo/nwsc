@@ -1,8 +1,9 @@
 from dataclasses import dataclass
+from nwsc.model.nws_item import NWSItem
 
 
-@dataclass
-class Location:
+@dataclass(kw_only=True)
+class Location(NWSItem):
     city: str
     state: str
     timezone: str
@@ -15,4 +16,3 @@ class Location:
     forecast_hourly_url: str
     gridpoints_url: str
     observation_stations_url: str
-    id: int = 0 # repository item id
