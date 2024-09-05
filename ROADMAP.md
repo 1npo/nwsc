@@ -104,13 +104,14 @@ Roadmap and individual work items that need to be completed to complete the MVP.
 - [ ] Move package from `venv` to `(micro)mamba`
 - [ ] Set up badges:
   - [ ] GitHub Release
+  - [ ] PyPI Version
   - [ ] GitHub License
   - [ ] GitHub Actions Workflow Status
     - [ ] Tests
     - [ ] Release to PyPI
+    - [ ] Release to TestPyPI
+    - [ ] Release to GitHub
   - [ ] GitHub code size
-  - [ ] Conda Version
-  - [ ] PyPI Version
 - [x] Rename `nws` to `nwsc`
 - [ ] Remove `pandas` as a dependency
 - [ ] Remove `loguru` as a dependency
