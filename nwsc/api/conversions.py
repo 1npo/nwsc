@@ -1,7 +1,8 @@
 """
 """
 
-from loguru import logger
+import logging
+logger = logging.getLogger(__name__)
 
 
 def convert_temperatures(data: dict) -> dict:

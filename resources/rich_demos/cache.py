@@ -1,9 +1,9 @@
 import os
 import json
+import logging
 from datetime import datetime
 from pathlib import Path
-
-from loguru import logger
+import logging
 
 
 NWS_DATA_EXPIRATION_DATE_FMT = '%a, %d %b %Y %H:%M:%S %Z'

@@ -1,8 +1,8 @@
 import os
 import configparser
+import logging
 from pathlib import Path
-
-from loguru import logger
+logger = logging.getLogger(__name__)
 
 
 DEFAULT_CONFIG_PATH = Path(os.path.expanduser("~")) / '.config/nws/nws.conf'

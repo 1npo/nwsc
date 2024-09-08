@@ -1,11 +1,12 @@
 import os
 import sqlite3
 import glob
+import logging
 from dataclasses import asdict
 from pathlib import Path
-from loguru import logger
 from nwsc.repository.base import BaseRepository
 from nwsc.model.nws_item import NWSItem
+logger = logging.getLogger(__name__)
 
 
 SQLITE_SCHEMA_PATH = os.path.join(os.path.dirname(__file__), 'schemas/sqlite/')

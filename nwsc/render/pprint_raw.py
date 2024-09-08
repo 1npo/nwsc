@@ -8,7 +8,6 @@ from pathlib import Path
 from rich.console import Console
 from rich.pretty import pprint
 from requests_cache import CachedSession
-from loguru import logger
 from nwsc.repository.memory import InMemoryRepository
 from nwsc.repository.sqlite import SQLiteRepository
 from nwsc.render.decorators import display_spinner
@@ -24,6 +23,7 @@ from nwsc.api.get_stations import *
 from nwsc.api.get_weather import *
 from nwsc.api.get_zones import *
 from nwsc.model import *
+logger = logging.getLogger(__name__)
 
 
 def get_all_nws_data(session: CachedSession, address: str) -> dict:

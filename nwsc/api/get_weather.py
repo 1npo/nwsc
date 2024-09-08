@@ -1,10 +1,10 @@
 """
 """
 
+import logging
 from typing import List
 from datetime import datetime
 from requests_cache import CachedSession
-from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.main import BUG_REPORT_MESSAGE
 from nwsc.api.api_request import api_request, parse_timestamp
@@ -16,6 +16,7 @@ from nwsc.api import (
 )
 from nwsc.model.weather import Observation, Forecast, ForecastPeriod
 from nwsc.model.locations import Location
+logger = logging.getLogger(__name__)
 
 
 def process_measurement_values(

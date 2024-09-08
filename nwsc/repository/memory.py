@@ -1,8 +1,9 @@
+import logging
 from typing import List
 from copy import deepcopy
-from loguru import logger
 from nwsc.repository.base import BaseRepository
 from nwsc.model.nws_item import NWSItem
+logger = logging.getLogger(__name__)
 
 
 class InMemoryRepository(BaseRepository):

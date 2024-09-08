@@ -46,8 +46,6 @@ A full-coverage National Weather Service API client for the terminal
   - CSV
   - JSON
   - SQLite
-  - Postgres
-  - Delta/Spark
 
 ## Screenshots
 - [ ] Add GIFs and PNGs here
@@ -55,7 +53,6 @@ A full-coverage National Weather Service API client for the terminal
 ## Installation
 ### Dependencies
 - [`requests-cache`](https://github.com/requests-cache/requests-cache)
-- [`loguru`](https://github.com/Delgan/loguru) (*being replaced with stdlib logging*)
 - [`rich`](https://github.com/Textualize/rich)
 - [`textual`](https://github.com/Textualize/textual)
 ### PyPI

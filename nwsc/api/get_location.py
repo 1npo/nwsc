@@ -1,11 +1,12 @@
 
+import logging
 from typing import Tuple
 from requests_cache import CachedSession
-from loguru import logger
 from nwsc.render.decorators import display_spinner
 from nwsc.api.api_request import api_request
 from nwsc.api import USCB_API_GEOCODE, NWS_API_POINTS
 from nwsc.model.locations import Location
+logger = logging.getLogger(__name__)
 
 
 # See: https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html

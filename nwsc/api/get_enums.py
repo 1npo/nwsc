@@ -4,16 +4,18 @@
 
 
 import json
+import logging
 from typing import Union
 from string import Template
 from requests_cache import CachedSession
-from loguru import logger
 from nwsc.main import BUG_REPORT_MESSAGE
 from nwsc.api.api_request import api_request
 from nwsc.api import (
     NWS_API_ZONES,
     NWS_API_OFFICES,
 )
+logger = logging.getLogger(__name__)
+
 
 INVALID_ENUM_MESSAGE_DELIMITER = 'Does not have a value in the enumeration'
 FAILED_TO_GET_ENUM_MESSAGE = (

@@ -8,13 +8,11 @@ BUG_REPORT_MESSAGE = (
 import os
 import sys
 import argparse
+import logging
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
-
-from loguru import logger
 from requests_cache import CachedSession, SQLiteCache, FileCache, NEVER_EXPIRE
-
 from nwsc.config import ConfigManager
 from nwsc.render.decorators import display_spinner
 from nwsc.render.pprint_raw import (
@@ -29,6 +27,10 @@ from nwsc.render.rich_print import (
 	rich_print_settings,
 	rich_print_overview,
 	)
+logging.basicConfig(format='%(asctime)s : %(levelname)-8s : %(name)s : %(message)s',
+					datefmt='%Y-%m-%d %I:%M%p',
+					level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 class LogFilter:

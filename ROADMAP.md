@@ -50,18 +50,12 @@ Roadmap and individual work items that need to be completed to complete the MVP.
 
 ## Repository
 - [x] Create a `repository` subpackage for recording historical weather responses
-- [ ] Define table schema for:
-  - [x] sqlite
-  - [ ] postgresql
-  - [ ] spark
+- [x] Define table schema for sqlite repository
 - [ ] Create repository modules:
   - [x] in-memory
   - [x] sqlite
   - [ ] json
   - [ ] csv
-  - [ ] postgresql
-  - [ ] spark
-
 
 ## Service
 - [ ] Create repository services:
@@ -97,7 +91,6 @@ Roadmap and individual work items that need to be completed to complete the MVP.
 - [ ] Compile full list of available settings
   - disable_cache
   - offline_mode
-  - 
 - [ ] Update default initialized configuration to include all available settings
 
 ## Package
@@ -114,7 +107,7 @@ Roadmap and individual work items that need to be completed to complete the MVP.
   - [ ] GitHub code size
 - [x] Rename `nws` to `nwsc`
 - [ ] Remove `pandas` as a dependency
-- [ ] Remove `loguru` as a dependency
+- [x] Remove `loguru` as a dependency
 - [ ] Remove `pytz` as a dependency
 - [ ] Finalize dependencies and add them to `pyproject.toml`
 - [x] Create resources folder for storing Rich demos and images
