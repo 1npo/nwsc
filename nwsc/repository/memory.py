@@ -24,9 +24,11 @@ class InMemoryRepository(BaseRepository):
         if len(filter) == 1:
             key = list(filter.keys())[0]
             value = list(filter.values())[0]
-            index = next((i for i, obj in enumerate(self._repository) if getattr(obj, key) == value), None)
+            index = next((i for i, obj in enumerate(self._repository)
+                          if getattr(obj, key) == value), None)
         else:
-            index = next((i for i, obj in enumerate(self._repository) if self._filter_mask(obj, filter)), None)
+            index = next((i for i, obj in enumerate(self._repository)
+                          if self._filter_mask(obj, filter)), None)
         return index
 
     def get_all(self) -> list:
@@ -37,17 +39,20 @@ class InMemoryRepository(BaseRepository):
             id_field = str(id_field)
         if not isinstance(id_value, str):
             id_value = str(id_value)
-        return next((obj for obj in self._repository if getattr(obj, id_field) == id_value), None)
+        return next((obj for obj in self._repository
+                     if getattr(obj, id_field) == id_value), None)
     
     def filter_by(self, filter: dict) -> List[NWSItem]:
         if len(filter) == 1:
             key = list(filter.keys())[0]
             value = list(filter.values())[0]
-            return [next((obj for obj in self._repository if getattr(obj, key) == value), None)]
+            return [next((obj for obj in self._repository
+                         if getattr(obj, key) == value), None)]
         else:
             items = []
             for key, value in filter.items():
-                items.append(next((obj for obj in self._repository if getattr(obj, key) == value), None))
+                items.append(next((obj for obj in self._repository
+                                  if getattr(obj, key) == value), None))
             return items
     
     def create(self, item: NWSItem) -> NWSItem:

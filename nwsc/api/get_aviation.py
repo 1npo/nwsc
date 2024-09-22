@@ -13,16 +13,16 @@ from nwsc.model.aviation import SIGMET, CenterWeatherAdvisory, CentralWeatherSer
 
 def process_sigmet_data(sigmet_data: dict, retrieved_at: datetime) -> SIGMET:
     sigmet_dict = {
-        'retrieved_at':   retrieved_at,
-        'url':                  sigmet_data.get('properties', {}).get('id'),
-        'issued_at':            sigmet_data.get('properties', {}).get('issueTime'),
-        'effective_at':         sigmet_data.get('properties', {}).get('start'),
-        'expires_at':           sigmet_data.get('properties', {}).get('end'),
-        'fir':                  sigmet_data.get('properties', {}).get('fir'),
-        'atsu':                 sigmet_data.get('properties', {}).get('atsu'),
-        'sequence':             sigmet_data.get('properties', {}).get('sequence'),
-        'phenomenon':           sigmet_data.get('properties', {}).get('phenomenon'),
-        'area_polygon':         None,
+        'retrieved_at': retrieved_at,
+        'url':          sigmet_data.get('properties', {}).get('id'),
+        'issued_at':    sigmet_data.get('properties', {}).get('issueTime'),
+        'effective_at': sigmet_data.get('properties', {}).get('start'),
+        'expires_at':   sigmet_data.get('properties', {}).get('end'),
+        'fir':          sigmet_data.get('properties', {}).get('fir'),
+        'atsu':         sigmet_data.get('properties', {}).get('atsu'),
+        'sequence':     sigmet_data.get('properties', {}).get('sequence'),
+        'phenomenon':   sigmet_data.get('properties', {}).get('phenomenon'),
+        'area_polygon': None,
     }
     geometry = sigmet_data.get('geometry')
     if geometry:
@@ -76,7 +76,9 @@ def get_sigmet(
     date_str: str,
     time_str
 ) -> SIGMET:
-    sigmet_data = api_request(session, NWS_API_AVIATION_SIGMETS + atsu + f'/{date_str}/{time_str}')
+    sigmet_data = api_request(session, (NWS_API_AVIATION_SIGMETS
+                                        + atsu
+                                        + f'/{date_str}/{time_str}'))
     response = sigmet_data.get('response')
     retrieved_at = sigmet_data.get('retrieved_at')
     return process_sigmets(response, retrieved_at)
@@ -92,7 +94,8 @@ def process_cwa_data(cwa_data: dict, retrieved_at: datetime) -> CenterWeatherAdv
         'issued_at':                cwa_data.get('properties', {}).get('issueTime'),
         'effective_at':             cwa_data.get('properties', {}).get('start'),
         'expires_at':               cwa_data.get('properties', {}).get('end'),
-        'observed_property_url':    cwa_data.get('properties', {}).get('observedProperty'),
+        'observed_property_url':    (cwa_data.get('properties', {})
+                                             .get('observedProperty')),
         'area_polygon':             None,
     }
     geometry = cwa_data.get('geometry')
@@ -147,7 +150,9 @@ def get_cwa(
     date_str: str,
     sequence: int
 ) -> CenterWeatherAdvisory:
-    cwa_data = api_request(session, NWS_API_AVIATION_CWSU + cwsu_id + f'/cwas/{date_str}/{sequence}')
+    cwa_data = api_request(session, (NWS_API_AVIATION_CWSU
+                                     + cwsu_id
+                                     + f'/cwas/{date_str}/{sequence}')
     response = cwa_data.get('response')
     retrieved_at = cwa_data.get('retrieved_at')
     return process_cwa_data(response, retrieved_at)

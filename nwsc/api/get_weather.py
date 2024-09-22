@@ -62,10 +62,13 @@ def process_measurement_values(
 	appreviated field suffixes.
 	
 	:param data: A dictionary containing a set of measurements.
-	:param field_map: A mapping of API response field names to standardized `nwsc` field names.
-	:param expected_units: The units of measure that are expected from the API for each measurement in `data`. Must
-		contain the same number of items as `field_map` and have the same keys.
-	:returns: Any items in `data` that are present in `field_map`, reformatted as a flat dictionary where all values are measurements instead of dicts.
+	:param field_map: A mapping of API response field names to standardized `nwsc`
+		field names.
+	:param expected_units: The units of measure that are expected from the API for each
+		measurement in `data`. Must contain the same number of items as `field_map` and
+		have the same keys.
+	:returns: Any items in `data` that are present in `field_map`, reformatted as a flat
+		dictionary where all values are measurements instead of dicts.
 	"""
 
 	if set(field_map.keys()) != set(expected_units.keys()):
@@ -82,12 +85,14 @@ def process_measurement_values(
 		if actual_unit:
 			if actual_unit != expected_unit:
 				logger.debug((
-					f'An actual value and unit are present for {old_name}, but the measurement unit '
-					f'is unexpected ({expected_unit=}, {actual_unit=}). Using actual unit.'))
+					f'An actual value and unit are present for {old_name}, but the '
+					f'measurement unit is unexpected ({expected_unit=}, {actual_unit=}). '
+					'Using actual unit.'))
 			if actual_unit not in WMI_UNIT_MAP:
 				logger.debug((
-					f'No standard field suffix for measurement unit ({actual_unit}). Using the expected unit '
-					f'field suffix instead. {BUG_REPORT_MESSAGE}'))
+					f'No standard field suffix for measurement unit ({actual_unit}). '
+					f'Using the expected unit field suffix instead. '
+					BUG_REPORT_MESSAGE))
 				unit_suffix = WMI_UNIT_MAP.get(expected_unit)
 			else:
 				unit_suffix = WMI_UNIT_MAP.get(actual_unit)
@@ -100,9 +105,9 @@ def process_measurement_values(
 def process_cloud_layers(cloud_layers_data: list) -> dict:
 	"""Flatten cloud layers and convert cloud cover codes to English descriptions
 
-	The NWS API returns a list dictionaries to describe cloud layers. Each dictionary contains
-	a measurement that indicates the height of the cloud layer, and a code that describes the
-	cloud cover at that layer.
+	The NWS API returns a list dictionaries to describe cloud layers. Each dictionary
+	contains a measurement that indicates the height of the cloud layer, and a code that
+	describes the cloud cover at that layer.
 
 	This function processes this list and returns a dictionary where the keys are strings
 	that represent the cloud layer height, and the values are an English description
@@ -138,8 +143,8 @@ def process_cloud_layers(cloud_layers_data: list) -> dict:
 			'640m': 'Scattered Clouds',
 		}
 
-	The METAR_CLOUD_COVER_MAP global in `nwsc.api.__init__` maps all the cloud cover codes to
-	English descriptions.
+	The METAR_CLOUD_COVER_MAP global in `nwsc.api.__init__` maps all the cloud cover
+	codes to English descriptions.
 	"""
 
 	cloud_layers = {}
@@ -163,9 +168,12 @@ def process_observations_data(
 	observations = {
 		'retrieved_at':	retrieved_at,
 		'station_or_zone_id':	station_or_zone_id,
-		'observed_at':      	parse_timestamp(observations_data.get('properties', {}).get('timestamp')),
+		'observed_at':      	(parse_timestamp(observations_data
+													.get('properties', {})
+													.get('timestamp'))),
 		'icon_url':         	observations_data.get('properties', {}).get('icon'),
-		'text_description': 	observations_data.get('properties', {}).get('textDescription'),
+		'text_description': 	(observations_data.get('properties', {})
+												  .get('textDescription')),
 		'raw_message':			observations_data.get('properties', {}).get('rawMessage'),
 	}
 	observation_field_map = {
@@ -228,8 +236,10 @@ def process_forecast_data(
 		'forecast_office':		location.forecast_office,
 		'grid_x':				location.grid_x,
 		'grid_y':				location.grid_y,
-		'generated_at':			parse_timestamp(forecast_data.get('properties', {}).get('generatedAt')),
-		'updated_at':			parse_timestamp(forecast_data.get('properties', {}).get('updateTime')),
+		'generated_at':			(parse_timestamp(forecast_data.get('properties', {})
+															  .get('generatedAt'))),
+		'updated_at':			(parse_timestamp(forecast_data.get('properties', {})
+															  .get('updateTime'))),
 		'periods':				[],
 	}
 	forecast = Forecast(**forecast_dict)
@@ -237,9 +247,9 @@ def process_forecast_data(
 		period = forecast_data.get('properties', {}).get('periods', {})
 		if period and isinstance(period, list):
 			period = period[i]
-			# The temperature unit and value in a forecast response aren't combined in a dict
-			# with 'unitCode' and 'value' keys like all other measures. They're flat fields
-			# ('temperatureUnit' and 'temperature'), so I don't include them in the
+			# The temperature unit and value in a forecast response aren't combined in a
+			# dict with 'unitCode' and 'value' keys like all other measures. They're flat
+			# fields ('temperatureUnit' and 'temperature'), so I don't include them in the
 			# process_measurement_values() call.
 			#
 			# TODO: Find a better and more uniform way to process all measurements.
@@ -268,7 +278,9 @@ def process_forecast_data(
 				'relativeHumidity':				'wmoUnit:percent',
 				'probabilityOfPrecipitation':	'wmoUnit:percent',
 			}
-			forecast_period_dict.update(process_measurement_values(period, field_map, expected_types))
+			forecast_period_dict.update(process_measurement_values(period,
+																   field_map,
+																   expected_types))
 			forecast_period_dict = convert_measures(forecast_period_dict)
 			forecast_period = ForecastPeriod(**forecast_period_dict)
 			forecast.periods.append(forecast_period)
@@ -280,7 +292,9 @@ def get_all_observations(
 	session: CachedSession,
 	station_id: str
 ) -> List[Observation]:
-	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations')
+	observations_data = api_request(session, (NWS_API_STATIONS
+											  + station_id
+											  + '/observations'))
 	response = observations_data.get('response')
 	retrieved_at = observations_data.get('retrieved_at')
 	observations = []
@@ -294,7 +308,9 @@ def get_latest_observations(
 	session: CachedSession,
 	station_id: str
 ) -> Observation:
-	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/latest')
+	observations_data = api_request(session, (NWS_API_STATIONS
+											  + station_id
+											  + '/observations/latest'))
 	response = observations_data.get('response')
 	retrieved_at = observations_data.get('retrieved_at')
 	return process_observations_data(response, retrieved_at, station_id)
@@ -306,7 +322,10 @@ def get_observations_at_time(
 	station_id: str,
 	timestamp: str
 ) -> Observation:
-	observations_data = api_request(session, NWS_API_STATIONS + station_id + '/observations/' + timestamp)
+	observations_data = api_request(session, (NWS_API_STATIONS
+											  + station_id
+											  + '/observations/'
+											  + timestamp))
 	response = observations_data.get('response')
 	retrieved_at = observations_data.get('retrieved_at')
 	return process_observations_data(response, retrieved_at, station_id)

@@ -15,4 +15,8 @@ def api_request(
 
 def parse_timestamp(timestamp: str) -> datetime | None:
 	if timestamp:
-		return datetime.fromisoformat(timestamp).astimezone(pytz.timezone('US/Eastern')).replace(tzinfo=None)
+		return (
+			datetime.fromisoformat(timestamp)
+					.astimezone(pytz.timezone('US/Eastern'))
+					.replace(tzinfo=None)
+		)

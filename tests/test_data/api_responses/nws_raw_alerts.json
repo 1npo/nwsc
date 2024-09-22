@@ -1,0 +1,386 @@
+[
+    {
+        "alert_title": null,
+        "alert_updated_at": null,
+        "alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.00f96e20d2cbacad25d0f8c754331235cbaa12f3.001.1",
+        "alert_id": "urn:oid:2.49.0.1.840.0.00f96e20d2cbacad25d0f8c754331235cbaa12f3.001.1",
+        "alert_area_desc": "Esmeralda and Nye County Deserts/CNC Dispatch; Nye County Deserts/Las Vegas Dispatch",
+        "alert_area_urls": [
+            "https://api.weather.gov/zones/fire/NVZ460",
+            "https://api.weather.gov/zones/fire/NVZ462"
+        ],
+        "alert_areas_ugc": [
+            "NVZ460",
+            "NVZ462"
+        ],
+        "alert_areas_same": [
+            "032009",
+            "032023",
+            "032003",
+            "032017"
+        ],
+        "alert_sent_by": "w-nws.webmaster@noaa.gov",
+        "alert_sent_by_name": "NWS Las Vegas NV",
+        "alert_sent_at": "2024-08-16 14:10:00",
+        "alert_effective_at": "2024-08-16 14:10:00",
+        "alert_ends_at": "2024-08-18 23:00:00",
+        "alert_status": "Actual",
+        "alert_message_type": "Update",
+        "alert_category": "Met",
+        "alert_certainty": "Likely",
+        "alert_urgency": "Expected",
+        "alert_event_type": "Red Flag Warning",
+        "alert_onset_at": "2024-08-17 14:00:00",
+        "alert_expires_at": "2024-08-17 08:30:00",
+        "alert_headline": "Red Flag Warning issued August 16 at 11:10AM PDT until August 18 at 8:00PM PDT by NWS Las Vegas NV",
+        "alert_description": "Southerly to southwesterly winds will increase over the weekend\nas a trough digs along the West Coast. These winds combined with\nafternoon relative humidities around 10% to 15% and dry fuels\nwill result in critical fire weather conditions across Esmeralda\nand Nye Counties in southern Nevada. Winds will drop off and\nrelative humidities will recover Saturday night into Sunday\nmorning before critical conditions return Sunday afternoon.\n\n* AFFECTED AREA...In Nevada...Fire weather zones 460 and 462.\n\n* TIMING...1100 AM PDT Saturday through 800 PM PDT Sunday.\n\n* WIND...15 to 25 mph southerly winds with gusts around 35 mph.\n\n* HUMIDITY...10 to 15 percent.\n\n* IMPACTS...Any fires that develop will likely spread rapidly.\nOutdoor burning is not recommended.",
+        "alert_instruction": "A Red Flag Warning means that critical fire weather conditions\nare either occurring now...or will shortly. A combination of\nstrong winds...low relative humidity...and warm temperatures can\ncontribute to extreme fire behavior.",
+        "alert_response_type": "Prepare",
+        "alert_cap_awips_id": [
+            "RFWVEF"
+        ],
+        "alert_cap_wmo_id": [
+            "WWUS85 KVEF 161810"
+        ],
+        "alert_cap_headline": [
+            "RED FLAG WARNING REMAINS IN EFFECT FROM 11 AM SATURDAY TO 8 PM PDT SUNDAY FOR GUSTY WINDS AND LOW HUMIDITY"
+        ],
+        "alert_cap_blocked_channels": [
+            "EAS",
+            "NWEM",
+            "CMAS"
+        ],
+        "alert_cap_vtec": [
+            "/O.CON.KVEF.FW.W.0006.240817T1800Z-240819T0300Z/"
+        ],
+        "prior_alerts": [
+            {
+                "prior_alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4f20eb9af4fe3534b17b0584dfc5977483d34b84.001.2",
+                "prior_alert_id": "urn:oid:2.49.0.1.840.0.4f20eb9af4fe3534b17b0584dfc5977483d34b84.001.2",
+                "prior_alert_sent_at": "2024-08-16 04:16:00"
+            }
+        ]
+    },
+    {
+        "alert_title": null,
+        "alert_updated_at": null,
+        "alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0957da70a8a1c6f8c02e57cfd8b4d60d100b199e.001.1",
+        "alert_id": "urn:oid:2.49.0.1.840.0.0957da70a8a1c6f8c02e57cfd8b4d60d100b199e.001.1",
+        "alert_area_desc": "White Pine and Northeast Nye Counties",
+        "alert_area_urls": [
+            "https://api.weather.gov/zones/fire/NVZ425"
+        ],
+        "alert_areas_ugc": [
+            "NVZ425"
+        ],
+        "alert_areas_same": [
+            "032007",
+            "032011",
+            "032023",
+            "032033"
+        ],
+        "alert_sent_by": "w-nws.webmaster@noaa.gov",
+        "alert_sent_by_name": "NWS Elko NV",
+        "alert_sent_at": "2024-08-16 04:20:00",
+        "alert_effective_at": "2024-08-16 04:20:00",
+        "alert_ends_at": "2024-08-16 23:00:00",
+        "alert_status": "Actual",
+        "alert_message_type": "Update",
+        "alert_category": "Met",
+        "alert_certainty": "Likely",
+        "alert_urgency": "Expected",
+        "alert_event_type": "Red Flag Warning",
+        "alert_onset_at": "2024-08-16 14:00:00",
+        "alert_expires_at": "2024-08-16 20:00:00",
+        "alert_headline": "Red Flag Warning issued August 16 at 1:20AM PDT until August 16 at 8:00PM PDT by NWS Elko NV",
+        "alert_description": "The National Weather Service in Elko has issued a Red Flag\nWarning for gusty winds and low relative humidity, which remains\nin effect from 11 AM this morning to 8 PM PDT this evening.\n\n* Affected Area...Fire Weather Zone 425 White Pine and Northeast\nNye Counties.\n\n* Winds...Southwest 15 to 25 mph with gusts up to 35 mph.\n\n* Relative Humidity...As low as 6 percent.\n\n* Impacts...The combination of gusty winds and low humidity will\ncreate critical fire weather conditions.",
+        "alert_instruction": "A red flag warning means that critical fire weather conditions\nare either occurring now, or will shortly. A combination of\nstrong winds, low relative humidity, and warm temperatures can\ncontribute to extreme fire behavior.",
+        "alert_response_type": "Prepare",
+        "alert_cap_awips_id": [
+            "RFWLKN"
+        ],
+        "alert_cap_wmo_id": [
+            "WWUS85 KLKN 160820"
+        ],
+        "alert_cap_headline": [
+            "RED FLAG WARNING REMAINS IN EFFECT FROM 11 AM THIS MORNING TO 8 PM PDT THIS EVENING FOR GUSTY WINDS AND LOW RELATIVE HUMIDITY FOR FIRE WEATHER ZONE 425"
+        ],
+        "alert_cap_blocked_channels": [
+            "EAS",
+            "NWEM",
+            "CMAS"
+        ],
+        "alert_cap_vtec": [
+            "/O.CON.KLKN.FW.W.0008.240816T1800Z-240817T0300Z/"
+        ],
+        "prior_alerts": [
+            {
+                "prior_alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7a282aa117659296f43eddbd4eb264f38b7d5133.001.2",
+                "prior_alert_id": "urn:oid:2.49.0.1.840.0.7a282aa117659296f43eddbd4eb264f38b7d5133.001.2",
+                "prior_alert_sent_at": "2024-08-15 16:28:00"
+            }
+        ]
+    },
+    {
+        "alert_title": null,
+        "alert_updated_at": null,
+        "alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0957da70a8a1c6f8c02e57cfd8b4d60d100b199e.002.1",
+        "alert_id": "urn:oid:2.49.0.1.840.0.0957da70a8a1c6f8c02e57cfd8b4d60d100b199e.002.1",
+        "alert_area_desc": "Northern Nye County - Mojave; Central Nevada - Toiyabe",
+        "alert_area_urls": [
+            "https://api.weather.gov/zones/fire/NVZ426",
+            "https://api.weather.gov/zones/fire/NVZ427"
+        ],
+        "alert_areas_ugc": [
+            "NVZ426",
+            "NVZ427"
+        ],
+        "alert_areas_same": [
+            "032023",
+            "032011",
+            "032015"
+        ],
+        "alert_sent_by": "w-nws.webmaster@noaa.gov",
+        "alert_sent_by_name": "NWS Elko NV",
+        "alert_sent_at": "2024-08-16 04:20:00",
+        "alert_effective_at": "2024-08-16 04:20:00",
+        "alert_ends_at": "2024-08-17 23:00:00",
+        "alert_status": "Actual",
+        "alert_message_type": "Update",
+        "alert_category": "Met",
+        "alert_certainty": "Possible",
+        "alert_urgency": "Future",
+        "alert_event_type": "Fire Weather Watch",
+        "alert_onset_at": "2024-08-17 14:00:00",
+        "alert_expires_at": "2024-08-16 20:00:00",
+        "alert_headline": "Fire Weather Watch issued August 16 at 1:20AM PDT until August 17 at 8:00PM PDT by NWS Elko NV",
+        "alert_description": "The National Weather Service in Elko has issued a Fire Weather\nWatch for gusty winds and low relative humidity, which remains in\neffect from Sunday morning through Sunday evening.\n\n* Affected Area...Fire Weather Zone 426 Northern Nye County-\nMojave and Fire Weather Zone 427 Central Nevada-Toiyabe.\n\n* Winds...South 15 to 25 mph with gusts up to 40 mph.\n\n* Relative Humidity...As low as 9 percent.\n\n* Impacts...The combination of gusty winds and low humidity will\ncreate critical fire weather conditions.",
+        "alert_instruction": "A fire weather watch means that critical fire weather conditions\nare forecast to occur. Listen for later forecasts and possible\nred flag warnings.",
+        "alert_response_type": "Prepare",
+        "alert_cap_awips_id": [
+            "RFWLKN"
+        ],
+        "alert_cap_wmo_id": [
+            "WWUS85 KLKN 160820"
+        ],
+        "alert_cap_headline": [
+            "FIRE WEATHER WATCH REMAINS IN EFFECT FROM SATURDAY MORNING THROUGH SATURDAY EVENING FOR GUSTY WINDS AND LOW RELATIVE HUMIDITY FOR FIRE WEATHER ZONES 426 AND 427... ...FIRE WEATHER WATCH REMAINS IN EFFECT FROM SUNDAY MORNING THROUGH SUNDAY EVENING FOR GUSTY WINDS AND LOW RELATIVE HUMIDITY FOR FIRE WEATHER ZONES 426 AND 427"
+        ],
+        "alert_cap_blocked_channels": [
+            "EAS",
+            "NWEM",
+            "CMAS"
+        ],
+        "alert_cap_vtec": [
+            "/O.CON.KLKN.FW.A.0007.240817T1800Z-240818T0300Z/"
+        ],
+        "prior_alerts": [
+            {
+                "prior_alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7a282aa117659296f43eddbd4eb264f38b7d5133.002.2",
+                "prior_alert_id": "urn:oid:2.49.0.1.840.0.7a282aa117659296f43eddbd4eb264f38b7d5133.002.2",
+                "prior_alert_sent_at": "2024-08-15 16:28:00"
+            }
+        ]
+    },
+    {
+        "alert_title": null,
+        "alert_updated_at": null,
+        "alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0957da70a8a1c6f8c02e57cfd8b4d60d100b199e.003.1",
+        "alert_id": "urn:oid:2.49.0.1.840.0.0957da70a8a1c6f8c02e57cfd8b4d60d100b199e.003.1",
+        "alert_area_desc": "Humboldt County - Quinn",
+        "alert_area_urls": [
+            "https://api.weather.gov/zones/fire/NVZ437"
+        ],
+        "alert_areas_ugc": [
+            "NVZ437"
+        ],
+        "alert_areas_same": [
+            "032007",
+            "032013"
+        ],
+        "alert_sent_by": "w-nws.webmaster@noaa.gov",
+        "alert_sent_by_name": "NWS Elko NV",
+        "alert_sent_at": "2024-08-16 04:20:00",
+        "alert_effective_at": "2024-08-16 04:20:00",
+        "alert_ends_at": "2024-08-17 23:00:00",
+        "alert_status": "Actual",
+        "alert_message_type": "Update",
+        "alert_category": "Met",
+        "alert_certainty": "Possible",
+        "alert_urgency": "Future",
+        "alert_event_type": "Fire Weather Watch",
+        "alert_onset_at": "2024-08-17 14:00:00",
+        "alert_expires_at": "2024-08-16 20:00:00",
+        "alert_headline": "Fire Weather Watch issued August 16 at 1:20AM PDT until August 17 at 8:00PM PDT by NWS Elko NV",
+        "alert_description": "The National Weather Service in Elko has issued a Fire Weather\nWatch for gusty winds and low relative humidity, which remains in\neffect from Saturday morning through Saturday evening.\n\n* Affected Area...Fire Weather Zone 437 Humboldt County-Quinn.\n\n* Winds...Southwest 10 to 20 mph with gusts up to 40 mph.\n\n* Relative Humidity...As low as 9 percent.\n\n* Impacts...The combination of gusty winds and low humidity will\ncreate critical fire weather conditions.",
+        "alert_instruction": "A fire weather watch means that critical fire weather conditions\nare forecast to occur. Listen for later forecasts and possible\nred flag warnings.",
+        "alert_response_type": "Prepare",
+        "alert_cap_awips_id": [
+            "RFWLKN"
+        ],
+        "alert_cap_wmo_id": [
+            "WWUS85 KLKN 160820"
+        ],
+        "alert_cap_headline": [
+            "FIRE WEATHER WATCH REMAINS IN EFFECT FROM SATURDAY MORNING THROUGH SATURDAY EVENING FOR GUSTY WINDS AND LOW RELATIVE HUMIDITY FOR FIRE WEATHER ZONE 437"
+        ],
+        "alert_cap_blocked_channels": [
+            "EAS",
+            "NWEM",
+            "CMAS"
+        ],
+        "alert_cap_vtec": [
+            "/O.CON.KLKN.FW.A.0007.240817T1800Z-240818T0300Z/"
+        ],
+        "prior_alerts": [
+            {
+                "prior_alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7a282aa117659296f43eddbd4eb264f38b7d5133.003.1",
+                "prior_alert_id": "urn:oid:2.49.0.1.840.0.7a282aa117659296f43eddbd4eb264f38b7d5133.003.1",
+                "prior_alert_sent_at": "2024-08-15 16:28:00"
+            }
+        ]
+    },
+    {
+        "alert_title": null,
+        "alert_updated_at": null,
+        "alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.0957da70a8a1c6f8c02e57cfd8b4d60d100b199e.002.2",
+        "alert_id": "urn:oid:2.49.0.1.840.0.0957da70a8a1c6f8c02e57cfd8b4d60d100b199e.002.2",
+        "alert_area_desc": "Northern Nye County - Mojave; Central Nevada - Toiyabe",
+        "alert_area_urls": [
+            "https://api.weather.gov/zones/fire/NVZ426",
+            "https://api.weather.gov/zones/fire/NVZ427"
+        ],
+        "alert_areas_ugc": [
+            "NVZ426",
+            "NVZ427"
+        ],
+        "alert_areas_same": [
+            "032023",
+            "032011",
+            "032015"
+        ],
+        "alert_sent_by": "w-nws.webmaster@noaa.gov",
+        "alert_sent_by_name": "NWS Elko NV",
+        "alert_sent_at": "2024-08-16 04:20:00",
+        "alert_effective_at": "2024-08-16 04:20:00",
+        "alert_ends_at": "2024-08-18 23:00:00",
+        "alert_status": "Actual",
+        "alert_message_type": "Update",
+        "alert_category": "Met",
+        "alert_certainty": "Possible",
+        "alert_urgency": "Future",
+        "alert_event_type": "Fire Weather Watch",
+        "alert_onset_at": "2024-08-18 14:00:00",
+        "alert_expires_at": "2024-08-16 20:00:00",
+        "alert_headline": "Fire Weather Watch issued August 16 at 1:20AM PDT until August 18 at 8:00PM PDT by NWS Elko NV",
+        "alert_description": "The National Weather Service in Elko has issued a Fire Weather\nWatch for gusty winds and low relative humidity, which remains in\neffect from Sunday morning through Sunday evening.\n\n* Affected Area...Fire Weather Zone 426 Northern Nye County-\nMojave and Fire Weather Zone 427 Central Nevada-Toiyabe.\n\n* Winds...South 15 to 25 mph with gusts up to 40 mph.\n\n* Relative Humidity...As low as 9 percent.\n\n* Impacts...The combination of gusty winds and low humidity will\ncreate critical fire weather conditions.",
+        "alert_instruction": "A fire weather watch means that critical fire weather conditions\nare forecast to occur. Listen for later forecasts and possible\nred flag warnings.",
+        "alert_response_type": "Prepare",
+        "alert_cap_awips_id": [
+            "RFWLKN"
+        ],
+        "alert_cap_wmo_id": [
+            "WWUS85 KLKN 160820"
+        ],
+        "alert_cap_headline": [
+            "FIRE WEATHER WATCH REMAINS IN EFFECT FROM SATURDAY MORNING THROUGH SATURDAY EVENING FOR GUSTY WINDS AND LOW RELATIVE HUMIDITY FOR FIRE WEATHER ZONES 426 AND 427... ...FIRE WEATHER WATCH REMAINS IN EFFECT FROM SUNDAY MORNING THROUGH SUNDAY EVENING FOR GUSTY WINDS AND LOW RELATIVE HUMIDITY FOR FIRE WEATHER ZONES 426 AND 427"
+        ],
+        "alert_cap_blocked_channels": [
+            "EAS",
+            "NWEM",
+            "CMAS"
+        ],
+        "alert_cap_vtec": [
+            "/O.CON.KLKN.FW.A.0008.240818T1800Z-240819T0300Z/"
+        ],
+        "prior_alerts": [
+            {
+                "prior_alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7a282aa117659296f43eddbd4eb264f38b7d5133.002.1",
+                "prior_alert_id": "urn:oid:2.49.0.1.840.0.7a282aa117659296f43eddbd4eb264f38b7d5133.002.1",
+                "prior_alert_sent_at": "2024-08-15 16:28:00"
+            }
+        ]
+    },
+    {
+        "alert_title": null,
+        "alert_updated_at": null,
+        "alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d0066ed59b39a6b4f1fa1484634ac924a2786259.001.1",
+        "alert_id": "urn:oid:2.49.0.1.840.0.d0066ed59b39a6b4f1fa1484634ac924a2786259.001.1",
+        "alert_area_desc": "Greater Lake Tahoe and Truckee Area; Southern Mono County; Eastern Lassen County; Northern Sierra Front - Carson City/Douglas/Storey/Southern Washoe/Eastern Lyon/Far Southern Lassen Counties; Southern Sierra Front - Alpine/Northern Mono/Southern Lyon/Western Mineral Counties; Northern Washoe County",
+        "alert_area_urls": [
+            "https://api.weather.gov/zones/fire/CAZ272",
+            "https://api.weather.gov/zones/fire/CAZ274",
+            "https://api.weather.gov/zones/fire/CAZ278",
+            "https://api.weather.gov/zones/fire/NVZ420",
+            "https://api.weather.gov/zones/fire/NVZ421",
+            "https://api.weather.gov/zones/fire/NVZ458"
+        ],
+        "alert_areas_ugc": [
+            "CAZ272",
+            "CAZ274",
+            "CAZ278",
+            "NVZ420",
+            "NVZ421",
+            "NVZ458"
+        ],
+        "alert_areas_same": [
+            "006003",
+            "006017",
+            "006057",
+            "006061",
+            "006091",
+            "032005",
+            "032031",
+            "032510",
+            "006019",
+            "006039",
+            "006051",
+            "006035",
+            "032019",
+            "032029",
+            "032021",
+            "032027"
+        ],
+        "alert_sent_by": "w-nws.webmaster@noaa.gov",
+        "alert_sent_by_name": "NWS Reno NV",
+        "alert_sent_at": "2024-08-15 17:57:00",
+        "alert_effective_at": "2024-08-15 17:57:00",
+        "alert_ends_at": "2024-08-18 02:00:00",
+        "alert_status": "Actual",
+        "alert_message_type": "Update",
+        "alert_category": "Met",
+        "alert_certainty": "Possible",
+        "alert_urgency": "Future",
+        "alert_event_type": "Fire Weather Watch",
+        "alert_onset_at": "2024-08-17 14:00:00",
+        "alert_expires_at": "2024-08-16 20:45:00",
+        "alert_headline": "Fire Weather Watch issued August 15 at 2:57PM PDT until August 17 at 11:00PM PDT by NWS Reno NV",
+        "alert_description": "* CHANGES...\n\n* Affected Area...Fire Weather Zone 272 Greater Lake Tahoe and\nTruckee Area, Fire Weather Zone 274 Southern Mono County, Fire\nWeather Zone 278 Eastern Lassen County, Fire Weather Zone 420\nNorthern Sierra Front including Carson City, Douglas, Storey,\nSouthern Washoe, Western Lyon, and Far Southern Lassen\nCounties, Fire Weather Zone 421 Southern Sierra Front\nincluding Alpine, Northern Mono, Southern Lyon, and Western\nMineral Counties and Fire Weather Zone 458 Northern Washoe\nCounty.\n\n* Winds...South to southwest wind 15 to 25 mph with gusts 30 to\n40 mph.\n\n* Humidity...9 to 15%\n\n* Duration...4 to 6 hours. Peak winds noon until 8 PM.\n\n* Impacts...The combination of gusty winds and low humidity can\ncause fire to rapidly grow in size and intensity before first\nresponders can contain them.",
+        "alert_instruction": "Avoid outdoor activities that can cause a spark near dry\nvegetation, such as yard work, target shooting, or campfires.\nFollow local fire restrictions. Check weather.gov/reno for\nupdates and livingwithfire.info for preparedness tips.",
+        "alert_response_type": "Prepare",
+        "alert_cap_awips_id": [
+            "RFWREV"
+        ],
+        "alert_cap_wmo_id": [
+            "WWUS85 KREV 152157"
+        ],
+        "alert_cap_headline": [
+            "FIRE WEATHER WATCH REMAINS IN EFFECT FROM SATURDAY MORNING THROUGH SATURDAY EVENING FOR GUSTY WINDS AND LOW HUMIDITY FOR PORTIONS OF WESTERN NEVADA AND NORTHEASTERN CALIFORNIA"
+        ],
+        "alert_cap_blocked_channels": [
+            "EAS",
+            "NWEM",
+            "CMAS"
+        ],
+        "alert_cap_vtec": [
+            "/O.CON.KREV.FW.A.0007.240817T1800Z-240818T0600Z/"
+        ],
+        "prior_alerts": [
+            {
+                "prior_alert_url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8a3e3e448c8d42600028b49862a020eed73255b0.001.1",
+                "prior_alert_id": "urn:oid:2.49.0.1.840.0.8a3e3e448c8d42600028b49862a020eed73255b0.001.1",
+                "prior_alert_sent_at": "2024-08-14 14:09:00"
+            }
+        ]
+    }
+]

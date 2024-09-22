@@ -15,7 +15,8 @@ SQLITE_SCHEMA_PATH = os.path.join(os.path.dirname(__file__), 'schemas/sqlite/')
 class SQLiteRepository(BaseRepository):
     """
     :param sqlite_path: The path to the SQLite database to open (default: in-memory)
-    :param sqlite_schema: The path to a file containing the schema to initialize a new database with
+    :param sqlite_schema: The path to a file containing the schema to initialize
+        a new database with
     """
 
     def __init__(
@@ -31,9 +32,11 @@ class SQLiteRepository(BaseRepository):
         if self.sqlite_path == ':memory:':
             self._init_new_sqlite_db()
         else:
-            # The database will be empty (no tables) if it was just created. If the db at sqlite_path is empty,
-            # initialize a new database using the given sqlite_schema.
-            if not self.curs.execute('SELECT name FROM sqlite_master WHERE type="table"').fetchall():
+            # The database will be empty (no tables) if it was just created. If the db
+            # at sqlite_path is empty, initialize a new database using the
+            # given sqlite_schema
+            query = 'SELECT name FROM sqlite_master WHERE type="table"'
+            if not self.curs.execute(query).fetchall():
                 self._init_new_sqlite_db()
 
     def _init_new_sqlite_db(self):
@@ -75,7 +78,8 @@ class SQLiteRepository(BaseRepository):
         return self._res_to_item(res, nws_item)
 
     def get(self, table: str, id_field: str, id_value: str, nws_item: NWSItem) -> list:
-        res = self.curs.execute(f'SELECT * FROM {table} WHERE {id_field} == {id_value}').fetchall()
+        query = f'SELECT * FROM {table} WHERE {id_field} == {id_value}'
+        res = self.curs.execute(query).fetchall()
         return self._res_to_item(res, nws_item)
     
     def filter_by(self, table: str, nws_item: NWSItem, filter: dict) -> list:
@@ -87,7 +91,8 @@ class SQLiteRepository(BaseRepository):
         record = self.serialize(item)
         fields = ', '.join([k for k in record.keys()])
         named_params = ', '.join([f':{k}' for k in record.keys()])
-        self.curs.execute(f'INSERT OR IGNORE INTO {table} ({fields}) VALUES ({named_params})', record)
+        query = f'INSERT OR IGNORE INTO {table} ({fields}) VALUES ({named_params})'
+        self.curs.execute(query, record)
         self.conn.commit()
         return self.curs.lastrowid
 
@@ -95,7 +100,8 @@ class SQLiteRepository(BaseRepository):
         record = self.serialize(item)
         update_str = ', '.join([f'{k} = :{k}' for k in record.keys() if k != 'id'])
         filter_str = self._get_filter_str(filter)
-        self.curs.execute(f'UPDATE OR IGNORE {table} SET {update_str} {filter_str}', record)
+        query = f'UPDATE OR IGNORE {table} SET {update_str} {filter_str}'
+        self.curs.execute(query, record)
         self.conn.commit()
         if self.curs.rowcount >= 1:
             return True

@@ -88,7 +88,8 @@ def convert_pressures(data: dict) -> dict:
 def convert_directions(data: dict) -> dict:
 	"""Add wind direction string on a 16-point compass"""
 	if data.get('wind_direction_deg_ang'):
-		if (0 <= data['wind_direction_deg_ang'] <= 22.4) or data['wind_direction_deg_ang'] == 360:
+		if ((0 <= data['wind_direction_deg_ang'] <= 22.4) or
+	  		data['wind_direction_deg_ang'] == 360):
 			data['wind_direction_compass'] = 'N'
 		elif 22.5 <= data['wind_direction_deg_ang'] <= 44.9:
 			data['wind_direction_compass'] = 'NNE'

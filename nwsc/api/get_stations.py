@@ -19,8 +19,9 @@ def process_station_data(feature: dict, retrieved_at: datetime) -> Station:
 		station_lat = None
 		station_lon = None
 	station = {
-		'retrieved_at':		retrieved_at,
-		'station_id':      			feature.get('properties', {}).get('stationIdentifier'),
+		'retrieved_at':				retrieved_at,
+		'station_id':      			(feature.get('properties', {})
+											.get('stationIdentifier')),
 		'name':    					feature.get('properties', {}).get('name'),
 		'lat':     					station_lat,
 		'lon':     					station_lon,
@@ -61,7 +62,8 @@ def get_stations_by_grid(
 	forecast_office: str,
 	gridpoints: dict
 ) -> List[Station]:
-	return get_stations(session, NWS_API_GRIDPOINTS + f'/{forecast_office}/{gridpoints}/stations')
+	return get_stations(session, (NWS_API_GRIDPOINTS 
+								  + f'/{forecast_office}/{gridpoints}/stations'))
 
 
 @display_spinner('Getting local stations...')

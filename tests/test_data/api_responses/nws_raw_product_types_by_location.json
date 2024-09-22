@@ -1,0 +1,150 @@
+[
+    {
+        "product_code": "AFD",
+        "product_name": "Area Forecast Discussion"
+    },
+    {
+        "product_code": "AFM",
+        "product_name": "Area Forecast Matrices"
+    },
+    {
+        "product_code": "CF6",
+        "product_name": "WFO Monthly/Daily Climate Data"
+    },
+    {
+        "product_code": "CLI",
+        "product_name": "Climatological Report (Daily)"
+    },
+    {
+        "product_code": "FFS",
+        "product_name": "Flash Flood Statement"
+    },
+    {
+        "product_code": "FFW",
+        "product_name": "Flash Flood Warning"
+    },
+    {
+        "product_code": "FLS",
+        "product_name": "Flood Statement"
+    },
+    {
+        "product_code": "FLW",
+        "product_name": "Flood Warning"
+    },
+    {
+        "product_code": "FWF",
+        "product_name": "Routine Fire Wx Fcst (With/Without 6-10 Day Outlook)"
+    },
+    {
+        "product_code": "FWM",
+        "product_name": "Miscellaneous Fire Weather Product"
+    },
+    {
+        "product_code": "FWN",
+        "product_name": "Fire Weather Notification"
+    },
+    {
+        "product_code": "FWO",
+        "product_name": "Fire Weather Observation"
+    },
+    {
+        "product_code": "HML",
+        "product_name": "AHPS XML"
+    },
+    {
+        "product_code": "HWO",
+        "product_name": "Hazardous Weather Outlook"
+    },
+    {
+        "product_code": "HYD",
+        "product_name": "Daily Hydrometeorological Products"
+    },
+    {
+        "product_code": "LCO",
+        "product_name": "Local Cooperative Observation"
+    },
+    {
+        "product_code": "LSR",
+        "product_name": "Local Storm Report"
+    },
+    {
+        "product_code": "NPW",
+        "product_name": "Non-Precipitation Warnings / Watches / Advisories"
+    },
+    {
+        "product_code": "PFM",
+        "product_name": "Point Forecast Matrices"
+    },
+    {
+        "product_code": "PNS",
+        "product_name": "Public Information Statement"
+    },
+    {
+        "product_code": "REC",
+        "product_name": "Recreational Report"
+    },
+    {
+        "product_code": "RER",
+        "product_name": "Record Report"
+    },
+    {
+        "product_code": "RR1",
+        "product_name": "Hydro-Met Data Report Part 1"
+    },
+    {
+        "product_code": "RR2",
+        "product_name": "Hydro-Met Data Report Part 2"
+    },
+    {
+        "product_code": "RR3",
+        "product_name": "Hydro-Met Data Report Part 3"
+    },
+    {
+        "product_code": "RRS",
+        "product_name": "HADS Data"
+    },
+    {
+        "product_code": "RTP",
+        "product_name": "Regional Max/Min Temp and Precipitation Table"
+    },
+    {
+        "product_code": "RVA",
+        "product_name": "River Summary"
+    },
+    {
+        "product_code": "RVF",
+        "product_name": "River Forecast"
+    },
+    {
+        "product_code": "RWR",
+        "product_name": "Regional Weather Roundup"
+    },
+    {
+        "product_code": "SPS",
+        "product_name": "Special Weather Statement"
+    },
+    {
+        "product_code": "SVR",
+        "product_name": "Severe Thunderstorm Warning"
+    },
+    {
+        "product_code": "SVS",
+        "product_name": "Severe Weather Statement"
+    },
+    {
+        "product_code": "TAF",
+        "product_name": "Terminal Aerodrome Forecast"
+    },
+    {
+        "product_code": "VFT",
+        "product_name": "Terminal Aerodrome Forecast (TAF) Verification"
+    },
+    {
+        "product_code": "WCN",
+        "product_name": "Weather Watch Clearance Notification"
+    },
+    {
+        "product_code": "ZFP",
+        "product_name": "Zone Forecast Product"
+    }
+]

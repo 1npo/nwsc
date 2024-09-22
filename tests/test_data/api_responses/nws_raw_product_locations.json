@@ -1,0 +1,6898 @@
+[
+    {
+        "location_code": "001",
+        "location_name": null
+    },
+    {
+        "location_code": "01",
+        "location_name": null
+    },
+    {
+        "location_code": "02",
+        "location_name": null
+    },
+    {
+        "location_code": "03",
+        "location_name": null
+    },
+    {
+        "location_code": "04",
+        "location_name": null
+    },
+    {
+        "location_code": "0F2",
+        "location_name": null
+    },
+    {
+        "location_code": "0J4",
+        "location_name": null
+    },
+    {
+        "location_code": "10R",
+        "location_name": null
+    },
+    {
+        "location_code": "11R",
+        "location_name": null
+    },
+    {
+        "location_code": "12N",
+        "location_name": null
+    },
+    {
+        "location_code": "1V4",
+        "location_name": null
+    },
+    {
+        "location_code": "20V",
+        "location_name": null
+    },
+    {
+        "location_code": "2R9",
+        "location_name": null
+    },
+    {
+        "location_code": "2WX",
+        "location_name": null
+    },
+    {
+        "location_code": "30D",
+        "location_name": null
+    },
+    {
+        "location_code": "33V",
+        "location_name": null
+    },
+    {
+        "location_code": "3T5",
+        "location_name": null
+    },
+    {
+        "location_code": "40B",
+        "location_name": null
+    },
+    {
+        "location_code": "55N",
+        "location_name": null
+    },
+    {
+        "location_code": "5C1",
+        "location_name": null
+    },
+    {
+        "location_code": "5T9",
+        "location_name": null
+    },
+    {
+        "location_code": "6P9",
+        "location_name": null
+    },
+    {
+        "location_code": "6R6",
+        "location_name": null
+    },
+    {
+        "location_code": "79J",
+        "location_name": null
+    },
+    {
+        "location_code": "8D3",
+        "location_name": null
+    },
+    {
+        "location_code": "90D",
+        "location_name": null
+    },
+    {
+        "location_code": "90S",
+        "location_name": null
+    },
+    {
+        "location_code": "9V9",
+        "location_name": null
+    },
+    {
+        "location_code": "A0A",
+        "location_name": null
+    },
+    {
+        "location_code": "A0B",
+        "location_name": null
+    },
+    {
+        "location_code": "A0C",
+        "location_name": null
+    },
+    {
+        "location_code": "A0D",
+        "location_name": null
+    },
+    {
+        "location_code": "A0E",
+        "location_name": null
+    },
+    {
+        "location_code": "A0F",
+        "location_name": null
+    },
+    {
+        "location_code": "A0G",
+        "location_name": null
+    },
+    {
+        "location_code": "A0H",
+        "location_name": null
+    },
+    {
+        "location_code": "A0I",
+        "location_name": null
+    },
+    {
+        "location_code": "A0J",
+        "location_name": null
+    },
+    {
+        "location_code": "A0K",
+        "location_name": null
+    },
+    {
+        "location_code": "A0L",
+        "location_name": null
+    },
+    {
+        "location_code": "A0M",
+        "location_name": null
+    },
+    {
+        "location_code": "A20",
+        "location_name": null
+    },
+    {
+        "location_code": "A30",
+        "location_name": null
+    },
+    {
+        "location_code": "AAF",
+        "location_name": null
+    },
+    {
+        "location_code": "AAO",
+        "location_name": null
+    },
+    {
+        "location_code": "AAQ",
+        "location_name": null
+    },
+    {
+        "location_code": "AAT",
+        "location_name": null
+    },
+    {
+        "location_code": "ABC",
+        "location_name": null
+    },
+    {
+        "location_code": "ABE",
+        "location_name": null
+    },
+    {
+        "location_code": "ABI",
+        "location_name": null
+    },
+    {
+        "location_code": "ABQ",
+        "location_name": "Albuquerque, NM"
+    },
+    {
+        "location_code": "ABR",
+        "location_name": "Aberdeen, SD"
+    },
+    {
+        "location_code": "ABT",
+        "location_name": null
+    },
+    {
+        "location_code": "ABY",
+        "location_name": null
+    },
+    {
+        "location_code": "ACD",
+        "location_name": null
+    },
+    {
+        "location_code": "ACK",
+        "location_name": null
+    },
+    {
+        "location_code": "ACR",
+        "location_name": null
+    },
+    {
+        "location_code": "ACT",
+        "location_name": null
+    },
+    {
+        "location_code": "ACV",
+        "location_name": null
+    },
+    {
+        "location_code": "ACY",
+        "location_name": null
+    },
+    {
+        "location_code": "ADF",
+        "location_name": null
+    },
+    {
+        "location_code": "ADL",
+        "location_name": null
+    },
+    {
+        "location_code": "ADQ",
+        "location_name": null
+    },
+    {
+        "location_code": "ADS",
+        "location_name": null
+    },
+    {
+        "location_code": "ADU",
+        "location_name": null
+    },
+    {
+        "location_code": "AEC",
+        "location_name": null
+    },
+    {
+        "location_code": "AEG",
+        "location_name": null
+    },
+    {
+        "location_code": "AEN",
+        "location_name": null
+    },
+    {
+        "location_code": "AER",
+        "location_name": "Anchorage East"
+    },
+    {
+        "location_code": "AEX",
+        "location_name": null
+    },
+    {
+        "location_code": "AFA",
+        "location_name": null
+    },
+    {
+        "location_code": "AFC",
+        "location_name": "Anchorage, AK"
+    },
+    {
+        "location_code": "AFG",
+        "location_name": "Fairbanks, AK"
+    },
+    {
+        "location_code": "AFW",
+        "location_name": null
+    },
+    {
+        "location_code": "AGA",
+        "location_name": null
+    },
+    {
+        "location_code": "AGC",
+        "location_name": null
+    },
+    {
+        "location_code": "AGK",
+        "location_name": null
+    },
+    {
+        "location_code": "AGL",
+        "location_name": null
+    },
+    {
+        "location_code": "AGS",
+        "location_name": null
+    },
+    {
+        "location_code": "AGU",
+        "location_name": null
+    },
+    {
+        "location_code": "AGY",
+        "location_name": null
+    },
+    {
+        "location_code": "AHN",
+        "location_name": null
+    },
+    {
+        "location_code": "AHO",
+        "location_name": null
+    },
+    {
+        "location_code": "AIA",
+        "location_name": null
+    },
+    {
+        "location_code": "AIH",
+        "location_name": null
+    },
+    {
+        "location_code": "AIL",
+        "location_name": null
+    },
+    {
+        "location_code": "AJK",
+        "location_name": "Juneau, AK"
+    },
+    {
+        "location_code": "AJN",
+        "location_name": null
+    },
+    {
+        "location_code": "AJO",
+        "location_name": null
+    },
+    {
+        "location_code": "AK",
+        "location_name": null
+    },
+    {
+        "location_code": "AK1",
+        "location_name": null
+    },
+    {
+        "location_code": "AK2",
+        "location_name": null
+    },
+    {
+        "location_code": "AK3",
+        "location_name": null
+    },
+    {
+        "location_code": "AK5",
+        "location_name": null
+    },
+    {
+        "location_code": "AK7",
+        "location_name": null
+    },
+    {
+        "location_code": "AK8",
+        "location_name": null
+    },
+    {
+        "location_code": "AK9",
+        "location_name": null
+    },
+    {
+        "location_code": "AKN",
+        "location_name": null
+    },
+    {
+        "location_code": "AKO",
+        "location_name": null
+    },
+    {
+        "location_code": "AKQ",
+        "location_name": "Wakefield, VA"
+    },
+    {
+        "location_code": "AKT",
+        "location_name": null
+    },
+    {
+        "location_code": "AKW",
+        "location_name": null
+    },
+    {
+        "location_code": "AL",
+        "location_name": null
+    },
+    {
+        "location_code": "ALB",
+        "location_name": null
+    },
+    {
+        "location_code": "ALI",
+        "location_name": null
+    },
+    {
+        "location_code": "ALK",
+        "location_name": null
+    },
+    {
+        "location_code": "ALM",
+        "location_name": null
+    },
+    {
+        "location_code": "ALO",
+        "location_name": null
+    },
+    {
+        "location_code": "ALR",
+        "location_name": null
+    },
+    {
+        "location_code": "ALS",
+        "location_name": null
+    },
+    {
+        "location_code": "ALU",
+        "location_name": "Anchorage West"
+    },
+    {
+        "location_code": "ALW",
+        "location_name": null
+    },
+    {
+        "location_code": "ALY",
+        "location_name": "Albany, NY"
+    },
+    {
+        "location_code": "AMA",
+        "location_name": "Amarillo, TX"
+    },
+    {
+        "location_code": "AMC",
+        "location_name": null
+    },
+    {
+        "location_code": "AMG",
+        "location_name": null
+    },
+    {
+        "location_code": "AMW",
+        "location_name": null
+    },
+    {
+        "location_code": "ANB",
+        "location_name": null
+    },
+    {
+        "location_code": "ANC",
+        "location_name": null
+    },
+    {
+        "location_code": "AND",
+        "location_name": null
+    },
+    {
+        "location_code": "ANJ",
+        "location_name": null
+    },
+    {
+        "location_code": "ANN",
+        "location_name": null
+    },
+    {
+        "location_code": "AOH",
+        "location_name": null
+    },
+    {
+        "location_code": "AOM",
+        "location_name": null
+    },
+    {
+        "location_code": "AOO",
+        "location_name": null
+    },
+    {
+        "location_code": "AOR",
+        "location_name": null
+    },
+    {
+        "location_code": "AOT",
+        "location_name": null
+    },
+    {
+        "location_code": "APA",
+        "location_name": null
+    },
+    {
+        "location_code": "APC",
+        "location_name": null
+    },
+    {
+        "location_code": "APF",
+        "location_name": null
+    },
+    {
+        "location_code": "APG",
+        "location_name": null
+    },
+    {
+        "location_code": "APN",
+        "location_name": null
+    },
+    {
+        "location_code": "APX",
+        "location_name": "Gaylord, MI"
+    },
+    {
+        "location_code": "AQO",
+        "location_name": null
+    },
+    {
+        "location_code": "AQT",
+        "location_name": null
+    },
+    {
+        "location_code": "AQV",
+        "location_name": null
+    },
+    {
+        "location_code": "AQW",
+        "location_name": null
+    },
+    {
+        "location_code": "AR",
+        "location_name": null
+    },
+    {
+        "location_code": "ARA",
+        "location_name": null
+    },
+    {
+        "location_code": "ARG",
+        "location_name": null
+    },
+    {
+        "location_code": "ARM",
+        "location_name": null
+    },
+    {
+        "location_code": "ARR",
+        "location_name": null
+    },
+    {
+        "location_code": "ART",
+        "location_name": null
+    },
+    {
+        "location_code": "ARX",
+        "location_name": "La Crosse, WI"
+    },
+    {
+        "location_code": "ASC",
+        "location_name": null
+    },
+    {
+        "location_code": "ASD",
+        "location_name": null
+    },
+    {
+        "location_code": "ASE",
+        "location_name": null
+    },
+    {
+        "location_code": "ASI",
+        "location_name": null
+    },
+    {
+        "location_code": "ASN",
+        "location_name": null
+    },
+    {
+        "location_code": "AST",
+        "location_name": null
+    },
+    {
+        "location_code": "ASX",
+        "location_name": null
+    },
+    {
+        "location_code": "AT",
+        "location_name": null
+    },
+    {
+        "location_code": "AT1",
+        "location_name": null
+    },
+    {
+        "location_code": "AT2",
+        "location_name": null
+    },
+    {
+        "location_code": "AT4",
+        "location_name": null
+    },
+    {
+        "location_code": "AT5",
+        "location_name": null
+    },
+    {
+        "location_code": "ATA",
+        "location_name": null
+    },
+    {
+        "location_code": "ATK",
+        "location_name": null
+    },
+    {
+        "location_code": "ATL",
+        "location_name": null
+    },
+    {
+        "location_code": "ATS",
+        "location_name": null
+    },
+    {
+        "location_code": "ATT",
+        "location_name": null
+    },
+    {
+        "location_code": "ATW",
+        "location_name": null
+    },
+    {
+        "location_code": "ATX",
+        "location_name": null
+    },
+    {
+        "location_code": "ATY",
+        "location_name": null
+    },
+    {
+        "location_code": "AUG",
+        "location_name": null
+    },
+    {
+        "location_code": "AUH",
+        "location_name": null
+    },
+    {
+        "location_code": "AUM",
+        "location_name": null
+    },
+    {
+        "location_code": "AUN",
+        "location_name": null
+    },
+    {
+        "location_code": "AUS",
+        "location_name": null
+    },
+    {
+        "location_code": "AUW",
+        "location_name": null
+    },
+    {
+        "location_code": "AVD",
+        "location_name": null
+    },
+    {
+        "location_code": "AVL",
+        "location_name": null
+    },
+    {
+        "location_code": "AVP",
+        "location_name": null
+    },
+    {
+        "location_code": "AVX",
+        "location_name": null
+    },
+    {
+        "location_code": "AWG",
+        "location_name": null
+    },
+    {
+        "location_code": "AXN",
+        "location_name": null
+    },
+    {
+        "location_code": "AYA",
+        "location_name": null
+    },
+    {
+        "location_code": "AZ",
+        "location_name": null
+    },
+    {
+        "location_code": "AZO",
+        "location_name": null
+    },
+    {
+        "location_code": "BAF",
+        "location_name": null
+    },
+    {
+        "location_code": "BAM",
+        "location_name": null
+    },
+    {
+        "location_code": "BAN",
+        "location_name": null
+    },
+    {
+        "location_code": "BAZ",
+        "location_name": null
+    },
+    {
+        "location_code": "BBD",
+        "location_name": null
+    },
+    {
+        "location_code": "BBG",
+        "location_name": null
+    },
+    {
+        "location_code": "BBW",
+        "location_name": null
+    },
+    {
+        "location_code": "BBX",
+        "location_name": null
+    },
+    {
+        "location_code": "BCB",
+        "location_name": null
+    },
+    {
+        "location_code": "BCE",
+        "location_name": null
+    },
+    {
+        "location_code": "BCR",
+        "location_name": null
+    },
+    {
+        "location_code": "BDE",
+        "location_name": null
+    },
+    {
+        "location_code": "BDL",
+        "location_name": null
+    },
+    {
+        "location_code": "BDN",
+        "location_name": null
+    },
+    {
+        "location_code": "BDR",
+        "location_name": null
+    },
+    {
+        "location_code": "BDU",
+        "location_name": null
+    },
+    {
+        "location_code": "BED",
+        "location_name": null
+    },
+    {
+        "location_code": "BEH",
+        "location_name": null
+    },
+    {
+        "location_code": "BET",
+        "location_name": null
+    },
+    {
+        "location_code": "BFD",
+        "location_name": null
+    },
+    {
+        "location_code": "BFF",
+        "location_name": null
+    },
+    {
+        "location_code": "BFI",
+        "location_name": null
+    },
+    {
+        "location_code": "BFL",
+        "location_name": null
+    },
+    {
+        "location_code": "BFM",
+        "location_name": null
+    },
+    {
+        "location_code": "BGD",
+        "location_name": null
+    },
+    {
+        "location_code": "BGM",
+        "location_name": "Binghamton, NY"
+    },
+    {
+        "location_code": "BGR",
+        "location_name": null
+    },
+    {
+        "location_code": "BHB",
+        "location_name": null
+    },
+    {
+        "location_code": "BHK",
+        "location_name": null
+    },
+    {
+        "location_code": "BHM",
+        "location_name": null
+    },
+    {
+        "location_code": "BIH",
+        "location_name": null
+    },
+    {
+        "location_code": "BIL",
+        "location_name": null
+    },
+    {
+        "location_code": "BIS",
+        "location_name": "Bismarck, ND"
+    },
+    {
+        "location_code": "BIV",
+        "location_name": null
+    },
+    {
+        "location_code": "BJC",
+        "location_name": null
+    },
+    {
+        "location_code": "BJI",
+        "location_name": null
+    },
+    {
+        "location_code": "BKB",
+        "location_name": null
+    },
+    {
+        "location_code": "BKD",
+        "location_name": null
+    },
+    {
+        "location_code": "BKE",
+        "location_name": null
+    },
+    {
+        "location_code": "BKH",
+        "location_name": null
+    },
+    {
+        "location_code": "BKV",
+        "location_name": null
+    },
+    {
+        "location_code": "BKW",
+        "location_name": null
+    },
+    {
+        "location_code": "BLF",
+        "location_name": null
+    },
+    {
+        "location_code": "BLH",
+        "location_name": null
+    },
+    {
+        "location_code": "BLI",
+        "location_name": null
+    },
+    {
+        "location_code": "BLU",
+        "location_name": null
+    },
+    {
+        "location_code": "BMG",
+        "location_name": null
+    },
+    {
+        "location_code": "BMI",
+        "location_name": null
+    },
+    {
+        "location_code": "BML",
+        "location_name": null
+    },
+    {
+        "location_code": "BMQ",
+        "location_name": null
+    },
+    {
+        "location_code": "BMX",
+        "location_name": "NWS Birmingham, Alabama"
+    },
+    {
+        "location_code": "BNA",
+        "location_name": null
+    },
+    {
+        "location_code": "BNO",
+        "location_name": null
+    },
+    {
+        "location_code": "BOI",
+        "location_name": "Boise, ID"
+    },
+    {
+        "location_code": "BOS",
+        "location_name": null
+    },
+    {
+        "location_code": "BOU",
+        "location_name": "Denver/Boulder, CO"
+    },
+    {
+        "location_code": "BOX",
+        "location_name": "Boston / Norton, MA"
+    },
+    {
+        "location_code": "BOY",
+        "location_name": null
+    },
+    {
+        "location_code": "BPG",
+        "location_name": null
+    },
+    {
+        "location_code": "BPI",
+        "location_name": null
+    },
+    {
+        "location_code": "BPK",
+        "location_name": null
+    },
+    {
+        "location_code": "BPT",
+        "location_name": null
+    },
+    {
+        "location_code": "BRD",
+        "location_name": null
+    },
+    {
+        "location_code": "BRL",
+        "location_name": null
+    },
+    {
+        "location_code": "BRO",
+        "location_name": "Brownsville/Rio Grande Valley, TX"
+    },
+    {
+        "location_code": "BRW",
+        "location_name": null
+    },
+    {
+        "location_code": "BTL",
+        "location_name": null
+    },
+    {
+        "location_code": "BTM",
+        "location_name": null
+    },
+    {
+        "location_code": "BTR",
+        "location_name": null
+    },
+    {
+        "location_code": "BTT",
+        "location_name": null
+    },
+    {
+        "location_code": "BTV",
+        "location_name": "Burlington, VT"
+    },
+    {
+        "location_code": "BUF",
+        "location_name": "Buffalo, NY"
+    },
+    {
+        "location_code": "BUR",
+        "location_name": null
+    },
+    {
+        "location_code": "BVI",
+        "location_name": null
+    },
+    {
+        "location_code": "BVO",
+        "location_name": null
+    },
+    {
+        "location_code": "BVR",
+        "location_name": null
+    },
+    {
+        "location_code": "BVX",
+        "location_name": null
+    },
+    {
+        "location_code": "BWG",
+        "location_name": null
+    },
+    {
+        "location_code": "BWI",
+        "location_name": null
+    },
+    {
+        "location_code": "BYG",
+        "location_name": null
+    },
+    {
+        "location_code": "BYI",
+        "location_name": null
+    },
+    {
+        "location_code": "BYX",
+        "location_name": null
+    },
+    {
+        "location_code": "BYY",
+        "location_name": null
+    },
+    {
+        "location_code": "BYZ",
+        "location_name": "Billings, MT"
+    },
+    {
+        "location_code": "BZN",
+        "location_name": null
+    },
+    {
+        "location_code": "C",
+        "location_name": null
+    },
+    {
+        "location_code": "CA",
+        "location_name": null
+    },
+    {
+        "location_code": "CAC",
+        "location_name": null
+    },
+    {
+        "location_code": "CAE",
+        "location_name": "Columbia, SC"
+    },
+    {
+        "location_code": "CAG",
+        "location_name": null
+    },
+    {
+        "location_code": "CAK",
+        "location_name": null
+    },
+    {
+        "location_code": "CAN",
+        "location_name": null
+    },
+    {
+        "location_code": "CAO",
+        "location_name": null
+    },
+    {
+        "location_code": "CAR",
+        "location_name": "Caribou, ME"
+    },
+    {
+        "location_code": "CBW",
+        "location_name": null
+    },
+    {
+        "location_code": "CBX",
+        "location_name": null
+    },
+    {
+        "location_code": "CC",
+        "location_name": null
+    },
+    {
+        "location_code": "CCA",
+        "location_name": null
+    },
+    {
+        "location_code": "CCB",
+        "location_name": null
+    },
+    {
+        "location_code": "CCC",
+        "location_name": null
+    },
+    {
+        "location_code": "CCD",
+        "location_name": null
+    },
+    {
+        "location_code": "CCE",
+        "location_name": null
+    },
+    {
+        "location_code": "CCF",
+        "location_name": null
+    },
+    {
+        "location_code": "CCG",
+        "location_name": null
+    },
+    {
+        "location_code": "CCH",
+        "location_name": null
+    },
+    {
+        "location_code": "CCI",
+        "location_name": null
+    },
+    {
+        "location_code": "CCJ",
+        "location_name": null
+    },
+    {
+        "location_code": "CCK",
+        "location_name": null
+    },
+    {
+        "location_code": "CCL",
+        "location_name": null
+    },
+    {
+        "location_code": "CCM",
+        "location_name": null
+    },
+    {
+        "location_code": "CCR",
+        "location_name": null
+    },
+    {
+        "location_code": "CCU",
+        "location_name": null
+    },
+    {
+        "location_code": "CCX",
+        "location_name": null
+    },
+    {
+        "location_code": "CCY",
+        "location_name": null
+    },
+    {
+        "location_code": "CDB",
+        "location_name": null
+    },
+    {
+        "location_code": "CDC",
+        "location_name": null
+    },
+    {
+        "location_code": "CDH",
+        "location_name": null
+    },
+    {
+        "location_code": "CDJ",
+        "location_name": null
+    },
+    {
+        "location_code": "CDR",
+        "location_name": null
+    },
+    {
+        "location_code": "CDS",
+        "location_name": null
+    },
+    {
+        "location_code": "CEC",
+        "location_name": null
+    },
+    {
+        "location_code": "CEW",
+        "location_name": null
+    },
+    {
+        "location_code": "CEZ",
+        "location_name": null
+    },
+    {
+        "location_code": "CFV",
+        "location_name": null
+    },
+    {
+        "location_code": "CGI",
+        "location_name": null
+    },
+    {
+        "location_code": "CHA",
+        "location_name": null
+    },
+    {
+        "location_code": "CHB",
+        "location_name": null
+    },
+    {
+        "location_code": "CHC",
+        "location_name": null
+    },
+    {
+        "location_code": "CHD",
+        "location_name": null
+    },
+    {
+        "location_code": "CHE",
+        "location_name": null
+    },
+    {
+        "location_code": "CHF",
+        "location_name": null
+    },
+    {
+        "location_code": "CHG",
+        "location_name": null
+    },
+    {
+        "location_code": "CHH",
+        "location_name": null
+    },
+    {
+        "location_code": "CHI",
+        "location_name": null
+    },
+    {
+        "location_code": "CHJ",
+        "location_name": null
+    },
+    {
+        "location_code": "CHK",
+        "location_name": null
+    },
+    {
+        "location_code": "CHL",
+        "location_name": null
+    },
+    {
+        "location_code": "CHM",
+        "location_name": null
+    },
+    {
+        "location_code": "CHO",
+        "location_name": null
+    },
+    {
+        "location_code": "CHS",
+        "location_name": "Charleston, SC"
+    },
+    {
+        "location_code": "CID",
+        "location_name": null
+    },
+    {
+        "location_code": "CIN",
+        "location_name": null
+    },
+    {
+        "location_code": "CIU",
+        "location_name": null
+    },
+    {
+        "location_code": "CIW",
+        "location_name": null
+    },
+    {
+        "location_code": "CKB",
+        "location_name": null
+    },
+    {
+        "location_code": "CKV",
+        "location_name": null
+    },
+    {
+        "location_code": "CLE",
+        "location_name": "Cleveland, OH"
+    },
+    {
+        "location_code": "CLL",
+        "location_name": null
+    },
+    {
+        "location_code": "CLM",
+        "location_name": null
+    },
+    {
+        "location_code": "CLT",
+        "location_name": null
+    },
+    {
+        "location_code": "CMA",
+        "location_name": null
+    },
+    {
+        "location_code": "CMH",
+        "location_name": null
+    },
+    {
+        "location_code": "CMI",
+        "location_name": null
+    },
+    {
+        "location_code": "CML",
+        "location_name": null
+    },
+    {
+        "location_code": "CMU",
+        "location_name": null
+    },
+    {
+        "location_code": "CMX",
+        "location_name": null
+    },
+    {
+        "location_code": "CMY",
+        "location_name": null
+    },
+    {
+        "location_code": "CN1",
+        "location_name": null
+    },
+    {
+        "location_code": "CN3",
+        "location_name": null
+    },
+    {
+        "location_code": "CN5",
+        "location_name": null
+    },
+    {
+        "location_code": "CNK",
+        "location_name": null
+    },
+    {
+        "location_code": "CNM",
+        "location_name": null
+    },
+    {
+        "location_code": "CNO",
+        "location_name": null
+    },
+    {
+        "location_code": "CNU",
+        "location_name": null
+    },
+    {
+        "location_code": "CNW",
+        "location_name": null
+    },
+    {
+        "location_code": "CNY",
+        "location_name": null
+    },
+    {
+        "location_code": "CO",
+        "location_name": null
+    },
+    {
+        "location_code": "COD",
+        "location_name": null
+    },
+    {
+        "location_code": "COE",
+        "location_name": null
+    },
+    {
+        "location_code": "CON",
+        "location_name": null
+    },
+    {
+        "location_code": "COS",
+        "location_name": null
+    },
+    {
+        "location_code": "COT",
+        "location_name": null
+    },
+    {
+        "location_code": "COU",
+        "location_name": null
+    },
+    {
+        "location_code": "CP",
+        "location_name": "Office of Central Processing"
+    },
+    {
+        "location_code": "CPR",
+        "location_name": null
+    },
+    {
+        "location_code": "CPS",
+        "location_name": null
+    },
+    {
+        "location_code": "CPT",
+        "location_name": null
+    },
+    {
+        "location_code": "CQC",
+        "location_name": null
+    },
+    {
+        "location_code": "CQT",
+        "location_name": null
+    },
+    {
+        "location_code": "CR1",
+        "location_name": null
+    },
+    {
+        "location_code": "CR2",
+        "location_name": null
+    },
+    {
+        "location_code": "CRE",
+        "location_name": null
+    },
+    {
+        "location_code": "CRG",
+        "location_name": null
+    },
+    {
+        "location_code": "CRH",
+        "location_name": "Central Region Headquarters"
+    },
+    {
+        "location_code": "CRN",
+        "location_name": null
+    },
+    {
+        "location_code": "CRP",
+        "location_name": "Corpus Christi, TX"
+    },
+    {
+        "location_code": "CRQ",
+        "location_name": null
+    },
+    {
+        "location_code": "CRS",
+        "location_name": null
+    },
+    {
+        "location_code": "CRW",
+        "location_name": null
+    },
+    {
+        "location_code": "CSG",
+        "location_name": null
+    },
+    {
+        "location_code": "CSM",
+        "location_name": null
+    },
+    {
+        "location_code": "CSV",
+        "location_name": null
+    },
+    {
+        "location_code": "CTA",
+        "location_name": null
+    },
+    {
+        "location_code": "CTB",
+        "location_name": null
+    },
+    {
+        "location_code": "CTC",
+        "location_name": null
+    },
+    {
+        "location_code": "CTD",
+        "location_name": null
+    },
+    {
+        "location_code": "CTE",
+        "location_name": null
+    },
+    {
+        "location_code": "CTF",
+        "location_name": null
+    },
+    {
+        "location_code": "CTG",
+        "location_name": null
+    },
+    {
+        "location_code": "CTH",
+        "location_name": null
+    },
+    {
+        "location_code": "CTI",
+        "location_name": null
+    },
+    {
+        "location_code": "CTJ",
+        "location_name": null
+    },
+    {
+        "location_code": "CTK",
+        "location_name": null
+    },
+    {
+        "location_code": "CTL",
+        "location_name": null
+    },
+    {
+        "location_code": "CTM",
+        "location_name": null
+    },
+    {
+        "location_code": "CTP",
+        "location_name": "State College, PA"
+    },
+    {
+        "location_code": "CUB",
+        "location_name": null
+    },
+    {
+        "location_code": "CUT",
+        "location_name": null
+    },
+    {
+        "location_code": "CVB",
+        "location_name": null
+    },
+    {
+        "location_code": "CVG",
+        "location_name": null
+    },
+    {
+        "location_code": "CWA",
+        "location_name": null
+    },
+    {
+        "location_code": "CXM",
+        "location_name": null
+    },
+    {
+        "location_code": "CXO",
+        "location_name": null
+    },
+    {
+        "location_code": "CXP",
+        "location_name": null
+    },
+    {
+        "location_code": "CYS",
+        "location_name": "Cheyenne, WY"
+    },
+    {
+        "location_code": "CZT",
+        "location_name": null
+    },
+    {
+        "location_code": "D07",
+        "location_name": null
+    },
+    {
+        "location_code": "D38",
+        "location_name": null
+    },
+    {
+        "location_code": "D48",
+        "location_name": null
+    },
+    {
+        "location_code": "DAB",
+        "location_name": null
+    },
+    {
+        "location_code": "DAG",
+        "location_name": null
+    },
+    {
+        "location_code": "DAL",
+        "location_name": null
+    },
+    {
+        "location_code": "DAN",
+        "location_name": null
+    },
+    {
+        "location_code": "DAR",
+        "location_name": null
+    },
+    {
+        "location_code": "DAX",
+        "location_name": null
+    },
+    {
+        "location_code": "DAY",
+        "location_name": null
+    },
+    {
+        "location_code": "DBQ",
+        "location_name": null
+    },
+    {
+        "location_code": "DCA",
+        "location_name": null
+    },
+    {
+        "location_code": "DCU",
+        "location_name": null
+    },
+    {
+        "location_code": "DDC",
+        "location_name": "Dodge City, KS"
+    },
+    {
+        "location_code": "DDH",
+        "location_name": null
+    },
+    {
+        "location_code": "DEC",
+        "location_name": null
+    },
+    {
+        "location_code": "DEH",
+        "location_name": null
+    },
+    {
+        "location_code": "DEN",
+        "location_name": null
+    },
+    {
+        "location_code": "DEQ",
+        "location_name": null
+    },
+    {
+        "location_code": "DES",
+        "location_name": null
+    },
+    {
+        "location_code": "DET",
+        "location_name": null
+    },
+    {
+        "location_code": "DEW",
+        "location_name": null
+    },
+    {
+        "location_code": "DFI",
+        "location_name": null
+    },
+    {
+        "location_code": "DFW",
+        "location_name": null
+    },
+    {
+        "location_code": "DFX",
+        "location_name": null
+    },
+    {
+        "location_code": "DGC",
+        "location_name": null
+    },
+    {
+        "location_code": "DGW",
+        "location_name": null
+    },
+    {
+        "location_code": "DGX",
+        "location_name": null
+    },
+    {
+        "location_code": "DHN",
+        "location_name": null
+    },
+    {
+        "location_code": "DHT",
+        "location_name": null
+    },
+    {
+        "location_code": "DIJ",
+        "location_name": null
+    },
+    {
+        "location_code": "DIK",
+        "location_name": null
+    },
+    {
+        "location_code": "DIS",
+        "location_name": null
+    },
+    {
+        "location_code": "DIX",
+        "location_name": null
+    },
+    {
+        "location_code": "DLF",
+        "location_name": null
+    },
+    {
+        "location_code": "DLH",
+        "location_name": "Duluth, MN"
+    },
+    {
+        "location_code": "DLN",
+        "location_name": null
+    },
+    {
+        "location_code": "DLS",
+        "location_name": null
+    },
+    {
+        "location_code": "DMH",
+        "location_name": null
+    },
+    {
+        "location_code": "DMN",
+        "location_name": null
+    },
+    {
+        "location_code": "DMO",
+        "location_name": null
+    },
+    {
+        "location_code": "DMX",
+        "location_name": "Des Moines, IA"
+    },
+    {
+        "location_code": "DNL",
+        "location_name": null
+    },
+    {
+        "location_code": "DOX",
+        "location_name": null
+    },
+    {
+        "location_code": "DPA",
+        "location_name": null
+    },
+    {
+        "location_code": "DRA",
+        "location_name": null
+    },
+    {
+        "location_code": "DRO",
+        "location_name": null
+    },
+    {
+        "location_code": "DRT",
+        "location_name": null
+    },
+    {
+        "location_code": "DSF",
+        "location_name": null
+    },
+    {
+        "location_code": "DSM",
+        "location_name": null
+    },
+    {
+        "location_code": "DTO",
+        "location_name": null
+    },
+    {
+        "location_code": "DTS",
+        "location_name": null
+    },
+    {
+        "location_code": "DTW",
+        "location_name": null
+    },
+    {
+        "location_code": "DTX",
+        "location_name": "Detroit/Pontiac, MI"
+    },
+    {
+        "location_code": "DUA",
+        "location_name": null
+    },
+    {
+        "location_code": "DUG",
+        "location_name": null
+    },
+    {
+        "location_code": "DUJ",
+        "location_name": null
+    },
+    {
+        "location_code": "DVF",
+        "location_name": null
+    },
+    {
+        "location_code": "DVL",
+        "location_name": null
+    },
+    {
+        "location_code": "DVN",
+        "location_name": "Quad Cities, IA/IL"
+    },
+    {
+        "location_code": "DVT",
+        "location_name": null
+    },
+    {
+        "location_code": "DWH",
+        "location_name": null
+    },
+    {
+        "location_code": "DY1",
+        "location_name": null
+    },
+    {
+        "location_code": "DY2",
+        "location_name": null
+    },
+    {
+        "location_code": "DY3",
+        "location_name": null
+    },
+    {
+        "location_code": "DYX",
+        "location_name": null
+    },
+    {
+        "location_code": "DZB",
+        "location_name": null
+    },
+    {
+        "location_code": "E",
+        "location_name": null
+    },
+    {
+        "location_code": "E11",
+        "location_name": null
+    },
+    {
+        "location_code": "E38",
+        "location_name": null
+    },
+    {
+        "location_code": "E41",
+        "location_name": null
+    },
+    {
+        "location_code": "EAR",
+        "location_name": null
+    },
+    {
+        "location_code": "EAT",
+        "location_name": null
+    },
+    {
+        "location_code": "EAU",
+        "location_name": null
+    },
+    {
+        "location_code": "EAX",
+        "location_name": "Kansas City/Pleasant Hill, MO"
+    },
+    {
+        "location_code": "ECG",
+        "location_name": null
+    },
+    {
+        "location_code": "ECP",
+        "location_name": null
+    },
+    {
+        "location_code": "ECU",
+        "location_name": null
+    },
+    {
+        "location_code": "EDC",
+        "location_name": null
+    },
+    {
+        "location_code": "EED",
+        "location_name": null
+    },
+    {
+        "location_code": "EEO",
+        "location_name": null
+    },
+    {
+        "location_code": "EET",
+        "location_name": null
+    },
+    {
+        "location_code": "EFK",
+        "location_name": null
+    },
+    {
+        "location_code": "EFW",
+        "location_name": null
+    },
+    {
+        "location_code": "EGE",
+        "location_name": null
+    },
+    {
+        "location_code": "EHH",
+        "location_name": null
+    },
+    {
+        "location_code": "EHI",
+        "location_name": null
+    },
+    {
+        "location_code": "EHL",
+        "location_name": null
+    },
+    {
+        "location_code": "EKA",
+        "location_name": "Eureka, CA"
+    },
+    {
+        "location_code": "EKN",
+        "location_name": null
+    },
+    {
+        "location_code": "EKO",
+        "location_name": null
+    },
+    {
+        "location_code": "EKS",
+        "location_name": null
+    },
+    {
+        "location_code": "ELD",
+        "location_name": null
+    },
+    {
+        "location_code": "ELM",
+        "location_name": null
+    },
+    {
+        "location_code": "ELN",
+        "location_name": null
+    },
+    {
+        "location_code": "ELP",
+        "location_name": null
+    },
+    {
+        "location_code": "ELY",
+        "location_name": null
+    },
+    {
+        "location_code": "EMP",
+        "location_name": null
+    },
+    {
+        "location_code": "EMX",
+        "location_name": null
+    },
+    {
+        "location_code": "ENV",
+        "location_name": null
+    },
+    {
+        "location_code": "ENW",
+        "location_name": null
+    },
+    {
+        "location_code": "EOX",
+        "location_name": null
+    },
+    {
+        "location_code": "EP",
+        "location_name": null
+    },
+    {
+        "location_code": "EP1",
+        "location_name": null
+    },
+    {
+        "location_code": "EP2",
+        "location_name": null
+    },
+    {
+        "location_code": "EP3",
+        "location_name": null
+    },
+    {
+        "location_code": "EP4",
+        "location_name": null
+    },
+    {
+        "location_code": "EP5",
+        "location_name": null
+    },
+    {
+        "location_code": "EP6",
+        "location_name": null
+    },
+    {
+        "location_code": "EP7",
+        "location_name": null
+    },
+    {
+        "location_code": "EPD",
+        "location_name": null
+    },
+    {
+        "location_code": "EPH",
+        "location_name": null
+    },
+    {
+        "location_code": "EPI",
+        "location_name": null
+    },
+    {
+        "location_code": "EPZ",
+        "location_name": "El Paso, TX"
+    },
+    {
+        "location_code": "ER1",
+        "location_name": null
+    },
+    {
+        "location_code": "ER2",
+        "location_name": null
+    },
+    {
+        "location_code": "ERD",
+        "location_name": null
+    },
+    {
+        "location_code": "ERH",
+        "location_name": "Eastern Region Headquarters"
+    },
+    {
+        "location_code": "ERI",
+        "location_name": null
+    },
+    {
+        "location_code": "ERN",
+        "location_name": null
+    },
+    {
+        "location_code": "ERV",
+        "location_name": null
+    },
+    {
+        "location_code": "ES",
+        "location_name": null
+    },
+    {
+        "location_code": "EST",
+        "location_name": null
+    },
+    {
+        "location_code": "ET4",
+        "location_name": null
+    },
+    {
+        "location_code": "ET5",
+        "location_name": null
+    },
+    {
+        "location_code": "ET6",
+        "location_name": null
+    },
+    {
+        "location_code": "ET7",
+        "location_name": null
+    },
+    {
+        "location_code": "ET8",
+        "location_name": null
+    },
+    {
+        "location_code": "ETN",
+        "location_name": null
+    },
+    {
+        "location_code": "EUF",
+        "location_name": null
+    },
+    {
+        "location_code": "EUG",
+        "location_name": null
+    },
+    {
+        "location_code": "EUL",
+        "location_name": null
+    },
+    {
+        "location_code": "EVT",
+        "location_name": null
+    },
+    {
+        "location_code": "EVV",
+        "location_name": null
+    },
+    {
+        "location_code": "EVW",
+        "location_name": null
+    },
+    {
+        "location_code": "EVX",
+        "location_name": null
+    },
+    {
+        "location_code": "EWN",
+        "location_name": null
+    },
+    {
+        "location_code": "EWR",
+        "location_name": null
+    },
+    {
+        "location_code": "EWS",
+        "location_name": null
+    },
+    {
+        "location_code": "EWX",
+        "location_name": "Austin/San Antonio, TX"
+    },
+    {
+        "location_code": "EYE",
+        "location_name": null
+    },
+    {
+        "location_code": "EYW",
+        "location_name": null
+    },
+    {
+        "location_code": "F00",
+        "location_name": null
+    },
+    {
+        "location_code": "F38",
+        "location_name": null
+    },
+    {
+        "location_code": "F44",
+        "location_name": null
+    },
+    {
+        "location_code": "F46",
+        "location_name": null
+    },
+    {
+        "location_code": "FAI",
+        "location_name": null
+    },
+    {
+        "location_code": "FAR",
+        "location_name": null
+    },
+    {
+        "location_code": "FAT",
+        "location_name": null
+    },
+    {
+        "location_code": "FAY",
+        "location_name": null
+    },
+    {
+        "location_code": "FCX",
+        "location_name": null
+    },
+    {
+        "location_code": "FD1",
+        "location_name": null
+    },
+    {
+        "location_code": "FD2",
+        "location_name": null
+    },
+    {
+        "location_code": "FDR",
+        "location_name": null
+    },
+    {
+        "location_code": "FDY",
+        "location_name": null
+    },
+    {
+        "location_code": "FFC",
+        "location_name": "Peachtree City, GA"
+    },
+    {
+        "location_code": "FFT",
+        "location_name": null
+    },
+    {
+        "location_code": "FFZ",
+        "location_name": null
+    },
+    {
+        "location_code": "FGF",
+        "location_name": "Grand Forks, ND"
+    },
+    {
+        "location_code": "FGZ",
+        "location_name": "NWS Flagstaff, AZ"
+    },
+    {
+        "location_code": "FKA",
+        "location_name": null
+    },
+    {
+        "location_code": "FKL",
+        "location_name": null
+    },
+    {
+        "location_code": "FL",
+        "location_name": null
+    },
+    {
+        "location_code": "FLD",
+        "location_name": null
+    },
+    {
+        "location_code": "FLG",
+        "location_name": null
+    },
+    {
+        "location_code": "FLL",
+        "location_name": null
+    },
+    {
+        "location_code": "FLO",
+        "location_name": null
+    },
+    {
+        "location_code": "FLP",
+        "location_name": null
+    },
+    {
+        "location_code": "FMH",
+        "location_name": null
+    },
+    {
+        "location_code": "FMN",
+        "location_name": null
+    },
+    {
+        "location_code": "FMY",
+        "location_name": null
+    },
+    {
+        "location_code": "FNB",
+        "location_name": null
+    },
+    {
+        "location_code": "FNL",
+        "location_name": null
+    },
+    {
+        "location_code": "FNT",
+        "location_name": null
+    },
+    {
+        "location_code": "FOD",
+        "location_name": null
+    },
+    {
+        "location_code": "FOE",
+        "location_name": null
+    },
+    {
+        "location_code": "FOR",
+        "location_name": null
+    },
+    {
+        "location_code": "FPR",
+        "location_name": null
+    },
+    {
+        "location_code": "FSD",
+        "location_name": "Sioux Falls, SD"
+    },
+    {
+        "location_code": "FSM",
+        "location_name": null
+    },
+    {
+        "location_code": "FST",
+        "location_name": null
+    },
+    {
+        "location_code": "FSX",
+        "location_name": null
+    },
+    {
+        "location_code": "FTN",
+        "location_name": null
+    },
+    {
+        "location_code": "FTW",
+        "location_name": null
+    },
+    {
+        "location_code": "FTY",
+        "location_name": null
+    },
+    {
+        "location_code": "FUL",
+        "location_name": null
+    },
+    {
+        "location_code": "FVE",
+        "location_name": null
+    },
+    {
+        "location_code": "FWA",
+        "location_name": null
+    },
+    {
+        "location_code": "FWD",
+        "location_name": "Fort Worth/Dallas, TX"
+    },
+    {
+        "location_code": "FWR",
+        "location_name": null
+    },
+    {
+        "location_code": "FWS",
+        "location_name": null
+    },
+    {
+        "location_code": "FXE",
+        "location_name": null
+    },
+    {
+        "location_code": "FYV",
+        "location_name": null
+    },
+    {
+        "location_code": "GA",
+        "location_name": null
+    },
+    {
+        "location_code": "GAG",
+        "location_name": null
+    },
+    {
+        "location_code": "GBD",
+        "location_name": null
+    },
+    {
+        "location_code": "GCC",
+        "location_name": null
+    },
+    {
+        "location_code": "GCK",
+        "location_name": null
+    },
+    {
+        "location_code": "GCN",
+        "location_name": null
+    },
+    {
+        "location_code": "GDJ",
+        "location_name": null
+    },
+    {
+        "location_code": "GDP",
+        "location_name": null
+    },
+    {
+        "location_code": "0",
+        "location_name": null
+    },
+    {
+        "location_code": "GDV",
+        "location_name": null
+    },
+    {
+        "location_code": "GED",
+        "location_name": null
+    },
+    {
+        "location_code": "GEG",
+        "location_name": null
+    },
+    {
+        "location_code": "GEY",
+        "location_name": null
+    },
+    {
+        "location_code": "GEZ",
+        "location_name": null
+    },
+    {
+        "location_code": "GFA",
+        "location_name": null
+    },
+    {
+        "location_code": "GFK",
+        "location_name": null
+    },
+    {
+        "location_code": "GFL",
+        "location_name": null
+    },
+    {
+        "location_code": "GGG",
+        "location_name": null
+    },
+    {
+        "location_code": "GGW",
+        "location_name": "Glasgow, MT"
+    },
+    {
+        "location_code": "GID",
+        "location_name": "Hastings, NE"
+    },
+    {
+        "location_code": "GIF",
+        "location_name": null
+    },
+    {
+        "location_code": "GJT",
+        "location_name": "Grand Junction, CO"
+    },
+    {
+        "location_code": "GKY",
+        "location_name": null
+    },
+    {
+        "location_code": "GLD",
+        "location_name": "Goodland, KS"
+    },
+    {
+        "location_code": "GLE",
+        "location_name": null
+    },
+    {
+        "location_code": "GLH",
+        "location_name": null
+    },
+    {
+        "location_code": "GLR",
+        "location_name": null
+    },
+    {
+        "location_code": "GLS",
+        "location_name": null
+    },
+    {
+        "location_code": "GMU",
+        "location_name": null
+    },
+    {
+        "location_code": "GNA",
+        "location_name": null
+    },
+    {
+        "location_code": "GNC",
+        "location_name": null
+    },
+    {
+        "location_code": "GND",
+        "location_name": null
+    },
+    {
+        "location_code": "GNR",
+        "location_name": null
+    },
+    {
+        "location_code": "GNV",
+        "location_name": null
+    },
+    {
+        "location_code": "GOK",
+        "location_name": null
+    },
+    {
+        "location_code": "GON",
+        "location_name": null
+    },
+    {
+        "location_code": "GOP",
+        "location_name": null
+    },
+    {
+        "location_code": "GPI",
+        "location_name": null
+    },
+    {
+        "location_code": "GPM",
+        "location_name": null
+    },
+    {
+        "location_code": "GPT",
+        "location_name": null
+    },
+    {
+        "location_code": "GRA",
+        "location_name": null
+    },
+    {
+        "location_code": "GRB",
+        "location_name": "Green Bay, WI"
+    },
+    {
+        "location_code": "GRI",
+        "location_name": null
+    },
+    {
+        "location_code": "GRK",
+        "location_name": null
+    },
+    {
+        "location_code": "GRN",
+        "location_name": null
+    },
+    {
+        "location_code": "GRO",
+        "location_name": null
+    },
+    {
+        "location_code": "GRR",
+        "location_name": "Grand Rapids, MI"
+    },
+    {
+        "location_code": "GSH",
+        "location_name": null
+    },
+    {
+        "location_code": "GSN",
+        "location_name": null
+    },
+    {
+        "location_code": "GSO",
+        "location_name": null
+    },
+    {
+        "location_code": "GSP",
+        "location_name": "Greenville-Spartanburg, SC"
+    },
+    {
+        "location_code": "GTF",
+        "location_name": null
+    },
+    {
+        "location_code": "GTL",
+        "location_name": null
+    },
+    {
+        "location_code": "GTR",
+        "location_name": null
+    },
+    {
+        "location_code": "GTU",
+        "location_name": null
+    },
+    {
+        "location_code": "GUA",
+        "location_name": null
+    },
+    {
+        "location_code": "GUC",
+        "location_name": null
+    },
+    {
+        "location_code": "GUM",
+        "location_name": "Tiyan, GU"
+    },
+    {
+        "location_code": "GUP",
+        "location_name": null
+    },
+    {
+        "location_code": "GUY",
+        "location_name": null
+    },
+    {
+        "location_code": "GVL",
+        "location_name": null
+    },
+    {
+        "location_code": "GVT",
+        "location_name": null
+    },
+    {
+        "location_code": "GWO",
+        "location_name": null
+    },
+    {
+        "location_code": "GWT",
+        "location_name": null
+    },
+    {
+        "location_code": "GWX",
+        "location_name": null
+    },
+    {
+        "location_code": "GX",
+        "location_name": null
+    },
+    {
+        "location_code": "GXY",
+        "location_name": null
+    },
+    {
+        "location_code": "GYB",
+        "location_name": null
+    },
+    {
+        "location_code": "GYI",
+        "location_name": null
+    },
+    {
+        "location_code": "GYX",
+        "location_name": "Gray - Portland, ME"
+    },
+    {
+        "location_code": "GYY",
+        "location_name": null
+    },
+    {
+        "location_code": "GZH",
+        "location_name": null
+    },
+    {
+        "location_code": "GZN",
+        "location_name": null
+    },
+    {
+        "location_code": "H",
+        "location_name": null
+    },
+    {
+        "location_code": "HAO",
+        "location_name": null
+    },
+    {
+        "location_code": "HBG",
+        "location_name": null
+    },
+    {
+        "location_code": "HBR",
+        "location_name": null
+    },
+    {
+        "location_code": "HBT",
+        "location_name": null
+    },
+    {
+        "location_code": "HCO",
+        "location_name": null
+    },
+    {
+        "location_code": "HCR",
+        "location_name": null
+    },
+    {
+        "location_code": "HDC",
+        "location_name": null
+    },
+    {
+        "location_code": "HDE",
+        "location_name": null
+    },
+    {
+        "location_code": "HDN",
+        "location_name": null
+    },
+    {
+        "location_code": "HDO",
+        "location_name": null
+    },
+    {
+        "location_code": "HEI",
+        "location_name": null
+    },
+    {
+        "location_code": "HEZ",
+        "location_name": null
+    },
+    {
+        "location_code": "HFD",
+        "location_name": null
+    },
+    {
+        "location_code": "HFO",
+        "location_name": "Honolulu, HI"
+    },
+    {
+        "location_code": "HGR",
+        "location_name": null
+    },
+    {
+        "location_code": "HGX",
+        "location_name": "Houston/Galveston, TX"
+    },
+    {
+        "location_code": "HHR",
+        "location_name": null
+    },
+    {
+        "location_code": "HI",
+        "location_name": null
+    },
+    {
+        "location_code": "HI1",
+        "location_name": null
+    },
+    {
+        "location_code": "HIB",
+        "location_name": null
+    },
+    {
+        "location_code": "HIE",
+        "location_name": null
+    },
+    {
+        "location_code": "HIL",
+        "location_name": null
+    },
+    {
+        "location_code": "HIO",
+        "location_name": null
+    },
+    {
+        "location_code": "HJH",
+        "location_name": null
+    },
+    {
+        "location_code": "HJO",
+        "location_name": null
+    },
+    {
+        "location_code": "HJR",
+        "location_name": null
+    },
+    {
+        "location_code": "HKI",
+        "location_name": null
+    },
+    {
+        "location_code": "HKM",
+        "location_name": null
+    },
+    {
+        "location_code": "HKO",
+        "location_name": null
+    },
+    {
+        "location_code": "HKS",
+        "location_name": null
+    },
+    {
+        "location_code": "HKY",
+        "location_name": null
+    },
+    {
+        "location_code": "HLC",
+        "location_name": null
+    },
+    {
+        "location_code": "HLG",
+        "location_name": null
+    },
+    {
+        "location_code": "HLI",
+        "location_name": null
+    },
+    {
+        "location_code": "HLN",
+        "location_name": null
+    },
+    {
+        "location_code": "HLR",
+        "location_name": null
+    },
+    {
+        "location_code": "HMK",
+        "location_name": null
+    },
+    {
+        "location_code": "HNB",
+        "location_name": null
+    },
+    {
+        "location_code": "HND",
+        "location_name": null
+    },
+    {
+        "location_code": "HNL",
+        "location_name": null
+    },
+    {
+        "location_code": "HNX",
+        "location_name": "San Joaquin Valley, CA"
+    },
+    {
+        "location_code": "HNY",
+        "location_name": null
+    },
+    {
+        "location_code": "HOB",
+        "location_name": null
+    },
+    {
+        "location_code": "HOC",
+        "location_name": null
+    },
+    {
+        "location_code": "HOG",
+        "location_name": null
+    },
+    {
+        "location_code": "HON",
+        "location_name": null
+    },
+    {
+        "location_code": "HOT",
+        "location_name": null
+    },
+    {
+        "location_code": "HOU",
+        "location_name": null
+    },
+    {
+        "location_code": "HPN",
+        "location_name": null
+    },
+    {
+        "location_code": "HQM",
+        "location_name": null
+    },
+    {
+        "location_code": "HQZ",
+        "location_name": null
+    },
+    {
+        "location_code": "HRF",
+        "location_name": null
+    },
+    {
+        "location_code": "HRI",
+        "location_name": null
+    },
+    {
+        "location_code": "HRL",
+        "location_name": null
+    },
+    {
+        "location_code": "HRO",
+        "location_name": null
+    },
+    {
+        "location_code": "HRY",
+        "location_name": null
+    },
+    {
+        "location_code": "HSE",
+        "location_name": null
+    },
+    {
+        "location_code": "HSI",
+        "location_name": null
+    },
+    {
+        "location_code": "HSV",
+        "location_name": null
+    },
+    {
+        "location_code": "HTL",
+        "location_name": null
+    },
+    {
+        "location_code": "HTO",
+        "location_name": null
+    },
+    {
+        "location_code": "HTS",
+        "location_name": null
+    },
+    {
+        "location_code": "HTX",
+        "location_name": null
+    },
+    {
+        "location_code": "HUF",
+        "location_name": null
+    },
+    {
+        "location_code": "HUL",
+        "location_name": null
+    },
+    {
+        "location_code": "HUM",
+        "location_name": null
+    },
+    {
+        "location_code": "HUN",
+        "location_name": "Huntsville, AL"
+    },
+    {
+        "location_code": "HUT",
+        "location_name": null
+    },
+    {
+        "location_code": "HVR",
+        "location_name": null
+    },
+    {
+        "location_code": "HW1",
+        "location_name": null
+    },
+    {
+        "location_code": "HW3",
+        "location_name": null
+    },
+    {
+        "location_code": "HW5",
+        "location_name": null
+    },
+    {
+        "location_code": "HW7",
+        "location_name": null
+    },
+    {
+        "location_code": "HW8",
+        "location_name": null
+    },
+    {
+        "location_code": "HW9",
+        "location_name": null
+    },
+    {
+        "location_code": "HWA",
+        "location_name": null
+    },
+    {
+        "location_code": "HWD",
+        "location_name": null
+    },
+    {
+        "location_code": "HWO",
+        "location_name": null
+    },
+    {
+        "location_code": "HWX",
+        "location_name": null
+    },
+    {
+        "location_code": "HYA",
+        "location_name": null
+    },
+    {
+        "location_code": "HYI",
+        "location_name": null
+    },
+    {
+        "location_code": "HYR",
+        "location_name": null
+    },
+    {
+        "location_code": "HYS",
+        "location_name": null
+    },
+    {
+        "location_code": "IA",
+        "location_name": null
+    },
+    {
+        "location_code": "IAD",
+        "location_name": null
+    },
+    {
+        "location_code": "IAG",
+        "location_name": null
+    },
+    {
+        "location_code": "IAH",
+        "location_name": null
+    },
+    {
+        "location_code": "ICH",
+        "location_name": null
+    },
+    {
+        "location_code": "ICR",
+        "location_name": null
+    },
+    {
+        "location_code": "ICT",
+        "location_name": "Wichita, Kansas"
+    },
+    {
+        "location_code": "ID",
+        "location_name": null
+    },
+    {
+        "location_code": "IDA",
+        "location_name": null
+    },
+    {
+        "location_code": "IEN",
+        "location_name": null
+    },
+    {
+        "location_code": "IFP",
+        "location_name": null
+    },
+    {
+        "location_code": "IGM",
+        "location_name": null
+    },
+    {
+        "location_code": "IL",
+        "location_name": null
+    },
+    {
+        "location_code": "ILE",
+        "location_name": null
+    },
+    {
+        "location_code": "ILG",
+        "location_name": null
+    },
+    {
+        "location_code": "ILM",
+        "location_name": "NWS Wilmington, NC"
+    },
+    {
+        "location_code": "ILN",
+        "location_name": "Wilmington, OH"
+    },
+    {
+        "location_code": "ILO",
+        "location_name": null
+    },
+    {
+        "location_code": "ILX",
+        "location_name": "Central Illinois"
+    },
+    {
+        "location_code": "IML",
+        "location_name": null
+    },
+    {
+        "location_code": "IN",
+        "location_name": null
+    },
+    {
+        "location_code": "IND",
+        "location_name": "Indianapolis, IN"
+    },
+    {
+        "location_code": "INF",
+        "location_name": null
+    },
+    {
+        "location_code": "INJ",
+        "location_name": null
+    },
+    {
+        "location_code": "INK",
+        "location_name": null
+    },
+    {
+        "location_code": "INL",
+        "location_name": null
+    },
+    {
+        "location_code": "INT",
+        "location_name": null
+    },
+    {
+        "location_code": "INW",
+        "location_name": null
+    },
+    {
+        "location_code": "IOW",
+        "location_name": null
+    },
+    {
+        "location_code": "IPL",
+        "location_name": null
+    },
+    {
+        "location_code": "IPT",
+        "location_name": null
+    },
+    {
+        "location_code": "IRK",
+        "location_name": null
+    },
+    {
+        "location_code": "ISM",
+        "location_name": null
+    },
+    {
+        "location_code": "ISO",
+        "location_name": null
+    },
+    {
+        "location_code": "ISP",
+        "location_name": null
+    },
+    {
+        "location_code": "IST",
+        "location_name": null
+    },
+    {
+        "location_code": "ISW",
+        "location_name": null
+    },
+    {
+        "location_code": "ISX",
+        "location_name": null
+    },
+    {
+        "location_code": "ITH",
+        "location_name": null
+    },
+    {
+        "location_code": "ITO",
+        "location_name": null
+    },
+    {
+        "location_code": "ITR",
+        "location_name": null
+    },
+    {
+        "location_code": "IWA",
+        "location_name": null
+    },
+    {
+        "location_code": "IWD",
+        "location_name": null
+    },
+    {
+        "location_code": "IWX",
+        "location_name": "Northern Indiana"
+    },
+    {
+        "location_code": "IXD",
+        "location_name": null
+    },
+    {
+        "location_code": "JAA",
+        "location_name": null
+    },
+    {
+        "location_code": "JAC",
+        "location_name": null
+    },
+    {
+        "location_code": "JAM",
+        "location_name": null
+    },
+    {
+        "location_code": "JAN",
+        "location_name": "Jackson, Mississippi"
+    },
+    {
+        "location_code": "JAX",
+        "location_name": "Jacksonville, FL"
+    },
+    {
+        "location_code": "JBQ",
+        "location_name": null
+    },
+    {
+        "location_code": "JBR",
+        "location_name": null
+    },
+    {
+        "location_code": "JCT",
+        "location_name": null
+    },
+    {
+        "location_code": "JDN",
+        "location_name": null
+    },
+    {
+        "location_code": "JEF",
+        "location_name": null
+    },
+    {
+        "location_code": "JER",
+        "location_name": null
+    },
+    {
+        "location_code": "JFK",
+        "location_name": null
+    },
+    {
+        "location_code": "JGX",
+        "location_name": null
+    },
+    {
+        "location_code": "JHW",
+        "location_name": null
+    },
+    {
+        "location_code": "JKA",
+        "location_name": null
+    },
+    {
+        "location_code": "JKL",
+        "location_name": "Jackson, KY"
+    },
+    {
+        "location_code": "JLN",
+        "location_name": null
+    },
+    {
+        "location_code": "JMS",
+        "location_name": null
+    },
+    {
+        "location_code": "JMZ",
+        "location_name": null
+    },
+    {
+        "location_code": "JNR",
+        "location_name": null
+    },
+    {
+        "location_code": "JNU",
+        "location_name": null
+    },
+    {
+        "location_code": "JPS",
+        "location_name": null
+    },
+    {
+        "location_code": "JRF",
+        "location_name": null
+    },
+    {
+        "location_code": "JSJ",
+        "location_name": null
+    },
+    {
+        "location_code": "JST",
+        "location_name": null
+    },
+    {
+        "location_code": "JUA",
+        "location_name": null
+    },
+    {
+        "location_code": "JVL",
+        "location_name": null
+    },
+    {
+        "location_code": "JWY",
+        "location_name": null
+    },
+    {
+        "location_code": "JXN",
+        "location_name": null
+    },
+    {
+        "location_code": "JYR",
+        "location_name": null
+    },
+    {
+        "location_code": "JZI",
+        "location_name": null
+    },
+    {
+        "location_code": "K04",
+        "location_name": null
+    },
+    {
+        "location_code": "K05",
+        "location_name": null
+    },
+    {
+        "location_code": "K06",
+        "location_name": null
+    },
+    {
+        "location_code": "K07",
+        "location_name": null
+    },
+    {
+        "location_code": "K08",
+        "location_name": null
+    },
+    {
+        "location_code": "KAN",
+        "location_name": null
+    },
+    {
+        "location_code": "KBM",
+        "location_name": null
+    },
+    {
+        "location_code": "KDF",
+        "location_name": null
+    },
+    {
+        "location_code": "KEY",
+        "location_name": "Key West, FL"
+    },
+    {
+        "location_code": "KMJ",
+        "location_name": null
+    },
+    {
+        "location_code": "KMR",
+        "location_name": null
+    },
+    {
+        "location_code": "KOA",
+        "location_name": null
+    },
+    {
+        "location_code": "KRF",
+        "location_name": null
+    },
+    {
+        "location_code": "KS",
+        "location_name": null
+    },
+    {
+        "location_code": "KSR",
+        "location_name": null
+    },
+    {
+        "location_code": "KTN",
+        "location_name": null
+    },
+    {
+        "location_code": "KTY",
+        "location_name": null
+    },
+    {
+        "location_code": "KWA",
+        "location_name": null
+    },
+    {
+        "location_code": "KY",
+        "location_name": null
+    },
+    {
+        "location_code": "LA",
+        "location_name": null
+    },
+    {
+        "location_code": "LAA",
+        "location_name": null
+    },
+    {
+        "location_code": "LAF",
+        "location_name": null
+    },
+    {
+        "location_code": "LAL",
+        "location_name": null
+    },
+    {
+        "location_code": "LAN",
+        "location_name": null
+    },
+    {
+        "location_code": "LAR",
+        "location_name": null
+    },
+    {
+        "location_code": "LAS",
+        "location_name": null
+    },
+    {
+        "location_code": "LAT",
+        "location_name": null
+    },
+    {
+        "location_code": "LAW",
+        "location_name": null
+    },
+    {
+        "location_code": "LAX",
+        "location_name": null
+    },
+    {
+        "location_code": "LBB",
+        "location_name": null
+    },
+    {
+        "location_code": "LBE",
+        "location_name": null
+    },
+    {
+        "location_code": "LBF",
+        "location_name": "North Platte, NE"
+    },
+    {
+        "location_code": "LBL",
+        "location_name": null
+    },
+    {
+        "location_code": "LBT",
+        "location_name": null
+    },
+    {
+        "location_code": "LBX",
+        "location_name": null
+    },
+    {
+        "location_code": "LCA",
+        "location_name": null
+    },
+    {
+        "location_code": "LCB",
+        "location_name": null
+    },
+    {
+        "location_code": "LCC",
+        "location_name": null
+    },
+    {
+        "location_code": "LCD",
+        "location_name": null
+    },
+    {
+        "location_code": "LCE",
+        "location_name": null
+    },
+    {
+        "location_code": "LCF",
+        "location_name": null
+    },
+    {
+        "location_code": "LCG",
+        "location_name": null
+    },
+    {
+        "location_code": "LCH",
+        "location_name": "Lake Charles, LA"
+    },
+    {
+        "location_code": "LCI",
+        "location_name": null
+    },
+    {
+        "location_code": "LCJ",
+        "location_name": null
+    },
+    {
+        "location_code": "LCK",
+        "location_name": null
+    },
+    {
+        "location_code": "LCL",
+        "location_name": null
+    },
+    {
+        "location_code": "LCM",
+        "location_name": null
+    },
+    {
+        "location_code": "LDE",
+        "location_name": null
+    },
+    {
+        "location_code": "LE",
+        "location_name": null
+    },
+    {
+        "location_code": "LEB",
+        "location_name": null
+    },
+    {
+        "location_code": "LEE",
+        "location_name": null
+    },
+    {
+        "location_code": "LEX",
+        "location_name": null
+    },
+    {
+        "location_code": "LFK",
+        "location_name": null
+    },
+    {
+        "location_code": "LFT",
+        "location_name": null
+    },
+    {
+        "location_code": "LGA",
+        "location_name": null
+    },
+    {
+        "location_code": "LGB",
+        "location_name": null
+    },
+    {
+        "location_code": "LGU",
+        "location_name": null
+    },
+    {
+        "location_code": "LH",
+        "location_name": null
+    },
+    {
+        "location_code": "LHA",
+        "location_name": null
+    },
+    {
+        "location_code": "LHB",
+        "location_name": null
+    },
+    {
+        "location_code": "LHC",
+        "location_name": null
+    },
+    {
+        "location_code": "LHD",
+        "location_name": null
+    },
+    {
+        "location_code": "LHE",
+        "location_name": null
+    },
+    {
+        "location_code": "LHF",
+        "location_name": null
+    },
+    {
+        "location_code": "LHG",
+        "location_name": null
+    },
+    {
+        "location_code": "LHH",
+        "location_name": null
+    },
+    {
+        "location_code": "LHI",
+        "location_name": null
+    },
+    {
+        "location_code": "LHJ",
+        "location_name": null
+    },
+    {
+        "location_code": "LHK",
+        "location_name": null
+    },
+    {
+        "location_code": "LHL",
+        "location_name": null
+    },
+    {
+        "location_code": "LHM",
+        "location_name": null
+    },
+    {
+        "location_code": "LHQ",
+        "location_name": null
+    },
+    {
+        "location_code": "LHX",
+        "location_name": null
+    },
+    {
+        "location_code": "LIC",
+        "location_name": null
+    },
+    {
+        "location_code": "LIH",
+        "location_name": null
+    },
+    {
+        "location_code": "LIK",
+        "location_name": null
+    },
+    {
+        "location_code": "LIT",
+        "location_name": null
+    },
+    {
+        "location_code": "LIX",
+        "location_name": "New Orleans/Baton Rouge"
+    },
+    {
+        "location_code": "LKH",
+        "location_name": null
+    },
+    {
+        "location_code": "LKN",
+        "location_name": "Elko, NV"
+    },
+    {
+        "location_code": "LKO",
+        "location_name": null
+    },
+    {
+        "location_code": "LLJ",
+        "location_name": null
+    },
+    {
+        "location_code": "LLQ",
+        "location_name": null
+    },
+    {
+        "location_code": "LM",
+        "location_name": null
+    },
+    {
+        "location_code": "LMK",
+        "location_name": "Louisville, KY"
+    },
+    {
+        "location_code": "LMT",
+        "location_name": null
+    },
+    {
+        "location_code": "LNC",
+        "location_name": null
+    },
+    {
+        "location_code": "LND",
+        "location_name": null
+    },
+    {
+        "location_code": "LNK",
+        "location_name": null
+    },
+    {
+        "location_code": "LNR",
+        "location_name": null
+    },
+    {
+        "location_code": "LNS",
+        "location_name": null
+    },
+    {
+        "location_code": "LO",
+        "location_name": null
+    },
+    {
+        "location_code": "LOM",
+        "location_name": null
+    },
+    {
+        "location_code": "LOT",
+        "location_name": "Chicago, IL"
+    },
+    {
+        "location_code": "LOU",
+        "location_name": null
+    },
+    {
+        "location_code": "LOX",
+        "location_name": "Los Angeles, CA"
+    },
+    {
+        "location_code": "LOZ",
+        "location_name": null
+    },
+    {
+        "location_code": "LPA",
+        "location_name": null
+    },
+    {
+        "location_code": "LPB",
+        "location_name": null
+    },
+    {
+        "location_code": "LPC",
+        "location_name": null
+    },
+    {
+        "location_code": "LPD",
+        "location_name": null
+    },
+    {
+        "location_code": "LPE",
+        "location_name": null
+    },
+    {
+        "location_code": "LPF",
+        "location_name": null
+    },
+    {
+        "location_code": "LPG",
+        "location_name": null
+    },
+    {
+        "location_code": "LPH",
+        "location_name": null
+    },
+    {
+        "location_code": "LPI",
+        "location_name": null
+    },
+    {
+        "location_code": "LPJ",
+        "location_name": null
+    },
+    {
+        "location_code": "LPK",
+        "location_name": null
+    },
+    {
+        "location_code": "LPL",
+        "location_name": null
+    },
+    {
+        "location_code": "LPM",
+        "location_name": null
+    },
+    {
+        "location_code": "LRD",
+        "location_name": null
+    },
+    {
+        "location_code": "LRF",
+        "location_name": null
+    },
+    {
+        "location_code": "LRU",
+        "location_name": null
+    },
+    {
+        "location_code": "LS",
+        "location_name": null
+    },
+    {
+        "location_code": "LSC",
+        "location_name": null
+    },
+    {
+        "location_code": "LSE",
+        "location_name": null
+    },
+    {
+        "location_code": "LSQ",
+        "location_name": null
+    },
+    {
+        "location_code": "LSX",
+        "location_name": "St. Louis, MO"
+    },
+    {
+        "location_code": "LTA",
+        "location_name": null
+    },
+    {
+        "location_code": "LTB",
+        "location_name": null
+    },
+    {
+        "location_code": "LTC",
+        "location_name": null
+    },
+    {
+        "location_code": "LTD",
+        "location_name": null
+    },
+    {
+        "location_code": "LTE",
+        "location_name": null
+    },
+    {
+        "location_code": "LTF",
+        "location_name": null
+    },
+    {
+        "location_code": "LTG",
+        "location_name": null
+    },
+    {
+        "location_code": "LTH",
+        "location_name": null
+    },
+    {
+        "location_code": "LTI",
+        "location_name": null
+    },
+    {
+        "location_code": "LTJ",
+        "location_name": null
+    },
+    {
+        "location_code": "LTK",
+        "location_name": null
+    },
+    {
+        "location_code": "LTL",
+        "location_name": null
+    },
+    {
+        "location_code": "LTM",
+        "location_name": null
+    },
+    {
+        "location_code": "LUB",
+        "location_name": "Lubbock, TX"
+    },
+    {
+        "location_code": "LUD",
+        "location_name": null
+    },
+    {
+        "location_code": "LUK",
+        "location_name": null
+    },
+    {
+        "location_code": "LUV",
+        "location_name": null
+    },
+    {
+        "location_code": "LVJ",
+        "location_name": null
+    },
+    {
+        "location_code": "LVK",
+        "location_name": null
+    },
+    {
+        "location_code": "LVM",
+        "location_name": null
+    },
+    {
+        "location_code": "LVS",
+        "location_name": null
+    },
+    {
+        "location_code": "LVX",
+        "location_name": null
+    },
+    {
+        "location_code": "LWA",
+        "location_name": null
+    },
+    {
+        "location_code": "LWB",
+        "location_name": null
+    },
+    {
+        "location_code": "LWC",
+        "location_name": null
+    },
+    {
+        "location_code": "LWD",
+        "location_name": null
+    },
+    {
+        "location_code": "LWS",
+        "location_name": null
+    },
+    {
+        "location_code": "LWT",
+        "location_name": null
+    },
+    {
+        "location_code": "LWV",
+        "location_name": null
+    },
+    {
+        "location_code": "LWX",
+        "location_name": "Baltimore/Washington"
+    },
+    {
+        "location_code": "LXN",
+        "location_name": null
+    },
+    {
+        "location_code": "LXT",
+        "location_name": null
+    },
+    {
+        "location_code": "LXV",
+        "location_name": null
+    },
+    {
+        "location_code": "LXY",
+        "location_name": null
+    },
+    {
+        "location_code": "LYH",
+        "location_name": null
+    },
+    {
+        "location_code": "LZK",
+        "location_name": "Little Rock, AR"
+    },
+    {
+        "location_code": "LZZ",
+        "location_name": null
+    },
+    {
+        "location_code": "M10",
+        "location_name": null
+    },
+    {
+        "location_code": "M19",
+        "location_name": null
+    },
+    {
+        "location_code": "MAE",
+        "location_name": null
+    },
+    {
+        "location_code": "MAF",
+        "location_name": "Midland/Odessa"
+    },
+    {
+        "location_code": "MAI",
+        "location_name": null
+    },
+    {
+        "location_code": "MAU",
+        "location_name": null
+    },
+    {
+        "location_code": "MAX",
+        "location_name": null
+    },
+    {
+        "location_code": "MBG",
+        "location_name": null
+    },
+    {
+        "location_code": "MBL",
+        "location_name": null
+    },
+    {
+        "location_code": "MBS",
+        "location_name": null
+    },
+    {
+        "location_code": "MCB",
+        "location_name": null
+    },
+    {
+        "location_code": "MCC",
+        "location_name": null
+    },
+    {
+        "location_code": "MCD",
+        "location_name": null
+    },
+    {
+        "location_code": "MCE",
+        "location_name": null
+    },
+    {
+        "location_code": "MCG",
+        "location_name": null
+    },
+    {
+        "location_code": "MCI",
+        "location_name": null
+    },
+    {
+        "location_code": "MCK",
+        "location_name": null
+    },
+    {
+        "location_code": "MCN",
+        "location_name": null
+    },
+    {
+        "location_code": "MCO",
+        "location_name": null
+    },
+    {
+        "location_code": "MCT",
+        "location_name": null
+    },
+    {
+        "location_code": "MCW",
+        "location_name": null
+    },
+    {
+        "location_code": "MD",
+        "location_name": null
+    },
+    {
+        "location_code": "MDD",
+        "location_name": null
+    },
+    {
+        "location_code": "MDE",
+        "location_name": null
+    },
+    {
+        "location_code": "MDH",
+        "location_name": null
+    },
+    {
+        "location_code": "MDT",
+        "location_name": null
+    },
+    {
+        "location_code": "MDW",
+        "location_name": null
+    },
+    {
+        "location_code": "MDY",
+        "location_name": null
+    },
+    {
+        "location_code": "MDZ",
+        "location_name": null
+    },
+    {
+        "location_code": "MEG",
+        "location_name": "Memphis, TN"
+    },
+    {
+        "location_code": "MEH",
+        "location_name": null
+    },
+    {
+        "location_code": "MEI",
+        "location_name": null
+    },
+    {
+        "location_code": "MEM",
+        "location_name": null
+    },
+    {
+        "location_code": "MER",
+        "location_name": null
+    },
+    {
+        "location_code": "MEV",
+        "location_name": null
+    },
+    {
+        "location_code": "MEZ",
+        "location_name": null
+    },
+    {
+        "location_code": "MFD",
+        "location_name": null
+    },
+    {
+        "location_code": "MFE",
+        "location_name": null
+    },
+    {
+        "location_code": "MFI",
+        "location_name": null
+    },
+    {
+        "location_code": "MFL",
+        "location_name": "Miami - South Florida"
+    },
+    {
+        "location_code": "MFR",
+        "location_name": "Medford, OR"
+    },
+    {
+        "location_code": "MGM",
+        "location_name": null
+    },
+    {
+        "location_code": "MGW",
+        "location_name": null
+    },
+    {
+        "location_code": "MGY",
+        "location_name": null
+    },
+    {
+        "location_code": "MHE",
+        "location_name": null
+    },
+    {
+        "location_code": "MHK",
+        "location_name": null
+    },
+    {
+        "location_code": "MHR",
+        "location_name": null
+    },
+    {
+        "location_code": "MHS",
+        "location_name": null
+    },
+    {
+        "location_code": "MHT",
+        "location_name": null
+    },
+    {
+        "location_code": "MHX",
+        "location_name": "Newport/Morehead City, NC"
+    },
+    {
+        "location_code": "MI",
+        "location_name": null
+    },
+    {
+        "location_code": "MIA",
+        "location_name": null
+    },
+    {
+        "location_code": "MIE",
+        "location_name": null
+    },
+    {
+        "location_code": "MIM",
+        "location_name": null
+    },
+    {
+        "location_code": "MIS",
+        "location_name": null
+    },
+    {
+        "location_code": "MIV",
+        "location_name": null
+    },
+    {
+        "location_code": "MIW",
+        "location_name": null
+    },
+    {
+        "location_code": "MKC",
+        "location_name": null
+    },
+    {
+        "location_code": "MKE",
+        "location_name": null
+    },
+    {
+        "location_code": "MKG",
+        "location_name": null
+    },
+    {
+        "location_code": "MKK",
+        "location_name": null
+    },
+    {
+        "location_code": "MKL",
+        "location_name": null
+    },
+    {
+        "location_code": "MKN",
+        "location_name": null
+    },
+    {
+        "location_code": "MKO",
+        "location_name": null
+    },
+    {
+        "location_code": "MKT",
+        "location_name": null
+    },
+    {
+        "location_code": "MKU",
+        "location_name": null
+    },
+    {
+        "location_code": "MKX",
+        "location_name": "Milwaukee/Sullivan, WI"
+    },
+    {
+        "location_code": "MLB",
+        "location_name": "Melbourne, FL"
+    },
+    {
+        "location_code": "MLC",
+        "location_name": null
+    },
+    {
+        "location_code": "MLI",
+        "location_name": null
+    },
+    {
+        "location_code": "MLS",
+        "location_name": null
+    },
+    {
+        "location_code": "MLT",
+        "location_name": null
+    },
+    {
+        "location_code": "MLU",
+        "location_name": null
+    },
+    {
+        "location_code": "MMH",
+        "location_name": null
+    },
+    {
+        "location_code": "MMV",
+        "location_name": null
+    },
+    {
+        "location_code": "MN",
+        "location_name": null
+    },
+    {
+        "location_code": "MNH",
+        "location_name": null
+    },
+    {
+        "location_code": "MNL",
+        "location_name": null
+    },
+    {
+        "location_code": "MNU",
+        "location_name": null
+    },
+    {
+        "location_code": "MNZ",
+        "location_name": null
+    },
+    {
+        "location_code": "MO",
+        "location_name": null
+    },
+    {
+        "location_code": "MOB",
+        "location_name": "Mobile/Pensacola"
+    },
+    {
+        "location_code": "MOD",
+        "location_name": null
+    },
+    {
+        "location_code": "MOM",
+        "location_name": null
+    },
+    {
+        "location_code": "MOT",
+        "location_name": null
+    },
+    {
+        "location_code": "MPD",
+        "location_name": null
+    },
+    {
+        "location_code": "MPO",
+        "location_name": null
+    },
+    {
+        "location_code": "MPV",
+        "location_name": null
+    },
+    {
+        "location_code": "MPX",
+        "location_name": "Twin Cities, MN"
+    },
+    {
+        "location_code": "MQT",
+        "location_name": "Marquette, MI"
+    },
+    {
+        "location_code": "MQY",
+        "location_name": null
+    },
+    {
+        "location_code": "MRB",
+        "location_name": null
+    },
+    {
+        "location_code": "MRD",
+        "location_name": null
+    },
+    {
+        "location_code": "MRF",
+        "location_name": null
+    },
+    {
+        "location_code": "MRH",
+        "location_name": null
+    },
+    {
+        "location_code": "MRX",
+        "location_name": "Morristown, TN"
+    },
+    {
+        "location_code": "MRY",
+        "location_name": null
+    },
+    {
+        "location_code": "MS",
+        "location_name": null
+    },
+    {
+        "location_code": "MSL",
+        "location_name": null
+    },
+    {
+        "location_code": "MSN",
+        "location_name": null
+    },
+    {
+        "location_code": "MSO",
+        "location_name": "Missoula, MT"
+    },
+    {
+        "location_code": "MSP",
+        "location_name": null
+    },
+    {
+        "location_code": "MSR",
+        "location_name": null
+    },
+    {
+        "location_code": "MSS",
+        "location_name": null
+    },
+    {
+        "location_code": "MSY",
+        "location_name": null
+    },
+    {
+        "location_code": "MT",
+        "location_name": null
+    },
+    {
+        "location_code": "MTA",
+        "location_name": null
+    },
+    {
+        "location_code": "MTB",
+        "location_name": null
+    },
+    {
+        "location_code": "MTH",
+        "location_name": null
+    },
+    {
+        "location_code": "MTJ",
+        "location_name": null
+    },
+    {
+        "location_code": "MTN",
+        "location_name": null
+    },
+    {
+        "location_code": "MTO",
+        "location_name": null
+    },
+    {
+        "location_code": "MTP",
+        "location_name": null
+    },
+    {
+        "location_code": "MTR",
+        "location_name": "San Francisco Bay Area, CA"
+    },
+    {
+        "location_code": "MTS",
+        "location_name": null
+    },
+    {
+        "location_code": "MTW",
+        "location_name": null
+    },
+    {
+        "location_code": "MUO",
+        "location_name": null
+    },
+    {
+        "location_code": "MUX",
+        "location_name": null
+    },
+    {
+        "location_code": "MVL",
+        "location_name": null
+    },
+    {
+        "location_code": "MVX",
+        "location_name": null
+    },
+    {
+        "location_code": "MWH",
+        "location_name": null
+    },
+    {
+        "location_code": "MWL",
+        "location_name": null
+    },
+    {
+        "location_code": "MWN",
+        "location_name": null
+    },
+    {
+        "location_code": "MWT",
+        "location_name": null
+    },
+    {
+        "location_code": "MX",
+        "location_name": null
+    },
+    {
+        "location_code": "MYF",
+        "location_name": null
+    },
+    {
+        "location_code": "MYL",
+        "location_name": null
+    },
+    {
+        "location_code": "MYR",
+        "location_name": null
+    },
+    {
+        "location_code": "MYV",
+        "location_name": null
+    },
+    {
+        "location_code": "N01",
+        "location_name": null
+    },
+    {
+        "location_code": "N02",
+        "location_name": null
+    },
+    {
+        "location_code": "N03",
+        "location_name": null
+    },
+    {
+        "location_code": "N04",
+        "location_name": null
+    },
+    {
+        "location_code": "N05",
+        "location_name": null
+    },
+    {
+        "location_code": "N06",
+        "location_name": null
+    },
+    {
+        "location_code": "N07",
+        "location_name": null
+    },
+    {
+        "location_code": "N08",
+        "location_name": null
+    },
+    {
+        "location_code": "N09",
+        "location_name": null
+    },
+    {
+        "location_code": "N10",
+        "location_name": null
+    },
+    {
+        "location_code": "N12",
+        "location_name": null
+    },
+    {
+        "location_code": "N13",
+        "location_name": null
+    },
+    {
+        "location_code": "N14",
+        "location_name": null
+    },
+    {
+        "location_code": "N15",
+        "location_name": null
+    },
+    {
+        "location_code": "N20",
+        "location_name": null
+    },
+    {
+        "location_code": "N21",
+        "location_name": null
+    },
+    {
+        "location_code": "N31",
+        "location_name": null
+    },
+    {
+        "location_code": "N32",
+        "location_name": null
+    },
+    {
+        "location_code": "N35",
+        "location_name": null
+    },
+    {
+        "location_code": "N36",
+        "location_name": null
+    },
+    {
+        "location_code": "N60",
+        "location_name": null
+    },
+    {
+        "location_code": "NAK",
+        "location_name": null
+    },
+    {
+        "location_code": "NAM",
+        "location_name": null
+    },
+    {
+        "location_code": "NBC",
+        "location_name": null
+    },
+    {
+        "location_code": "NBG",
+        "location_name": null
+    },
+    {
+        "location_code": "NBT",
+        "location_name": null
+    },
+    {
+        "location_code": "NC",
+        "location_name": null
+    },
+    {
+        "location_code": "NCA",
+        "location_name": null
+    },
+    {
+        "location_code": "ND",
+        "location_name": null
+    },
+    {
+        "location_code": "NDZ",
+        "location_name": null
+    },
+    {
+        "location_code": "NE",
+        "location_name": null
+    },
+    {
+        "location_code": "NEL",
+        "location_name": null
+    },
+    {
+        "location_code": "NES",
+        "location_name": null
+    },
+    {
+        "location_code": "NEW",
+        "location_name": null
+    },
+    {
+        "location_code": "NFE",
+        "location_name": null
+    },
+    {
+        "location_code": "NFG",
+        "location_name": null
+    },
+    {
+        "location_code": "NFL",
+        "location_name": null
+    },
+    {
+        "location_code": "NFW",
+        "location_name": null
+    },
+    {
+        "location_code": "NGF",
+        "location_name": null
+    },
+    {
+        "location_code": "NGP",
+        "location_name": null
+    },
+    {
+        "location_code": "NGU",
+        "location_name": null
+    },
+    {
+        "location_code": "NH",
+        "location_name": null
+    },
+    {
+        "location_code": "NHK",
+        "location_name": null
+    },
+    {
+        "location_code": "NID",
+        "location_name": null
+    },
+    {
+        "location_code": "NIP",
+        "location_name": null
+    },
+    {
+        "location_code": "NJ1",
+        "location_name": null
+    },
+    {
+        "location_code": "NJK",
+        "location_name": null
+    },
+    {
+        "location_code": "NJM",
+        "location_name": null
+    },
+    {
+        "location_code": "NJW",
+        "location_name": null
+    },
+    {
+        "location_code": "NKT",
+        "location_name": null
+    },
+    {
+        "location_code": "NKX",
+        "location_name": null
+    },
+    {
+        "location_code": "NLC",
+        "location_name": null
+    },
+    {
+        "location_code": "NLM",
+        "location_name": null
+    },
+    {
+        "location_code": "NM",
+        "location_name": null
+    },
+    {
+        "location_code": "NMC",
+        "location_name": null
+    },
+    {
+        "location_code": "NMM",
+        "location_name": null
+    },
+    {
+        "location_code": "NOG",
+        "location_name": null
+    },
+    {
+        "location_code": "NOZ",
+        "location_name": null
+    },
+    {
+        "location_code": "NP",
+        "location_name": null
+    },
+    {
+        "location_code": "NPA",
+        "location_name": null
+    },
+    {
+        "location_code": "NPL",
+        "location_name": null
+    },
+    {
+        "location_code": "NQI",
+        "location_name": null
+    },
+    {
+        "location_code": "NQX",
+        "location_name": null
+    },
+    {
+        "location_code": "NRB",
+        "location_name": null
+    },
+    {
+        "location_code": "NRS",
+        "location_name": null
+    },
+    {
+        "location_code": "NS4",
+        "location_name": null
+    },
+    {
+        "location_code": "NSB",
+        "location_name": null
+    },
+    {
+        "location_code": "NSE",
+        "location_name": null
+    },
+    {
+        "location_code": "NSI",
+        "location_name": null
+    },
+    {
+        "location_code": "NT1",
+        "location_name": null
+    },
+    {
+        "location_code": "NT2",
+        "location_name": null
+    },
+    {
+        "location_code": "NT3",
+        "location_name": null
+    },
+    {
+        "location_code": "NT4",
+        "location_name": null
+    },
+    {
+        "location_code": "NT5",
+        "location_name": null
+    },
+    {
+        "location_code": "NTD",
+        "location_name": null
+    },
+    {
+        "location_code": "NTL",
+        "location_name": null
+    },
+    {
+        "location_code": "NTU",
+        "location_name": null
+    },
+    {
+        "location_code": "NUC",
+        "location_name": null
+    },
+    {
+        "location_code": "NUI",
+        "location_name": null
+    },
+    {
+        "location_code": "NUW",
+        "location_name": null
+    },
+    {
+        "location_code": "NV",
+        "location_name": null
+    },
+    {
+        "location_code": "NWC",
+        "location_name": null
+    },
+    {
+        "location_code": "NXP",
+        "location_name": null
+    },
+    {
+        "location_code": "NY",
+        "location_name": null
+    },
+    {
+        "location_code": "NY1",
+        "location_name": null
+    },
+    {
+        "location_code": "NYC",
+        "location_name": null
+    },
+    {
+        "location_code": "NYG",
+        "location_name": null
+    },
+    {
+        "location_code": "NYL",
+        "location_name": null
+    },
+    {
+        "location_code": "NZY",
+        "location_name": null
+    },
+    {
+        "location_code": "O",
+        "location_name": null
+    },
+    {
+        "location_code": "OAJ",
+        "location_name": null
+    },
+    {
+        "location_code": "OAK",
+        "location_name": null
+    },
+    {
+        "location_code": "OAX",
+        "location_name": "Omaha/Valley, NE"
+    },
+    {
+        "location_code": "OBS",
+        "location_name": null
+    },
+    {
+        "location_code": "OC1",
+        "location_name": null
+    },
+    {
+        "location_code": "OC3",
+        "location_name": null
+    },
+    {
+        "location_code": "OC5",
+        "location_name": null
+    },
+    {
+        "location_code": "OC7",
+        "location_name": null
+    },
+    {
+        "location_code": "OC8",
+        "location_name": null
+    },
+    {
+        "location_code": "OC9",
+        "location_name": null
+    },
+    {
+        "location_code": "ODO",
+        "location_name": null
+    },
+    {
+        "location_code": "ODX",
+        "location_name": null
+    },
+    {
+        "location_code": "OFK",
+        "location_name": null
+    },
+    {
+        "location_code": "OGB",
+        "location_name": null
+    },
+    {
+        "location_code": "OGD",
+        "location_name": null
+    },
+    {
+        "location_code": "OGG",
+        "location_name": null
+    },
+    {
+        "location_code": "OH",
+        "location_name": null
+    },
+    {
+        "location_code": "OHC",
+        "location_name": null
+    },
+    {
+        "location_code": "OHH",
+        "location_name": null
+    },
+    {
+        "location_code": "OHL",
+        "location_name": null
+    },
+    {
+        "location_code": "OHP",
+        "location_name": null
+    },
+    {
+        "location_code": "OHS",
+        "location_name": null
+    },
+    {
+        "location_code": "OHW",
+        "location_name": null
+    },
+    {
+        "location_code": "OHX",
+        "location_name": "Nashville, TN"
+    },
+    {
+        "location_code": "OJC",
+        "location_name": null
+    },
+    {
+        "location_code": "OK",
+        "location_name": null
+    },
+    {
+        "location_code": "OKB",
+        "location_name": null
+    },
+    {
+        "location_code": "OKC",
+        "location_name": null
+    },
+    {
+        "location_code": "OKX",
+        "location_name": "New York, NY"
+    },
+    {
+        "location_code": "OLF",
+        "location_name": null
+    },
+    {
+        "location_code": "OLM",
+        "location_name": null
+    },
+    {
+        "location_code": "OLS",
+        "location_name": null
+    },
+    {
+        "location_code": "OLZ",
+        "location_name": null
+    },
+    {
+        "location_code": "OMA",
+        "location_name": null
+    },
+    {
+        "location_code": "OME",
+        "location_name": null
+    },
+    {
+        "location_code": "OMK",
+        "location_name": null
+    },
+    {
+        "location_code": "ONA",
+        "location_name": null
+    },
+    {
+        "location_code": "ONO",
+        "location_name": null
+    },
+    {
+        "location_code": "ONP",
+        "location_name": null
+    },
+    {
+        "location_code": "ONT",
+        "location_name": null
+    },
+    {
+        "location_code": "OPC",
+        "location_name": "Ocean Prediction Center"
+    },
+    {
+        "location_code": "OPF",
+        "location_name": null
+    },
+    {
+        "location_code": "OQT",
+        "location_name": null
+    },
+    {
+        "location_code": "OR",
+        "location_name": null
+    },
+    {
+        "location_code": "ORA",
+        "location_name": null
+    },
+    {
+        "location_code": "ORD",
+        "location_name": null
+    },
+    {
+        "location_code": "ORF",
+        "location_name": null
+    },
+    {
+        "location_code": "ORH",
+        "location_name": null
+    },
+    {
+        "location_code": "ORL",
+        "location_name": null
+    },
+    {
+        "location_code": "ORN",
+        "location_name": null
+    },
+    {
+        "location_code": "OSG",
+        "location_name": null
+    },
+    {
+        "location_code": "OSH",
+        "location_name": null
+    },
+    {
+        "location_code": "OSU",
+        "location_name": null
+    },
+    {
+        "location_code": "OTH",
+        "location_name": null
+    },
+    {
+        "location_code": "OTM",
+        "location_name": null
+    },
+    {
+        "location_code": "OTX",
+        "location_name": "Spokane, WA"
+    },
+    {
+        "location_code": "OTZ",
+        "location_name": null
+    },
+    {
+        "location_code": "OUN",
+        "location_name": "Norman, OK"
+    },
+    {
+        "location_code": "OUT",
+        "location_name": null
+    },
+    {
+        "location_code": "OVE",
+        "location_name": null
+    },
+    {
+        "location_code": "OVS",
+        "location_name": null
+    },
+    {
+        "location_code": "OWB",
+        "location_name": null
+    },
+    {
+        "location_code": "OXR",
+        "location_name": null
+    },
+    {
+        "location_code": "P0B",
+        "location_name": null
+    },
+    {
+        "location_code": "P0C",
+        "location_name": null
+    },
+    {
+        "location_code": "P0D",
+        "location_name": null
+    },
+    {
+        "location_code": "P0E",
+        "location_name": null
+    },
+    {
+        "location_code": "P0F",
+        "location_name": null
+    },
+    {
+        "location_code": "P0H",
+        "location_name": null
+    },
+    {
+        "location_code": "P28",
+        "location_name": null
+    },
+    {
+        "location_code": "P53",
+        "location_name": null
+    },
+    {
+        "location_code": "P58",
+        "location_name": null
+    },
+    {
+        "location_code": "P59",
+        "location_name": null
+    },
+    {
+        "location_code": "P60",
+        "location_name": null
+    },
+    {
+        "location_code": "P68",
+        "location_name": null
+    },
+    {
+        "location_code": "P69",
+        "location_name": null
+    },
+    {
+        "location_code": "PA",
+        "location_name": null
+    },
+    {
+        "location_code": "PA2",
+        "location_name": null
+    },
+    {
+        "location_code": "PA3",
+        "location_name": null
+    },
+    {
+        "location_code": "PAC",
+        "location_name": null
+    },
+    {
+        "location_code": "PAE",
+        "location_name": null
+    },
+    {
+        "location_code": "PAH",
+        "location_name": "Paducah, KY"
+    },
+    {
+        "location_code": "PAN",
+        "location_name": null
+    },
+    {
+        "location_code": "PAO",
+        "location_name": null
+    },
+    {
+        "location_code": "PAP",
+        "location_name": null
+    },
+    {
+        "location_code": "PAQ",
+        "location_name": null
+    },
+    {
+        "location_code": "PAR",
+        "location_name": null
+    },
+    {
+        "location_code": "PAS",
+        "location_name": null
+    },
+    {
+        "location_code": "PAT",
+        "location_name": null
+    },
+    {
+        "location_code": "PAU",
+        "location_name": null
+    },
+    {
+        "location_code": "PAV",
+        "location_name": null
+    },
+    {
+        "location_code": "PAW",
+        "location_name": null
+    },
+    {
+        "location_code": "PAX",
+        "location_name": null
+    },
+    {
+        "location_code": "PAY",
+        "location_name": null
+    },
+    {
+        "location_code": "PBF",
+        "location_name": null
+    },
+    {
+        "location_code": "PBG",
+        "location_name": null
+    },
+    {
+        "location_code": "PBI",
+        "location_name": null
+    },
+    {
+        "location_code": "PBZ",
+        "location_name": "Pittsburgh, PA"
+    },
+    {
+        "location_code": "PDC",
+        "location_name": null
+    },
+    {
+        "location_code": "PDK",
+        "location_name": null
+    },
+    {
+        "location_code": "PDT",
+        "location_name": "Pendleton, OR"
+    },
+    {
+        "location_code": "PDX",
+        "location_name": null
+    },
+    {
+        "location_code": "PEQ",
+        "location_name": null
+    },
+    {
+        "location_code": "PEZ",
+        "location_name": null
+    },
+    {
+        "location_code": "PGA",
+        "location_name": null
+    },
+    {
+        "location_code": "PGD",
+        "location_name": null
+    },
+    {
+        "location_code": "PGV",
+        "location_name": null
+    },
+    {
+        "location_code": "PH",
+        "location_name": null
+    },
+    {
+        "location_code": "PHD",
+        "location_name": null
+    },
+    {
+        "location_code": "PHF",
+        "location_name": null
+    },
+    {
+        "location_code": "PHI",
+        "location_name": "Philadelphia/Mt Holly"
+    },
+    {
+        "location_code": "PHL",
+        "location_name": null
+    },
+    {
+        "location_code": "PHP",
+        "location_name": null
+    },
+    {
+        "location_code": "PHX",
+        "location_name": null
+    },
+    {
+        "location_code": "PIA",
+        "location_name": null
+    },
+    {
+        "location_code": "PIB",
+        "location_name": null
+    },
+    {
+        "location_code": "PIE",
+        "location_name": null
+    },
+    {
+        "location_code": "PIH",
+        "location_name": "Pocatello, ID"
+    },
+    {
+        "location_code": "PIL",
+        "location_name": null
+    },
+    {
+        "location_code": "PIR",
+        "location_name": null
+    },
+    {
+        "location_code": "PIT",
+        "location_name": null
+    },
+    {
+        "location_code": "PKB",
+        "location_name": null
+    },
+    {
+        "location_code": "PKD",
+        "location_name": null
+    },
+    {
+        "location_code": "PLN",
+        "location_name": null
+    },
+    {
+        "location_code": "PLR",
+        "location_name": null
+    },
+    {
+        "location_code": "PMD",
+        "location_name": null
+    },
+    {
+        "location_code": "PMP",
+        "location_name": null
+    },
+    {
+        "location_code": "PNA",
+        "location_name": null
+    },
+    {
+        "location_code": "PNC",
+        "location_name": null
+    },
+    {
+        "location_code": "PNE",
+        "location_name": null
+    },
+    {
+        "location_code": "PNS",
+        "location_name": null
+    },
+    {
+        "location_code": "POF",
+        "location_name": null
+    },
+    {
+        "location_code": "POT",
+        "location_name": null
+    },
+    {
+        "location_code": "POU",
+        "location_name": null
+    },
+    {
+        "location_code": "PPF",
+        "location_name": null
+    },
+    {
+        "location_code": "PPG",
+        "location_name": "WSO Pago Pago"
+    },
+    {
+        "location_code": "PQ",
+        "location_name": null
+    },
+    {
+        "location_code": "PQ1",
+        "location_name": null
+    },
+    {
+        "location_code": "PQ2",
+        "location_name": null
+    },
+    {
+        "location_code": "PQ3",
+        "location_name": null
+    },
+    {
+        "location_code": "PQI",
+        "location_name": null
+    },
+    {
+        "location_code": "PQL",
+        "location_name": null
+    },
+    {
+        "location_code": "PQR",
+        "location_name": "Portland, OR"
+    },
+    {
+        "location_code": "PR",
+        "location_name": null
+    },
+    {
+        "location_code": "PR2",
+        "location_name": null
+    },
+    {
+        "location_code": "PRB",
+        "location_name": null
+    },
+    {
+        "location_code": "PRC",
+        "location_name": null
+    },
+    {
+        "location_code": "PRE",
+        "location_name": null
+    },
+    {
+        "location_code": "PRN",
+        "location_name": null
+    },
+    {
+        "location_code": "PRS",
+        "location_name": null
+    },
+    {
+        "location_code": "PRX",
+        "location_name": null
+    },
+    {
+        "location_code": "PSC",
+        "location_name": null
+    },
+    {
+        "location_code": "PSF",
+        "location_name": null
+    },
+    {
+        "location_code": "PSM",
+        "location_name": null
+    },
+    {
+        "location_code": "PSN",
+        "location_name": null
+    },
+    {
+        "location_code": "PSP",
+        "location_name": null
+    },
+    {
+        "location_code": "PSR",
+        "location_name": "NWS Phoenix"
+    },
+    {
+        "location_code": "PSX",
+        "location_name": null
+    },
+    {
+        "location_code": "PTK",
+        "location_name": null
+    },
+    {
+        "location_code": "PTR",
+        "location_name": null
+    },
+    {
+        "location_code": "PUB",
+        "location_name": "Pueblo, CO"
+    },
+    {
+        "location_code": "PUW",
+        "location_name": null
+    },
+    {
+        "location_code": "PVD",
+        "location_name": null
+    },
+    {
+        "location_code": "PVU",
+        "location_name": null
+    },
+    {
+        "location_code": "PVW",
+        "location_name": null
+    },
+    {
+        "location_code": "PWA",
+        "location_name": null
+    },
+    {
+        "location_code": "PWG",
+        "location_name": null
+    },
+    {
+        "location_code": "PWK",
+        "location_name": null
+    },
+    {
+        "location_code": "PWM",
+        "location_name": null
+    },
+    {
+        "location_code": "PWT",
+        "location_name": null
+    },
+    {
+        "location_code": "PZ5",
+        "location_name": null
+    },
+    {
+        "location_code": "PZ6",
+        "location_name": null
+    },
+    {
+        "location_code": "PZ7",
+        "location_name": null
+    },
+    {
+        "location_code": "PZ8",
+        "location_name": null
+    },
+    {
+        "location_code": "RAC",
+        "location_name": null
+    },
+    {
+        "location_code": "RAH",
+        "location_name": "Raleigh, NC"
+    },
+    {
+        "location_code": "RAL",
+        "location_name": null
+    },
+    {
+        "location_code": "RAP",
+        "location_name": null
+    },
+    {
+        "location_code": "RAW",
+        "location_name": null
+    },
+    {
+        "location_code": "RAX",
+        "location_name": null
+    },
+    {
+        "location_code": "RBD",
+        "location_name": null
+    },
+    {
+        "location_code": "RBG",
+        "location_name": null
+    },
+    {
+        "location_code": "RBL",
+        "location_name": null
+    },
+    {
+        "location_code": "RCK",
+        "location_name": null
+    },
+    {
+        "location_code": "RDD",
+        "location_name": null
+    },
+    {
+        "location_code": "RDG",
+        "location_name": null
+    },
+    {
+        "location_code": "RDM",
+        "location_name": null
+    },
+    {
+        "location_code": "RDU",
+        "location_name": null
+    },
+    {
+        "location_code": "RDW",
+        "location_name": null
+    },
+    {
+        "location_code": "REO",
+        "location_name": null
+    },
+    {
+        "location_code": "REV",
+        "location_name": "Reno, NV"
+    },
+    {
+        "location_code": "RFD",
+        "location_name": null
+    },
+    {
+        "location_code": "RGA",
+        "location_name": null
+    },
+    {
+        "location_code": "RHA",
+        "location_name": null
+    },
+    {
+        "location_code": "RHI",
+        "location_name": null
+    },
+    {
+        "location_code": "RIC",
+        "location_name": null
+    },
+    {
+        "location_code": "RIL",
+        "location_name": null
+    },
+    {
+        "location_code": "RIV",
+        "location_name": null
+    },
+    {
+        "location_code": "RIW",
+        "location_name": "Western and Central Wyoming"
+    },
+    {
+        "location_code": "RKD",
+        "location_name": null
+    },
+    {
+        "location_code": "RKP",
+        "location_name": null
+    },
+    {
+        "location_code": "RKS",
+        "location_name": null
+    },
+    {
+        "location_code": "RLX",
+        "location_name": "Charleston, WV"
+    },
+    {
+        "location_code": "RME",
+        "location_name": null
+    },
+    {
+        "location_code": "RMG",
+        "location_name": null
+    },
+    {
+        "location_code": "RN",
+        "location_name": null
+    },
+    {
+        "location_code": "RND",
+        "location_name": null
+    },
+    {
+        "location_code": "RNH",
+        "location_name": null
+    },
+    {
+        "location_code": "RNK",
+        "location_name": "Blacksburg, VA"
+    },
+    {
+        "location_code": "RNM",
+        "location_name": null
+    },
+    {
+        "location_code": "RNO",
+        "location_name": null
+    },
+    {
+        "location_code": "ROA",
+        "location_name": null
+    },
+    {
+        "location_code": "ROC",
+        "location_name": "ROC"
+    },
+    {
+        "location_code": "ROG",
+        "location_name": null
+    },
+    {
+        "location_code": "ROW",
+        "location_name": null
+    },
+    {
+        "location_code": "RPH",
+        "location_name": null
+    },
+    {
+        "location_code": "RQE",
+        "location_name": null
+    },
+    {
+        "location_code": "RSA",
+        "location_name": null
+    },
+    {
+        "location_code": "RSL",
+        "location_name": null
+    },
+    {
+        "location_code": "RSP",
+        "location_name": null
+    },
+    {
+        "location_code": "RST",
+        "location_name": null
+    },
+    {
+        "location_code": "RSW",
+        "location_name": null
+    },
+    {
+        "location_code": "RTN",
+        "location_name": null
+    },
+    {
+        "location_code": "RUE",
+        "location_name": null
+    },
+    {
+        "location_code": "RUT",
+        "location_name": null
+    },
+    {
+        "location_code": "RVS",
+        "location_name": null
+    },
+    {
+        "location_code": "RWF",
+        "location_name": null
+    },
+    {
+        "location_code": "RWI",
+        "location_name": null
+    },
+    {
+        "location_code": "RWL",
+        "location_name": null
+    },
+    {
+        "location_code": "RXE",
+        "location_name": null
+    },
+    {
+        "location_code": "RYW",
+        "location_name": null
+    },
+    {
+        "location_code": "RYY",
+        "location_name": null
+    },
+    {
+        "location_code": "S",
+        "location_name": null
+    },
+    {
+        "location_code": "SA",
+        "location_name": null
+    },
+    {
+        "location_code": "SAC",
+        "location_name": null
+    },
+    {
+        "location_code": "SAD",
+        "location_name": null
+    },
+    {
+        "location_code": "SAF",
+        "location_name": null
+    },
+    {
+        "location_code": "SAN",
+        "location_name": null
+    },
+    {
+        "location_code": "SAT",
+        "location_name": null
+    },
+    {
+        "location_code": "SAV",
+        "location_name": null
+    },
+    {
+        "location_code": "SAW",
+        "location_name": null
+    },
+    {
+        "location_code": "SAY",
+        "location_name": null
+    },
+    {
+        "location_code": "SBA",
+        "location_name": null
+    },
+    {
+        "location_code": "SBD",
+        "location_name": null
+    },
+    {
+        "location_code": "SBM",
+        "location_name": null
+    },
+    {
+        "location_code": "SBN",
+        "location_name": null
+    },
+    {
+        "location_code": "SBP",
+        "location_name": null
+    },
+    {
+        "location_code": "SBY",
+        "location_name": null
+    },
+    {
+        "location_code": "SC",
+        "location_name": null
+    },
+    {
+        "location_code": "SCA",
+        "location_name": null
+    },
+    {
+        "location_code": "SCI",
+        "location_name": null
+    },
+    {
+        "location_code": "SCK",
+        "location_name": null
+    },
+    {
+        "location_code": "SD",
+        "location_name": null
+    },
+    {
+        "location_code": "SDB",
+        "location_name": null
+    },
+    {
+        "location_code": "SDF",
+        "location_name": null
+    },
+    {
+        "location_code": "SDL",
+        "location_name": null
+    },
+    {
+        "location_code": "SDM",
+        "location_name": null
+    },
+    {
+        "location_code": "SDY",
+        "location_name": null
+    },
+    {
+        "location_code": "SE",
+        "location_name": null
+    },
+    {
+        "location_code": "SEA",
+        "location_name": null
+    },
+    {
+        "location_code": "SEP",
+        "location_name": null
+    },
+    {
+        "location_code": "SEQ",
+        "location_name": null
+    },
+    {
+        "location_code": "SET",
+        "location_name": null
+    },
+    {
+        "location_code": "SEW",
+        "location_name": "Seattle/Tacoma, WA"
+    },
+    {
+        "location_code": "SEZ",
+        "location_name": null
+    },
+    {
+        "location_code": "SFB",
+        "location_name": null
+    },
+    {
+        "location_code": "SFD",
+        "location_name": null
+    },
+    {
+        "location_code": "SFF",
+        "location_name": null
+    },
+    {
+        "location_code": "SFO",
+        "location_name": null
+    },
+    {
+        "location_code": "SGF",
+        "location_name": "Springfield, MO"
+    },
+    {
+        "location_code": "SGJ",
+        "location_name": null
+    },
+    {
+        "location_code": "SGR",
+        "location_name": null
+    },
+    {
+        "location_code": "SGT",
+        "location_name": null
+    },
+    {
+        "location_code": "SGU",
+        "location_name": null
+    },
+    {
+        "location_code": "SGX",
+        "location_name": "San Diego, CA"
+    },
+    {
+        "location_code": "SHR",
+        "location_name": null
+    },
+    {
+        "location_code": "SHV",
+        "location_name": "Shreveport, LA"
+    },
+    {
+        "location_code": "SIO",
+        "location_name": null
+    },
+    {
+        "location_code": "SIY",
+        "location_name": null
+    },
+    {
+        "location_code": "SJ",
+        "location_name": null
+    },
+    {
+        "location_code": "SJC",
+        "location_name": null
+    },
+    {
+        "location_code": "SJN",
+        "location_name": null
+    },
+    {
+        "location_code": "SJS",
+        "location_name": null
+    },
+    {
+        "location_code": "SJT",
+        "location_name": "San Angelo, TX"
+    },
+    {
+        "location_code": "SJU",
+        "location_name": "San Juan, PR"
+    },
+    {
+        "location_code": "SKF",
+        "location_name": null
+    },
+    {
+        "location_code": "SL",
+        "location_name": null
+    },
+    {
+        "location_code": "SLC",
+        "location_name": "Salt Lake City, UT"
+    },
+    {
+        "location_code": "SLD",
+        "location_name": null
+    },
+    {
+        "location_code": "SLE",
+        "location_name": null
+    },
+    {
+        "location_code": "SLK",
+        "location_name": null
+    },
+    {
+        "location_code": "SLN",
+        "location_name": null
+    },
+    {
+        "location_code": "SLR",
+        "location_name": null
+    },
+    {
+        "location_code": "SME",
+        "location_name": null
+    },
+    {
+        "location_code": "SMF",
+        "location_name": null
+    },
+    {
+        "location_code": "SMN",
+        "location_name": null
+    },
+    {
+        "location_code": "SMO",
+        "location_name": null
+    },
+    {
+        "location_code": "SMP",
+        "location_name": null
+    },
+    {
+        "location_code": "SMS",
+        "location_name": null
+    },
+    {
+        "location_code": "SMX",
+        "location_name": null
+    },
+    {
+        "location_code": "SNA",
+        "location_name": null
+    },
+    {
+        "location_code": "SNK",
+        "location_name": null
+    },
+    {
+        "location_code": "SNO",
+        "location_name": null
+    },
+    {
+        "location_code": "SNP",
+        "location_name": null
+    },
+    {
+        "location_code": "SNS",
+        "location_name": null
+    },
+    {
+        "location_code": "SNT",
+        "location_name": null
+    },
+    {
+        "location_code": "SNY",
+        "location_name": null
+    },
+    {
+        "location_code": "SOA",
+        "location_name": null
+    },
+    {
+        "location_code": "SP",
+        "location_name": null
+    },
+    {
+        "location_code": "SPB",
+        "location_name": null
+    },
+    {
+        "location_code": "SPC",
+        "location_name": null
+    },
+    {
+        "location_code": "SPD",
+        "location_name": null
+    },
+    {
+        "location_code": "SPG",
+        "location_name": null
+    },
+    {
+        "location_code": "SPI",
+        "location_name": null
+    },
+    {
+        "location_code": "SPL",
+        "location_name": null
+    },
+    {
+        "location_code": "SPN",
+        "location_name": null
+    },
+    {
+        "location_code": "SPS",
+        "location_name": null
+    },
+    {
+        "location_code": "SPW",
+        "location_name": null
+    },
+    {
+        "location_code": "SR1",
+        "location_name": null
+    },
+    {
+        "location_code": "SR2",
+        "location_name": null
+    },
+    {
+        "location_code": "SR3",
+        "location_name": null
+    },
+    {
+        "location_code": "SRB",
+        "location_name": null
+    },
+    {
+        "location_code": "SRC",
+        "location_name": null
+    },
+    {
+        "location_code": "SRH",
+        "location_name": "Southern Region Headquarters"
+    },
+    {
+        "location_code": "SRP",
+        "location_name": null
+    },
+    {
+        "location_code": "SRQ",
+        "location_name": null
+    },
+    {
+        "location_code": "SRR",
+        "location_name": null
+    },
+    {
+        "location_code": "SRX",
+        "location_name": null
+    },
+    {
+        "location_code": "SSA",
+        "location_name": null
+    },
+    {
+        "location_code": "SSB",
+        "location_name": null
+    },
+    {
+        "location_code": "SSC",
+        "location_name": null
+    },
+    {
+        "location_code": "SSE",
+        "location_name": null
+    },
+    {
+        "location_code": "SSF",
+        "location_name": null
+    },
+    {
+        "location_code": "SSG",
+        "location_name": null
+    },
+    {
+        "location_code": "SSI",
+        "location_name": null
+    },
+    {
+        "location_code": "SSP",
+        "location_name": null
+    },
+    {
+        "location_code": "SST",
+        "location_name": null
+    },
+    {
+        "location_code": "STC",
+        "location_name": null
+    },
+    {
+        "location_code": "STG",
+        "location_name": null
+    },
+    {
+        "location_code": "STJ",
+        "location_name": null
+    },
+    {
+        "location_code": "STL",
+        "location_name": null
+    },
+    {
+        "location_code": "STO",
+        "location_name": "Sacramento, CA"
+    },
+    {
+        "location_code": "STR",
+        "location_name": null
+    },
+    {
+        "location_code": "STS",
+        "location_name": null
+    },
+    {
+        "location_code": "STU",
+        "location_name": null
+    },
+    {
+        "location_code": "SUA",
+        "location_name": null
+    },
+    {
+        "location_code": "SUN",
+        "location_name": null
+    },
+    {
+        "location_code": "SUS",
+        "location_name": null
+    },
+    {
+        "location_code": "SUX",
+        "location_name": null
+    },
+    {
+        "location_code": "SVC",
+        "location_name": null
+    },
+    {
+        "location_code": "SWF",
+        "location_name": null
+    },
+    {
+        "location_code": "SWO",
+        "location_name": null
+    },
+    {
+        "location_code": "SYM",
+        "location_name": null
+    },
+    {
+        "location_code": "SYR",
+        "location_name": null
+    },
+    {
+        "location_code": "T",
+        "location_name": null
+    },
+    {
+        "location_code": "T11",
+        "location_name": null
+    },
+    {
+        "location_code": "T20",
+        "location_name": null
+    },
+    {
+        "location_code": "T35",
+        "location_name": null
+    },
+    {
+        "location_code": "T70",
+        "location_name": null
+    },
+    {
+        "location_code": "T74",
+        "location_name": null
+    },
+    {
+        "location_code": "T82",
+        "location_name": null
+    },
+    {
+        "location_code": "T89",
+        "location_name": null
+    },
+    {
+        "location_code": "TAD",
+        "location_name": null
+    },
+    {
+        "location_code": "TAE",
+        "location_name": "Tallahassee, FL"
+    },
+    {
+        "location_code": "TAR",
+        "location_name": null
+    },
+    {
+        "location_code": "TBW",
+        "location_name": "Tampa Bay Area, FL"
+    },
+    {
+        "location_code": "TCC",
+        "location_name": null
+    },
+    {
+        "location_code": "TCL",
+        "location_name": null
+    },
+    {
+        "location_code": "TCS",
+        "location_name": null
+    },
+    {
+        "location_code": "TDF",
+        "location_name": null
+    },
+    {
+        "location_code": "TEB",
+        "location_name": null
+    },
+    {
+        "location_code": "TEX",
+        "location_name": null
+    },
+    {
+        "location_code": "TFX",
+        "location_name": "Great Falls, MT"
+    },
+    {
+        "location_code": "THR",
+        "location_name": null
+    },
+    {
+        "location_code": "TIA",
+        "location_name": null
+    },
+    {
+        "location_code": "TIJ",
+        "location_name": null
+    },
+    {
+        "location_code": "TIR",
+        "location_name": null
+    },
+    {
+        "location_code": "TIX",
+        "location_name": null
+    },
+    {
+        "location_code": "TKI",
+        "location_name": null
+    },
+    {
+        "location_code": "TKK",
+        "location_name": null
+    },
+    {
+        "location_code": "TKR",
+        "location_name": null
+    },
+    {
+        "location_code": "TLH",
+        "location_name": null
+    },
+    {
+        "location_code": "TMB",
+        "location_name": null
+    },
+    {
+        "location_code": "TN",
+        "location_name": null
+    },
+    {
+        "location_code": "TOB",
+        "location_name": null
+    },
+    {
+        "location_code": "TOI",
+        "location_name": null
+    },
+    {
+        "location_code": "TOL",
+        "location_name": null
+    },
+    {
+        "location_code": "TOP",
+        "location_name": "Topeka, KS"
+    },
+    {
+        "location_code": "TOR",
+        "location_name": null
+    },
+    {
+        "location_code": "TP2",
+        "location_name": null
+    },
+    {
+        "location_code": "TP4",
+        "location_name": null
+    },
+    {
+        "location_code": "TPA",
+        "location_name": null
+    },
+    {
+        "location_code": "TPH",
+        "location_name": null
+    },
+    {
+        "location_code": "TPL",
+        "location_name": null
+    },
+    {
+        "location_code": "TPN",
+        "location_name": null
+    },
+    {
+        "location_code": "TQE",
+        "location_name": null
+    },
+    {
+        "location_code": "TRI",
+        "location_name": null
+    },
+    {
+        "location_code": "TRK",
+        "location_name": null
+    },
+    {
+        "location_code": "TRL",
+        "location_name": null
+    },
+    {
+        "location_code": "TRM",
+        "location_name": null
+    },
+    {
+        "location_code": "TRO",
+        "location_name": null
+    },
+    {
+        "location_code": "TSA",
+        "location_name": "Tulsa, OK"
+    },
+    {
+        "location_code": "TTD",
+        "location_name": null
+    },
+    {
+        "location_code": "TTN",
+        "location_name": null
+    },
+    {
+        "location_code": "TTP",
+        "location_name": null
+    },
+    {
+        "location_code": "TUA",
+        "location_name": null
+    },
+    {
+        "location_code": "TUL",
+        "location_name": null
+    },
+    {
+        "location_code": "TUP",
+        "location_name": null
+    },
+    {
+        "location_code": "TUR",
+        "location_name": null
+    },
+    {
+        "location_code": "TUS",
+        "location_name": null
+    },
+    {
+        "location_code": "TVC",
+        "location_name": null
+    },
+    {
+        "location_code": "TVF",
+        "location_name": null
+    },
+    {
+        "location_code": "TVL",
+        "location_name": null
+    },
+    {
+        "location_code": "TVR",
+        "location_name": null
+    },
+    {
+        "location_code": "TWB",
+        "location_name": null
+    },
+    {
+        "location_code": "TWC",
+        "location_name": "NWS Tucson Arizona"
+    },
+    {
+        "location_code": "TWE",
+        "location_name": null
+    },
+    {
+        "location_code": "TWF",
+        "location_name": null
+    },
+    {
+        "location_code": "TWG",
+        "location_name": null
+    },
+    {
+        "location_code": "TWP",
+        "location_name": null
+    },
+    {
+        "location_code": "TX",
+        "location_name": null
+    },
+    {
+        "location_code": "TXK",
+        "location_name": null
+    },
+    {
+        "location_code": "TYA",
+        "location_name": null
+    },
+    {
+        "location_code": "TYR",
+        "location_name": null
+    },
+    {
+        "location_code": "TYS",
+        "location_name": null
+    },
+    {
+        "location_code": "UAO",
+        "location_name": null
+    },
+    {
+        "location_code": "UC",
+        "location_name": null
+    },
+    {
+        "location_code": "UDE",
+        "location_name": null
+    },
+    {
+        "location_code": "UES",
+        "location_name": null
+    },
+    {
+        "location_code": "UGN",
+        "location_name": null
+    },
+    {
+        "location_code": "UIL",
+        "location_name": null
+    },
+    {
+        "location_code": "UIN",
+        "location_name": null
+    },
+    {
+        "location_code": "UKI",
+        "location_name": null
+    },
+    {
+        "location_code": "UNO",
+        "location_name": null
+    },
+    {
+        "location_code": "UNR",
+        "location_name": "Rapid City, SD"
+    },
+    {
+        "location_code": "UNV",
+        "location_name": null
+    },
+    {
+        "location_code": "UPM",
+        "location_name": null
+    },
+    {
+        "location_code": "US1",
+        "location_name": null
+    },
+    {
+        "location_code": "US3",
+        "location_name": null
+    },
+    {
+        "location_code": "US5",
+        "location_name": null
+    },
+    {
+        "location_code": "US7",
+        "location_name": null
+    },
+    {
+        "location_code": "US8",
+        "location_name": null
+    },
+    {
+        "location_code": "US9",
+        "location_name": null
+    },
+    {
+        "location_code": "USA",
+        "location_name": null
+    },
+    {
+        "location_code": "USQ",
+        "location_name": null
+    },
+    {
+        "location_code": "UT",
+        "location_name": null
+    },
+    {
+        "location_code": "UTS",
+        "location_name": null
+    },
+    {
+        "location_code": "UVA",
+        "location_name": null
+    },
+    {
+        "location_code": "VA",
+        "location_name": null
+    },
+    {
+        "location_code": "VA2",
+        "location_name": null
+    },
+    {
+        "location_code": "VAX",
+        "location_name": null
+    },
+    {
+        "location_code": "VCB",
+        "location_name": null
+    },
+    {
+        "location_code": "VCT",
+        "location_name": null
+    },
+    {
+        "location_code": "VEF",
+        "location_name": "Las Vegas, NV"
+    },
+    {
+        "location_code": "VEL",
+        "location_name": null
+    },
+    {
+        "location_code": "VGT",
+        "location_name": null
+    },
+    {
+        "location_code": "VHN",
+        "location_name": null
+    },
+    {
+        "location_code": "VI",
+        "location_name": null
+    },
+    {
+        "location_code": "VIH",
+        "location_name": null
+    },
+    {
+        "location_code": "VIS",
+        "location_name": null
+    },
+    {
+        "location_code": "VLD",
+        "location_name": null
+    },
+    {
+        "location_code": "VNX",
+        "location_name": null
+    },
+    {
+        "location_code": "VNY",
+        "location_name": null
+    },
+    {
+        "location_code": "VPC",
+        "location_name": null
+    },
+    {
+        "location_code": "VPZ",
+        "location_name": null
+    },
+    {
+        "location_code": "VQQ",
+        "location_name": null
+    },
+    {
+        "location_code": "VRB",
+        "location_name": null
+    },
+    {
+        "location_code": "VSF",
+        "location_name": null
+    },
+    {
+        "location_code": "VT",
+        "location_name": null
+    },
+    {
+        "location_code": "VTA",
+        "location_name": null
+    },
+    {
+        "location_code": "VTN",
+        "location_name": null
+    },
+    {
+        "location_code": "VTO",
+        "location_name": null
+    },
+    {
+        "location_code": "VTU",
+        "location_name": null
+    },
+    {
+        "location_code": "VTX",
+        "location_name": null
+    },
+    {
+        "location_code": "VUO",
+        "location_name": null
+    },
+    {
+        "location_code": "VWX",
+        "location_name": null
+    },
+    {
+        "location_code": "W",
+        "location_name": null
+    },
+    {
+        "location_code": "WA",
+        "location_name": null
+    },
+    {
+        "location_code": "WAL",
+        "location_name": null
+    },
+    {
+        "location_code": "WBL",
+        "location_name": null
+    },
+    {
+        "location_code": "WBU",
+        "location_name": null
+    },
+    {
+        "location_code": "WCZ",
+        "location_name": null
+    },
+    {
+        "location_code": "WFO",
+        "location_name": null
+    },
+    {
+        "location_code": "WHH",
+        "location_name": null
+    },
+    {
+        "location_code": "WHI",
+        "location_name": null
+    },
+    {
+        "location_code": "WHL",
+        "location_name": null
+    },
+    {
+        "location_code": "WHT",
+        "location_name": null
+    },
+    {
+        "location_code": "WI",
+        "location_name": null
+    },
+    {
+        "location_code": "WIS",
+        "location_name": null
+    },
+    {
+        "location_code": "WJF",
+        "location_name": null
+    },
+    {
+        "location_code": "WLD",
+        "location_name": null
+    },
+    {
+        "location_code": "WMC",
+        "location_name": null
+    },
+    {
+        "location_code": "WNP",
+        "location_name": null
+    },
+    {
+        "location_code": "WR1",
+        "location_name": null
+    },
+    {
+        "location_code": "WR2",
+        "location_name": null
+    },
+    {
+        "location_code": "WRK",
+        "location_name": null
+    },
+    {
+        "location_code": "WRL",
+        "location_name": null
+    },
+    {
+        "location_code": "WRN",
+        "location_name": "Weather-Ready Nation"
+    },
+    {
+        "location_code": "WSH",
+        "location_name": null
+    },
+    {
+        "location_code": "WTM",
+        "location_name": null
+    },
+    {
+        "location_code": "WV",
+        "location_name": null
+    },
+    {
+        "location_code": "WVI",
+        "location_name": null
+    },
+    {
+        "location_code": "WWR",
+        "location_name": null
+    },
+    {
+        "location_code": "WY",
+        "location_name": null
+    },
+    {
+        "location_code": "WYS",
+        "location_name": null
+    },
+    {
+        "location_code": "X01",
+        "location_name": null
+    },
+    {
+        "location_code": "XBP",
+        "location_name": null
+    },
+    {
+        "location_code": "XM5",
+        "location_name": null
+    },
+    {
+        "location_code": "XMF",
+        "location_name": null
+    },
+    {
+        "location_code": "XNA",
+        "location_name": null
+    },
+    {
+        "location_code": "XWA",
+        "location_name": null
+    },
+    {
+        "location_code": "YAK",
+        "location_name": null
+    },
+    {
+        "location_code": "YIP",
+        "location_name": null
+    },
+    {
+        "location_code": "YKM",
+        "location_name": null
+    },
+    {
+        "location_code": "YKN",
+        "location_name": null
+    },
+    {
+        "location_code": "YNG",
+        "location_name": null
+    },
+    {
+        "location_code": "Z",
+        "location_name": null
+    },
+    {
+        "location_code": "ZZV",
+        "location_name": null
+    },
+    {
+        "location_code": "1",
+        "location_name": null
+    },
+    {
+        "location_code": "2",
+        "location_name": null
+    },
+    {
+        "location_code": "3",
+        "location_name": null
+    },
+    {
+        "location_code": "4",
+        "location_name": null
+    },
+    {
+        "location_code": "5",
+        "location_name": null
+    },
+    {
+        "location_code": "6",
+        "location_name": null
+    },
+    {
+        "location_code": "7",
+        "location_name": null
+    },
+    {
+        "location_code": "8",
+        "location_name": null
+    },
+    {
+        "location_code": "9",
+        "location_name": null
+    },
+    {
+        "location_code": "10",
+        "location_name": null
+    }
+]

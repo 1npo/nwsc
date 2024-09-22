@@ -37,26 +37,45 @@ def process_alert_data(alert_data: dict, retrieved_at: datetime) -> List[Alert]:
 			'urgency':             	feature.get('properties', {}).get('urgency'),
 			'area_description':   	feature.get('properties', {}).get('areaDesc'),
 			'affected_zones_urls':	feature.get('properties', {}).get('affectedZones'),
-			'areas_ugc':            feature.get('properties', {}).get('geocode', {}).get('UGC'),
-			'areas_same':           feature.get('properties', {}).get('geocode', {}).get('SAME'),
+			'areas_ugc':            (feature.get('properties', {})
+											.get('geocode', {})
+											.get('UGC')),
+			'areas_same':           (feature.get('properties', {})
+											.get('geocode', {})
+											.get('SAME')),
 			'sent_by':             	feature.get('properties', {}).get('sender'),
 			'sent_by_name':        	feature.get('properties', {}).get('senderName'),
-			'sent_at':             	parse_timestamp(feature.get('properties', {}).get('sent')),
-			'effective_at':        	parse_timestamp(feature.get('properties', {}).get('effective')),
-			'ends_at':             	parse_timestamp(feature.get('properties', {}).get('ends')),
+			'sent_at':             	(parse_timestamp(feature.get('properties', {})
+															.get('sent'))),
+			'effective_at':        	(parse_timestamp(feature.get('properties', {})
+															.get('effective'))),
+			'ends_at':             	(parse_timestamp(feature.get('properties', {})
+															.get('ends'))),
 			'status':              	feature.get('properties', {}).get('status'),
 			'message_type':        	feature.get('properties', {}).get('messageType'),
 			'category':            	feature.get('properties', {}).get('category'),
 			'certainty':           	feature.get('properties', {}).get('certainty'),
 			'event_type':          	feature.get('properties', {}).get('event'),
-			'onset_at':            	parse_timestamp(feature.get('properties', {}).get('onset')),
-			'expires_at':          	parse_timestamp(feature.get('properties', {}).get('expires')),
+			'onset_at':            	(parse_timestamp(feature.get('properties', {})
+															.get('onset'))),
+			'expires_at':          	(parse_timestamp(feature.get('properties', {})
+															.get('expires'))),
 			'response_type':       	feature.get('properties', {}).get('response'),
-			'cap_awips_id':        	feature.get('properties', {}).get('parameters', {}).get('AWIPSidentifier'),
-			'cap_wmo_id':          	feature.get('properties', {}).get('parameters', {}).get('WMOidentifier'),
-			'cap_headline':        	feature.get('properties', {}).get('parameters', {}).get('NWSheadline'),
-			'cap_blocked_channels':	feature.get('properties', {}).get('parameters', {}).get('BLOCKCHANNEL'),
-			'cap_vtec':            	feature.get('properties', {}).get('parameters', {}).get('VTEC'),
+			'cap_awips_id':        	(feature.get('properties', {})
+											.get('parameters', {})
+											.get('AWIPSidentifier')),
+			'cap_wmo_id':          	(feature.get('properties', {})
+											.get('parameters', {})
+											.get('WMOidentifier')),
+			'cap_headline':        	(feature.get('properties', {})
+											.get('parameters', {})
+											.get('NWSheadline')),
+			'cap_blocked_channels':	(feature.get('properties', {})
+											.get('parameters', {})
+											.get('BLOCKCHANNEL')),
+			'cap_vtec':            	(feature.get('properties', {})
+											.get('parameters', {})
+											.get('VTEC')),
 			'prior_alerts':         [],
 		}
 		alert = Alert(**alert_dict)
@@ -81,10 +100,7 @@ def get_alerts(session: CachedSession) -> List[Alert]:
 
 
 @display_spinner('Getting alerts for the local area...')
-def get_alerts_by_area(
-	session: CachedSession,
-	area: str
-) -> List[Alert]:
+def get_alerts_by_area(session: CachedSession, area: str) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_AREA + area)
 	response = alerts.get('response')
 	retrieved_at = alerts.get('retrieved_at')
@@ -92,10 +108,7 @@ def get_alerts_by_area(
 
 
 @display_spinner('Getting alerts for zone...')
-def get_alerts_by_zone(
-	session: CachedSession,
-	zone: str
-) -> List[Alert]:
+def get_alerts_by_zone(session: CachedSession, zone: str) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_ZONE + zone)
 	response = alerts.get('response')
 	retrieved_at = alerts.get('retrieved_at')
@@ -103,10 +116,7 @@ def get_alerts_by_zone(
 
 
 @display_spinner('Getting alerts for marine region...')
-def get_alerts_by_region(
-	session: CachedSession,
-	region: str
-) -> List[Alert]:
+def get_alerts_by_region(session: CachedSession, region: str) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS_REGION + region)
 	response = alerts.get('response')
 	retrieved_at = alerts.get('retrieved_at')
@@ -114,10 +124,7 @@ def get_alerts_by_region(
 
 
 @display_spinner('Getting alerts for marine region...')
-def get_alerts_by_id(
-	session: CachedSession,
-	alert_id: str
-) -> List[Alert]:
+def get_alerts_by_id(session: CachedSession, alert_id: str) -> List[Alert]:
 	alerts = api_request(session, NWS_API_ALERTS + alert_id)
 	response = alerts.get('response')
 	retrieved_at = alerts.get('retrieved_at')
@@ -137,12 +144,12 @@ def get_alert_counts(session: CachedSession) -> AlertCounts:
 	retrieved_at = alert_counts_data.get('retrieved_at')
 	alert_counts_dict = {
 		'retrieved_at':	retrieved_at,
-		'total':				response.get('total'),
-		'land':					response.get('land'),
-		'marine':				response.get('marine'),
-		'regions':				response.get('regions'),
-		'areas':				response.get('areas'),
-		'zones':				response.get('zones'),
+		'total':		response.get('total'),
+		'land':			response.get('land'),
+		'marine':		response.get('marine'),
+		'regions':		response.get('regions'),
+		'areas':		response.get('areas'),
+		'zones':		response.get('zones'),
 	}
 	alert_counts = AlertCounts(**alert_counts_dict)
 	return alert_counts

@@ -1,0 +1,22 @@
+[
+    {
+        "url": "https://api.weather.gov/aviation/cwsus/ZOB/cwas/2024-08-17/102",
+        "cwsu": "ZOB",
+        "sequence": 102,
+        "issued_at": "2024-08-17T17:15:00+00:00",
+        "effective_at": "2024-08-17T17:15:00+00:00",
+        "expires_at": "2024-08-17T17:17:00+00:00",
+        "observed_property": null,
+        "text": "CANCEL ZOB CWA 101."
+    },
+    {
+        "url": "https://api.weather.gov/aviation/cwsus/ZOB/cwas/2024-08-17/101",
+        "cwsu": "ZOB",
+        "sequence": 101,
+        "issued_at": "2024-08-17T16:40:00+00:00",
+        "effective_at": "2024-08-17T16:40:00+00:00",
+        "expires_at": "2024-08-17T18:00:00+00:00",
+        "observed_property": "https://codes.nws.noaa.gov/NWSI-10-803/BasisForIssuance/Tstm",
+        "text": "DVLPG AREA TS. MOV FROM 23025KT TOPS FL350-FL440. TREND... INCRG.  PA LE NY"
+    }
+]

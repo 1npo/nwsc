@@ -1,0 +1,75 @@
+{
+    "forecasted_at": "2024-08-16 20:14:00",
+    "period_forecasts": [
+        {
+            "period_num": 1,
+            "period_name": "Tonight",
+            "period_forecast_detailed": "Mostly clear. Lows around 80. South winds 5 to 10 mph."
+        },
+        {
+            "period_num": 2,
+            "period_name": "Saturday",
+            "period_forecast_detailed": "Mostly sunny. Hot with highs around 103. Southwest winds 5 to 10 mph. Heat index values up to 110 in the afternoon."
+        },
+        {
+            "period_num": 3,
+            "period_name": "Saturday Night",
+            "period_forecast_detailed": "Partly cloudy in the evening, then clearing. Lows around 80. South winds around 5 mph."
+        },
+        {
+            "period_num": 4,
+            "period_name": "Sunday",
+            "period_forecast_detailed": "Sunny, hot with highs around 105. Southwest winds around 5 mph. Heat index values up to 114."
+        },
+        {
+            "period_num": 5,
+            "period_name": "Sunday Night",
+            "period_forecast_detailed": "Mostly clear. Lows in the lower 80s. South winds around 5 mph."
+        },
+        {
+            "period_num": 6,
+            "period_name": "Monday",
+            "period_forecast_detailed": "Sunny, hot with highs 100 to 105. Heat index values up to 110 in the afternoon."
+        },
+        {
+            "period_num": 7,
+            "period_name": "Monday Night",
+            "period_forecast_detailed": "Mostly clear. Lows in the upper 70s."
+        },
+        {
+            "period_num": 8,
+            "period_name": "Tuesday",
+            "period_forecast_detailed": "Sunny, hot with highs around 100. Heat index values up to 110 in the afternoon."
+        },
+        {
+            "period_num": 9,
+            "period_name": "Tuesday Night",
+            "period_forecast_detailed": "Mostly clear. Lows in the upper 70s."
+        },
+        {
+            "period_num": 10,
+            "period_name": "Wednesday",
+            "period_forecast_detailed": "Sunny, hot with highs around 100. Heat index values up to 110 in the afternoon."
+        },
+        {
+            "period_num": 11,
+            "period_name": "Wednesday Night",
+            "period_forecast_detailed": "Mostly clear. Lows in the mid 70s."
+        },
+        {
+            "period_num": 12,
+            "period_name": "Thursday",
+            "period_forecast_detailed": "Sunny, hot with highs in the upper 90s."
+        },
+        {
+            "period_num": 13,
+            "period_name": "Thursday Night",
+            "period_forecast_detailed": "Mostly clear. Lows in the mid 70s."
+        },
+        {
+            "period_num": 14,
+            "period_name": "Friday",
+            "period_forecast_detailed": "Sunny, hot with highs in the upper 90s."
+        }
+    ]
+}

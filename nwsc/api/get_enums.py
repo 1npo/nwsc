@@ -19,8 +19,8 @@ logger = logging.getLogger(__name__)
 
 INVALID_ENUM_MESSAGE_DELIMITER = 'Does not have a value in the enumeration'
 FAILED_TO_GET_ENUM_MESSAGE = (
-    'Unable to extract list of valid NWS $enum_type from the API. Falling back on hardcoded '
-    'values that may be out of date. '
+    'Unable to extract list of valid NWS $enum_type from the API. Falling back on '
+    'hardcoded values that may be out of date. '
 ) + BUG_REPORT_MESSAGE
 
 
@@ -56,5 +56,7 @@ def get_valid_forecast_offices(session: CachedSession) -> list:
     enum_data = api_request(session, NWS_API_OFFICES + 'DEADBEEF')
     response = enum_data.get('response')
     parameter_errors = response.get('parameterErrors', {})
-    failure_message = Template(FAILED_TO_GET_ENUM_MESSAGE).substitute(enum_type='forecast offices')
+    failure_message = (
+        Template(FAILED_TO_GET_ENUM_MESSAGE).substitute(enum_type='forecast offices')
+    )
     return process_error_response(parameter_errors, failure_message)

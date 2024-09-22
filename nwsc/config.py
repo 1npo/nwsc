@@ -23,10 +23,10 @@ class ConfigManager:
     
     def _init_new_user_config(self):
         self.config['nws'] = {
-            'address':                  '1600 Pennsylvania Avenue NW, Washington, DC 20500',
-            'measurements':             'imperial',
-            'cache_api_responses':      True,
-            'exports_dir':              DEFAULT_EXPORT_DIR,
+            'address':              '1600 Pennsylvania Avenue NW, Washington, DC 20500',
+            'measurements':         'imperial',
+            'cache_api_responses':  True,
+            'exports_dir':          DEFAULT_EXPORT_DIR,
         }
         self.save_settings()
 

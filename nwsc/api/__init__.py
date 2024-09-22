@@ -2,8 +2,12 @@
 # - https://github.com/weather-gov/api/discussions/478
 # - https://weather-gov.github.io/api/general-faqs, especially these sections:
 #   - "How do I get a forecast for a location from the API?"
-#   - "How do I know I'm getting the latest data? Do I need to use “cache busting” methods?"
-USCB_API_GEOCODE = 'http://geocoding.geo.census.gov/geocoder/locations/onelineaddress?benchmark=Public_AR_Current&format=json&address='
+#   - "How do I know I'm getting the latest data? Do I need to use
+# 	  “cache busting” methods?"
+USCB_API_GEOCODE = (
+    'http://geocoding.geo.census.gov/geocoder/locations/onelineaddress'
+    '?benchmark=Public_AR_Current&format=json&address='
+)
 NWS_API_ALERTS = 'http://api.weather.gov/alerts/'
 NWS_API_ALERTS_AREA = 'http://api.weather.gov/alerts/active/area/'
 NWS_API_ALERTS_REGION = 'http://api.weather.gov/alerts/active/region/'

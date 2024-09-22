@@ -61,7 +61,10 @@ def get_office_headline(
 ) -> OfficeHeadline:
     if office_id not in VALID_NWS_FORECAST_OFFICES:
         raise InvalidOfficeException
-    headline_data = api_request(session, NWS_API_OFFICES + office_id + '/headlines/' + headline_id)
+    headline_data = api_request(session, (NWS_API_OFFICES
+                                          + office_id
+                                          + '/headlines/'
+                                          + headline_id))
     response = headline_data.get('response')
     retrieved_at = headline_data.get('retrieved_at')
     return process_headline_data(response, retrieved_at, office_id)

@@ -65,13 +65,15 @@ def get_product_types_by_location(
 	session: CachedSession,
 	location_id: str
 ) -> List[ProductType]:
-	product_types_data = api_request(session, NWS_API_PRODUCT_LOCATIONS + f'/{location_id}/types').get('response')
+	product_types_data = api_request(session, (NWS_API_PRODUCT_LOCATIONS
+											   + f'/{location_id}/types').get('response'))
 	return process_product_types_data(product_types_data)
 
 
 @display_spinner('Getting all product issuing locations...')
 def get_product_locations(session: CachedSession) -> List[ProductLocation]:
-	product_locations_data = api_request(session, NWS_API_PRODUCT_LOCATIONS).get('response')
+	product_locations_data = api_request(session,
+									  	 NWS_API_PRODUCT_LOCATIONS).get('response')
 	return process_product_locations_data(product_locations_data)
 
 
@@ -80,7 +82,10 @@ def get_product_locations_by_type(
 	session: CachedSession,
 	type_id: str
 ) -> List[ProductLocation]:
-	product_locations_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}/locations').get('response')
+	product_locations_data = (
+		api_request(session, (NWS_API_PRODUCT_TYPES
+							  + f'/{type_id}/locations').get('response'))
+	)
 	return process_product_locations_data(product_locations_data)
 
 
@@ -109,7 +114,8 @@ def get_products_by_type_and_location(
 	type_id: str,
 	location_id: str
 ) -> List[Product]:
-	products_data = api_request(session, NWS_API_PRODUCT_TYPES + f'/{type_id}/locations/{location_id}')
+	products_data = api_request(session, (NWS_API_PRODUCT_TYPES
+										  + f'/{type_id}/locations/{location_id}'))
 	response = products_data.get('response')
 	retrieved_at = products_data.get('retrieved_at')
 	return process_product_data(response.get('@graph', {}), retrieved_at)

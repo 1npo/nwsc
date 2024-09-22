@@ -1,0 +1,398 @@
+[
+    {
+        "station_lat": -115.16,
+        "station_lon": 36.07,
+        "station_id": "KLAS",
+        "station_name": "Harry Reid International Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 664.46,
+        "station_elevation_mi": 0.41
+    },
+    {
+        "station_lat": -115.19,
+        "station_lon": 36.21,
+        "station_id": "KVGT",
+        "station_name": "Las Vegas, North Las Vegas Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 666.9,
+        "station_elevation_mi": 0.41
+    },
+    {
+        "station_lat": -115.13,
+        "station_lon": 35.98,
+        "station_id": "KHND",
+        "station_name": "Las Vegas - Henderson Executive Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 739.75,
+        "station_elevation_mi": 0.46
+    },
+    {
+        "station_lat": -115.34,
+        "station_lon": 36.2,
+        "station_id": "E5967",
+        "station_name": "EW5967 Las Vegas",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 976.88,
+        "station_elevation_mi": 0.61
+    },
+    {
+        "station_lat": -115.03,
+        "station_lon": 36.23,
+        "station_id": "KLSV",
+        "station_name": "Nellis Air Force Base",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 569.98,
+        "station_elevation_mi": 0.35
+    },
+    {
+        "station_lat": -114.97,
+        "station_lon": 36.01,
+        "station_id": "CMP10",
+        "station_name": "Henderson",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 667.51,
+        "station_elevation_mi": 0.41
+    },
+    {
+        "station_lat": -115.43,
+        "station_lon": 36.13,
+        "station_id": "RRKN2",
+        "station_name": "RED ROCK",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1144.83,
+        "station_elevation_mi": 0.71
+    },
+    {
+        "station_lat": -115.52,
+        "station_lon": 36.03,
+        "station_id": "MTSN2",
+        "station_name": "MOUNTAIN SPRINGS",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1706.88,
+        "station_elevation_mi": 1.06
+    },
+    {
+        "station_lat": -114.86,
+        "station_lon": 35.95,
+        "station_id": "KBVU",
+        "station_name": "Boulder City Municipal Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 670.56,
+        "station_elevation_mi": 0.42
+    },
+    {
+        "station_lat": -115.61,
+        "station_lon": 36.26,
+        "station_id": "KYCN2",
+        "station_name": "KYLE CANYON",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 2194.56,
+        "station_elevation_mi": 1.36
+    },
+    {
+        "station_lat": -115.09,
+        "station_lon": 36.57,
+        "station_id": "DWRN2",
+        "station_name": "WAMP SPRINGS",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1837.03,
+        "station_elevation_mi": 1.14
+    },
+    {
+        "station_lat": -115.69,
+        "station_lon": 36.59,
+        "station_id": "KINS",
+        "station_name": "Nellis AFB - Indian Springs Auxiliary Airfield",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 954.02,
+        "station_elevation_mi": 0.59
+    },
+    {
+        "station_lat": -116.0,
+        "station_lon": 36.22,
+        "station_id": "CMP17",
+        "station_name": "Pahrump",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 804.67,
+        "station_elevation_mi": 0.5
+    },
+    {
+        "station_lat": -114.45,
+        "station_lon": 36.55,
+        "station_id": "CMP16",
+        "station_name": "Overton",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 384.05,
+        "station_elevation_mi": 0.24
+    },
+    {
+        "station_lat": -115.41,
+        "station_lon": 35.12,
+        "station_id": "MDHC1",
+        "station_name": "MID HILLS",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1635.25,
+        "station_elevation_mi": 1.02
+    },
+    {
+        "station_lat": -114.56,
+        "station_lon": 35.16,
+        "station_id": "KIFP",
+        "station_name": "Bullhead City, Laughlin/Bullhead International Airport",
+        "station_timezone": "America/Phoenix",
+        "station_elevation_m": 212.14,
+        "station_elevation_mi": 0.13
+    },
+    {
+        "station_lat": -114.05,
+        "station_lon": 36.81,
+        "station_id": "CMP27",
+        "station_name": "Mesquite",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 538.58,
+        "station_elevation_mi": 0.33
+    },
+    {
+        "station_lat": -113.8,
+        "station_lon": 35.78,
+        "station_id": "TCRA3",
+        "station_name": "TRUXTON CANYON",
+        "station_timezone": "America/Phoenix",
+        "station_elevation_m": 1616.66,
+        "station_elevation_mi": 1.0
+    },
+    {
+        "station_lat": -115.16,
+        "station_lon": 37.36,
+        "station_id": "CMP01",
+        "station_name": "Alamo",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1051.56,
+        "station_elevation_mi": 0.65
+    },
+    {
+        "station_lat": -113.93,
+        "station_lon": 35.26,
+        "station_id": "KIGM",
+        "station_name": "Kingman, Kingman Airport",
+        "station_timezone": "America/Phoenix",
+        "station_elevation_m": 1050.04,
+        "station_elevation_mi": 0.65
+    },
+    {
+        "station_lat": -116.86,
+        "station_lon": 36.46,
+        "station_id": "DEVC1",
+        "station_name": "VISITORS CENTER AT FURNACE CREEK DEATH VALLEY",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": -58.83,
+        "station_elevation_mi": -0.04
+    },
+    {
+        "station_lat": -114.62,
+        "station_lon": 34.77,
+        "station_id": "KEED",
+        "station_name": "Needles, Needles Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 271.27,
+        "station_elevation_mi": 0.17
+    },
+    {
+        "station_lat": -116.62,
+        "station_lon": 35.28,
+        "station_id": "KBYS",
+        "station_name": "Fort Irwin/Barstow, Bicycle Lake Army Airfield",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 715.98,
+        "station_elevation_mi": 0.44
+    },
+    {
+        "station_lat": -115.17,
+        "station_lon": 34.67,
+        "station_id": "EXCC1",
+        "station_name": "Essex",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 805.89,
+        "station_elevation_mi": 0.5
+    },
+    {
+        "station_lat": -116.76,
+        "station_lon": 36.91,
+        "station_id": "CMP03",
+        "station_name": "Beatty",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 979.93,
+        "station_elevation_mi": 0.61
+    },
+    {
+        "station_lat": -114.51,
+        "station_lon": 37.61,
+        "station_id": "CMP05",
+        "station_name": "Caliente",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1335.02,
+        "station_elevation_mi": 0.83
+    },
+    {
+        "station_lat": -115.74,
+        "station_lon": 37.64,
+        "station_id": "CMP19",
+        "station_name": "Rachel",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1478.28,
+        "station_elevation_mi": 0.92
+    },
+    {
+        "station_lat": -113.51,
+        "station_lon": 37.05,
+        "station_id": "KSGU",
+        "station_name": "St George Regional Airport",
+        "station_timezone": "America/Denver",
+        "station_elevation_m": 875.39,
+        "station_elevation_mi": 0.54
+    },
+    {
+        "station_lat": -114.35,
+        "station_lon": 34.57,
+        "station_id": "KHII",
+        "station_name": "Havasu City Airport",
+        "station_timezone": "America/Phoenix",
+        "station_elevation_m": 245.97,
+        "station_elevation_mi": 0.15
+    },
+    {
+        "station_lat": -114.31,
+        "station_lon": 34.52,
+        "station_id": "C2796",
+        "station_name": "CW2796 Lake Havasu City",
+        "station_timezone": "America/Phoenix",
+        "station_elevation_m": 329.18,
+        "station_elevation_mi": 0.2
+    },
+    {
+        "station_lat": -116.79,
+        "station_lon": 34.85,
+        "station_id": "KDAG",
+        "station_name": "Daggett, Barstow-Daggett Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 587.04,
+        "station_elevation_mi": 0.36
+    },
+    {
+        "station_lat": -114.45,
+        "station_lon": 37.94,
+        "station_id": "CMP18",
+        "station_name": "Pioche",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1776.98,
+        "station_elevation_mi": 1.1
+    },
+    {
+        "station_lat": -113,
+        "station_lon": 36.95,
+        "station_id": "KAZC",
+        "station_name": "Colorado City, Colorado City Municipal Airport",
+        "station_timezone": "America/Phoenix",
+        "station_elevation_m": 1485.9,
+        "station_elevation_mi": 0.92
+    },
+    {
+        "station_lat": -117.69,
+        "station_lon": 35.69,
+        "station_id": "KNID",
+        "station_name": "China Lake, Naval Air Facility",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 695.86,
+        "station_elevation_mi": 0.43
+    },
+    {
+        "station_lat": -116.1,
+        "station_lon": 34.16,
+        "station_id": "E3443",
+        "station_name": "EW3443 Twentynine Palms",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 642.82,
+        "station_elevation_mi": 0.4
+    },
+    {
+        "station_lat": -114.33,
+        "station_lon": 34.13,
+        "station_id": "AKPA3",
+        "station_name": "AHAKHAV PRESERVE",
+        "station_timezone": "America/Phoenix",
+        "station_elevation_m": 110.64,
+        "station_elevation_mi": 0.07
+    },
+    {
+        "station_lat": -116.41,
+        "station_lon": 34.12,
+        "station_id": "UCCC1",
+        "station_name": "YUCCA VALLEY",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 989.38,
+        "station_elevation_mi": 0.61
+    },
+    {
+        "station_lat": -117.24,
+        "station_lon": 37.71,
+        "station_id": "CMP09",
+        "station_name": "Goldfield",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1714.5,
+        "station_elevation_mi": 1.07
+    },
+    {
+        "station_lat": -112.53,
+        "station_lon": 37.01,
+        "station_id": "KKNB",
+        "station_name": "KANAB MUNICIPAL AIRPORT",
+        "station_timezone": "America/Denver",
+        "station_elevation_m": 1482.85,
+        "station_elevation_mi": 0.92
+    },
+    {
+        "station_lat": -117.09,
+        "station_lon": 38.06,
+        "station_id": "KTPH",
+        "station_name": "Tonopah, Tonopah Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1653.84,
+        "station_elevation_mi": 1.03
+    },
+    {
+        "station_lat": -114.72,
+        "station_lon": 33.62,
+        "station_id": "KBLH",
+        "station_name": "Blythe, Blythe Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 121.01,
+        "station_elevation_mi": 0.08
+    },
+    {
+        "station_lat": -118.02,
+        "station_lon": 37.61,
+        "station_id": "DYNN2",
+        "station_name": "NOAA WESTERN REGION CLIMATE STATION IN THE FISH LAKE VALLEY NEAR DYER 6SE",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1485.9,
+        "station_elevation_mi": 0.92
+    },
+    {
+        "station_lat": -118.36,
+        "station_lon": 37.37,
+        "station_id": "KBIH",
+        "station_name": "Bishop, Bishop Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 1256.08,
+        "station_elevation_mi": 0.78
+    },
+    {
+        "station_lat": -118.84,
+        "station_lon": 37.62,
+        "station_id": "KMMH",
+        "station_name": "Mammoth Yosemite Airport",
+        "station_timezone": "America/Los_Angeles",
+        "station_elevation_m": 2167.74,
+        "station_elevation_mi": 1.35
+    }
+]

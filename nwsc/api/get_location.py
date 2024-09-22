@@ -14,7 +14,9 @@ def uscb_geocode(
 	session: CachedSession,
 	address: str
 ) -> Tuple[float, float] | None:
-	"""Get the lat and lon for a street address using the US Census Bureau's free geocoding API"""
+	"""Get the lat and lon for a street address using the US Census Bureau's free
+	geocoding API"""
+
 	coord_data = api_request(session, USCB_API_GEOCODE + address.replace(' ', '+'))
 	response = coord_data.get('response')
 	try:
@@ -37,17 +39,25 @@ def get_location(
 	location_data = api_request(session, NWS_API_POINTS + coords_str)
 	response = location_data.get('response')
 	location_dict = {
-		'city':                     response.get('properties', {}).get('relativeLocation', {}).get('properties', {}).get('city'),
-		'state':                    response.get('properties', {}).get('relativeLocation', {}).get('properties', {}).get('state'),
+		'city':                     (response.get('properties', {})
+							   				 .get('relativeLocation', {})
+											 .get('properties', {})
+											 .get('city')),
+		'state':                    (response.get('properties', {})
+							   				 .get('relativeLocation', {})
+											 .get('properties', {})
+											 .get('state')),
 		'timezone':                 response.get('properties', {}).get('timeZone'),
 		'grid_x':                   response.get('properties', {}).get('gridX'),
 		'grid_y':                   response.get('properties', {}).get('gridY'),
 		'forecast_office':      	response.get('properties', {}).get('cwa'),
 		'radar_station':            response.get('properties', {}).get('radarStation'),
 		'forecast_office_url':      response.get('properties', {}).get('forecastOffice'),
-		'forecast_extended_url':    response.get('properties', {}).get('forecast'),				# /gridpoints/{wfo}/{x},{y}/forecast
-		'forecast_hourly_url':      response.get('properties', {}).get('forecastHourly'),		# /gridpoints/{wfo}/{x},{y}/forecast/hourly
-		'gridpoints_url':           response.get('properties', {}).get('forecastGridData'),		# /gridpoints/{wfo}/{x},{y}
-		'observation_stations_url': response.get('properties', {}).get('observationStations'),	# /gridpoints/{wfo}/{x},{y}/stations
+		'forecast_extended_url':    response.get('properties', {}).get('forecast'),			# /gridpoints/{wfo}/{x},{y}/forecast
+		'forecast_hourly_url':      response.get('properties', {}).get('forecastHourly'),	# /gridpoints/{wfo}/{x},{y}/forecast/hourly
+		'gridpoints_url':           (response.get('properties', {})
+							   				 .get('forecastGridData')),						# /gridpoints/{wfo}/{x},{y}
+		'observation_stations_url': (response.get('properties', {})
+							   				 .get('observationStations')),					# /gridpoints/{wfo}/{x},{y}/stations
 	}
 	return Location(**location_dict)
